@@ -1,23 +1,20 @@
-"""Command-line entry point for the tender-agent."""
+from fastapi import FastAPI
+from app.models import StartTenderRunRequest
+from app.workflow import start_run, get_status, get_result
 
-import argparse
-
-from app.workflow import run_workflow
-
-
-def main() -> None:
-    """Parse CLI arguments and run the tender response workflow."""
-    parser = argparse.ArgumentParser(
-        prog="tender-agent",
-        description="AI-assisted tender response agent for government and defence procurement.",
-    )
-    parser.add_argument(
-        "rft_id",
-        help="RFT identifier for the tender to process (e.g. RFT-123).",
-    )
-    args = parser.parse_args()
-    run_workflow(args.rft_id)
+app = FastAPI(title="Tender Agent API")
 
 
-if __name__ == "__main__":
-    main()
+@app.post("/start_tender_run")
+def start_tender_run(request: StartTenderRunRequest):
+    return start_run(request.model_dump())
+
+
+@app.get("/get_tender_run_status/{run_id}")
+def get_tender_run_status(run_id: str):
+    return get_status(run_id)
+
+
+@app.get("/get_tender_run_result/{run_id}")
+def get_tender_run_result(run_id: str):
+    return get_result(run_id)
