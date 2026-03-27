@@ -1,38 +1,11 @@
-"""Pydantic data models for the tender-agent workflow."""
-
-from typing import List, Literal, Optional
-
 from pydantic import BaseModel
+from typing import List
 
 
-class Requirement(BaseModel):
-    """A single requirement extracted from a tender document."""
-
-    id: str
-    clause: str
-    text: str
-    category: Literal["Mandatory", "Desirable", "Informational"]
-    evaluation_criterion: Optional[str] = None
-
-
-class TemplateMapping(BaseModel):
-    """Maps a requirement to a section of the response template."""
-
-    requirement_id: str
-    template_section: str
-    notes: Optional[str] = None
-
-
-class DraftSection(BaseModel):
-    """A drafted section of the tender response."""
-
-    section: str
-    content: str
-
-
-class QAReport(BaseModel):
-    """Quality assurance review report for a drafted tender response."""
-
-    passed: List[str]
-    failed: List[dict]
-    risk_flags: List[str]
+class StartTenderRunRequest(BaseModel):
+    tender_id: str
+    template_path: str
+    tender_input_path: str
+    boilerplate_paths: List[str] = []
+    case_study_paths: List[str] = []
+    output_mode: str = "extract_and_map"
