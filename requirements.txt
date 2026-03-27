@@ -5,3 +5,11 @@ httpx>=0.27.0
 python-dotenv>=1.0.0
 pytest>=8.0.0
 pytest-mock>=3.14.0
+fastapi
+uvicorn
+pydantic
+python-dotenv
+openai
+python-docx
+pypdf
+PyGithub
