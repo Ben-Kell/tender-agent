@@ -1,0 +1,1 @@
+"""Tender-agent application package."""
