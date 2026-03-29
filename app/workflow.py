@@ -11,6 +11,7 @@ from app.template_loader import load_template
 from app.json_loader import load_tender_output_json
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.markdown_writer import write_markdown_output
+from app.template_fill import fill_template_placeholders
 
 
 def start_run(config: dict) -> dict:
@@ -56,9 +57,15 @@ Do not use triple backticks.
 Do not add any explanatory text.
 
 Return JSON only in this structure:
-{{
+{
+  "metadata": {
+    "tender_reference": "RFQ 47137",
+    "tender_title": "JP2181 and NMP2106 ICT Resources",
+    "customer": "Department of Defence",
+    "submission_date": "08/11/2024"
+  },
   "requirements": [
-    {{
+    {
       "requirement_id": "REQ-001",
       "source_document": "filename.md",
       "clause_reference": "1.1",
@@ -66,9 +73,9 @@ Return JSON only in this structure:
       "requirement_type": "mandatory",
       "theme": "service delivery",
       "response_needed": true
-    }}
+    }
   ]
-}}
+}
 """
 
         raw_output = chat(system_prompt, user_prompt)
@@ -87,6 +94,12 @@ Return JSON only in this structure:
             parsed = json.loads(cleaned_output)
         except json.JSONDecodeError:
             parsed = {
+                "metadata": {
+                    "tender_reference": "",
+                    "tender_title": "",
+                    "customer": "",
+                    "submission_date": ""
+                },
                 "requirements": [],
                 "error": "Failed to parse model output as JSON",
                 "raw_output": raw_output,
@@ -216,6 +229,13 @@ def draft_sections(config: dict) -> dict:
         mapped_sections = template_map.get("sections", [])
 
         template_text = load_template(template_name)
+
+        extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
+        tender_metadata = extracted.get("metadata", {})
+
+        template_text = fill_template_placeholders(template_text, tender_metadata)
+
+        section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         boilerplate_docs = load_boilerplate_docs()
         case_study_docs = load_case_studies()
         tender_docs = load_normalised_tender_docs(tender_id)

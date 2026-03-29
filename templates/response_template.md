@@ -6,7 +6,7 @@
 
 **Tender Reference:** [RFT NUMBER]
 **Tender Title:** [TENDER TITLE]
-**Respondent:** [COMPANY NAME]
+**Customer:** [CUSTOMER NAME]
 **ABN:** [ABN]
 **Submission Date:** [DATE]
 **Version:** 1.0
