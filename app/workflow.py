@@ -92,6 +92,20 @@ Return JSON only in this structure:
 
         try:
             parsed = json.loads(cleaned_output)
+                        # --- STEP 6: Metadata normalisation / fallback ---
+            metadata = parsed.get("metadata", {}) or {}
+
+            def clean_value(value):
+                return value.strip() if isinstance(value, str) else ""
+
+            metadata = {
+                "tender_reference": clean_value(metadata.get("tender_reference", "")),
+                "tender_title": clean_value(metadata.get("tender_title", "")),
+                "customer": clean_value(metadata.get("customer", "")),
+                "submission_date": clean_value(metadata.get("submission_date", "")),
+            }
+
+            parsed["metadata"] = metadata
         except json.JSONDecodeError:
             parsed = {
                 "metadata": {
@@ -107,7 +121,11 @@ Return JSON only in this structure:
 
         write_tender_output(tender_id, "extracted_requirements.json", parsed)
 
-        RUNS[run_id]["result"] = parsed
+        RUNS[run_id]["result"] = {
+            "metadata": parsed.get("metadata", {}),
+            "requirement_count": len(parsed.get("requirements", [])),
+            "output_file": f"tenders/{tender_id}/output/extracted_requirements.json"
+        }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 
@@ -320,6 +338,89 @@ Return raw JSON only in this structure:
     return {"run_id": run_id, "status": "queued"}
 
 def compile_response(config: dict) -> dict:
+    run_id = f"run_{uuid.uuid4().hex[:8]}"
+
+    RUNS[run_id] = {
+        "status": "running",
+        "current_step": "loading_response_parts",
+        "config": config,
+        "result": None,
+    }
+
+    try:
+        tender_id = config["tender_id"]
+        template_name = config.get("template_name", "response_template.md")
+
+        # Load template
+        template_text = load_template(template_name)
+
+        # Load extracted requirements so we can access metadata
+        extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
+        tender_metadata = extracted.get("metadata", {})
+
+        if not any(tender_metadata.values()):
+            raise ValueError(
+                f"No metadata found in extracted_requirements.json for tender {tender_id}. "
+                "Expected metadata keys: tender_reference, tender_title, customer, submission_date."
+            )
+
+        # Fill placeholders in the template before compile
+        template_text = fill_template_placeholders(template_text, tender_metadata)
+
+        # Load drafted sections
+        section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
+        drafted_sections = section_drafts.get("sections", [])
+
+        system_prompt = load_prompt("system_instructions.md")
+        compile_prompt = load_prompt("compile_response.md")
+
+        RUNS[run_id]["current_step"] = "compiling_final_response"
+
+        user_prompt = f"""
+TASK: {compile_prompt}
+
+TENDER ID: {tender_id}
+
+RESPONSE TEMPLATE:
+{template_text}
+
+SECTION DRAFTS:
+{json.dumps(drafted_sections, indent=2)}
+
+Return markdown only.
+Do not use triple backticks.
+Do not add commentary before or after the document.
+"""
+
+        raw_output = chat(system_prompt, user_prompt)
+        final_markdown = raw_output.strip()
+
+        if final_markdown.startswith("```markdown"):
+            final_markdown = final_markdown[len("```markdown"):].strip()
+        elif final_markdown.startswith("```"):
+            final_markdown = final_markdown[len("```"):].strip()
+
+        if final_markdown.endswith("```"):
+            final_markdown = final_markdown[:-3].strip()
+
+        # Safety pass in case the model reproduced placeholders again
+        final_markdown = fill_template_placeholders(final_markdown, tender_metadata)
+
+        write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
+
+        RUNS[run_id]["result"] = {
+            "message": "Final response draft compiled successfully",
+            "output_file": f"tenders/{tender_id}/output/final_response_draft.md",
+            "metadata_used": tender_metadata,
+        }
+        RUNS[run_id]["status"] = "completed"
+        RUNS[run_id]["current_step"] = "done"
+
+    except Exception as e:
+        RUNS[run_id]["status"] = "failed"
+        RUNS[run_id]["result"] = {"error": str(e)}
+
+    return {"run_id": run_id, "status": "queued"}
     run_id = f"run_{uuid.uuid4().hex[:8]}"
 
     RUNS[run_id] = {
