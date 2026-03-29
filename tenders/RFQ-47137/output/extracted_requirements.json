@@ -1,0 +1,139 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "source_document": "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "clause_reference": "N/A",
+      "requirement_text": "Supplier is to complete the table below for T&M Services if specified in the RFQ.",
+      "requirement_type": "commercial",
+      "theme": "pricing",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-002",
+      "source_document": "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "clause_reference": "N/A",
+      "requirement_text": "Supplier must insert relevant pricing information for Allowable Expenses in the table provided.",
+      "requirement_type": "commercial",
+      "theme": "pricing",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-003",
+      "source_document": "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "clause_reference": "N/A",
+      "requirement_text": "All Allowable Expenses must be pre-approved in writing by the Commonwealth.",
+      "requirement_type": "commercial",
+      "theme": "pricing",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-004",
+      "source_document": "Attachments to the ICTPA Conditions of Deed.md",
+      "clause_reference": "Attachment D",
+      "requirement_text": "Supplier must comply with the Governance Framework.",
+      "requirement_type": "governance",
+      "theme": "governance",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-005",
+      "source_document": "ICTPA Conditions of Deed.md",
+      "clause_reference": "3.13",
+      "requirement_text": "Supplier must propose Key Persons for the Work Order.",
+      "requirement_type": "personnel",
+      "theme": "personnel",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-006",
+      "source_document": "ICTPA Conditions of Deed.md",
+      "clause_reference": "11.11",
+      "requirement_text": "Supplier must propose any Subcontractors for the Work Order.",
+      "requirement_type": "personnel",
+      "theme": "personnel",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-007",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-PERF-001",
+      "requirement_text": "The Supplier must participate in Performance Reviews conducted by the Commonwealth.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-008",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-REP-001",
+      "requirement_text": "The Supplier must support reporting aligned to performance measurement and review cycles.",
+      "requirement_type": "mandatory",
+      "theme": "reporting",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-AIC-001",
+      "requirement_text": "The Supplier must submit a draft AIC Schedule as part of the RFQ response.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-010",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-GOV-001",
+      "requirement_text": "The Supplier must participate in meetings as defined in the SOW.",
+      "requirement_type": "mandatory",
+      "theme": "governance",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-011",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-DEL-001",
+      "requirement_text": "The Supplier must deliver services aligned to defined milestones.",
+      "requirement_type": "mandatory",
+      "theme": "service delivery",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-012",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-PER-001",
+      "requirement_text": "The Supplier must provide personnel as required to deliver the services.",
+      "requirement_type": "personnel",
+      "theme": "personnel",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-013",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-SEC-001",
+      "requirement_text": "The Supplier must comply with security obligations, including Probity, Conflict of Interest, and Security Compliance.",
+      "requirement_type": "security",
+      "theme": "security",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-014",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-TECH-001",
+      "requirement_text": "The Supplier must operate within the defined technical environment.",
+      "requirement_type": "technical",
+      "theme": "technical",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-015",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "RQ-COM-001",
+      "requirement_text": "The Supplier must provide pricing in accordance with SOW pricing structure.",
+      "requirement_type": "commercial",
+      "theme": "pricing",
+      "response_needed": true
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "section_id": "SEC-001",
+      "template_section": "5.1 Pricing Schedule",
+      "matched_requirements": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-015"
+      ],
+      "section_purpose": "To provide detailed pricing information as required by the tender.",
+      "response_guidance": "Complete the pricing schedule as specified in the tender. Include T&M Services, Allowable Expenses, and ensure alignment with SOW pricing structure.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-002",
+      "template_section": "3.1 Project Management",
+      "matched_requirements": [
+        "REQ-004",
+        "REQ-010"
+      ],
+      "section_purpose": "To outline the project management framework and governance compliance.",
+      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach. Ensure compliance with the Governance Framework and participation in meetings as defined in the SOW.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "4.3 Key Personnel",
+      "matched_requirements": [
+        "REQ-005",
+        "REQ-006",
+        "REQ-012"
+      ],
+      "section_purpose": "To identify key personnel and subcontractors involved in the project.",
+      "response_guidance": "List proposed key personnel with roles, qualifications, and relevant experience. Include any proposed subcontractors and ensure personnel availability for service delivery.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "2.1 Technical Approach",
+      "matched_requirements": [
+        "REQ-014"
+      ],
+      "section_purpose": "To describe the technical approach to meet the tender requirements.",
+      "response_guidance": "Describe the proposed technical approach to meet the stated requirements, ensuring operation within the defined technical environment.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "2.3 Security Approach",
+      "matched_requirements": [
+        "REQ-013"
+      ],
+      "section_purpose": "To outline the security measures and compliance obligations.",
+      "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement. Ensure compliance with security obligations, including Probity, Conflict of Interest, and Security Compliance.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "3.2 Service Management",
+      "matched_requirements": [
+        "REQ-007",
+        "REQ-008",
+        "REQ-011"
+      ],
+      "section_purpose": "To detail the service management framework and performance management.",
+      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths. Include participation in Performance Reviews, support for reporting aligned to performance measurement, and service delivery aligned to defined milestones.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "5.2 Commercial Terms",
+      "matched_requirements": [],
+      "section_purpose": "To address the acceptance or deviation from the draft contract terms.",
+      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms.",
+      "headings_to_add": [
+        "AIC Schedule"
+      ]
+    }
+  ]
+}
