@@ -8,7 +8,7 @@
         "RQ-TECH-002"
       ],
       "section_purpose": "To describe the technical approach to meet the requirements.",
-      "response_guidance": "Describe how the supplier will operate within the defined technical environment and meet service attributes and application requirements.",
+      "response_guidance": "Describe how the technical approach will operate within the defined technical environment and meet service attributes and application requirements.",
       "headings_to_add": []
     },
     {
@@ -18,7 +18,7 @@
         "RQ-SEC-001",
         "RQ-SEC-002"
       ],
-      "section_purpose": "To ensure the supplier's security framework aligns with the engagement's requirements.",
+      "section_purpose": "To outline the security framework and compliance obligations.",
       "response_guidance": "Describe compliance with security obligations, including probity, conflict of interest, and Defence policies and standards.",
       "headings_to_add": []
     },
@@ -29,7 +29,7 @@
         "RQ-GOV-001",
         "RQ-GOV-002"
       ],
-      "section_purpose": "To outline the project management and governance approach.",
+      "section_purpose": "To detail the project management and governance structure.",
       "response_guidance": "Describe participation in meetings and compliance with governance frameworks.",
       "headings_to_add": []
     },
@@ -45,7 +45,7 @@
         "RQ-REP-001",
         "RQ-REP-002"
       ],
-      "section_purpose": "To detail the service management framework and performance management.",
+      "section_purpose": "To describe the service management framework and performance management.",
       "response_guidance": "Describe participation in performance reviews, meeting KPIs, and supporting reporting aligned to performance measurement.",
       "headings_to_add": []
     },
@@ -57,37 +57,23 @@
         "RQ-DEL-002",
         "RQ-DEL-003"
       ],
-      "section_purpose": "To describe the approach to service delivery and transition.",
+      "section_purpose": "To outline the approach to service delivery and transition.",
       "response_guidance": "Describe how services will be delivered aligned to milestones, acceptance criteria, and support testing activities.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-006",
-      "template_section": "4.2 Relevant Experience and Case Studies",
-      "matched_requirements": [
-        "RQ-AIC-001",
-        "RQ-AIC-002",
-        "RQ-AIC-003",
-        "RQ-AIC-004",
-        "RQ-AIC-005"
-      ],
-      "section_purpose": "To demonstrate the supplier's experience and approach to Australian Industry Capability (AIC).",
-      "response_guidance": "Provide a draft AIC Schedule and demonstrate engagement with local businesses and alignment with Defence AIC policies.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-007",
       "template_section": "4.3 Key Personnel",
       "matched_requirements": [
         "RQ-PER-001",
         "RQ-PER-002"
       ],
-      "section_purpose": "To outline the personnel involved in delivering the services.",
+      "section_purpose": "To list key personnel involved in service delivery.",
       "response_guidance": "List personnel required to deliver services and any stand-down conditions.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-008",
+      "section_id": "SEC-007",
       "template_section": "5.1 Pricing Schedule",
       "matched_requirements": [
         "RQ-COM-001",
@@ -98,24 +84,13 @@
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-009",
+      "section_id": "SEC-008",
       "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
         "RQ-IP-001"
       ],
-      "section_purpose": "To address compliance with intellectual property provisions.",
+      "section_purpose": "To state acceptance or deviations from contract terms.",
       "response_guidance": "State compliance with IP provisions defined in the SOW.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-010",
-      "template_section": "3.1 Project Management",
-      "matched_requirements": [
-        "RQ-PLAN-001",
-        "RQ-PLAN-002"
-      ],
-      "section_purpose": "To ensure plans are developed and maintained as required.",
-      "response_guidance": "Describe the development and maintenance of plans aligning with performance, reporting, and governance requirements.",
       "headings_to_add": []
     }
   ]

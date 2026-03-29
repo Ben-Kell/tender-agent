@@ -3,7 +3,7 @@
     {
       "section_id": "SEC-001",
       "template_section": "2.1 Technical Approach",
-      "draft_text": "Our technical approach is designed to operate seamlessly within the defined technical environment, ensuring compliance with all service attributes and application requirements. We leverage our extensive experience in delivering ICT solutions to align with the specific needs of the Department of Defence. Our team will utilize advanced technologies and methodologies to ensure robust and reliable service delivery.",
+      "draft_text": "Our technical approach is designed to operate seamlessly within the defined technical environment, ensuring compliance with all service attributes and application requirements. We leverage industry best practices and cutting-edge technologies to deliver robust and scalable solutions. Our team is committed to maintaining high standards of technical excellence, ensuring that all deliverables meet the specified requirements and exceed client expectations.",
       "requirements_covered": [
         "RQ-TECH-001",
         "RQ-TECH-002"
@@ -15,7 +15,7 @@
     {
       "section_id": "SEC-002",
       "template_section": "2.3 Security Approach",
-      "draft_text": "Our security framework is aligned with the Australian Government's Information Security Manual (ISM) and the ACSC Essential Eight strategies. We ensure compliance with all security obligations, including probity, conflict of interest, and adherence to Defence policies and standards. Our team includes personnel with appropriate security clearances to handle sensitive information securely.",
+      "draft_text": "Our security framework is aligned with the Australian Government's Information Security Manual (ISM) and the ACSC Essential Eight mitigation strategies. We ensure compliance with all security obligations, including probity, conflict of interest, and adherence to Defence policies and standards. Our team of security-cleared personnel is dedicated to maintaining the highest levels of security compliance and integrity throughout the engagement.",
       "requirements_covered": [
         "RQ-SEC-001",
         "RQ-SEC-002"
@@ -29,7 +29,7 @@
     {
       "section_id": "SEC-003",
       "template_section": "3.1 Project Management",
-      "draft_text": "We employ a structured project management methodology that includes participation in all required meetings and adherence to governance frameworks as defined in the Work Order. Our approach ensures effective communication and collaboration with all stakeholders, facilitating successful project delivery.",
+      "draft_text": "Our project management methodology is structured around active participation in all required meetings and strict adherence to the governance frameworks defined in the Work Order. We employ a robust governance structure to ensure effective oversight and management of all project activities, facilitating clear communication and accountability.",
       "requirements_covered": [
         "RQ-GOV-001",
         "RQ-GOV-002"
@@ -41,7 +41,7 @@
     {
       "section_id": "SEC-004",
       "template_section": "3.2 Service Management",
-      "draft_text": "Our service management framework is ITIL-aligned, ensuring consistent and measurable service delivery. We actively participate in performance reviews, meet all KPIs, and support reporting aligned to performance measurement and review cycles. Our approach includes a comprehensive incident management process to address any issues promptly.",
+      "draft_text": "We implement a comprehensive service management framework that includes participation in performance reviews, meeting Key Performance Indicators (KPIs), and supporting reporting aligned to performance measurement. Our approach ensures that all service management activities are conducted in accordance with best practices and client expectations.",
       "requirements_covered": [
         "RQ-PERF-001",
         "RQ-PERF-002",
@@ -60,7 +60,7 @@
     {
       "section_id": "SEC-005",
       "template_section": "3.3 Transition Approach",
-      "draft_text": "Our transition approach is designed to ensure a smooth and seamless transition-in and transition-out process. We deliver services aligned to defined milestones and acceptance criteria, supporting all necessary testing activities to validate service readiness and performance.",
+      "draft_text": "Our transition approach is designed to ensure a smooth and efficient transition-in and transition-out process. We deliver services aligned to defined milestones, meet all acceptance criteria, and support testing activities as required. Our structured methodology minimizes risks and ensures continuity of service throughout the transition phases.",
       "requirements_covered": [
         "RQ-DEL-001",
         "RQ-DEL-002",
@@ -74,26 +74,8 @@
     },
     {
       "section_id": "SEC-006",
-      "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "We have a proven track record of maximizing Australian Industry participation, demonstrated through our engagement with local businesses and SMEs. Our draft AIC Schedule outlines our commitment to aligning with Defence AIC policies and strategies.",
-      "requirements_covered": [
-        "RQ-AIC-001",
-        "RQ-AIC-002",
-        "RQ-AIC-003",
-        "RQ-AIC-004",
-        "RQ-AIC-005"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [
-        "dict_case_study.md",
-        "nds_case_study.md"
-      ],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-007",
       "template_section": "4.3 Key Personnel",
-      "draft_text": "Our team comprises highly qualified personnel essential for delivering the required services. We ensure that all personnel are aware of and comply with any stand-down conditions as necessary.",
+      "draft_text": "We have assembled a team of highly qualified personnel to deliver the services required under this engagement. Our team members are subject to stand-down conditions as necessary, ensuring that we maintain the highest standards of service delivery and compliance.",
       "requirements_covered": [
         "RQ-PER-001",
         "RQ-PER-002"
@@ -103,9 +85,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-008",
+      "section_id": "SEC-007",
       "template_section": "5.1 Pricing Schedule",
-      "draft_text": "We provide a comprehensive pricing schedule in accordance with the SOW pricing structure, ensuring full compliance with Work Order pricing and payment arrangements. Our pricing is transparent and inclusive of all necessary costs.",
+      "draft_text": "Our pricing is structured in accordance with the SOW pricing structure and complies with all Work Order pricing and payment arrangements. We ensure transparency and accuracy in all pricing submissions, adhering to the specified requirements.",
       "requirements_covered": [
         "RQ-COM-001",
         "RQ-COM-002"
@@ -115,23 +97,11 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-009",
+      "section_id": "SEC-008",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "We confirm our compliance with the intellectual property provisions as defined in the SOW, ensuring all IP rights are respected and managed appropriately.",
+      "draft_text": "We confirm our compliance with the intellectual property provisions defined in the SOW. Our approach ensures that all IP rights are managed in accordance with the specified requirements, protecting both our interests and those of the Commonwealth.",
       "requirements_covered": [
         "RQ-IP-001"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-010",
-      "template_section": "3.1 Project Management",
-      "draft_text": "We develop and maintain comprehensive plans that align with performance, reporting, and governance requirements. Our planning process is integral to ensuring successful project execution and delivery.",
-      "requirements_covered": [
-        "RQ-PLAN-001",
-        "RQ-PLAN-002"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
