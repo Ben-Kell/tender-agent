@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import List, Dict
 
 
-def load_normalized_tender_docs(tender_id: str) -> List[Dict[str, str]]:
+def load_normalised_tender_docs(tender_id: str) -> List[Dict[str, str]]:
     base = Path("tenders") / tender_id / "input" / "02_normalised"
 
     if not base.exists():

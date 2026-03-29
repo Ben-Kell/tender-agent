@@ -1,33 +1,21 @@
-# Extract Requirements Prompt
+Extract all explicit and implied supplier response requirements from the tender documents.
 
-## Task
+Include:
+- mandatory obligations
+- response requirements
+- pricing requirements
+- personnel requirements
+- security requirements
+- governance requirements
+- reporting requirements
+- plan requirements
+- AIC requirements
+- technical and delivery requirements
 
-Parse the provided tender document(s) and extract all requirements into a structured list.
-
-## Instructions
-
-1. Read through the entire tender document, including all annexes and addenda.
-2. Identify and categorise each requirement as:
-   - **Mandatory** – must be addressed for the response to be considered compliant
-   - **Desirable** – should be addressed to maximise evaluation score
-   - **Informational** – context that informs the response but requires no direct answer
-3. For each requirement, capture:
-   - Clause/section reference
-   - Requirement text (verbatim or paraphrased)
-   - Category (Mandatory / Desirable / Informational)
-   - Evaluation criterion it maps to (if stated)
-4. Output the requirements as a structured markdown table or JSON object.
-
-## Output Format
-
-```json
-[
-  {
-    "id": "REQ-001",
-    "clause": "3.1.2",
-    "text": "The respondent must demonstrate...",
-    "category": "Mandatory",
-    "evaluation_criterion": "Technical Capability"
-  }
-]
-```
+Rules:
+- Preserve clause references where possible.
+- Use the source filename where possible.
+- Break combined obligations into separate requirements where practical.
+- requirement_type must be one of:
+  mandatory, response, commercial, security, personnel, governance, technical
+- response_needed should be true if the supplier needs to address it in the tender response.
