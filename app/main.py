@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from app.storage import RUNS
-from app.workflow import start_run, map_template
+from app.workflow import start_run, map_template, draft_sections, compile_response
 
 app = FastAPI()
 
@@ -14,6 +14,14 @@ class TemplateMapRequest(BaseModel):
     tender_id: str
     template_name: str = "response_template.md"
 
+class SectionDraftRequest(BaseModel):
+    tender_id: str
+    template_name: str = "response_template.md"
+
+class CompileResponseRequest(BaseModel):
+    tender_id: str
+    template_name: str = "response_template.md"
+
 
 @app.post("/start_tender_run")
 def start_tender_run(request: TenderRunRequest):
@@ -22,6 +30,14 @@ def start_tender_run(request: TenderRunRequest):
 @app.post("/map_template")
 def map_template_endpoint(request: TemplateMapRequest):
     return map_template(request.dict())
+
+@app.post("/draft_sections")
+def draft_sections_endpoint(request: SectionDraftRequest):
+    return draft_sections(request.dict())
+
+@app.post("/compile_response")
+def compile_response_endpoint(request: CompileResponseRequest):
+    return compile_response(request.dict())
 
 
 @app.get("/get_tender_run_status/{run_id}")

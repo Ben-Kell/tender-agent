@@ -9,6 +9,8 @@ from app.openai_client import chat
 
 from app.template_loader import load_template
 from app.json_loader import load_tender_output_json
+from app.content_loader import load_boilerplate_docs, load_case_studies
+from app.markdown_writer import write_markdown_output
 
 
 def start_run(config: dict) -> dict:
@@ -184,6 +186,179 @@ Return raw JSON only in this structure:
         write_tender_output(tender_id, "template_map.json", parsed)
 
         RUNS[run_id]["result"] = parsed
+        RUNS[run_id]["status"] = "completed"
+        RUNS[run_id]["current_step"] = "done"
+
+    except Exception as e:
+        RUNS[run_id]["status"] = "failed"
+        RUNS[run_id]["result"] = {"error": str(e)}
+
+    return {"run_id": run_id, "status": "queued"}
+
+def draft_sections(config: dict) -> dict:
+    run_id = f"run_{uuid.uuid4().hex[:8]}"
+
+    RUNS[run_id] = {
+        "status": "running",
+        "current_step": "loading_inputs_for_drafting",
+        "config": config,
+        "result": None,
+    }
+
+    try:
+        tender_id = config["tender_id"]
+        template_name = config.get("template_name", "response_template.md")
+
+        extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
+        template_map = load_tender_output_json(tender_id, "template_map.json")
+
+        requirements = extracted.get("requirements", [])
+        mapped_sections = template_map.get("sections", [])
+
+        template_text = load_template(template_name)
+        boilerplate_docs = load_boilerplate_docs()
+        case_study_docs = load_case_studies()
+        tender_docs = load_normalised_tender_docs(tender_id)
+
+        system_prompt = load_prompt("system_instructions.md")
+        draft_prompt = load_prompt("draft_sections.md")
+
+        RUNS[run_id]["current_step"] = "drafting_sections"
+
+        user_prompt = f"""
+TASK:
+{draft_prompt}
+
+TENDER ID:
+{tender_id}
+
+RESPONSE TEMPLATE:
+{template_text}
+
+TENDER DOCUMENTS:
+{json.dumps(tender_docs, indent=2)}
+
+EXTRACTED REQUIREMENTS:
+{json.dumps(requirements, indent=2)}
+
+TEMPLATE MAP:
+{json.dumps(mapped_sections, indent=2)}
+
+BOILERPLATE:
+{json.dumps(boilerplate_docs, indent=2)}
+
+CASE STUDIES:
+{json.dumps(case_study_docs, indent=2)}
+
+Return raw JSON only in this structure:
+{{
+  "sections": [
+    {{
+      "section_id": "SEC-001",
+      "template_section": "Executive Summary",
+      "draft_text": "Draft response text here",
+      "requirements_covered": ["REQ-001", "REQ-004"],
+      "used_boilerplate": ["file1.md"],
+      "used_case_studies": ["case1.md"],
+      "headings_added": ["Optional heading"]
+    }}
+  ]
+}}
+"""
+
+        raw_output = chat(system_prompt, user_prompt)
+
+        cleaned_output = raw_output.strip()
+
+        if cleaned_output.startswith("```json"):
+            cleaned_output = cleaned_output[len("```json"):].strip()
+        elif cleaned_output.startswith("```"):
+            cleaned_output = cleaned_output[len("```"):].strip()
+
+        if cleaned_output.endswith("```"):
+            cleaned_output = cleaned_output[:-3].strip()
+
+        try:
+            parsed = json.loads(cleaned_output)
+        except json.JSONDecodeError:
+            parsed = {
+                "sections": [],
+                "error": "Failed to parse model output as JSON",
+                "raw_output": raw_output,
+            }
+
+        write_tender_output(tender_id, "section_drafts.json", parsed)
+
+        RUNS[run_id]["result"] = parsed
+        RUNS[run_id]["status"] = "completed"
+        RUNS[run_id]["current_step"] = "done"
+
+    except Exception as e:
+        RUNS[run_id]["status"] = "failed"
+        RUNS[run_id]["result"] = {"error": str(e)}
+
+    return {"run_id": run_id, "status": "queued"}
+
+def compile_response(config: dict) -> dict:
+    run_id = f"run_{uuid.uuid4().hex[:8]}"
+
+    RUNS[run_id] = {
+        "status": "running",
+        "current_step": "loading_response_parts",
+        "config": config,
+        "result": None,
+    }
+
+    try:
+        tender_id = config["tender_id"]
+        template_name = config.get("template_name", "response_template.md")
+
+        template_text = load_template(template_name)
+        section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
+
+        drafted_sections = section_drafts.get("sections", [])
+
+        system_prompt = load_prompt("system_instructions.md")
+        compile_prompt = load_prompt("compile_response.md")
+
+        RUNS[run_id]["current_step"] = "compiling_final_response"
+
+        user_prompt = f"""
+TASK:
+{compile_prompt}
+
+TENDER ID:
+{tender_id}
+
+RESPONSE TEMPLATE:
+{template_text}
+
+SECTION DRAFTS:
+{json.dumps(drafted_sections, indent=2)}
+
+Return markdown only.
+Do not use triple backticks.
+Do not add commentary before or after the document.
+"""
+
+        raw_output = chat(system_prompt, user_prompt)
+
+        final_markdown = raw_output.strip()
+
+        if final_markdown.startswith("```markdown"):
+            final_markdown = final_markdown[len("```markdown"):].strip()
+        elif final_markdown.startswith("```"):
+            final_markdown = final_markdown[len("```"):].strip()
+
+        if final_markdown.endswith("```"):
+            final_markdown = final_markdown[:-3].strip()
+
+        write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
+
+        RUNS[run_id]["result"] = {
+            "message": "Final response draft compiled successfully",
+            "output_file": f"tenders/{tender_id}/output/final_response_draft.md"
+        }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 

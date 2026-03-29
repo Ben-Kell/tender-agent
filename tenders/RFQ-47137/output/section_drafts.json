@@ -1,0 +1,93 @@
+{
+  "sections": [
+    {
+      "section_id": "SEC-001",
+      "template_section": "5.1 Pricing Schedule",
+      "draft_text": "In accordance with the tender requirements, we have completed the pricing schedule, detailing our proposed Time and Materials (T&M) Services and Allowable Expenses. Our pricing aligns with the SOW pricing structure and includes all necessary components such as taxes, licence fees, and service costs. We ensure that all Allowable Expenses will be pre-approved in writing by the Commonwealth, as stipulated.",
+      "requirements_covered": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-015"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-002",
+      "template_section": "3.1 Project Management",
+      "draft_text": "Our project management approach is structured around a robust governance framework, ensuring compliance with the Commonwealth's requirements. We will actively participate in all meetings as defined in the SOW, and our methodology includes regular reporting and performance reviews to maintain alignment with project objectives.",
+      "requirements_covered": [
+        "REQ-004",
+        "REQ-010"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "4.3 Key Personnel",
+      "draft_text": "We propose a team of highly qualified key personnel, each with relevant experience and qualifications to deliver the services required. Our team includes [insert names and roles], and we have identified [insert subcontractors] to support specific aspects of the project, ensuring all personnel are available as needed.",
+      "requirements_covered": [
+        "REQ-005",
+        "REQ-006",
+        "REQ-012"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "2.1 Technical Approach",
+      "draft_text": "Our technical approach is designed to operate seamlessly within the defined technical environment. We leverage advanced methodologies and technologies to meet the tender requirements effectively, ensuring robust and reliable service delivery.",
+      "requirements_covered": [
+        "REQ-014"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "2.3 Security Approach",
+      "draft_text": "We maintain a comprehensive security framework that aligns with the Commonwealth's security obligations, including probity, conflict of interest, and security compliance. Our approach includes rigorous controls and certifications to safeguard all aspects of the engagement.",
+      "requirements_covered": [
+        "REQ-013"
+      ],
+      "used_boilerplate": [
+        "security_capability.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "3.2 Service Management",
+      "draft_text": "Our service management framework is ITIL-aligned, ensuring efficient and effective service delivery. We will participate in performance reviews and support reporting aligned with performance measurement cycles. Our service delivery will adhere to defined milestones, ensuring timely and quality outcomes.",
+      "requirements_covered": [
+        "REQ-007",
+        "REQ-008",
+        "REQ-011"
+      ],
+      "used_boilerplate": [
+        "service_management.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "We accept the draft contract terms as provided, with no deviations proposed. Our commercial terms are structured to ensure compliance with all tender requirements, including the submission of an AIC Schedule where applicable.",
+      "requirements_covered": [],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": [
+        "AIC Schedule"
+      ]
+    }
+  ]
+}
