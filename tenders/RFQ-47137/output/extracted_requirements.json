@@ -138,7 +138,7 @@
       "clause_reference": "Milestones section",
       "requirement_text": "The Supplier must deliver services aligned to defined milestones.",
       "requirement_type": "mandatory",
-      "theme": "delivery",
+      "theme": "service delivery",
       "response_needed": true
     },
     {
@@ -147,7 +147,7 @@
       "clause_reference": "Acceptance section",
       "requirement_text": "Deliverables must meet acceptance criteria defined by the Commonwealth.",
       "requirement_type": "mandatory",
-      "theme": "delivery",
+      "theme": "service delivery",
       "response_needed": true
     },
     {
@@ -156,7 +156,7 @@
       "clause_reference": "Testing section",
       "requirement_text": "The Supplier must support testing activities where applicable.",
       "requirement_type": "mandatory",
-      "theme": "delivery",
+      "theme": "service delivery",
       "response_needed": true
     },
     {

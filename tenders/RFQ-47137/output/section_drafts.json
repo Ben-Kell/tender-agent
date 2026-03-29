@@ -3,7 +3,7 @@
     {
       "section_id": "SEC-001",
       "template_section": "2.1 Technical Approach",
-      "draft_text": "Our technical approach is designed to operate seamlessly within the defined technical environment, ensuring compliance with all service attributes and application requirements. We leverage industry best practices and cutting-edge technologies to deliver robust and scalable solutions. Our team is committed to maintaining high standards of technical excellence, ensuring that all deliverables meet the specified requirements and exceed client expectations.",
+      "draft_text": "Our technical approach is designed to operate seamlessly within the defined technical environment, ensuring compliance with all service attributes and application requirements. We leverage industry best practices and cutting-edge technologies to deliver robust and scalable solutions. Our team is proficient in integrating complex systems and ensuring interoperability across various platforms, which is critical for meeting the stringent requirements of the Department of Defence.",
       "requirements_covered": [
         "RQ-TECH-001",
         "RQ-TECH-002"
@@ -15,7 +15,7 @@
     {
       "section_id": "SEC-002",
       "template_section": "2.3 Security Approach",
-      "draft_text": "Our security framework is aligned with the Australian Government's Information Security Manual (ISM) and the ACSC Essential Eight mitigation strategies. We ensure compliance with all security obligations, including probity, conflict of interest, and adherence to Defence policies and standards. Our team of security-cleared personnel is dedicated to maintaining the highest levels of security compliance and integrity throughout the engagement.",
+      "draft_text": "We adhere to a comprehensive security framework that aligns with the Australian Government's Information Security Manual (ISM) and Defence policies. Our approach includes rigorous compliance with probity and conflict of interest requirements, ensuring that all security obligations are met. Our team is equipped with the necessary clearances and training to handle sensitive information securely.",
       "requirements_covered": [
         "RQ-SEC-001",
         "RQ-SEC-002"
@@ -29,7 +29,7 @@
     {
       "section_id": "SEC-003",
       "template_section": "3.1 Project Management",
-      "draft_text": "Our project management methodology is structured around active participation in all required meetings and strict adherence to the governance frameworks defined in the Work Order. We employ a robust governance structure to ensure effective oversight and management of all project activities, facilitating clear communication and accountability.",
+      "draft_text": "Our project management methodology is structured around active participation in all required meetings and strict adherence to governance frameworks as defined in the Work Order. We employ a robust governance structure to ensure transparency and accountability throughout the project lifecycle.",
       "requirements_covered": [
         "RQ-GOV-001",
         "RQ-GOV-002"
@@ -41,15 +41,11 @@
     {
       "section_id": "SEC-004",
       "template_section": "3.2 Service Management",
-      "draft_text": "We implement a comprehensive service management framework that includes participation in performance reviews, meeting Key Performance Indicators (KPIs), and supporting reporting aligned to performance measurement. Our approach ensures that all service management activities are conducted in accordance with best practices and client expectations.",
+      "draft_text": "Service delivery is aligned with defined milestones and acceptance criteria, ensuring that all deliverables meet the Commonwealth's standards. We support comprehensive testing activities to validate service performance and reliability. Our ITIL-aligned service management framework ensures consistent and measurable service delivery.",
       "requirements_covered": [
-        "RQ-PERF-001",
-        "RQ-PERF-002",
-        "RQ-PERF-003",
-        "RQ-PERF-004",
-        "RQ-PERF-005",
-        "RQ-REP-001",
-        "RQ-REP-002"
+        "RQ-DEL-001",
+        "RQ-DEL-002",
+        "RQ-DEL-003"
       ],
       "used_boilerplate": [
         "service_management.md"
@@ -59,23 +55,8 @@
     },
     {
       "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "Our transition approach is designed to ensure a smooth and efficient transition-in and transition-out process. We deliver services aligned to defined milestones, meet all acceptance criteria, and support testing activities as required. Our structured methodology minimizes risks and ensures continuity of service throughout the transition phases.",
-      "requirements_covered": [
-        "RQ-DEL-001",
-        "RQ-DEL-002",
-        "RQ-DEL-003"
-      ],
-      "used_boilerplate": [
-        "transition_approach.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-006",
       "template_section": "4.3 Key Personnel",
-      "draft_text": "We have assembled a team of highly qualified personnel to deliver the services required under this engagement. Our team members are subject to stand-down conditions as necessary, ensuring that we maintain the highest standards of service delivery and compliance.",
+      "draft_text": "We have identified key personnel who are essential for the successful delivery of services. These individuals possess the necessary qualifications and experience, and are subject to stand-down conditions as required. Our team is committed to maintaining the highest standards of professionalism and expertise.",
       "requirements_covered": [
         "RQ-PER-001",
         "RQ-PER-002"
@@ -85,9 +66,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-007",
+      "section_id": "SEC-006",
       "template_section": "5.1 Pricing Schedule",
-      "draft_text": "Our pricing is structured in accordance with the SOW pricing structure and complies with all Work Order pricing and payment arrangements. We ensure transparency and accuracy in all pricing submissions, adhering to the specified requirements.",
+      "draft_text": "Our pricing schedule is meticulously structured in accordance with the SOW pricing framework. We ensure full compliance with Work Order pricing and payment arrangements, providing transparent and competitive pricing that reflects the value of our services.",
       "requirements_covered": [
         "RQ-COM-001",
         "RQ-COM-002"
@@ -97,9 +78,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-008",
+      "section_id": "SEC-007",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "We confirm our compliance with the intellectual property provisions defined in the SOW. Our approach ensures that all IP rights are managed in accordance with the specified requirements, protecting both our interests and those of the Commonwealth.",
+      "draft_text": "We fully comply with the intellectual property provisions as defined in the SOW. Our approach ensures that all IP rights are respected and managed in accordance with the Commonwealth's requirements.",
       "requirements_covered": [
         "RQ-IP-001"
       ],

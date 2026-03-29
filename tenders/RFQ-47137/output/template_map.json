@@ -37,59 +37,43 @@
       "section_id": "SEC-004",
       "template_section": "3.2 Service Management",
       "matched_requirements": [
-        "RQ-PERF-001",
-        "RQ-PERF-002",
-        "RQ-PERF-003",
-        "RQ-PERF-004",
-        "RQ-PERF-005",
-        "RQ-REP-001",
-        "RQ-REP-002"
-      ],
-      "section_purpose": "To describe the service management framework and performance management.",
-      "response_guidance": "Describe participation in performance reviews, meeting KPIs, and supporting reporting aligned to performance measurement.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "matched_requirements": [
         "RQ-DEL-001",
         "RQ-DEL-002",
         "RQ-DEL-003"
       ],
-      "section_purpose": "To outline the approach to service delivery and transition.",
-      "response_guidance": "Describe how services will be delivered aligned to milestones, acceptance criteria, and support testing activities.",
+      "section_purpose": "To describe the service delivery and management framework.",
+      "response_guidance": "Explain how services will be delivered aligned to milestones, acceptance criteria, and support testing activities.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-006",
+      "section_id": "SEC-005",
       "template_section": "4.3 Key Personnel",
       "matched_requirements": [
         "RQ-PER-001",
         "RQ-PER-002"
       ],
-      "section_purpose": "To list key personnel involved in service delivery.",
+      "section_purpose": "To identify key personnel involved in service delivery.",
       "response_guidance": "List personnel required to deliver services and any stand-down conditions.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-007",
+      "section_id": "SEC-006",
       "template_section": "5.1 Pricing Schedule",
       "matched_requirements": [
         "RQ-COM-001",
         "RQ-COM-002"
       ],
-      "section_purpose": "To provide the pricing structure and compliance with payment arrangements.",
+      "section_purpose": "To provide a detailed pricing schedule.",
       "response_guidance": "Provide pricing in accordance with the SOW pricing structure and comply with Work Order pricing arrangements.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-008",
+      "section_id": "SEC-007",
       "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
         "RQ-IP-001"
       ],
-      "section_purpose": "To state acceptance or deviations from contract terms.",
+      "section_purpose": "To address commercial terms and conditions.",
       "response_guidance": "State compliance with IP provisions defined in the SOW.",
       "headings_to_add": []
     }
