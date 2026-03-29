@@ -12,6 +12,10 @@ from app.json_loader import load_tender_output_json
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.markdown_writer import write_markdown_output
 from app.template_fill import fill_template_placeholders
+from app.template_utils import fill_template_placeholders
+
+from app.docx_payload_builder import build_docx_payload, write_docx_payload
+from app.docx_bridge import render_docx_with_node
 
 
 def start_run(config: dict) -> dict:
@@ -432,77 +436,30 @@ Do not add commentary before or after the document.
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
 
-        RUNS[run_id]["result"] = {
-            "message": "Final response draft compiled successfully",
-            "output_file": f"tenders/{tender_id}/output/final_response_draft.md",
-            "metadata_used": tender_metadata,
-        }
-        RUNS[run_id]["status"] = "completed"
-        RUNS[run_id]["current_step"] = "done"
+        RUNS[run_id]["current_step"] = "building_docx_payload"
 
-    except Exception as e:
-        RUNS[run_id]["status"] = "failed"
-        RUNS[run_id]["result"] = {"error": str(e)}
+        payload = build_docx_payload(
+            tender_id=tender_id,
+            markdown_text=final_markdown,
+            mapping_path="templates/fujitsu_response_template.mapping.json"
+        )
 
-    return {"run_id": run_id, "status": "queued"}
-    run_id = f"run_{uuid.uuid4().hex[:8]}"
+        payload_file = write_docx_payload(tender_id, payload)
 
-    RUNS[run_id] = {
-        "status": "running",
-        "current_step": "loading_response_parts",
-        "config": config,
-        "result": None,
-    }
+        RUNS[run_id]["current_step"] = "rendering_docx"
 
-    try:
-        tender_id = config["tender_id"]
-        template_name = config.get("template_name", "response_template.md")
-
-        template_text = load_template(template_name)
-        section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
-
-        drafted_sections = section_drafts.get("sections", [])
-
-        system_prompt = load_prompt("system_instructions.md")
-        compile_prompt = load_prompt("compile_response.md")
-
-        RUNS[run_id]["current_step"] = "compiling_final_response"
-
-        user_prompt = f"""
-TASK:
-{compile_prompt}
-
-TENDER ID:
-{tender_id}
-
-RESPONSE TEMPLATE:
-{template_text}
-
-SECTION DRAFTS:
-{json.dumps(drafted_sections, indent=2)}
-
-Return markdown only.
-Do not use triple backticks.
-Do not add commentary before or after the document.
-"""
-
-        raw_output = chat(system_prompt, user_prompt)
-
-        final_markdown = raw_output.strip()
-
-        if final_markdown.startswith("```markdown"):
-            final_markdown = final_markdown[len("```markdown"):].strip()
-        elif final_markdown.startswith("```"):
-            final_markdown = final_markdown[len("```"):].strip()
-
-        if final_markdown.endswith("```"):
-            final_markdown = final_markdown[:-3].strip()
-
-        write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
+        docx_output_file = render_docx_with_node(
+            tender_id=tender_id,
+            template_path="templates/fujitsu_response_template.docx",
+            payload_path=payload_file,
+            output_path=f"tenders/{tender_id}/output/final_response.docx"
+        )
 
         RUNS[run_id]["result"] = {
-            "message": "Final response draft compiled successfully",
-            "output_file": f"tenders/{tender_id}/output/final_response_draft.md"
+            "message": "Final response draft and DOCX compiled successfully",
+            "markdown_output_file": f"tenders/{tender_id}/output/final_response_draft.md",
+            "payload_file": f"tenders/{tender_id}/output/docx_payload.json",
+            "docx_output_file": docx_output_file
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"

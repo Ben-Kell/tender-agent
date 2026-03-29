@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "Tender Reference": "tender_reference",
+    "Tender Title": "tender_title",
+    "Customer": "customer",
+    "ABN": "abn",
+    "Submission Date": "submission_date"
+  },
+  "sections": {
+    "Executive Summary": "executive_summary",
+    "Corporate Capability": "corporate_capability",
+    "Technical Response": "technical_response",
+    "Implementation Approach": "implementation_approach",
+    "Risk Management": "risk_management",
+    "Pricing": "pricing"
+  }
+}
