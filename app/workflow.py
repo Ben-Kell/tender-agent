@@ -26,11 +26,14 @@ def start_run(config: dict) -> dict:
 
     try:
         tender_id = config["tender_id"]
+        print(f"[start_run] tender_id={tender_id}")
 
         docs = load_normalised_tender_docs(tender_id)
+        print(f"[start_run] loaded {len(docs)} normalised docs")
 
         system_prompt = load_prompt("system_instructions.md")
         extract_prompt = load_prompt("extract_requirements.md")
+        print("[start_run] prompts loaded")
 
         RUNS[run_id]["current_step"] = "extracting_requirements"
 
@@ -57,15 +60,15 @@ Do not use triple backticks.
 Do not add any explanatory text.
 
 Return JSON only in this structure:
-{
-  "metadata": {
+{{
+  "metadata": {{
     "tender_reference": "RFQ 47137",
     "tender_title": "JP2181 and NMP2106 ICT Resources",
     "customer": "Department of Defence",
     "submission_date": "08/11/2024"
-  },
+  }},
   "requirements": [
-    {
+    {{
       "requirement_id": "REQ-001",
       "source_document": "filename.md",
       "clause_reference": "1.1",
@@ -73,12 +76,14 @@ Return JSON only in this structure:
       "requirement_type": "mandatory",
       "theme": "service delivery",
       "response_needed": true
-    }
+    }}
   ]
-}
+}}
 """
 
+        print("[start_run] calling OpenAI")
         raw_output = chat(system_prompt, user_prompt)
+        print("[start_run] OpenAI call complete")
 
         cleaned_output = raw_output.strip()
 
@@ -92,49 +97,58 @@ Return JSON only in this structure:
 
         try:
             parsed = json.loads(cleaned_output)
-                        # --- STEP 6: Metadata normalisation / fallback ---
-            metadata = parsed.get("metadata", {}) or {}
-
-            def clean_value(value):
-                return value.strip() if isinstance(value, str) else ""
-
-            metadata = {
-                "tender_reference": clean_value(metadata.get("tender_reference", "")),
-                "tender_title": clean_value(metadata.get("tender_title", "")),
-                "customer": clean_value(metadata.get("customer", "")),
-                "submission_date": clean_value(metadata.get("submission_date", "")),
-            }
-
-            parsed["metadata"] = metadata
-        except json.JSONDecodeError:
+            print("[start_run] JSON parsed successfully")
+        except json.JSONDecodeError as e:
+            print(f"[start_run] JSON parse failed: {e}")
             parsed = {
                 "metadata": {
                     "tender_reference": "",
                     "tender_title": "",
                     "customer": "",
-                    "submission_date": ""
+                    "submission_date": "",
                 },
                 "requirements": [],
                 "error": "Failed to parse model output as JSON",
                 "raw_output": raw_output,
             }
 
-        write_tender_output(tender_id, "extracted_requirements.json", parsed)
+        metadata = parsed.get("metadata", {}) or {}
+
+        def clean_value(value):
+            return value.strip() if isinstance(value, str) else ""
+
+        metadata = {
+            "tender_reference": clean_value(metadata.get("tender_reference", "")),
+            "tender_title": clean_value(metadata.get("tender_title", "")),
+            "customer": clean_value(metadata.get("customer", "")),
+            "submission_date": clean_value(metadata.get("submission_date", "")),
+        }
+
+        parsed["metadata"] = metadata
+
+        output_path = write_tender_output(tender_id, "extracted_requirements.json", parsed)
+        print(f"[start_run] wrote output to {output_path}")
 
         RUNS[run_id]["result"] = {
-            "metadata": parsed.get("metadata", {}),
+            "message": "Requirements extracted successfully",
+            "output_file": output_path,
+            "metadata": metadata,
             "requirement_count": len(parsed.get("requirements", [])),
-            "output_file": f"tenders/{tender_id}/output/extracted_requirements.json"
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 
     except Exception as e:
+        print(f"[start_run] FAILED: {e}")
         RUNS[run_id]["status"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
-    return {"run_id": run_id, "status": "queued"}
-
+    return {
+        "run_id": run_id,
+        "status": RUNS[run_id]["status"],
+        "current_step": RUNS[run_id]["current_step"],
+        "result": RUNS[run_id]["result"],
+    }
 
 def map_template(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -224,7 +238,12 @@ Return raw JSON only in this structure:
         RUNS[run_id]["status"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
-    return {"run_id": run_id, "status": "queued"}
+    return {
+        "run_id": run_id,
+        "status": RUNS[run_id]["status"],
+        "current_step": RUNS[run_id]["current_step"],
+        "result": RUNS[run_id]["result"],
+    }
 
 def draft_sections(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -335,7 +354,12 @@ Return raw JSON only in this structure:
         RUNS[run_id]["status"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
-    return {"run_id": run_id, "status": "queued"}
+    return {
+        "run_id": run_id,
+        "status": RUNS[run_id]["status"],
+        "current_step": RUNS[run_id]["current_step"],
+        "result": RUNS[run_id]["result"],
+    }
 
 def compile_response(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"

@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "tender_reference": "RFQ 47137",
+    "tender_title": "JP2181 and NMP2106 ICT Resources",
+    "customer": "Department of Defence",
+    "submission_date": "08/11/2024"
+  },
+  "requirements": [
+    {
+      "requirement_id": "RQ-PERF-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Performance Reviews and Reporting",
+      "requirement_text": "The Supplier must participate in Performance Reviews conducted by the Commonwealth.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PERF-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Key Performance Indicators",
+      "requirement_text": "The Supplier must meet Key Performance Indicators (KPIs) defined in Appendix A.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PERF-003",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Review Periods",
+      "requirement_text": "The Supplier\u2019s performance will be measured during defined Review Periods starting from the Work Order Effective Date.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PERF-004",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Performance Reviews",
+      "requirement_text": "The Supplier must respond to performance outcomes, including any required corrective actions identified by the Commonwealth.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PERF-005",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Performance Consequences",
+      "requirement_text": "Supplier performance may influence: Payment (At Risk Amounts), Service Credits, Contract extension decisions.",
+      "requirement_type": "mandatory",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-REP-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure B \u2013 Reporting",
+      "requirement_text": "The Supplier must support reporting aligned to performance measurement and review cycles.",
+      "requirement_type": "mandatory",
+      "theme": "reporting",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-REP-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Implied from Performance Reporting obligations",
+      "requirement_text": "The Supplier must provide reporting sufficient for the Commonwealth to assess KPI achievement.",
+      "requirement_type": "mandatory",
+      "theme": "reporting",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-AIC-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure F \u2013 AIC Schedule",
+      "requirement_text": "The Supplier must submit a draft AIC Schedule as part of the RFQ response.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-AIC-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure F",
+      "requirement_text": "The Supplier must demonstrate how it will maximise Australian Industry participation.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-AIC-003",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure F",
+      "requirement_text": "The Supplier must demonstrate engagement with: Local businesses, SMEs.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-AIC-004",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure F",
+      "requirement_text": "The Supplier must provide evidence of market testing Australian Industry.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-AIC-005",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Annexure F \u2013 Policy References",
+      "requirement_text": "The Supplier must align with Defence AIC policies and strategies.",
+      "requirement_type": "mandatory",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-GOV-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Table of Contents \u2013 Meetings",
+      "requirement_text": "The Supplier must participate in meetings as defined in the SOW.",
+      "requirement_type": "mandatory",
+      "theme": "governance",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-GOV-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Governance section (structure inferred from SOW headings)",
+      "requirement_text": "The Supplier must comply with governance frameworks defined in the Work Order.",
+      "requirement_type": "mandatory",
+      "theme": "governance",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-DEL-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Milestones section",
+      "requirement_text": "The Supplier must deliver services aligned to defined milestones.",
+      "requirement_type": "mandatory",
+      "theme": "delivery",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-DEL-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Acceptance section",
+      "requirement_text": "Deliverables must meet acceptance criteria defined by the Commonwealth.",
+      "requirement_type": "mandatory",
+      "theme": "delivery",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-DEL-003",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Testing section",
+      "requirement_text": "The Supplier must support testing activities where applicable.",
+      "requirement_type": "mandatory",
+      "theme": "delivery",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PER-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Personnel section",
+      "requirement_text": "The Supplier must provide personnel as required to deliver the services.",
+      "requirement_type": "mandatory",
+      "theme": "personnel",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PER-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Stand Down of Personnel",
+      "requirement_text": "Personnel may be subject to stand-down conditions.",
+      "requirement_type": "mandatory",
+      "theme": "personnel",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-SEC-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "KPI-03",
+      "requirement_text": "The Supplier must comply with security obligations, including: Probity, Conflict of Interest, Security Compliance.",
+      "requirement_type": "mandatory",
+      "theme": "security",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-SEC-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Policy and Law section",
+      "requirement_text": "The Supplier must comply with Defence policies and standards referenced in the SOW.",
+      "requirement_type": "mandatory",
+      "theme": "security",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-TECH-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Services Technical Environment",
+      "requirement_text": "The Supplier must operate within the defined technical environment.",
+      "requirement_type": "mandatory",
+      "theme": "technology",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-TECH-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Technology sections",
+      "requirement_text": "The Supplier must meet service attributes and application requirements where defined.",
+      "requirement_type": "mandatory",
+      "theme": "technology",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-COM-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Pricing section",
+      "requirement_text": "The Supplier must provide pricing in accordance with SOW pricing structure.",
+      "requirement_type": "mandatory",
+      "theme": "commercial",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-COM-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Pricing + Attachment A linkage",
+      "requirement_text": "The Supplier must comply with Work Order pricing and payment arrangements.",
+      "requirement_type": "mandatory",
+      "theme": "commercial",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-IP-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Intellectual Property section",
+      "requirement_text": "The Supplier must comply with IP provisions defined in the SOW.",
+      "requirement_type": "mandatory",
+      "theme": "intellectual property",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PLAN-001",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Plans section",
+      "requirement_text": "The Supplier must develop and maintain plans required under the SOW.",
+      "requirement_type": "mandatory",
+      "theme": "plans",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "RQ-PLAN-002",
+      "source_document": "Schedule A \u2013 Statement of Work.md",
+      "clause_reference": "Cross-section dependency",
+      "requirement_text": "Plans must align with performance, reporting, and governance requirements.",
+      "requirement_type": "mandatory",
+      "theme": "plans",
+      "response_needed": true
+    }
+  ]
+}
