@@ -379,23 +379,13 @@ def compile_response(config: dict) -> dict:
         tender_id = config["tender_id"]
         template_name = config.get("template_name", "response_template.md")
 
-        # Load template
         template_text = load_template(template_name)
 
-        # Load extracted requirements so we can access metadata
         extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
         tender_metadata = extracted.get("metadata", {})
 
-        if not any(tender_metadata.values()):
-            raise ValueError(
-                f"No metadata found in extracted_requirements.json for tender {tender_id}. "
-                "Expected metadata keys: tender_reference, tender_title, customer, submission_date."
-            )
-
-        # Fill placeholders in the template before compile
         template_text = fill_template_placeholders(template_text, tender_metadata)
 
-        # Load drafted sections
         section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         drafted_sections = section_drafts.get("sections", [])
 
@@ -431,7 +421,6 @@ Do not add commentary before or after the document.
         if final_markdown.endswith("```"):
             final_markdown = final_markdown[:-3].strip()
 
-        # Safety pass in case the model reproduced placeholders again
         final_markdown = fill_template_placeholders(final_markdown, tender_metadata)
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
@@ -459,12 +448,14 @@ Do not add commentary before or after the document.
             "message": "Final response draft and DOCX compiled successfully",
             "markdown_output_file": f"tenders/{tender_id}/output/final_response_draft.md",
             "payload_file": f"tenders/{tender_id}/output/docx_payload.json",
-            "docx_output_file": docx_output_file
+            "docx_output_file": docx_output_file,
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         RUNS[run_id]["status"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
