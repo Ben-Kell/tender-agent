@@ -201,7 +201,7 @@
       "clause_reference": "Services Technical Environment",
       "requirement_text": "The Supplier must operate within the defined technical environment.",
       "requirement_type": "mandatory",
-      "theme": "technical",
+      "theme": "technology",
       "response_needed": true
     },
     {
@@ -210,7 +210,7 @@
       "clause_reference": "Technology sections",
       "requirement_text": "The Supplier must meet service attributes and application requirements where defined.",
       "requirement_type": "mandatory",
-      "theme": "technical",
+      "theme": "technology",
       "response_needed": true
     },
     {

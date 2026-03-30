@@ -13,7 +13,7 @@ def render_docx_with_node(
         payload_path = f"tenders/{tender_id}/output/docx_payload.json"
 
     if output_path is None:
-        output_path = f"tenders/{tender_id}/output/final_response.docx"
+        output_path = f"tenders/{tender_id}/output/proposal_overview.docx"
 
     cmd = [
         "node",

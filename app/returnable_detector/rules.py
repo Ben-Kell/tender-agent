@@ -102,6 +102,41 @@ def score_document(filename: str, content: str) -> Dict:
     filename_lower = filename.lower()
     text = content.lower()
 
+    
+    # 🔴 HARD OVERRIDE: only true Statement of Work documents are never returnable
+    statement_of_work_filename_patterns = [
+        "statement of work",
+        "_sow",
+        "sow_",
+    ]
+
+    work_order_exclusions = [
+        "work order",
+        "draft work order",
+        "short form rfq",
+        "rfq",
+    ]
+
+    is_statement_of_work_filename = any(
+        pattern in filename_lower for pattern in statement_of_work_filename_patterns
+    )
+
+    has_work_order_exclusion = any(
+        phrase in filename_lower for phrase in work_order_exclusions
+    )
+
+    if is_statement_of_work_filename and not has_work_order_exclusion:
+        return {
+            "score": -999,
+            "is_returnable": False,
+            "confidence": 0.99,
+            "document_type": "statement_of_work",
+            "reasons": ["Hard rule: filename identified as a Statement of Work document, which is not returnable"],
+            "key_signals": {
+                "override": "statement_of_work_filename"
+            },
+        }
+
     for keyword, (_, points) in FILENAME_KEYWORDS.items():
         if keyword in filename_lower:
             score += points

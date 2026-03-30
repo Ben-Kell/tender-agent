@@ -9,6 +9,7 @@ from app.openai_client import chat
 
 from app.template_loader import load_template
 from app.json_loader import load_tender_output_json
+from app.submission_artefacts import build_submission_artefacts
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.markdown_writer import write_markdown_output
 from app.template_utils import fill_template_placeholders
@@ -21,6 +22,11 @@ from app.executive_summary import (
     generate_executive_summary,
     inject_executive_summary,
     remove_existing_executive_summary,
+)
+from app.supplier_background import (
+    detect_supplier_background_requirement,
+    copy_supplier_background_template_if_required,
+    detect_past_performance_requirement,
 )
 
 def start_run(config: dict) -> dict:
@@ -140,11 +146,41 @@ Return JSON only in this structure:
         output_path = write_tender_output(tender_id, "extracted_requirements.json", parsed)
         print(f"[start_run] wrote output to {output_path}")
 
+                # 🔍 Detect if supplier background / company overview is required
+        supplier_background_detection = detect_supplier_background_requirement(parsed)
+
+        # 📄 Copy template into output folder if required
+        supplier_background_copy_result = copy_supplier_background_template_if_required(
+            tender_id=tender_id,
+            detection_result=supplier_background_detection,
+        )
+
+        # 💾 Save detection result for traceability
+        write_tender_output(
+            tender_id,
+            "supplier_background_requirement.json",
+            supplier_background_detection
+        )
+
+        # 🔍 Detect if past performance / relevant experience is required
+        past_performance_detection = detect_past_performance_requirement(parsed)
+
+        # 💾 Save detection result for traceability
+        write_tender_output(
+            tender_id,
+            "past_performance_requirement.json",
+            past_performance_detection
+        )
+
+
         RUNS[run_id]["result"] = {
             "message": "Requirements extracted successfully",
             "output_file": output_path,
             "metadata": metadata,
             "requirement_count": len(parsed.get("requirements", [])),
+            "supplier_background_requirement": supplier_background_detection,
+            "supplier_background_copy_result": supplier_background_copy_result,
+            "past_performance_requirement": past_performance_detection,
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
@@ -410,6 +446,11 @@ def compile_response(config: dict) -> dict:
         extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
         tender_metadata = extracted.get("metadata", {})
 
+        past_performance_requirement = load_tender_output_json(
+            tender_id,
+            "past_performance_requirement.json"
+        )        
+
         template_text = fill_template_placeholders(template_text, tender_metadata)
 
         section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
@@ -477,7 +518,7 @@ Do not add commentary before or after the document.
             tender_id=tender_id,
             template_path="templates/fujitsu_response_template.docx",
             payload_path=payload_file,
-            output_path=f"tenders/{tender_id}/output/final_response.docx"
+            output_path=f"tenders/{tender_id}/output/proposal_overview.docx"
         )
 
         aic_docx_output_file = render_docx_with_node(
@@ -487,12 +528,29 @@ Do not add commentary before or after the document.
             output_path=f"tenders/{tender_id}/output/fujitsu_aic_plan.docx"
         )
 
+        past_performance_docx_output_file = None
+
+        if past_performance_requirement.get("past_performance_required"):
+            past_performance_docx_output_file = render_docx_with_node(
+                tender_id=tender_id,
+                template_path="templates/fujitsu_past_performance.docx",
+                payload_path=payload_file,
+                output_path=f"tenders/{tender_id}/output/fujitsu_past_performance.docx"
+            )
+
+        submission_artefact_result = build_submission_artefacts(tender_id)
+
         RUNS[run_id]["result"] = {
             "message": "Final response draft and DOCX files compiled successfully",
             "markdown_output_file": f"tenders/{tender_id}/output/final_response_draft.md",
             "payload_file": f"tenders/{tender_id}/output/docx_payload.json",
             "main_docx_output_file": main_docx_output_file,
-            "aic_docx_output_file": aic_docx_output_file
+            "aic_docx_output_file": aic_docx_output_file,
+            "past_performance_docx_output_file": past_performance_docx_output_file,
+            "submission_artefacts_json": submission_artefact_result["submission_artefacts"],
+            "submission_checklist_markdown": submission_artefact_result["submission_checklist_markdown"],
+            "submission_artefacts_json_path": submission_artefact_result["submission_artefacts_json_path"],
+            "submission_checklist_md_path": submission_artefact_result["submission_checklist_md_path"],
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"

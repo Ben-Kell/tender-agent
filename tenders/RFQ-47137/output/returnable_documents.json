@@ -1,0 +1,187 @@
+{
+  "tender_id": "RFQ-47137",
+  "documents": [
+    {
+      "filename": "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "original_filename": "Attachment A to Quotation - Work Order Price and Payment Arrangements.docx",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "pricing_schedule",
+      "reasons": [
+        "Filename contains 'price'",
+        "Filename contains 'attachment'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'",
+        "Detected table/content hint 'total price'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "price",
+          "attachment"
+        ],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [
+          "price",
+          "rate",
+          "total price"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 14
+    },
+    {
+      "filename": "Supplier Quotation Form.md",
+      "original_filename": "Supplier Quotation Form.docx",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "deed",
+      "reasons": [
+        "Contains phrase 'the supplier must provide'",
+        "Markdown table detected",
+        "Detected table/content hint 'compliant'",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [
+          "the supplier must provide"
+        ],
+        "negative_phrases": [],
+        "table_hints": [
+          "compliant",
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 12
+    },
+    {
+      "filename": "Attachments to the ICTPA Conditions of Deed.md",
+      "original_filename": "Attachments to the ICTPA Conditions of Deed.docx",
+      "is_returnable": true,
+      "confidence": 0.92,
+      "document_type": "compliance_schedule",
+      "reasons": [
+        "Filename contains 'attachment'",
+        "Filename contains 'deed'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "attachment",
+          "deed"
+        ],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 11
+    },
+    {
+      "filename": "Schedule A – Statement of Work.md",
+      "original_filename": "Schedule A – Statement of Work",
+      "is_returnable": false,
+      "confidence": 0.99,
+      "document_type": "statement_of_work",
+      "reasons": [
+        "Hard rule: filename identified as a Statement of Work document, which is not returnable"
+      ],
+      "key_signals": {
+        "override": "statement_of_work_filename"
+      },
+      "score": -999
+    },
+    {
+      "filename": "ICTPA Conditions of Deed.md",
+      "original_filename": "ICTPA Conditions of Deed.docx",
+      "is_returnable": false,
+      "confidence": 0.33,
+      "document_type": "deed",
+      "reasons": [
+        "Filename contains 'deed'",
+        "Contains reference-only phrase 'for reference only'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "deed"
+        ],
+        "phrases": [],
+        "negative_phrases": [
+          "for reference only"
+        ],
+        "table_hints": [
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 4
+    },
+    {
+      "filename": "RFQ 47137 Addendum 1.md",
+      "original_filename": null,
+      "is_returnable": false,
+      "confidence": 0.05,
+      "document_type": "unknown",
+      "reasons": [],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [],
+        "markdown_table_detected": false
+      },
+      "score": 0
+    },
+    {
+      "filename": "Short Form RFQ and draft Work Order.md",
+      "original_filename": "Short Form RFQ and draft Work Order.docx",
+      "is_returnable": false,
+      "confidence": 0.05,
+      "document_type": "schedule",
+      "reasons": [],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [],
+        "markdown_table_detected": false
+      },
+      "score": 0
+    },
+    {
+      "filename": "Tenderer Letter - Fujitsu Australia Limited.md",
+      "original_filename": "Tenderer Letter - Fujitsu Australia Limited.pdf",
+      "is_returnable": false,
+      "confidence": 0.05,
+      "document_type": "aic_plan",
+      "reasons": [],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [],
+        "markdown_table_detected": false
+      },
+      "score": 0
+    }
+  ],
+  "summary": {
+    "total_documents": 8,
+    "returnable_documents": 3,
+    "reference_only_documents": 5
+  }
+}
