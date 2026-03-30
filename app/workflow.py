@@ -14,9 +14,15 @@ from app.markdown_writer import write_markdown_output
 from app.template_fill import fill_template_placeholders
 from app.template_utils import fill_template_placeholders
 
+from app.tender_bootstrap import create_tender_structure
+
 from app.docx_payload_builder import build_docx_payload, write_docx_payload
 from app.docx_bridge import render_docx_with_node
-
+from app.executive_summary import (
+    generate_executive_summary,
+    inject_executive_summary,
+    remove_existing_executive_summary,
+)
 
 def start_run(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -31,6 +37,8 @@ def start_run(config: dict) -> dict:
     try:
         tender_id = config["tender_id"]
         print(f"[start_run] tender_id={tender_id}")
+
+        create_tender_structure(tender_id)
 
         docs = load_normalised_tender_docs(tender_id)
         print(f"[start_run] loaded {len(docs)} normalised docs")
@@ -259,6 +267,11 @@ def draft_sections(config: dict) -> dict:
         "result": None,
     }
 
+    SKIP_AUTO_DRAFT_SECTIONS = {
+        "Executive Summary",
+        "1. Executive Summary",
+    }
+
     try:
         tender_id = config["tender_id"]
         template_name = config.get("template_name", "response_template.md")
@@ -269,14 +282,18 @@ def draft_sections(config: dict) -> dict:
         requirements = extracted.get("requirements", [])
         mapped_sections = template_map.get("sections", [])
 
+        filtered_mapped_sections = []
+        for section in mapped_sections:
+            section_name = section.get("template_section", "").strip()
+            if section_name in SKIP_AUTO_DRAFT_SECTIONS:
+                continue
+            filtered_mapped_sections.append(section)
+
         template_text = load_template(template_name)
 
-        extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
         tender_metadata = extracted.get("metadata", {})
-
         template_text = fill_template_placeholders(template_text, tender_metadata)
 
-        section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         boilerplate_docs = load_boilerplate_docs()
         case_study_docs = load_case_studies()
         tender_docs = load_normalised_tender_docs(tender_id)
@@ -303,7 +320,7 @@ EXTRACTED REQUIREMENTS:
 {json.dumps(requirements, indent=2)}
 
 TEMPLATE MAP:
-{json.dumps(mapped_sections, indent=2)}
+{json.dumps(filtered_mapped_sections, indent=2)}
 
 BOILERPLATE:
 {json.dumps(boilerplate_docs, indent=2)}
@@ -315,8 +332,8 @@ Return raw JSON only in this structure:
 {{
   "sections": [
     {{
-      "section_id": "SEC-001",
-      "template_section": "Executive Summary",
+      "section_id": "SEC-002",
+      "template_section": "Technical Response",
       "draft_text": "Draft response text here",
       "requirements_covered": ["REQ-001", "REQ-004"],
       "used_boilerplate": ["file1.md"],
@@ -325,6 +342,8 @@ Return raw JSON only in this structure:
     }}
   ]
 }}
+
+Do not include an Executive Summary section.
 """
 
         raw_output = chat(system_prompt, user_prompt)
@@ -341,6 +360,14 @@ Return raw JSON only in this structure:
 
         try:
             parsed = json.loads(cleaned_output)
+
+            parsed_sections = parsed.get("sections", [])
+            parsed["sections"] = [
+                section
+                for section in parsed_sections
+                if section.get("template_section", "").strip() not in SKIP_AUTO_DRAFT_SECTIONS
+            ]
+
         except json.JSONDecodeError:
             parsed = {
                 "sections": [],
@@ -421,7 +448,17 @@ Do not add commentary before or after the document.
         if final_markdown.endswith("```"):
             final_markdown = final_markdown[:-3].strip()
 
+        # Safety pass in case the model reproduced placeholders again
         final_markdown = fill_template_placeholders(final_markdown, tender_metadata)
+
+        RUNS[run_id]["current_step"] = "generating_executive_summary"
+
+        # Remove placeholder / stale executive summary content before summarising
+        summary_source_markdown = remove_existing_executive_summary(final_markdown)
+
+        executive_summary_text = generate_executive_summary(summary_source_markdown)
+
+        final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
 
