@@ -6,6 +6,7 @@ from app.workflow import start_run, map_template, draft_sections, compile_respon
 
 from pydantic import BaseModel
 from app.tender_bootstrap import create_tender_structure
+from app.tender_ingest import create_and_ingest_tender
 
 app = FastAPI()
 
@@ -53,6 +54,7 @@ def create_tender(request: CreateTenderRequest):
         "message": f"Tender structure ready for {request.tender_id}",
         "result": result,
     }
+
 
 @app.get("/get_tender_run_status/{run_id}")
 def get_tender_run_status(run_id: str):
