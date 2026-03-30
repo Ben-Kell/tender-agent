@@ -474,18 +474,26 @@ Do not add commentary before or after the document.
 
         RUNS[run_id]["current_step"] = "rendering_docx"
 
-        docx_output_file = render_docx_with_node(
+        main_docx_output_file = render_docx_with_node(
             tender_id=tender_id,
             template_path="templates/fujitsu_response_template.docx",
             payload_path=payload_file,
             output_path=f"tenders/{tender_id}/output/final_response.docx"
         )
 
+        aic_docx_output_file = render_docx_with_node(
+            tender_id=tender_id,
+            template_path="templates/fujitsu_aic_plan_template.docx",
+            payload_path=payload_file,
+            output_path=f"tenders/{tender_id}/output/fujitsu_aic_plan.docx"
+        )
+
         RUNS[run_id]["result"] = {
-            "message": "Final response draft and DOCX compiled successfully",
+            "message": "Final response draft and DOCX files compiled successfully",
             "markdown_output_file": f"tenders/{tender_id}/output/final_response_draft.md",
             "payload_file": f"tenders/{tender_id}/output/docx_payload.json",
-            "docx_output_file": docx_output_file,
+            "main_docx_output_file": main_docx_output_file,
+            "aic_docx_output_file": aic_docx_output_file
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"

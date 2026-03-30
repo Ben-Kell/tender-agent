@@ -1,6 +1,9 @@
 from pathlib import Path
 from typing import Dict, Any, List
 
+from docx import Document
+from pypdf import PdfReader
+
 
 SUPPORTED_EXTENSIONS = {
     ".md",
@@ -15,58 +18,138 @@ def normalise_filename(source_name: str) -> str:
     return f"{source_path.stem}.md"
 
 
+def clean_text(text: str) -> str:
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    lines = [line.rstrip() for line in text.splitlines()]
+
+    cleaned_lines: List[str] = []
+    previous_blank = False
+
+    for line in lines:
+        is_blank = not line.strip()
+        if is_blank and previous_blank:
+            continue
+        cleaned_lines.append(line)
+        previous_blank = is_blank
+
+    return "\n".join(cleaned_lines).strip()
+
+
+def wrap_with_header(file_path: Path, document_type: str, body: str) -> str:
+    body = clean_text(body)
+
+    return f"""# Source: {file_path.name}
+# Document Type: {document_type}
+# Normalised For: Tender agent ingestion
+
+{body}
+"""
+
+
 def normalise_text_file(file_path: Path) -> str:
-    return file_path.read_text(encoding="utf-8", errors="ignore")
+    body = file_path.read_text(encoding="utf-8", errors="ignore")
+    return wrap_with_header(file_path, "txt", body)
 
 
 def normalise_markdown_file(file_path: Path) -> str:
-    return file_path.read_text(encoding="utf-8", errors="ignore")
+    body = file_path.read_text(encoding="utf-8", errors="ignore")
+    return wrap_with_header(file_path, "md", body)
 
 
-def placeholder_normalise_pdf(file_path: Path) -> str:
-    return f"""# Source: {file_path.name}
-# Document Type: pdf
-# Normalised For: Tender agent ingestion
+def table_to_markdown(table) -> str:
+    rows = []
+    for row in table.rows:
+        cells = []
+        for cell in row.cells:
+            text = clean_text(cell.text).replace("\n", " ").strip()
+            cells.append(text if text else " ")
+        rows.append(cells)
 
-[PDF normalisation not yet implemented for this file.]
-"""
+    if not rows:
+        return ""
+
+    max_cols = max(len(r) for r in rows)
+    padded_rows = [r + [" "] * (max_cols - len(r)) for r in rows]
+
+    header = padded_rows[0]
+    separator = ["---"] * max_cols
+    body_rows = padded_rows[1:]
+
+    markdown_lines = [
+        "| " + " | ".join(header) + " |",
+        "| " + " | ".join(separator) + " |",
+    ]
+
+    for row in body_rows:
+        markdown_lines.append("| " + " | ".join(row) + " |")
+
+    return "\n".join(markdown_lines)
 
 
-def placeholder_normalise_docx(file_path: Path) -> str:
-    return f"""# Source: {file_path.name}
-# Document Type: docx
-# Normalised For: Tender agent ingestion
+def normalise_docx(file_path: Path) -> str:
+    doc = Document(str(file_path))
 
-[DOCX normalisation not yet implemented for this file.]
-"""
+    parts: List[str] = []
+
+    # Paragraphs
+    for paragraph in doc.paragraphs:
+        text = clean_text(paragraph.text)
+        if text:
+            parts.append(text)
+
+    # Tables
+    for table in doc.tables:
+        md_table = table_to_markdown(table)
+        if md_table:
+            parts.append(md_table)
+
+    body = "\n\n".join(parts).strip()
+
+    if not body:
+        body = "[No extractable text found in DOCX.]"
+
+    return wrap_with_header(file_path, "docx", body)
+
+
+def normalise_pdf(file_path: Path) -> str:
+    reader = PdfReader(str(file_path))
+    page_chunks: List[str] = []
+
+    for page_number, page in enumerate(reader.pages, start=1):
+        try:
+            text = page.extract_text() or ""
+        except Exception:
+            text = ""
+
+        text = clean_text(text)
+
+        if text:
+            page_chunks.append(f"## Page {page_number}\n\n{text}")
+        else:
+            page_chunks.append(f"## Page {page_number}\n\n[No extractable text found on this page.]")
+
+    body = "\n\n".join(page_chunks).strip()
+
+    if not body:
+        body = "[No extractable text found in PDF.]"
+
+    return wrap_with_header(file_path, "pdf", body)
 
 
 def normalise_one_document(file_path: Path) -> str:
     suffix = file_path.suffix.lower()
 
     if suffix == ".txt":
-        body = normalise_text_file(file_path)
-        return f"""# Source: {file_path.name}
-# Document Type: txt
-# Normalised For: Tender agent ingestion
-
-{body}
-"""
+        return normalise_text_file(file_path)
 
     if suffix == ".md":
-        body = normalise_markdown_file(file_path)
-        return f"""# Source: {file_path.name}
-# Document Type: md
-# Normalised For: Tender agent ingestion
-
-{body}
-"""
+        return normalise_markdown_file(file_path)
 
     if suffix == ".pdf":
-        return placeholder_normalise_pdf(file_path)
+        return normalise_pdf(file_path)
 
     if suffix == ".docx":
-        return placeholder_normalise_docx(file_path)
+        return normalise_docx(file_path)
 
     raise ValueError(f"Unsupported file type: {file_path.suffix}")
 

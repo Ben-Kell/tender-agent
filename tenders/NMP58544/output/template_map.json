@@ -1,0 +1,89 @@
+{
+  "sections": [
+    {
+      "section_id": "SEC-001",
+      "template_section": "5.1 Pricing Schedule",
+      "matched_requirements": [
+        "REQ-001",
+        "REQ-003"
+      ],
+      "section_purpose": "To provide detailed pricing information as required by the tender.",
+      "response_guidance": "Complete the pricing schedule as specified in the tender. Include pricing on the basis of Fixed Price, Outcome Based T&M, Time and Materials, and any combination thereof. Reference annexes where required.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-002",
+      "template_section": "5.2 Commercial Terms",
+      "matched_requirements": [
+        "REQ-012"
+      ],
+      "section_purpose": "To outline the commercial terms and conditions of the proposal.",
+      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms. Include a draft AIC Schedule and describe the approach to maximizing Australian Industry participation.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "3.1 Project Management",
+      "matched_requirements": [
+        "REQ-011",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "section_purpose": "To describe the project management methodology and governance structure.",
+      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach. Include details on performance management, meeting schedules, and reporting requirements.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "3.3 Transition Approach",
+      "matched_requirements": [
+        "REQ-013"
+      ],
+      "section_purpose": "To outline the approach to transitioning services in and out.",
+      "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out. Include plans such as Transition-In Plan, Phase-Out Plan, and others as specified.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "2.2 Solution Architecture",
+      "matched_requirements": [
+        "REQ-013",
+        "REQ-016"
+      ],
+      "section_purpose": "To provide a description of the proposed solution architecture.",
+      "response_guidance": "Provide a description of the proposed solution architecture, including diagrams where appropriate. Include plans such as the Test Plan and others as specified.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "2.3 Security Approach",
+      "matched_requirements": [
+        "REQ-008",
+        "REQ-018"
+      ],
+      "section_purpose": "To describe the security framework and controls relevant to the engagement.",
+      "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement. Include confidentiality requirements and physical security arrangements.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "matched_requirements": [
+        "REQ-004"
+      ],
+      "section_purpose": "To demonstrate relevant experience and past performance.",
+      "response_guidance": "Provide two or more case studies demonstrating relevant experience. Highlight methodology, past performance, and technical merit.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-008",
+      "template_section": "4.3 Key Personnel",
+      "matched_requirements": [
+        "REQ-005"
+      ],
+      "section_purpose": "To list proposed key personnel and their qualifications.",
+      "response_guidance": "List proposed key personnel with roles, qualifications, and relevant experience. Ensure compliance with legal requirements regarding employee entitlements and gender equality.",
+      "headings_to_add": []
+    }
+  ]
+}

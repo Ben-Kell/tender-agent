@@ -1,0 +1,106 @@
+{
+  "sections": [
+    {
+      "section_id": "SEC-001",
+      "template_section": "5.1 Pricing Schedule",
+      "draft_text": "The pricing schedule is completed in accordance with the tender requirements. Pricing is provided on a Fixed Price basis, as well as Outcome Based T&M and Time and Materials, capped at a Not-To-Exceed (NTE) Price. Detailed pricing information is included in 'Quotation Attachment A \u2013 Work Order Price & Payment Arrangements'.",
+      "requirements_covered": [
+        "REQ-001",
+        "REQ-003"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-002",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "We accept the draft contract terms with no deviations. A draft Australian Industry Capability (AIC) Schedule is included, detailing our approach to maximizing participation of Australian Industry, including local businesses, in our supply chain. This approach ensures compliance with the AIC obligations and supports the Commonwealth's objectives.",
+      "requirements_covered": [
+        "REQ-012"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "3.1 Project Management",
+      "draft_text": "Our project management methodology is based on industry best practices, ensuring effective governance and reporting. We will conduct monthly Performance Reviews to assess our performance against the agreed KPIs. Detailed Performance Reports will be provided to the Commonwealth, outlining our compliance with the Performance Measures and any required actions.",
+      "requirements_covered": [
+        "REQ-011",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "used_boilerplate": [
+        "service_management.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "Our transition approach includes a comprehensive Transition-In Plan and Phase-Out Plan, ensuring seamless service continuity. These plans are developed in accordance with the requirements outlined in Annexures H and I of the SOW, and will be regularly updated to reflect any changes.",
+      "requirements_covered": [
+        "REQ-013"
+      ],
+      "used_boilerplate": [
+        "transition_approach.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "2.2 Solution Architecture",
+      "draft_text": "The proposed solution architecture is designed to meet the technical requirements of the engagement. Detailed diagrams and a Test Plan, as specified in Annexure P of the SOW, are included to ensure comprehensive testing and validation of the solution.",
+      "requirements_covered": [
+        "REQ-013",
+        "REQ-016"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "2.3 Security Approach",
+      "draft_text": "Our security framework is aligned with the Commonwealth's requirements, ensuring confidentiality and integrity of information. All services will be delivered from a Physical Zone 3 or higher site, as certified under the DSPF, to meet the security standards.",
+      "requirements_covered": [
+        "REQ-008",
+        "REQ-018"
+      ],
+      "used_boilerplate": [
+        "security_capability.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "draft_text": "We present two case studies demonstrating our relevant experience and past performance. These case studies highlight our methodology, technical merit, and ability to deliver similar services successfully.",
+      "requirements_covered": [
+        "REQ-004"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [
+        "dict_case_study.md",
+        "nds_case_study.md"
+      ],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-008",
+      "template_section": "4.3 Key Personnel",
+      "draft_text": "Our proposed key personnel are listed with their roles, qualifications, and relevant experience. We ensure compliance with all legal requirements regarding employee entitlements and gender equality.",
+      "requirements_covered": [
+        "REQ-005"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    }
+  ]
+}

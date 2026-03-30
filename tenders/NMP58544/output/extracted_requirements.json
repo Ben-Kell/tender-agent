@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "tender_reference": "NMP58544",
+    "tender_title": "eTools and DDM Sustainment Support",
+    "customer": "Department of Defence",
+    "submission_date": "Monday, 04 August 2025 16:00 (4pm) AEST"
+  },
+  "requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Quotation format",
+      "requirement_text": "Quotations are to be written in English. All measurements are to be expressed in Australian legal units of measurement unless otherwise specified. Quotations are to include a PDF copy of the Supplier\u2019s Deed of Undertaking in the form attached duly signed by the Supplier. The Supplier must provide its pricing information as a separate attachment to the Quotation, marked \u2018Quotation Attachment A \u2013 Work Order Price & Payment Arrangements\u2019.",
+      "requirement_type": "mandatory",
+      "theme": "submission format",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-002",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Return address for Quotation",
+      "requirement_text": "Quotations are to be lodged electronically via AusTender using the Dynamic Sourcing for Panels (DS4P) lodgement page.",
+      "requirement_type": "mandatory",
+      "theme": "submission process",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-003",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Pricing Model",
+      "requirement_text": "The Supplier\u2019s Quotation is to include pricing on the basis of: Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), Combination of T&M and Fixed Price, Other.",
+      "requirement_type": "commercial",
+      "theme": "pricing",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-004",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Evaluation Criteria",
+      "requirement_text": "The criteria that the Commonwealth will use to evaluate the Quotation comprises the following: Methodology, Past Performance, Technical Merit, Pricing, Compliance.",
+      "requirement_type": "response",
+      "theme": "evaluation",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-005",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Australian Government requirements",
+      "requirement_text": "The Commonwealth will not enter into a Work Order with a Supplier which has a judicial decision against it relating to unpaid employee entitlements where the entitlements remain unpaid. In accordance with the Workplace Gender Equality Procurement Principles, the Commonwealth will not enter into a Work Order with a Supplier who is non-compliant under the Workplace Gender Equality Act 2012 (Cth).",
+      "requirement_type": "compliance",
+      "theme": "legal compliance",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-006",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Suppliers to inform themselves",
+      "requirement_text": "Suppliers are solely responsible for: examining this RFQ, any documents referenced in or attached to this RFQ and any other information made available by the Commonwealth to Suppliers in connection with the RFQ process; obtaining and examining all further information which is obtainable by the making of reasonable inquiries and inspections relevant to the risks, contingencies, and other circumstances having an effect on their Quotations; seeking clarification where further information has been communicated or provided to Suppliers, or otherwise communicated by the Commonwealth, which is or appears to be inconsistent with the information in this RFQ; and satisfying themselves that their Quotation is accurate, complete and not misleading.",
+      "requirement_type": "mandatory",
+      "theme": "supplier responsibility",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-007",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Lodgement of Quotations",
+      "requirement_text": "Quotations are to be lodged electronically via AusTender before the Closing Time in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender.",
+      "requirement_type": "mandatory",
+      "theme": "submission process",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-008",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Confidentiality and Use of documents",
+      "requirement_text": "Suppliers are to treat the RFQ and any information provided to Suppliers by or on behalf of the Commonwealth in connection with the RFQ process as confidential and not disclose or use that information except as strictly required for the purpose of developing a Quotation in accordance with the RFQ.",
+      "requirement_type": "security",
+      "theme": "confidentiality",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Part Quotations",
+      "requirement_text": "The Commonwealth will not consider a Quotation for part of the Services.",
+      "requirement_type": "mandatory",
+      "theme": "submission completeness",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-010",
+      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
+      "clause_reference": "Alternative Proposal",
+      "requirement_text": "The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with the requirements specified in this clause 9.",
+      "requirement_type": "response",
+      "theme": "alternative proposals",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-011",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Performance Management",
+      "requirement_text": "The Supplier agrees and acknowledges that: the Commonwealth will inform the Supplier, as soon as practicable after each Performance Review, of the Supplier\u2019s Achieved Performance for each KPI for the relevant Review Period and whether the Supplier is required to undertake any course of action in relation to its performance.",
+      "requirement_type": "governance",
+      "theme": "performance management",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-012",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "AIC Obligations",
+      "requirement_text": "Tenderers are to provide a draft AIC Schedule in accordance with Table 1 below; describe the tenderer\u2019s approach to maximising participation of Australian Industry (where competitive), including local businesses, in their supply chain.",
+      "requirement_type": "commercial",
+      "theme": "AIC",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-013",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Plans",
+      "requirement_text": "The Supplier must deliver the following Plans: Australian Industry Capability (AIC) Plan in accordance with Annexure G to this SOW; Transition-In Plan prepared in accordance with Annexure H to this SOW; Phase-Out Plan prepared in accordance with Annexure I to this SOW; Supplier Risk Management Plan in accordance with Annexure J to this SOW; Service Management Plan in accordance with Annexure L to this SOW; Disaster Recovery Plan in accordance with Annexure N to this SOW; Test Plan in accordance with Annexure P to this SOW.",
+      "requirement_type": "technical",
+      "theme": "planning",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-014",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Meetings",
+      "requirement_text": "The Supplier must attend Performance Reviews for this Work Order on a monthly basis during the Work Order Term to assess and discuss the Supplier\u2019s performance against Performance Measures as outlined in the Performance Reports.",
+      "requirement_type": "governance",
+      "theme": "meetings",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-015",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Reporting",
+      "requirement_text": "The Supplier must provide Performance Reports to the Commonwealth, which detail the Supplier\u2019s assessment of its own performance against, and compliance with, the Performance Measures, the Deed and the Work Order.",
+      "requirement_type": "governance",
+      "theme": "reporting",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-016",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Testing",
+      "requirement_text": "The Supplier must deliver a Test Plan to the Commonwealth for Approval in accordance with clause 3.19 of the COD and Annexure P to this SOW by the date(s) specified in the Milestone/Deliverable table in clause 6 of the SOW.",
+      "requirement_type": "technical",
+      "theme": "testing",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-017",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Intellectual Property",
+      "requirement_text": "The Supplier must manage Intellectual Property under this Work Order, including Technical Data and Software rights and restrictions, in accordance with clause 5 of the COD and the Work Order.",
+      "requirement_type": "compliance",
+      "theme": "intellectual property",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-018",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Security",
+      "requirement_text": "The Commonwealth\u2019s security arrangements impacting the Services are: Sustainment of eTools and DDM must be undertaken from a Physical Zone 3 (as certified under the DSPF) or higher site.",
+      "requirement_type": "security",
+      "theme": "security",
+      "response_needed": true
+    }
+  ]
+}
