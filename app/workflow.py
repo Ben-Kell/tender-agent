@@ -548,6 +548,7 @@ Do not add commentary before or after the document.
             "aic_docx_output_file": aic_docx_output_file,
             "past_performance_docx_output_file": past_performance_docx_output_file,
             "submission_artefacts_json": submission_artefact_result["submission_artefacts"],
+            "submission_readiness": submission_artefact_result["submission_readiness"],
             "submission_checklist_markdown": submission_artefact_result["submission_checklist_markdown"],
             "submission_artefacts_json_path": submission_artefact_result["submission_artefacts_json_path"],
             "submission_checklist_md_path": submission_artefact_result["submission_checklist_md_path"],

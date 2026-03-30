@@ -4,7 +4,7 @@
       "section_id": "SEC-001",
       "template_section": "5.1 Pricing Schedule",
       "matched_requirements": [
-        "REQ-002"
+        "REQ-001"
       ],
       "section_purpose": "To provide detailed pricing information as required by the tender.",
       "response_guidance": "Complete the pricing schedule as specified in the tender. Reference annexes where required.",
@@ -14,86 +14,68 @@
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
-        "REQ-001"
+        "REQ-005"
       ],
-      "section_purpose": "To confirm acceptance or propose deviations from the draft contract terms.",
+      "section_purpose": "To outline the supplier's acceptance or proposed changes to the commercial terms.",
       "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
-      "matched_requirements": [
-        "REQ-005"
-      ],
-      "section_purpose": "To outline the project management methodology and governance structure.",
-      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "3.3 Transition Approach",
-      "matched_requirements": [
-        "REQ-007"
-      ],
-      "section_purpose": "To describe the approach to transitioning services in and out.",
-      "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-005",
       "template_section": "2.3 Security Approach",
       "matched_requirements": [
-        "REQ-009"
+        "REQ-010"
       ],
-      "section_purpose": "To ensure the security framework and controls meet the engagement requirements.",
+      "section_purpose": "To describe the security measures and compliance relevant to the engagement.",
       "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-006",
-      "template_section": "4.3 Key Personnel",
+      "section_id": "SEC-004",
+      "template_section": "3.1 Project Management",
       "matched_requirements": [
-        "REQ-010"
-      ],
-      "section_purpose": "To identify key personnel involved in the project.",
-      "response_guidance": "List proposed key personnel with roles, qualifications, and relevant experience.",
-      "headings_to_add": []
-    }
-  ],
-  "headings_to_add": [
-    {
-      "heading": "Submission Requirements",
-      "matched_requirements": [
-        "REQ-004"
-      ],
-      "section_purpose": "To ensure the quotation is submitted correctly and on time.",
-      "response_guidance": "Detail the electronic lodgement process via AusTender and ensure compliance with submission procedures."
-    },
-    {
-      "heading": "Evaluation Criteria",
-      "matched_requirements": [
-        "REQ-003"
-      ],
-      "section_purpose": "To understand the criteria against which the quotation will be evaluated.",
-      "response_guidance": "Address how the response meets the evaluation criteria: Methodology, Past Performance, Technical Merit, Pricing, Compliance."
-    },
-    {
-      "heading": "Compliance and Obligations",
-      "matched_requirements": [
-        "REQ-006"
-      ],
-      "section_purpose": "To ensure compliance with AIC obligations based on the work order value.",
-      "response_guidance": "Complete and submit the appropriate AIC Schedule or Plan as specified."
-    },
-    {
-      "heading": "Technical Plans",
-      "matched_requirements": [
-        "REQ-007",
+        "REQ-004",
         "REQ-008"
       ],
-      "section_purpose": "To outline the technical plans required for the project.",
-      "response_guidance": "Deliver the required plans including AIC Plan, Transition-In Plan, Phase-Out Plan, Supplier Risk Management Plan, Service Management Plan, Disaster Recovery Plan, Test Plan."
+      "section_purpose": "To detail the project management practices and governance structure.",
+      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "3.2 Service Management",
+      "matched_requirements": [
+        "REQ-009"
+      ],
+      "section_purpose": "To outline the service management framework and reporting requirements.",
+      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "matched_requirements": [
+        "REQ-002"
+      ],
+      "section_purpose": "To demonstrate the supplier's past performance and technical merit.",
+      "response_guidance": "Provide two or more case studies demonstrating relevant experience. Reference case study files from `case_studies/`.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "headings_to_add",
+      "matched_requirements": [
+        "REQ-003",
+        "REQ-006",
+        "REQ-007"
+      ],
+      "section_purpose": "To address requirements not fitting existing sections.",
+      "response_guidance": "Provide responses to the specific requirements as outlined.",
+      "headings_to_add": [
+        "Submission Requirements",
+        "Intellectual Property Management",
+        "Planning Obligations"
+      ]
     }
   ]
 }

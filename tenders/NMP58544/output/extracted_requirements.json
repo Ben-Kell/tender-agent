@@ -12,29 +12,11 @@
       "clause_reference": "Quotation format",
       "requirement_text": "Quotations are to be written in English. All measurements are to be expressed in Australian legal units of measurement unless otherwise specified. Quotations are to include a PDF copy of the Supplier\u2019s Deed of Undertaking in the form attached duly signed by the Supplier. The Supplier must provide its pricing information as a separate attachment to the Quotation, marked \u2018Quotation Attachment A \u2013 Work Order Price & Payment Arrangements\u2019.",
       "requirement_type": "mandatory",
-      "theme": "submission format",
+      "theme": "submission",
       "response_needed": true
     },
     {
       "requirement_id": "REQ-002",
-      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
-      "clause_reference": "Return address for Quotation",
-      "requirement_text": "Quotations are to be lodged electronically via AusTender using the Dynamic Sourcing for Panels (DS4P) lodgement page.",
-      "requirement_type": "mandatory",
-      "theme": "submission process",
-      "response_needed": true
-    },
-    {
-      "requirement_id": "REQ-003",
-      "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
-      "clause_reference": "Pricing Model",
-      "requirement_text": "The Supplier\u2019s Quotation is to include pricing on the basis of: Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), Combination of T&M and Fixed Price, Other.",
-      "requirement_type": "commercial",
-      "theme": "pricing",
-      "response_needed": true
-    },
-    {
-      "requirement_id": "REQ-004",
       "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
       "clause_reference": "Evaluation Criteria",
       "requirement_text": "The criteria that the Commonwealth will use to evaluate the Quotation comprises the following: Methodology, Past Performance, Technical Merit, Pricing, Compliance.",
@@ -43,57 +25,75 @@
       "response_needed": true
     },
     {
-      "requirement_id": "REQ-005",
+      "requirement_id": "REQ-003",
       "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
-      "clause_reference": "Australian Government requirements",
-      "requirement_text": "The Commonwealth will not enter into a Work Order with a Supplier which has a judicial decision against it relating to unpaid employee entitlements where the entitlements remain unpaid. In accordance with the Workplace Gender Equality Procurement Principles, the Commonwealth will not enter into a Work Order with a Supplier who is non-compliant under the Workplace Gender Equality Act 2012 (Cth).",
-      "requirement_type": "compliance",
-      "theme": "legal compliance",
+      "clause_reference": "Lodgement of Quotations",
+      "requirement_text": "Quotations are to be lodged electronically via AusTender (https://www.tenders.gov.au) before the Closing Time in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender.",
+      "requirement_type": "mandatory",
+      "theme": "submission",
       "response_needed": true
     },
     {
-      "requirement_id": "REQ-006",
+      "requirement_id": "REQ-004",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
       "clause_reference": "Performance Management",
-      "requirement_text": "The Supplier agrees and acknowledges that the Commonwealth will inform the Supplier, as soon as practicable after each Performance Review, of the Supplier\u2019s Achieved Performance for each KPI for the relevant Review Period and whether the Supplier is required to undertake any course of action in relation to its performance.",
+      "requirement_text": "The Supplier agrees and acknowledges that: the Commonwealth will inform the Supplier, as soon as practicable after each Performance Review, of the Supplier\u2019s Achieved Performance for each KPI for the relevant Review Period and whether the Supplier is required to undertake any course of action in relation to its performance.",
       "requirement_type": "governance",
       "theme": "performance management",
       "response_needed": true
     },
     {
-      "requirement_id": "REQ-007",
+      "requirement_id": "REQ-005",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
       "clause_reference": "AIC Obligations",
       "requirement_text": "The Supplier agrees and acknowledges that it must complete and submit for Approval either: an AIC Schedule, in the format set out in Annexure F or as otherwise specified by the Commonwealth, if the Work Order value (inclusive of all extensions and variations) including GST is between $4M and $20M; or an AIC Plan, in the format set out in Annexure G or as otherwise specified by the Commonwealth, if the Work Order value (inclusive of all extensions and variations) including GST exceeds $20M.",
-      "requirement_type": "mandatory",
+      "requirement_type": "commercial",
       "theme": "AIC",
       "response_needed": true
     },
     {
-      "requirement_id": "REQ-008",
+      "requirement_id": "REQ-006",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Intellectual Property",
+      "requirement_text": "The Supplier must manage Intellectual Property under this Work Order, including Technical Data and Software rights and restrictions, in accordance with clause 5 of the COD and the Work Order.",
+      "requirement_type": "compliance",
+      "theme": "intellectual property",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-007",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
       "clause_reference": "Plans",
-      "requirement_text": "The Supplier must deliver the following Plans: Australian Industry Capability (AIC) Plan in accordance with Annexure G to this SOW; Transition-In Plan prepared in accordance with Annexure H to this SOW; Phase-Out Plan prepared in accordance with Annexure I to this SOW; Supplier Risk Management Plan in accordance with Annexure J to this SOW; Service Management Plan in accordance with Annexure L to this SOW; Disaster Recovery Plan in accordance with Annexure N to this SOW; Test Plan in accordance with Annexure P to this SOW.",
+      "requirement_text": "The Supplier must provide each Plan in accordance with the COD and as set out in the Work Order and as further specified in this clause 10.",
       "requirement_type": "mandatory",
       "theme": "planning",
       "response_needed": true
     },
     {
+      "requirement_id": "REQ-008",
+      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
+      "clause_reference": "Meetings",
+      "requirement_text": "The Supplier must attend Performance Reviews for this Work Order on a monthly basis during the Work Order Term to assess and discuss the Supplier\u2019s performance against Performance Measures as outlined in the Performance Reports.",
+      "requirement_type": "governance",
+      "theme": "meetings",
+      "response_needed": true
+    },
+    {
       "requirement_id": "REQ-009",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Testing",
-      "requirement_text": "The Supplier must deliver a Test Plan to the Commonwealth for Approval in accordance with clause 3.19 of the COD and Annexure P to this SOW by the date(s) specified in the Milestone/Deliverable table in clause 6 of the SOW. The Supplier must deliver Testing in accordance with the Approved Test Plan.",
-      "requirement_type": "technical",
-      "theme": "testing",
+      "clause_reference": "Reporting",
+      "requirement_text": "The Supplier must provide the reports in accordance with this clause 13. The reports must be in a format and utilising a delivery method as agreed between the parties, or, absent such agreement, in a form specified by the Commonwealth.",
+      "requirement_type": "mandatory",
+      "theme": "reporting",
       "response_needed": true
     },
     {
       "requirement_id": "REQ-010",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Intellectual Property",
-      "requirement_text": "The Supplier must manage Intellectual Property under this Work Order, including Technical Data and Software rights and restrictions, in accordance with clause 5 of the COD and the Work Order. The Supplier must: submit an IP Schedule for this Work Order to the Commonwealth by the date(s) specified in the Milestone/Deliverable table in clause 6 of the SOW, prepared in accordance with clause 5.10(b) of the COD and in the format set out in Attachment I to the COD; keep the IP Schedule up to date during the Work Order Term; and submit a final updated IP Schedule to the Commonwealth at the Work Order End Date.",
-      "requirement_type": "compliance",
-      "theme": "intellectual property",
+      "clause_reference": "Security",
+      "requirement_text": "The Commonwealth\u2019s security arrangements impacting the Services are: Sustainment of eTools and DDM must be undertaken from a Physical Zone 3 (as certified under the DSPF) or higher site.",
+      "requirement_type": "security",
+      "theme": "security",
       "response_needed": true
     }
   ]

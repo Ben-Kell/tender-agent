@@ -102,23 +102,32 @@ def build_submission_artefacts(tender_id: str) -> Dict[str, Any]:
             )
         )
 
-    submission_artefacts_payload = {"artefacts": artefacts}
-    submission_checklist_markdown = _build_submission_checklist_markdown(artefacts)
+    readiness_summary = _build_readiness_summary(artefacts)
+
+    submission_artefacts_payload = {
+        "submission_readiness": readiness_summary,
+        "artefacts": artefacts,
+    }
+    submission_checklist_markdown = _build_submission_checklist_markdown(
+        artefacts,
+        readiness_summary,
+    )
 
     write_tender_output(
         tender_id,
         "submission_artefacts.json",
-        json.dumps(submission_artefacts_payload, indent=2),
+        submission_artefacts_payload,
     )
 
     write_tender_output(
         tender_id,
         "submission_checklist.md",
-        submission_checklist_markdown,
+        submission_checklist_markdown.strip() + "\n",
     )
 
     return {
         "submission_artefacts": submission_artefacts_payload,
+        "submission_readiness": readiness_summary,
         "submission_checklist_markdown": submission_checklist_markdown,
         "submission_artefacts_json_path": _normalise_path(
             output_dir / "submission_artefacts.json"
@@ -317,13 +326,40 @@ def _build_returnable_candidate_filenames(
     return _deduplicate_preserve_order(candidates)
 
 
-def _build_submission_checklist_markdown(artefacts: List[Dict[str, Any]]) -> str:
+def _build_submission_checklist_markdown(
+    artefacts: List[Dict[str, Any]],
+    readiness_summary: Dict[str, Any],
+) -> str:
     required_artefacts = [item for item in artefacts if item.get("required") is True]
     optional_artefacts = [item for item in artefacts if item.get("required") is not True]
+
+    readiness_percent = readiness_summary.get("readiness_percent", 0)
+    generated_required = readiness_summary.get("generated_required_count", 0)
+    total_required = readiness_summary.get("total_required_count", 0)
+    missing_required_names = readiness_summary.get("missing_required_names", [])
 
     lines: List[str] = []
     lines.append("# Submission Checklist")
     lines.append("")
+    lines.append(f"## Submission Readiness: {readiness_percent}%")
+    lines.append("")
+    lines.append(
+        f"Required artefacts generated: {generated_required} of {total_required}"
+    )
+    lines.append("")
+
+    if missing_required_names:
+        lines.append("### Missing Required Artefacts")
+        lines.append("")
+        for name in missing_required_names:
+            lines.append(f"* {name}")
+        lines.append("")
+    else:
+        lines.append("### Missing Required Artefacts")
+        lines.append("")
+        lines.append("* None")
+        lines.append("")
+
     lines.append("## Required Artefacts")
     lines.append("")
 
@@ -344,6 +380,38 @@ def _build_submission_checklist_markdown(artefacts: List[Dict[str, Any]]) -> str
 
     return "\n".join(lines).strip() + "\n"
 
+def _build_readiness_summary(artefacts: List[Dict[str, Any]]) -> Dict[str, Any]:
+    required_artefacts = [item for item in artefacts if item.get("required") is True]
+    total_required_count = len(required_artefacts)
+
+    generated_required = [
+        item for item in required_artefacts if item.get("status") == "generated"
+    ]
+    generated_required_count = len(generated_required)
+
+    missing_required = [
+        item for item in required_artefacts if item.get("status") != "generated"
+    ]
+    missing_required_count = len(missing_required)
+
+    missing_required_names = [
+        str(item.get("name", "Unnamed Artefact")) for item in missing_required
+    ]
+
+    if total_required_count == 0:
+        readiness_percent = 100
+    else:
+        readiness_percent = round(
+            (generated_required_count / total_required_count) * 100
+        )
+
+    return {
+        "readiness_percent": readiness_percent,
+        "total_required_count": total_required_count,
+        "generated_required_count": generated_required_count,
+        "missing_required_count": missing_required_count,
+        "missing_required_names": missing_required_names,
+    }
 
 def _build_checklist_line(artefact: Dict[str, Any]) -> str:
     status = str(artefact.get("status", "")).strip()

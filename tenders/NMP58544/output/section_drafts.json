@@ -3,18 +3,7 @@
     {
       "section_id": "SEC-001",
       "template_section": "5.1 Pricing Schedule",
-      "draft_text": "The Supplier's Quotation is to include pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), Combination of T&M and Fixed Price, or Other as specified in the tender. The pricing schedule should be completed as specified in the tender documents, referencing annexes where required.",
-      "requirements_covered": [
-        "REQ-002"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-002",
-      "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier confirms acceptance of the draft contract terms as outlined in the tender documents. A PDF copy of the Supplier's Deed of Undertaking, duly signed, is included as part of the Quotation submission.",
+      "draft_text": "The Supplier must provide its pricing information as a separate attachment to the Quotation, marked 'Quotation Attachment A \u2013 Work Order Price & Payment Arrangements'. This attachment should include a detailed breakdown of costs, ensuring all figures are expressed in Australian legal units of measurement. The pricing schedule should be completed as specified in the tender documents, referencing annexes where required.",
       "requirements_covered": [
         "REQ-001"
       ],
@@ -23,9 +12,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
-      "draft_text": "The Supplier's performance against the Performance Measures will be measured under the Work Order and may impact the Supplier's entitlement to any At Risk Amount or the Commonwealth's entitlement to any Service Credits. The project management methodology will include regular performance reviews to ensure compliance with these measures.",
+      "section_id": "SEC-002",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "The Supplier acknowledges the requirement to complete and submit for Approval either an AIC Schedule or an AIC Plan, depending on the Work Order value. The Supplier confirms acceptance of the draft contract terms as outlined in the tender documents, with no proposed deviations.",
       "requirements_covered": [
         "REQ-005"
       ],
@@ -34,24 +23,11 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-004",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "The Supplier will deliver the following Plans as part of the transition approach: Australian Industry Capability (AIC) Plan, Transition-In Plan, Phase-Out Plan, Supplier Risk Management Plan, Service Management Plan, Disaster Recovery Plan, and Test Plan. These plans will ensure a smooth transition-in and, if applicable, transition-out.",
-      "requirements_covered": [
-        "REQ-007"
-      ],
-      "used_boilerplate": [
-        "transition_approach.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-005",
+      "section_id": "SEC-003",
       "template_section": "2.3 Security Approach",
-      "draft_text": "Sustainment of eTools and DDM must be undertaken from a Physical Zone 3 (as certified under the DSPF) or higher site. The security framework will align with the Australian Government's Information Security Manual (ISM) and the ACSC Essential Eight mitigation strategies.",
+      "draft_text": "The Supplier will ensure that all sustainment activities for eTools and DDM are conducted from a Physical Zone 3 or higher site, as certified under the Defence Security Principles Framework (DSPF). This approach aligns with the Commonwealth's security arrangements and ensures compliance with all relevant security protocols.",
       "requirements_covered": [
-        "REQ-009"
+        "REQ-010"
       ],
       "used_boilerplate": [
         "security_capability.md"
@@ -60,15 +36,60 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-006",
-      "template_section": "4.3 Key Personnel",
-      "draft_text": "The Supplier will provide Key Persons for the following Key Positions, ensuring that all personnel have the necessary qualifications and relevant experience to meet the project requirements.",
+      "section_id": "SEC-004",
+      "template_section": "3.1 Project Management",
+      "draft_text": "The Supplier will implement a robust project management methodology, incorporating regular Performance Reviews to assess and discuss performance against KPIs. Monthly meetings will be held to ensure alignment with the Commonwealth's expectations and to address any performance issues promptly.",
       "requirements_covered": [
-        "REQ-010"
+        "REQ-004",
+        "REQ-008"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "3.2 Service Management",
+      "draft_text": "The Supplier will provide comprehensive service management, including ITSM processes, SLAs, and escalation paths. Reports will be delivered in a format agreed upon with the Commonwealth, ensuring transparency and accountability in service delivery.",
+      "requirements_covered": [
+        "REQ-009"
+      ],
+      "used_boilerplate": [
+        "service_management.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "draft_text": "The Supplier's past performance and technical merit will be demonstrated through case studies that highlight successful delivery of similar services. These case studies will showcase the Supplier's ability to meet challenging timeframes and adapt to changes through innovation and continuous improvement.",
+      "requirements_covered": [
+        "REQ-002"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [
+        "dict_case_study.md",
+        "nds_case_study.md"
+      ],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "headings_to_add",
+      "draft_text": "Submission Requirements: Quotations must be lodged electronically via AusTender before the Closing Time. Intellectual Property Management: The Supplier must manage IP in accordance with clause 5 of the COD. Planning Obligations: The Supplier must provide each Plan as set out in the Work Order.",
+      "requirements_covered": [
+        "REQ-003",
+        "REQ-006",
+        "REQ-007"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": [
+        "Submission Requirements",
+        "Intellectual Property Management",
+        "Planning Obligations"
+      ]
     }
   ]
 }
