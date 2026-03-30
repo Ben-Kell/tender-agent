@@ -11,7 +11,6 @@ from app.template_loader import load_template
 from app.json_loader import load_tender_output_json
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.markdown_writer import write_markdown_output
-from app.template_fill import fill_template_placeholders
 from app.template_utils import fill_template_placeholders
 
 from app.tender_bootstrap import create_tender_structure
@@ -504,4 +503,9 @@ Do not add commentary before or after the document.
         RUNS[run_id]["status"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
-    return {"run_id": run_id, "status": "queued"}
+    return {
+        "run_id": run_id,
+        "status": RUNS[run_id]["status"],
+        "current_step": RUNS[run_id]["current_step"],
+        "result": RUNS[run_id]["result"],
+    }

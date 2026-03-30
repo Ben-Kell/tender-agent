@@ -1,1 +1,1 @@
-"""Tender-agent application package."""
+from .detector import detect_returnable_documents

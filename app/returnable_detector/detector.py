@@ -1,12 +1,8 @@
-# app/returnable_detector/detector.py
-
-import json
 from pathlib import Path
-from typing import Optional, Callable
+from typing import Optional
 
-from .rules import score_document
-from .classifier import classify_document_with_llm
 from .models import ReturnableDocumentResult, ReturnableDocumentsReport
+from .rules import score_document
 
 
 def load_original_filename_from_markdown(content: str) -> Optional[str]:
@@ -20,29 +16,38 @@ def load_original_filename_from_markdown(content: str) -> Optional[str]:
     return None
 
 
-def merge_rule_and_llm(rule_result: dict, llm_result: Optional[dict]) -> dict:
-    if not llm_result:
-        return rule_result
+def write_markdown_summary(output_dir: Path, report: dict) -> None:
+    lines = []
+    lines.append(f"# Returnable Documents Report - {report['tender_id']}")
+    lines.append("")
+    lines.append("## Summary")
+    lines.append("")
+    lines.append(f"- Total documents: {report['summary']['total_documents']}")
+    lines.append(f"- Returnable documents: {report['summary']['returnable_documents']}")
+    lines.append(f"- Reference-only documents: {report['summary']['reference_only_documents']}")
+    lines.append("")
+    lines.append("## Documents")
+    lines.append("")
 
-    merged = dict(rule_result)
+    for doc in report["documents"]:
+        lines.append(f"### {doc['filename']}")
+        lines.append(f"- Original filename: {doc.get('original_filename')}")
+        lines.append(f"- Is returnable: {doc['is_returnable']}")
+        lines.append(f"- Confidence: {doc['confidence']}")
+        lines.append(f"- Document type: {doc['document_type']}")
+        lines.append(f"- Score: {doc['score']}")
+        lines.append("- Reasons:")
+        for reason in doc["reasons"]:
+            lines.append(f"  - {reason}")
+        lines.append("")
 
-    merged["is_returnable"] = llm_result.get("is_returnable", rule_result["is_returnable"])
-    merged["confidence"] = llm_result.get("confidence", rule_result["confidence"])
-    merged["document_type"] = llm_result.get("document_type", rule_result["document_type"])
-
-    llm_reason = llm_result.get("reasoning")
-    if llm_reason:
-        merged["reasons"] = list(merged.get("reasons", [])) + [f"LLM: {llm_reason}"]
-
-    return merged
+    (output_dir / "returnable_documents.md").write_text(
+        "\n".join(lines),
+        encoding="utf-8"
+    )
 
 
-def detect_returnable_documents(
-    tender_id: str,
-    base_dir: str = ".",
-    use_llm: bool = False,
-    chat_fn: Optional[Callable] = None,
-):
+def detect_returnable_documents(tender_id: str, base_dir: str = ".") -> dict:
     tender_path = Path(base_dir) / "tenders" / tender_id
     normalised_dir = tender_path / "input" / "02_normalised"
     output_dir = tender_path / "output"
@@ -57,24 +62,18 @@ def detect_returnable_documents(
         content = md_file.read_text(encoding="utf-8", errors="ignore")
         original_filename = load_original_filename_from_markdown(content)
 
-        rule_result = score_document(md_file.name, content)
-
-        llm_result = None
-        if use_llm and chat_fn and 3 <= rule_result["score"] <= 8:
-            llm_result = classify_document_with_llm(chat_fn, md_file.name, content)
-
-        final = merge_rule_and_llm(rule_result, llm_result)
+        scored = score_document(md_file.name, content)
 
         documents.append(
             ReturnableDocumentResult(
                 filename=md_file.name,
                 original_filename=original_filename,
-                is_returnable=final["is_returnable"],
-                confidence=final["confidence"],
-                document_type=final["document_type"],
-                reasons=final["reasons"],
-                key_signals=final["key_signals"],
-                score=final["score"],
+                is_returnable=scored["is_returnable"],
+                confidence=scored["confidence"],
+                document_type=scored["document_type"],
+                reasons=scored["reasons"],
+                key_signals=scored["key_signals"],
+                score=scored["score"],
             )
         )
 
@@ -94,7 +93,9 @@ def detect_returnable_documents(
         }
     )
 
-    output_file = output_dir / "returnable_documents.json"
-    output_file.write_text(report.model_dump_json(indent=2), encoding="utf-8")
+    json_path = output_dir / "returnable_documents.json"
+    json_path.write_text(report.model_dump_json(indent=2), encoding="utf-8")
+
+    write_markdown_summary(output_dir, report.model_dump())
 
     return report.model_dump()

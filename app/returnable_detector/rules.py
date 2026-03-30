@@ -1,6 +1,3 @@
-# app/returnable_detector/rules.py
-
-import re
 from typing import Dict, List
 
 
@@ -135,7 +132,6 @@ def score_document(filename: str, content: str) -> Dict:
             key_signals["table_hints"].append(hint)
 
     doc_type = infer_document_type(filename, text)
-
     is_returnable = score >= 5
     confidence = min(0.99, max(0.05, score / 12))
 

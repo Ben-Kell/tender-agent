@@ -1,5 +1,3 @@
-# app/returnable_detector/models.py
-
 from pydantic import BaseModel, Field
 from typing import List, Dict, Optional
 
