@@ -14,88 +14,72 @@
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
-        "REQ-001"
+        "REQ-007"
       ],
-      "section_purpose": "To confirm acceptance or propose deviations from the draft contract terms.",
-      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms. Include a PDF copy of the Supplier’s Deed of Undertaking in the form attached duly signed by the Supplier.",
+      "section_purpose": "To outline the commercial terms and conditions of the engagement.",
+      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms. Include details of AIC Obligations as required.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
-      "matched_requirements": [
-        "REQ-005"
-      ],
-      "section_purpose": "To outline the project management approach and ensure alignment with the tender requirements.",
-      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach. Ensure the Services are provided in accordance with the Deed and the Work Order, achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "3.2 Service Management",
-      "matched_requirements": [
-        "REQ-009"
-      ],
-      "section_purpose": "To describe the service management framework and support structure.",
-      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths. Include details on Level Zero to Level Four support for DDM services.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "matched_requirements": [],
-      "section_purpose": "To outline the approach to transitioning services in and out.",
-      "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-006",
       "template_section": "4.2 Relevant Experience and Case Studies",
       "matched_requirements": [
         "REQ-003"
       ],
-      "section_purpose": "To demonstrate past performance and technical merit through relevant experience.",
+      "section_purpose": "To demonstrate the supplier's past performance and technical merit.",
       "response_guidance": "Provide two or more case studies demonstrating relevant experience. Reference case study files from `case_studies/`. Address evaluation criteria including Methodology, Past Performance, Technical Merit, Pricing, Compliance.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-007",
+      "section_id": "SEC-004",
+      "template_section": "3.1 Project Management",
+      "matched_requirements": [
+        "REQ-006",
+        "REQ-010"
+      ],
+      "section_purpose": "To describe the project management methodology and governance structure.",
+      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach. Include details on performance management and meeting attendance for performance reviews.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-005",
       "template_section": "4.1 Corporate Overview",
       "matched_requirements": [
-        "REQ-006"
+        "REQ-005"
       ],
-      "section_purpose": "To provide a summary of the company's background and relevance to the opportunity.",
-      "response_guidance": "Provide a summary of the company's background, size, structure, and relevance to this opportunity. Include details on completing and submitting an AIC Schedule or AIC Plan as applicable.",
+      "section_purpose": "To provide a summary of the company's background and compliance with legal requirements.",
+      "response_guidance": "Provide a summary of the company's background, size, structure, and relevance to this opportunity. Confirm compliance with Australian Government requirements regarding unpaid employee entitlements.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "2.2 Solution Architecture",
+      "matched_requirements": [
+        "REQ-008"
+      ],
+      "section_purpose": "To describe the proposed solution architecture and management of intellectual property.",
+      "response_guidance": "Provide a description of the proposed solution architecture, including diagrams where appropriate. Include management of Intellectual Property under this Work Order.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "3.3 Transition Approach",
+      "matched_requirements": [
+        "REQ-009"
+      ],
+      "section_purpose": "To describe the approach to transition-in and transition-out.",
+      "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out. Include details on the provision of each Plan as required.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-008",
-      "template_section": "2.1 Technical Approach",
-      "matched_requirements": [
-        "REQ-008"
-      ],
-      "section_purpose": "To describe the technical approach to meet the stated requirements.",
-      "response_guidance": "Describe the proposed technical approach to meet the stated requirements. Address the need for remediation of eTools documentation during the software development lifecycle.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-009",
-      "template_section": "3.1 Project Management",
-      "matched_requirements": [
-        "REQ-007"
-      ],
-      "section_purpose": "To outline the project management approach and ensure alignment with the tender requirements.",
-      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach. Include details on providing reports in accordance with the agreed format and delivery method.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-010",
       "template_section": "Cover Page",
       "matched_requirements": [
+        "REQ-001",
         "REQ-004"
       ],
-      "section_purpose": "To provide essential submission details and ensure compliance with lodgement procedures.",
-      "response_guidance": "Ensure quotations are lodged electronically via AusTender before the Closing Time in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender.",
+      "section_purpose": "To provide essential submission details and ensure compliance with submission requirements.",
+      "response_guidance": "Include a PDF copy of the Supplier’s Deed of Undertaking duly signed. Ensure quotations are lodged electronically via AusTender before the Closing Time.",
       "headings_to_add": []
     }
   ]

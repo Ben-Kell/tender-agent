@@ -14,20 +14,8 @@
     {
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier accepts the draft contract terms and includes a PDF copy of the Supplier's Deed of Undertaking, duly signed, as required by the tender. Any proposed deviations from the draft contract terms are detailed in the attached documentation.",
+      "draft_text": "The Supplier accepts the draft contract terms and acknowledges the requirement to complete and submit an AIC Schedule or AIC Plan, as applicable, based on the Work Order value. The Supplier is committed to fulfilling all AIC Obligations as specified by the Commonwealth.",
       "requirements_covered": [
-        "REQ-001"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
-      "draft_text": "The project management methodology will ensure that all Services are provided in accordance with the Deed and the Work Order, achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates. The governance structure and reporting approach are designed to align with the tender requirements, ensuring transparency and accountability throughout the project lifecycle.",
-      "requirements_covered": [
-        "REQ-005",
         "REQ-007"
       ],
       "used_boilerplate": [],
@@ -35,22 +23,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-004",
-      "template_section": "3.2 Service Management",
-      "draft_text": "The service management framework includes ITSM processes, SLAs, and escalation paths. Level Zero support is provided by DCD help pages and DSMS Knowledge Articles, with Level One support from the Defence ICT Service Desk. Level Two and Three support is provided by the DDM sustainment team, while Level Four support is available from the manufacturer where applicable.",
-      "requirements_covered": [
-        "REQ-009"
-      ],
-      "used_boilerplate": [
-        "service_management.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-006",
+      "section_id": "SEC-003",
       "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "The Supplier's past performance and technical merit are demonstrated through the following case studies. These case studies highlight our methodology, past performance, technical merit, pricing, and compliance, addressing the evaluation criteria set by the Commonwealth.",
+      "draft_text": "The Supplier provides two case studies demonstrating relevant experience in delivering similar services. These case studies highlight our methodology, past performance, technical merit, and compliance with pricing structures. Detailed case studies are attached in the `case_studies/` directory.",
       "requirements_covered": [
         "REQ-003"
       ],
@@ -62,11 +37,25 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-007",
-      "template_section": "4.1 Corporate Overview",
-      "draft_text": "The Supplier provides a comprehensive overview of its background, size, structure, and relevance to this opportunity. An AIC Schedule or AIC Plan will be completed and submitted as applicable, in accordance with the tender requirements.",
+      "section_id": "SEC-004",
+      "template_section": "3.1 Project Management",
+      "draft_text": "The Supplier employs a robust project management methodology, supported by a governance structure that ensures effective reporting and performance management. Monthly performance reviews will be attended to assess and discuss performance against agreed measures.",
       "requirements_covered": [
-        "REQ-006"
+        "REQ-006",
+        "REQ-010"
+      ],
+      "used_boilerplate": [
+        "service_management.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "4.1 Corporate Overview",
+      "draft_text": "The Supplier confirms compliance with all Australian Government requirements, including the absence of any judicial decisions relating to unpaid employee entitlements. A detailed corporate overview is provided, outlining our background, size, and structure.",
+      "requirements_covered": [
+        "REQ-005"
       ],
       "used_boilerplate": [
         "corporate_overview.md"
@@ -75,9 +64,9 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-008",
-      "template_section": "2.1 Technical Approach",
-      "draft_text": "The proposed technical approach addresses the need for remediation of eTools documentation during the software development lifecycle. Our approach ensures that all technical requirements are met, with a focus on maintaining alignment between documentation and the application code base.",
+      "section_id": "SEC-006",
+      "template_section": "2.2 Solution Architecture",
+      "draft_text": "The proposed solution architecture is designed to meet the requirements of the Work Order, with a focus on managing Intellectual Property in accordance with clause 5 of the COD. Detailed architectural diagrams are included to illustrate the solution.",
       "requirements_covered": [
         "REQ-008"
       ],
@@ -86,10 +75,24 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-010",
-      "template_section": "Cover Page",
-      "draft_text": "Quotations will be lodged electronically via AusTender before the Closing Time, in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender. This ensures compliance with all submission requirements.",
+      "section_id": "SEC-007",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "The Supplier's transition approach ensures a seamless transition-in and transition-out process, with detailed plans provided for each phase. All required plans will be delivered in accordance with the Work Order specifications.",
       "requirements_covered": [
+        "REQ-009"
+      ],
+      "used_boilerplate": [
+        "transition_approach.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-008",
+      "template_section": "Cover Page",
+      "draft_text": "The Supplier's Deed of Undertaking is included as a PDF, duly signed, and all quotations will be lodged electronically via AusTender before the specified Closing Time.",
+      "requirements_covered": [
+        "REQ-001",
         "REQ-004"
       ],
       "used_boilerplate": [],
