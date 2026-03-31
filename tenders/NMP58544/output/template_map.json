@@ -2,80 +2,73 @@
   "sections": [
     {
       "section_id": "SEC-001",
-      "template_section": "5.1 Pricing Schedule",
+      "template_section": "1. Executive Summary",
       "matched_requirements": [
-        "REQ-001"
+        "REQ-004"
       ],
-      "section_purpose": "To provide detailed pricing information as required by the tender.",
-      "response_guidance": "Complete the pricing schedule as specified in the tender. Reference annexes where required.",
+      "section_purpose": "Provide a concise overview of the response, highlighting key differentiators and the value proposition.",
+      "response_guidance": "Summarize the methodology, past performance, technical merit, pricing, and compliance aspects of the proposal.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-002",
-      "template_section": "5.2 Commercial Terms",
-      "matched_requirements": [
-        "REQ-005"
-      ],
-      "section_purpose": "To outline the supplier's acceptance or proposed changes to the commercial terms.",
-      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms.",
+      "template_section": "2. Technical Response",
+      "matched_requirements": [],
+      "section_purpose": "Detail the technical aspects of the proposal to meet the stated requirements.",
+      "response_guidance": "Include technical approach, solution architecture, and security approach.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-003",
-      "template_section": "2.3 Security Approach",
+      "template_section": "3. Management Response",
       "matched_requirements": [
-        "REQ-010"
+        "REQ-011",
+        "REQ-012",
+        "REQ-016",
+        "REQ-017",
+        "REQ-018"
       ],
-      "section_purpose": "To describe the security measures and compliance relevant to the engagement.",
-      "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement.",
+      "section_purpose": "Outline the management strategies for project execution and performance monitoring.",
+      "response_guidance": "Describe project management, service management, transition approach, performance management, planning, meetings, and reporting.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-004",
-      "template_section": "3.1 Project Management",
+      "template_section": "4. Corporate Response",
       "matched_requirements": [
-        "REQ-004",
+        "REQ-007",
         "REQ-008"
       ],
-      "section_purpose": "To detail the project management practices and governance structure.",
-      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach.",
+      "section_purpose": "Provide information about the company's background and communication strategy.",
+      "response_guidance": "Include corporate overview and communication protocols.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-005",
-      "template_section": "3.2 Service Management",
+      "template_section": "5. Commercial Response",
       "matched_requirements": [
-        "REQ-009"
+        "REQ-001",
+        "REQ-003",
+        "REQ-013",
+        "REQ-014"
       ],
-      "section_purpose": "To outline the service management framework and reporting requirements.",
-      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
+      "section_purpose": "Detail the commercial aspects including pricing and compliance with commercial terms.",
+      "response_guidance": "Provide pricing schedule, commercial terms, and AIC obligations.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-006",
-      "template_section": "4.2 Relevant Experience and Case Studies",
+      "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
-        "REQ-002"
-      ],
-      "section_purpose": "To demonstrate the supplier's past performance and technical merit.",
-      "response_guidance": "Provide two or more case studies demonstrating relevant experience. Reference case study files from `case_studies/`.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-007",
-      "template_section": "headings_to_add",
-      "matched_requirements": [
-        "REQ-003",
+        "REQ-005",
         "REQ-006",
-        "REQ-007"
+        "REQ-015",
+        "REQ-019",
+        "REQ-020"
       ],
-      "section_purpose": "To address requirements not fitting existing sections.",
-      "response_guidance": "Provide responses to the specific requirements as outlined.",
-      "headings_to_add": [
-        "Submission Requirements",
-        "Intellectual Property Management",
-        "Planning Obligations"
-      ]
+      "section_purpose": "Ensure compliance with legal and policy requirements.",
+      "response_guidance": "State acceptance of legal compliance, intellectual property management, policy compliance, and digital compliance.",
+      "headings_to_add": []
     }
   ]
 }

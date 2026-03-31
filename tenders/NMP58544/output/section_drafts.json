@@ -1,34 +1,10 @@
 {
   "sections": [
     {
-      "section_id": "SEC-001",
-      "template_section": "5.1 Pricing Schedule",
-      "draft_text": "The Supplier must provide its pricing information as a separate attachment to the Quotation, marked 'Quotation Attachment A \u2013 Work Order Price & Payment Arrangements'. This attachment should include a detailed breakdown of costs, ensuring all figures are expressed in Australian legal units of measurement. The pricing schedule should be completed as specified in the tender documents, referencing annexes where required.",
-      "requirements_covered": [
-        "REQ-001"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
       "section_id": "SEC-002",
-      "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier acknowledges the requirement to complete and submit for Approval either an AIC Schedule or an AIC Plan, depending on the Work Order value. The Supplier confirms acceptance of the draft contract terms as outlined in the tender documents, with no proposed deviations.",
-      "requirements_covered": [
-        "REQ-005"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-003",
-      "template_section": "2.3 Security Approach",
-      "draft_text": "The Supplier will ensure that all sustainment activities for eTools and DDM are conducted from a Physical Zone 3 or higher site, as certified under the Defence Security Principles Framework (DSPF). This approach aligns with the Commonwealth's security arrangements and ensures compliance with all relevant security protocols.",
-      "requirements_covered": [
-        "REQ-010"
-      ],
+      "template_section": "2. Technical Response",
+      "draft_text": "Our technical approach is designed to meet the requirements of the eTools and DDM Sustainment Support project by leveraging our extensive experience in managing complex ICT environments. We will employ a robust solution architecture that integrates seamlessly with existing Defence systems, ensuring high availability and security compliance. Our security approach aligns with the Australian Government's Information Security Manual (ISM) and includes continuous monitoring and incident response capabilities.",
+      "requirements_covered": [],
       "used_boilerplate": [
         "security_capability.md"
       ],
@@ -36,60 +12,65 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-004",
-      "template_section": "3.1 Project Management",
-      "draft_text": "The Supplier will implement a robust project management methodology, incorporating regular Performance Reviews to assess and discuss performance against KPIs. Monthly meetings will be held to ensure alignment with the Commonwealth's expectations and to address any performance issues promptly.",
+      "section_id": "SEC-003",
+      "template_section": "3. Management Response",
+      "draft_text": "Our project management methodology is based on industry best practices, ensuring effective governance and reporting throughout the project lifecycle. We will conduct regular performance reviews to assess our performance against the KPIs outlined in the Work Order. Our service management framework is ITIL-aligned, providing structured processes for incident, problem, and change management. We will deliver comprehensive transition plans to ensure seamless integration and continuity of services.",
       "requirements_covered": [
-        "REQ-004",
+        "REQ-011",
+        "REQ-012",
+        "REQ-016",
+        "REQ-017",
+        "REQ-018"
+      ],
+      "used_boilerplate": [
+        "service_management.md",
+        "transition_approach.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "4. Corporate Response",
+      "draft_text": "Our company, [COMPANY NAME], is committed to maintaining open and transparent communication with the Department of Defence. We have a dedicated contact officer to handle all inquiries related to this RFQ, ensuring timely and accurate responses. Our corporate overview highlights our extensive experience and capabilities in delivering ICT solutions to Defence and government agencies.",
+      "requirements_covered": [
+        "REQ-007",
         "REQ-008"
       ],
-      "used_boilerplate": [],
+      "used_boilerplate": [
+        "corporate_overview.md"
+      ],
       "used_case_studies": [],
       "headings_added": []
     },
     {
       "section_id": "SEC-005",
-      "template_section": "3.2 Service Management",
-      "draft_text": "The Supplier will provide comprehensive service management, including ITSM processes, SLAs, and escalation paths. Reports will be delivered in a format agreed upon with the Commonwealth, ensuring transparency and accountability in service delivery.",
+      "template_section": "5. Commercial Response",
+      "draft_text": "Our pricing model is competitive and transparent, offering a combination of fixed price and time and materials options to suit the project's needs. We are committed to maximizing Australian Industry Capability (AIC) by engaging local businesses and SMEs in our supply chain. Our draft AIC Schedule outlines our approach to achieving these objectives.",
       "requirements_covered": [
-        "REQ-009"
+        "REQ-001",
+        "REQ-003",
+        "REQ-013",
+        "REQ-014"
       ],
-      "used_boilerplate": [
-        "service_management.md"
-      ],
+      "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     },
     {
       "section_id": "SEC-006",
-      "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "The Supplier's past performance and technical merit will be demonstrated through case studies that highlight successful delivery of similar services. These case studies will showcase the Supplier's ability to meet challenging timeframes and adapt to changes through innovation and continuous improvement.",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "We acknowledge and accept the legal and policy compliance requirements outlined in the RFQ. Our intellectual property management strategy ensures compliance with all relevant clauses, and we are committed to adhering to the Digital Service Standard. Our company has no outstanding legal issues that would affect our ability to deliver the services required.",
       "requirements_covered": [
-        "REQ-002"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [
-        "dict_case_study.md",
-        "nds_case_study.md"
-      ],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-007",
-      "template_section": "headings_to_add",
-      "draft_text": "Submission Requirements: Quotations must be lodged electronically via AusTender before the Closing Time. Intellectual Property Management: The Supplier must manage IP in accordance with clause 5 of the COD. Planning Obligations: The Supplier must provide each Plan as set out in the Work Order.",
-      "requirements_covered": [
-        "REQ-003",
+        "REQ-005",
         "REQ-006",
-        "REQ-007"
+        "REQ-015",
+        "REQ-019",
+        "REQ-020"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
-      "headings_added": [
-        "Submission Requirements",
-        "Intellectual Property Management",
-        "Planning Obligations"
-      ]
+      "headings_added": []
     }
   ]
 }

@@ -15,6 +15,8 @@ from app.markdown_writer import write_markdown_output
 from app.template_utils import fill_template_placeholders
 
 from app.tender_bootstrap import create_tender_structure
+from app.tender_ingest import create_and_ingest_tender
+from app.returnable_detector import detect_returnable_documents
 
 from app.docx_payload_builder import build_docx_payload, write_docx_payload
 from app.docx_bridge import render_docx_with_node
@@ -560,6 +562,82 @@ Do not add commentary before or after the document.
         import traceback
         traceback.print_exc()
         RUNS[run_id]["status"] = "failed"
+        RUNS[run_id]["result"] = {"error": str(e)}
+
+    return {
+        "run_id": run_id,
+        "status": RUNS[run_id]["status"],
+        "current_step": RUNS[run_id]["current_step"],
+        "result": RUNS[run_id]["result"],
+    }
+
+def _assert_stage_completed(stage_name: str, stage_result: dict) -> None:
+    if not isinstance(stage_result, dict):
+        raise RuntimeError(f"{stage_name} returned a non-dict response")
+
+    if stage_result.get("status") != "completed":
+        raise RuntimeError(f"{stage_name} failed: {stage_result.get('result')}")
+
+
+def run_full_pipeline(config: dict) -> dict:
+    run_id = f"run_{uuid.uuid4().hex[:8]}"
+
+    RUNS[run_id] = {
+        "status": "running",
+        "current_step": "starting_full_pipeline",
+        "config": config,
+        "result": None,
+    }
+
+    try:
+        tender_id = config["tender_id"]
+        template_name = config.get("template_name", "response_template.md")
+
+        RUNS[run_id]["current_step"] = "running_create_tender"
+        create_result = create_and_ingest_tender(tender_id)
+
+        RUNS[run_id]["current_step"] = "running_detect_returnable_documents"
+        returnable_result = detect_returnable_documents(tender_id)
+
+        stage_config = {
+            "tender_id": tender_id,
+            "template_name": template_name,
+        }
+
+        RUNS[run_id]["current_step"] = "running_start_run"
+        start_result = start_run(stage_config)
+        _assert_stage_completed("start_run", start_result)
+
+        RUNS[run_id]["current_step"] = "running_map_template"
+        map_result = map_template(stage_config)
+        _assert_stage_completed("map_template", map_result)
+
+        RUNS[run_id]["current_step"] = "running_draft_sections"
+        draft_result = draft_sections(stage_config)
+        _assert_stage_completed("draft_sections", draft_result)
+
+        RUNS[run_id]["current_step"] = "running_compile_response"
+        compile_result = compile_response(stage_config)
+        _assert_stage_completed("compile_response", compile_result)
+
+        RUNS[run_id]["result"] = {
+            "message": "Full tender pipeline completed successfully",
+            "tender_id": tender_id,
+            "create_tender": create_result,
+            "detect_returnable_documents": returnable_result,
+            "start_run": start_result["result"],
+            "map_template": map_result["result"],
+            "draft_sections": draft_result["result"],
+            "compile_response": compile_result["result"],
+        }
+        RUNS[run_id]["status"] = "completed"
+        RUNS[run_id]["current_step"] = "done"
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        RUNS[run_id]["status"] = "failed"
+        RUNS[run_id]["current_step"] = "failed"
         RUNS[run_id]["result"] = {"error": str(e)}
 
     return {

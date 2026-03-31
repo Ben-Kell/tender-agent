@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tender Agent</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .subtext {
+      margin-bottom: 24px;
+      color: #4b5563;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .secondary {
+      background: #6b7280;
+    }
+
+    .secondary:hover {
+      background: #4b5563;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .download-link {
+      display: inline-block;
+      margin-left: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .download-link:hover {
+      text-decoration: underline;
+    }
+
+    .status {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .success {
+      color: #047857;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tender Agent</h1>
+    <div class="subtext">Run the tender workflow without using Swagger.</div>
+
+    <div class="card">
+      <label for="tenderId">Tender ID</label>
+      <input type="text" id="tenderId" placeholder="Enter tender ID, e.g. RFQ-47137" />
+
+      <label for="templateName">Template Name</label>
+      <input type="text" id="templateName" value="response_template.md" />
+
+      <button onclick="createTender()">Create Tender</button>
+      <button onclick="detectReturnables()">Detect Returnables</button>
+      <button onclick="runFullPipeline()">Run Full Pipeline</button>
+      <button class="secondary" onclick="loadOutputs()">Refresh Outputs</button>
+    </div>
+
+    <div class="card">
+      <div id="statusMessage" class="status"></div>
+      <pre id="resultBox">Results will appear here...</pre>
+    </div>
+
+    <div class="card">
+      <h2>Output Files</h2>
+      <ul id="outputList">
+        <li>No outputs loaded yet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function getTenderId() {
+      return document.getElementById("tenderId").value.trim();
+    }
+
+    function getTemplateName() {
+      return document.getElementById("templateName").value.trim();
+    }
+
+    function setStatus(message, isError = false) {
+      const statusMessage = document.getElementById("statusMessage");
+      statusMessage.textContent = message;
+      statusMessage.className = isError ? "status error" : "status success";
+    }
+
+    function setResult(data) {
+      document.getElementById("resultBox").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function postJson(url, body) {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(JSON.stringify(data, null, 2));
+      }
+
+      return data;
+    }
+
+    async function createTender() {
+      const tenderId = getTenderId();
+      if (!tenderId) {
+        setStatus("Tender ID is required.", true);
+        return;
+      }
+
+      try {
+        setStatus("Creating tender...");
+        const data = await postJson("/create_tender", {
+          tender_id: tenderId
+        });
+        setResult(data);
+        setStatus("Tender created successfully.");
+        await loadOutputs();
+      } catch (error) {
+        setStatus("Create tender failed.", true);
+        setResult({ error: error.message });
+      }
+    }
+
+    async function detectReturnables() {
+      const tenderId = getTenderId();
+      if (!tenderId) {
+        setStatus("Tender ID is required.", true);
+        return;
+      }
+
+      try {
+        setStatus("Detecting returnable documents...");
+        const data = await postJson("/detect_returnable_documents", {
+          tender_id: tenderId
+        });
+        setResult(data);
+        setStatus("Returnable document detection completed.");
+        await loadOutputs();
+      } catch (error) {
+        setStatus("Returnable detection failed.", true);
+        setResult({ error: error.message });
+      }
+    }
+
+    async function runFullPipeline() {
+      const tenderId = getTenderId();
+      const templateName = getTemplateName();
+
+      if (!tenderId) {
+        setStatus("Tender ID is required.", true);
+        return;
+      }
+
+      try {
+        setStatus("Running full pipeline...");
+        const data = await postJson("/run_full_pipeline", {
+          tender_id: tenderId,
+          template_name: templateName
+        });
+        setResult(data);
+        setStatus("Full pipeline completed.");
+        await loadOutputs();
+      } catch (error) {
+        setStatus("Full pipeline failed.", true);
+        setResult({ error: error.message });
+      }
+    }
+
+    async function loadOutputs() {
+      const tenderId = getTenderId();
+      const outputList = document.getElementById("outputList");
+
+      if (!tenderId) {
+        outputList.innerHTML = "<li>Enter a Tender ID first.</li>";
+        return;
+      }
+
+      try {
+        const response = await fetch(`/list_outputs/${encodeURIComponent(tenderId)}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(JSON.stringify(data, null, 2));
+        }
+
+        outputList.innerHTML = "";
+
+        if (!data.files || data.files.length === 0) {
+          outputList.innerHTML = "<li>No output files found.</li>";
+          return;
+        }
+
+        data.files.forEach(fileName => {
+          const li = document.createElement("li");
+
+          const textSpan = document.createElement("span");
+          textSpan.textContent = fileName;
+
+          const link = document.createElement("a");
+          link.href = `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent(fileName)}`;
+          link.textContent = "Download";
+          link.className = "download-link";
+
+          li.appendChild(textSpan);
+          li.appendChild(link);
+          outputList.appendChild(li);
+        });
+      } catch (error) {
+        outputList.innerHTML = `<li>Failed to load outputs: ${error.message}</li>`;
+      }
+    }
+  </script>
+</body>
+</html>

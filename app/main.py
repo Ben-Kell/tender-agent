@@ -1,16 +1,19 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from pathlib import Path
 
 from app.storage import RUNS
-from app.workflow import start_run, map_template, draft_sections, compile_response
+from app.workflow import start_run, map_template, draft_sections, compile_response, run_full_pipeline
 from app.tender_ingest import create_and_ingest_tender
 
 from app.returnable_detector import detect_returnable_documents
-from app.openai_client import chat
+
 
 
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class TenderRunRequest(BaseModel):
     tender_id: str
@@ -40,6 +43,9 @@ class FullPipelineRequest(BaseModel):
     tender_id: str
     template_name: str = "response_template.md"
 
+@app.get("/")
+def home():
+    return FileResponse("static/index.html")
 
 @app.post("/create_tender")
 def create_tender(request: CreateTenderRequest):
@@ -78,6 +84,9 @@ def draft_sections_endpoint(request: SectionDraftRequest):
 def compile_response_endpoint(request: CompileResponseRequest):
     return compile_response(request.dict())
 
+@app.post("/run_full_pipeline")
+def run_full_pipeline_endpoint(request: FullPipelineRequest):
+    return run_full_pipeline(request.dict())
 
 @app.get("/get_tender_run_status/{run_id}")
 def get_tender_run_status(run_id: str):
@@ -103,39 +112,6 @@ def get_tender_run_result(run_id: str):
         "status": run["status"],
         "result": run["result"],
     }
-
-@app.post("/run_full_pipeline")
-def run_full_pipeline(request: FullPipelineRequest):
-    create_result = create_and_ingest_tender(request.tender_id)
-    returnable_result = detect_returnable_documents(request.tender_id)
-    extract_result = start_run({"tender_id": request.tender_id})
-    map_result = map_template({
-        "tender_id": request.tender_id,
-        "template_name": request.template_name,
-    })
-    draft_result = draft_sections({
-        "tender_id": request.tender_id,
-        "template_name": request.template_name,
-    })
-    compile_result = compile_response({
-        "tender_id": request.tender_id,
-        "template_name": request.template_name,
-    })
-
-    return {
-        "status": "success",
-        "tender_id": request.tender_id,
-        "steps": {
-            "create_tender": create_result,
-            "detect_returnable_documents": returnable_result,
-            "start_tender_run": extract_result,
-            "map_template": map_result,
-            "draft_sections": draft_result,
-            "compile_response": compile_result,
-        }
-    }
-
-
     
 @app.post("/rerun_tender_pipeline")
 def rerun_tender_pipeline(request: FullPipelineRequest):
@@ -165,3 +141,34 @@ def rerun_tender_pipeline(request: FullPipelineRequest):
             "error": str(e),
             "result": pipeline_result,
         }
+
+@app.get("/list_outputs/{tender_id}")
+def list_outputs(tender_id: str):
+    output_dir = Path("tenders") / tender_id / "output"
+
+    if not output_dir.exists():
+        raise HTTPException(status_code=404, detail="Output folder not found")
+
+    files = sorted(
+        [item.name for item in output_dir.iterdir() if item.is_file()]
+    )
+
+    return {
+        "tender_id": tender_id,
+        "files": files,
+    }
+
+
+@app.get("/download_output/{tender_id}/{filename}")
+def download_output(tender_id: str, filename: str):
+    output_dir = Path("tenders") / tender_id / "output"
+    file_path = output_dir / filename
+
+    if not file_path.exists() or not file_path.is_file():
+        raise HTTPException(status_code=404, detail="File not found")
+
+    return FileResponse(
+        path=file_path,
+        filename=filename,
+        media_type="application/octet-stream",
+    )
