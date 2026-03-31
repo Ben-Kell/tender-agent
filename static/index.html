@@ -620,13 +620,21 @@
                             <input type="text" id="tender-id" placeholder="Enter tender ID" oninput="syncSummary()" />
                         </div>
                     </div>
+
+                    <div class="field">
+                        <label for="tender-files">Tender Documents</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📎</span>
+                            <input type="file" id="tender-files" multiple />
+                        </div>
+                    </div>
                 </div>
 
                 <input type="hidden" id="template-name" value="response_template.md" />
 
                 <div class="button-row">
                     <button class="btn-primary" id="btn-create" onclick="createTender()">Create Tender</button>
-                    <button class="btn-secondary" id="btn-returnables" onclick="detectReturnables()">Detect Returnables</button>
+                    <button class="btn-secondary" id="btn-upload" onclick="uploadTenderDocuments()">Upload Tender Documents</button>
                     <button class="btn-accent" id="btn-run" onclick="runFullPipeline()">Run Full Pipeline</button>
                     <button class="btn-ghost" id="btn-refresh" onclick="refreshOutputs()">Refresh Outputs</button>
                 </div>
@@ -704,7 +712,7 @@
         }
 
         function setButtonsDisabled(isDisabled) {
-            ["btn-create", "btn-returnables", "btn-run", "btn-refresh"].forEach(id => {
+            ["btn-create", "btn-upload", "btn-run", "btn-refresh"].forEach(id => {
                 document.getElementById(id).disabled = isDisabled;
             });
         }
@@ -1005,6 +1013,56 @@
                 setButtonsDisabled(false);
             }
         }
+
+        async function uploadTenderDocuments() {
+            const tenderId = getTenderId();
+            const fileInput = document.getElementById("tender-files");
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert("Select one or more tender documents.");
+                return;
+            }
+
+            setButtonsDisabled(true);
+            setStatus(`Uploading tender documents for ${tenderId}...`);
+
+            try {
+                const formData = new FormData();
+                formData.append("tender_id", tenderId);
+
+                for (const file of fileInput.files) {
+                    formData.append("files", file);
+                }
+
+                const response = await fetch("/upload_tender_documents", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    setStatus(errorText, "error");
+                    alert(`Upload failed:\n${errorText}`);
+                    return;
+                }
+
+                const data = await response.json();
+                setStatus(`Uploaded ${data.files.length} tender document(s) for ${tenderId}.`, "success");
+                fileInput.value = "";
+                alert(`Upload complete.\n\nSaved to dump/${tenderId}`);
+            } catch (error) {
+                setStatus(error.message || "Unexpected error occurred.", "error");
+                alert(`Upload failed:\n${error.message}`);
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
 
         async function createTender() {
             const tenderId = getTenderId();

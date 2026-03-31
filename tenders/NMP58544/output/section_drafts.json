@@ -14,7 +14,7 @@
     {
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier accepts the draft contract terms as outlined in the RFQ. A PDF copy of the Supplier's Deed of Undertaking, duly signed, is included as part of this submission, in compliance with the tender requirements.",
+      "draft_text": "The Supplier accepts the draft contract terms and includes a PDF copy of the Supplier's Deed of Undertaking, duly signed, as required by the tender. Any proposed deviations from the draft contract terms are detailed in the attached documentation.",
       "requirements_covered": [
         "REQ-001"
       ],
@@ -25,10 +25,10 @@
     {
       "section_id": "SEC-003",
       "template_section": "3.1 Project Management",
-      "draft_text": "The Supplier will employ a robust project management methodology aligned with industry best practices to ensure successful delivery of the services. Our governance structure includes regular performance reviews and reporting to the Commonwealth, detailing compliance with Performance Measures and the Work Order. This approach ensures transparency and accountability, fostering continuous improvement.",
+      "draft_text": "The project management methodology will ensure that all Services are provided in accordance with the Deed and the Work Order, achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates. The governance structure and reporting approach are designed to align with the tender requirements, ensuring transparency and accountability throughout the project lifecycle.",
       "requirements_covered": [
         "REQ-005",
-        "REQ-009"
+        "REQ-007"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
@@ -37,9 +37,9 @@
     {
       "section_id": "SEC-004",
       "template_section": "3.2 Service Management",
-      "draft_text": "The Supplier will deliver managed services using an ITIL-aligned service management framework. This includes comprehensive ITSM processes, SLAs, and defined escalation paths to ensure consistent service delivery. Our approach is designed to meet the Commonwealth's requirements and support operational efficiency.",
+      "draft_text": "The service management framework includes ITSM processes, SLAs, and escalation paths. Level Zero support is provided by DCD help pages and DSMS Knowledge Articles, with Level One support from the Defence ICT Service Desk. Level Two and Three support is provided by the DDM sustainment team, while Level Four support is available from the manufacturer where applicable.",
       "requirements_covered": [
-        "REQ-007"
+        "REQ-009"
       ],
       "used_boilerplate": [
         "service_management.md"
@@ -48,28 +48,51 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "The Supplier's transition approach is structured to ensure a seamless transition-in and transition-out process. This includes detailed planning, risk management, and stakeholder engagement to maintain service continuity and minimise disruption.",
+      "section_id": "SEC-006",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "draft_text": "The Supplier's past performance and technical merit are demonstrated through the following case studies. These case studies highlight our methodology, past performance, technical merit, pricing, and compliance, addressing the evaluation criteria set by the Commonwealth.",
       "requirements_covered": [
-        "REQ-007"
+        "REQ-003"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [
+        "dict_case_study.md",
+        "nds_case_study.md"
+      ],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "4.1 Corporate Overview",
+      "draft_text": "The Supplier provides a comprehensive overview of its background, size, structure, and relevance to this opportunity. An AIC Schedule or AIC Plan will be completed and submitted as applicable, in accordance with the tender requirements.",
+      "requirements_covered": [
+        "REQ-006"
       ],
       "used_boilerplate": [
-        "transition_approach.md"
+        "corporate_overview.md"
       ],
       "used_case_studies": [],
       "headings_added": []
     },
     {
-      "section_id": "SEC-006",
-      "template_section": "2.3 Security Approach",
-      "draft_text": "The Supplier will undertake sustainment of eTools and DDM from a Physical Zone 3 or higher site, as certified under the DSPF. Our security framework includes comprehensive controls and certifications to ensure compliance with the Commonwealth's security requirements.",
+      "section_id": "SEC-008",
+      "template_section": "2.1 Technical Approach",
+      "draft_text": "The proposed technical approach addresses the need for remediation of eTools documentation during the software development lifecycle. Our approach ensures that all technical requirements are met, with a focus on maintaining alignment between documentation and the application code base.",
       "requirements_covered": [
-        "REQ-010"
+        "REQ-008"
       ],
-      "used_boilerplate": [
-        "security_capability.md"
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-010",
+      "template_section": "Cover Page",
+      "draft_text": "Quotations will be lodged electronically via AusTender before the Closing Time, in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender. This ensures compliance with all submission requirements.",
+      "requirements_covered": [
+        "REQ-004"
       ],
+      "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     }

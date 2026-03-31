@@ -45,16 +45,16 @@
     {
       "requirement_id": "REQ-005",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Performance Management",
-      "requirement_text": "The Supplier’s performance against the Performance Measures will be measured under the Work Order and may impact the Supplier’s entitlement to any At Risk Amount or the Commonwealth’s entitlement to any Service Credits.",
-      "requirement_type": "governance",
-      "theme": "performance",
+      "clause_reference": "6. Milestones, Delivery, Approval and Acceptance",
+      "requirement_text": "The Supplier must provide the Services in accordance with the Deed and the Work Order, including by achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates as set out in the table below.",
+      "requirement_type": "mandatory",
+      "theme": "service delivery",
       "response_needed": true
     },
     {
       "requirement_id": "REQ-006",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "AIC Obligations",
+      "clause_reference": "8. AIC Obligations",
       "requirement_text": "The Supplier agrees and acknowledges that it must complete and submit for Approval either: an AIC Schedule, in the format set out in Annexure F or as otherwise specified by the Commonwealth, if the Work Order value (inclusive of all extensions and variations) including GST is between $4M and $20M; or an AIC Plan, in the format set out in Annexure G or as otherwise specified by the Commonwealth, if the Work Order value (inclusive of all extensions and variations) including GST exceeds $20M.",
       "requirement_type": "mandatory",
       "theme": "AIC",
@@ -63,37 +63,28 @@
     {
       "requirement_id": "REQ-007",
       "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Plans",
-      "requirement_text": "The Supplier must deliver the following Plans: Australian Industry Capability (AIC) Plan, Transition-In Plan, Phase-Out Plan, Supplier Risk Management Plan, Service Management Plan, Disaster Recovery Plan, Test Plan.",
-      "requirement_type": "technical",
-      "theme": "planning",
-      "response_needed": true
-    },
-    {
-      "requirement_id": "REQ-008",
-      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Testing",
-      "requirement_text": "The Supplier must deliver a Test Plan to the Commonwealth for Approval in accordance with clause 3.19 of the COD and Annexure P to this SOW by the date(s) specified in the Milestone/Deliverable table in clause 6 of the SOW.",
-      "requirement_type": "technical",
-      "theme": "testing",
-      "response_needed": true
-    },
-    {
-      "requirement_id": "REQ-009",
-      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Reporting",
-      "requirement_text": "The Supplier must provide Performance Reports to the Commonwealth, which detail the Supplier’s assessment of its own performance against, and compliance with, the Performance Measures, the Deed and the Work Order.",
-      "requirement_type": "governance",
+      "clause_reference": "13. Reporting",
+      "requirement_text": "The Supplier must provide the reports in accordance with this clause 13. The reports must be in a format and utilising a delivery method as agreed between the parties, or, absent such agreement, in a form specified by the Commonwealth.",
+      "requirement_type": "mandatory",
       "theme": "reporting",
       "response_needed": true
     },
     {
-      "requirement_id": "REQ-010",
-      "source_document": "02. NMP58544 - ICTPA Schedule A - Statement of Work - eTools and DDM Sustainment Support.md",
-      "clause_reference": "Security",
-      "requirement_text": "Sustainment of eTools and DDM must be undertaken from a Physical Zone 3 (as certified under the DSPF) or higher site.",
-      "requirement_type": "security",
-      "theme": "security",
+      "requirement_id": "REQ-008",
+      "source_document": "NMP58544 - SOW Annexure A - eTools Services Background.md",
+      "clause_reference": "1.8",
+      "requirement_text": "eTools has undergone consistent development and enhancement over the years to meet urgent business and security needs. As a result, not all of the supporting documentation been maintained to industry standards. There will be instances where eTools documentation is not in full alignment with the application and code base which will require remediation when identified during software development lifecycle.",
+      "requirement_type": "technical",
+      "theme": "documentation",
+      "response_needed": true
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_document": "NMP58544 - SOW Annexure B - DDM Services Background.md",
+      "clause_reference": "4.1",
+      "requirement_text": "Level Zero support is provided by DCD help pages and DSMS Knowledge Articles. The Defence ICT Service Desk provides Level One support. Level Two and Three DDM services support is provided by the DDM sustainment team (being procured under this approach to market). Infrastructure support for DDM is provided under other service towers/teams/contracts. Level Four support for DDM software/frameworks is provided where applicable by the manufacturer.",
+      "requirement_type": "service delivery",
+      "theme": "support",
       "response_needed": true
     }
   ]

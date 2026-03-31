@@ -1,18 +1,27 @@
 from fastapi import FastAPI, HTTPException
+from fastapi import UploadFile, File, Form
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+
 from pydantic import BaseModel
 from pathlib import Path
+from typing import List
 
 from app.storage import RUNS
 from app.workflow import start_run, map_template, draft_sections, compile_response, run_full_pipeline
 from app.tender_ingest import create_and_ingest_tender
-
 from app.returnable_detector import detect_returnable_documents
+
+import shutil
 
 
 
 app = FastAPI()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DUMP_DIR = BASE_DIR / "dump"
+DUMP_DIR.mkdir(parents=True, exist_ok=True)
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class TenderRunRequest(BaseModel):
@@ -172,3 +181,39 @@ def download_output(tender_id: str, filename: str):
         filename=filename,
         media_type="application/octet-stream",
     )
+
+@app.post("/upload_tender_documents")
+async def upload_tender_documents(
+    tender_id: str = Form(...),
+    files: List[UploadFile] = File(...)
+):
+    safe_tender_id = tender_id.strip()
+
+    if not safe_tender_id:
+        raise HTTPException(status_code=400, detail="tender_id is required")
+
+    tender_dump_dir = DUMP_DIR / safe_tender_id
+    tender_dump_dir.mkdir(parents=True, exist_ok=True)
+
+    saved_files = []
+
+    for upload in files:
+        if not upload.filename or not upload.filename.strip():
+            continue
+
+        destination_path = tender_dump_dir / Path(upload.filename).name
+
+        with destination_path.open("wb") as buffer:
+            shutil.copyfileobj(upload.file, buffer)
+
+        saved_files.append(destination_path.name)
+
+    if not saved_files:
+        raise HTTPException(status_code=400, detail="No valid files were uploaded")
+
+    return {
+        "message": f"Uploaded {len(saved_files)} file(s) to dump/{safe_tender_id}",
+        "tender_id": safe_tender_id,
+        "dump_folder": str(tender_dump_dir),
+        "files": saved_files
+    }
