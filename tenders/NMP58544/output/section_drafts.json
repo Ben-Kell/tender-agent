@@ -1,10 +1,15 @@
 {
   "sections": [
     {
-      "section_id": "SEC-002",
+      "section_id": "SEC-001",
       "template_section": "2. Technical Response",
-      "draft_text": "Our technical approach is designed to meet the requirements of the eTools and DDM Sustainment Support project by leveraging our extensive experience in managing complex ICT environments. We will employ a robust solution architecture that integrates seamlessly with existing Defence systems, ensuring high availability and security compliance. Our security approach aligns with the Australian Government's Information Security Manual (ISM) and includes continuous monitoring and incident response capabilities.",
-      "requirements_covered": [],
+      "draft_text": "The proposed services will ensure compatibility with the Commonwealth's existing ICT environment, including any impacted Existing Systems, as required by REQ-011. Our approach includes delivering a comprehensive Test Plan, as outlined in REQ-023, to be approved by the Commonwealth. This plan will detail the testing methodologies and schedules to ensure all services meet the required standards. Furthermore, our service delivery will align with ITIL v4 standards to ensure consistency and quality, as specified in REQ-032. We will provide the services with respect to Commonwealth server, network, and Application Software, ensuring seamless integration and operation, as per REQ-033.",
+      "requirements_covered": [
+        "REQ-011",
+        "REQ-023",
+        "REQ-032",
+        "REQ-033"
+      ],
       "used_boilerplate": [
         "security_capability.md"
       ],
@@ -12,46 +17,49 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-003",
+      "section_id": "SEC-002",
       "template_section": "3. Management Response",
-      "draft_text": "Our project management methodology is based on industry best practices, ensuring effective governance and reporting throughout the project lifecycle. We will conduct regular performance reviews to assess our performance against the KPIs outlined in the Work Order. Our service management framework is ITIL-aligned, providing structured processes for incident, problem, and change management. We will deliver comprehensive transition plans to ensure seamless integration and continuity of services.",
+      "draft_text": "Our service delivery approach is designed to meet all specifications, laws, authorisations, performance measures, milestones, and timeframes as outlined in REQ-010. Services will be delivered across specified geographic locations, including Anzac Park West, Russell Offices, and RAAF Williams, as detailed in REQ-014, REQ-015, and REQ-016. We will ensure that all services are consistent with the Deed Objectives and minimise any risks or disruptions to the Commonwealth, as required by REQ-012 and REQ-013. Performance management will be conducted in accordance with the Performance Management Framework, ensuring all performance measures are met, as specified in REQ-027. Regular performance reviews and reporting will be conducted to assess and discuss service delivery, as outlined in REQ-028 and REQ-029.",
       "requirements_covered": [
-        "REQ-011",
+        "REQ-009",
+        "REQ-010",
         "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
         "REQ-016",
         "REQ-017",
-        "REQ-018"
+        "REQ-018",
+        "REQ-022",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028",
+        "REQ-029"
       ],
       "used_boilerplate": [
-        "service_management.md",
-        "transition_approach.md"
+        "service_management.md"
       ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "4. Corporate Response",
+      "draft_text": "Our approach to personnel management includes clear procedures for the stand down of personnel, as outlined in REQ-021. This ensures that we can efficiently manage workforce adjustments while maintaining service continuity and compliance with contractual obligations.",
+      "requirements_covered": [
+        "REQ-021"
+      ],
+      "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     },
     {
       "section_id": "SEC-004",
-      "template_section": "4. Corporate Response",
-      "draft_text": "Our company, [COMPANY NAME], is committed to maintaining open and transparent communication with the Department of Defence. We have a dedicated contact officer to handle all inquiries related to this RFQ, ensuring timely and accurate responses. Our corporate overview highlights our extensive experience and capabilities in delivering ICT solutions to Defence and government agencies.",
-      "requirements_covered": [
-        "REQ-007",
-        "REQ-008"
-      ],
-      "used_boilerplate": [
-        "corporate_overview.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-005",
       "template_section": "5. Commercial Response",
-      "draft_text": "Our pricing model is competitive and transparent, offering a combination of fixed price and time and materials options to suit the project's needs. We are committed to maximizing Australian Industry Capability (AIC) by engaging local businesses and SMEs in our supply chain. Our draft AIC Schedule outlines our approach to achieving these objectives.",
+      "draft_text": "We confirm that our pricing information is provided as a separate attachment, marked 'Quotation Attachment A – Work Order Price & Payment Arrangements', in compliance with REQ-001. Our pricing structure is designed to ensure value for money while meeting all service delivery requirements. We accept the commercial terms as outlined in the tender documents, ensuring compliance with all relevant legal and policy requirements.",
       "requirements_covered": [
         "REQ-001",
-        "REQ-003",
-        "REQ-013",
-        "REQ-014"
+        "REQ-020"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
@@ -59,14 +67,62 @@
     },
     {
       "section_id": "SEC-006",
-      "template_section": "5.2 Commercial Terms",
-      "draft_text": "We acknowledge and accept the legal and policy compliance requirements outlined in the RFQ. Our intellectual property management strategy ensures compliance with all relevant clauses, and we are committed to adhering to the Digital Service Standard. Our company has no outstanding legal issues that would affect our ability to deliver the services required.",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "draft_text": "Our past performance demonstrates our capability to deliver similar services effectively. We have included case studies that highlight our ability to meet challenging timeframes and adapt to changes through innovation and continuous improvement, as required by REQ-003.",
       "requirements_covered": [
+        "REQ-003"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [
+        "dict_case_study.md",
+        "nds_case_study.md"
+      ],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "We confirm compliance with all legal requirements, including those related to unpaid employee entitlements and the Workplace Gender Equality Act 2012 (Cth), as specified in REQ-004 and REQ-005. Additionally, we will adhere to all additional standards and policy requirements outlined in REQ-030 and REQ-031.",
+      "requirements_covered": [
+        "REQ-004",
         "REQ-005",
-        "REQ-006",
-        "REQ-015",
-        "REQ-019",
-        "REQ-020"
+        "REQ-030",
+        "REQ-031"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-008",
+      "template_section": "3.2 Service Management",
+      "draft_text": "The Commonwealth will provide Government Furnished Materials, Facilities, and Services as outlined in REQ-019. We will utilize these resources effectively to ensure seamless service management and delivery.",
+      "requirements_covered": [
+        "REQ-019"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-009",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "We are prepared to manage and submit alternative proposals in accordance with the requirements specified in REQ-008. Our transition approach ensures that any alternative proposals are integrated smoothly into the overall service delivery framework.",
+      "requirements_covered": [
+        "REQ-008"
+      ],
+      "used_boilerplate": [
+        "transition_approach.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-010",
+      "template_section": "4.3 Key Personnel",
+      "draft_text": "We will manage Intellectual Property rights and restrictions in accordance with clause 5 of the COD and the Work Order, as required by REQ-025. This includes ensuring that all technical data and software rights are appropriately managed and protected.",
+      "requirements_covered": [
+        "REQ-025"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],

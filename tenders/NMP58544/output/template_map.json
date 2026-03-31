@@ -2,72 +2,120 @@
   "sections": [
     {
       "section_id": "SEC-001",
-      "template_section": "1. Executive Summary",
+      "template_section": "2. Technical Response",
       "matched_requirements": [
-        "REQ-004"
+        "REQ-011",
+        "REQ-023",
+        "REQ-032",
+        "REQ-033"
       ],
-      "section_purpose": "Provide a concise overview of the response, highlighting key differentiators and the value proposition.",
-      "response_guidance": "Summarize the methodology, past performance, technical merit, pricing, and compliance aspects of the proposal.",
+      "section_purpose": "To detail the technical aspects and compatibility of the proposed solution.",
+      "response_guidance": "Describe how the proposed services will be compatible with existing ICT environments, include a test plan, and ensure alignment with ITIL v4 standards.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-002",
-      "template_section": "2. Technical Response",
-      "matched_requirements": [],
-      "section_purpose": "Detail the technical aspects of the proposal to meet the stated requirements.",
-      "response_guidance": "Include technical approach, solution architecture, and security approach.",
+      "template_section": "3. Management Response",
+      "matched_requirements": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-017",
+        "REQ-018",
+        "REQ-022",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028",
+        "REQ-029"
+      ],
+      "section_purpose": "To outline the management and delivery of services, including locations and performance management.",
+      "response_guidance": "Detail the service delivery approach, including geographic locations, milestone achievement, performance management, and reporting requirements.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3. Management Response",
+      "template_section": "4. Corporate Response",
       "matched_requirements": [
-        "REQ-011",
-        "REQ-012",
-        "REQ-016",
-        "REQ-017",
-        "REQ-018"
+        "REQ-021"
       ],
-      "section_purpose": "Outline the management strategies for project execution and performance monitoring.",
-      "response_guidance": "Describe project management, service management, transition approach, performance management, planning, meetings, and reporting.",
+      "section_purpose": "To provide information on personnel management and corporate governance.",
+      "response_guidance": "Explain the approach to personnel management, including stand down procedures.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-004",
-      "template_section": "4. Corporate Response",
+      "template_section": "5. Commercial Response",
       "matched_requirements": [
-        "REQ-007",
-        "REQ-008"
+        "REQ-001",
+        "REQ-020"
       ],
-      "section_purpose": "Provide information about the company's background and communication strategy.",
-      "response_guidance": "Include corporate overview and communication protocols.",
+      "section_purpose": "To address pricing and commercial terms.",
+      "response_guidance": "Provide detailed pricing information and confirm acceptance of commercial terms.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-005",
-      "template_section": "5. Commercial Response",
-      "matched_requirements": [
-        "REQ-001",
-        "REQ-003",
-        "REQ-013",
-        "REQ-014"
-      ],
-      "section_purpose": "Detail the commercial aspects including pricing and compliance with commercial terms.",
-      "response_guidance": "Provide pricing schedule, commercial terms, and AIC obligations.",
+      "template_section": "2.3 Security Approach",
+      "matched_requirements": [],
+      "section_purpose": "To describe the security measures and compliance with standards.",
+      "response_guidance": "Detail the security framework and controls relevant to the engagement.",
       "headings_to_add": []
     },
     {
       "section_id": "SEC-006",
+      "template_section": "4.2 Relevant Experience and Case Studies",
+      "matched_requirements": [
+        "REQ-003"
+      ],
+      "section_purpose": "To demonstrate past performance and technical merit.",
+      "response_guidance": "Provide case studies and examples of past performance that align with the evaluation criteria.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-007",
       "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
+        "REQ-004",
         "REQ-005",
-        "REQ-006",
-        "REQ-015",
-        "REQ-019",
-        "REQ-020"
+        "REQ-030",
+        "REQ-031"
       ],
-      "section_purpose": "Ensure compliance with legal and policy requirements.",
-      "response_guidance": "State acceptance of legal compliance, intellectual property management, policy compliance, and digital compliance.",
+      "section_purpose": "To ensure compliance with legal and policy requirements.",
+      "response_guidance": "Confirm compliance with legal requirements and additional standards.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-008",
+      "template_section": "3.2 Service Management",
+      "matched_requirements": [
+        "REQ-019"
+      ],
+      "section_purpose": "To outline the resources provided by the Commonwealth.",
+      "response_guidance": "Describe how the provided resources will be utilized in service management.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-009",
+      "template_section": "3.3 Transition Approach",
+      "matched_requirements": [
+        "REQ-008"
+      ],
+      "section_purpose": "To describe the approach to handling alternative proposals.",
+      "response_guidance": "Explain how alternative proposals will be managed and submitted.",
+      "headings_to_add": []
+    },
+    {
+      "section_id": "SEC-010",
+      "template_section": "4.3 Key Personnel",
+      "matched_requirements": [
+        "REQ-025"
+      ],
+      "section_purpose": "To manage intellectual property rights.",
+      "response_guidance": "Detail the management of intellectual property, including rights and restrictions.",
       "headings_to_add": []
     }
   ]

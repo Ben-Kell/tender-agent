@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tender Response Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #output-files {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 16px;
+            border-radius: 6px;
+            min-height: 60px;
+        }
+
+        #output-files ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        #output-files li {
+            margin-bottom: 8px;
+        }
+
+        #output-files a {
+            text-decoration: none;
+        }
+
+        #output-files a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Tender Response Agent</h1>
+
+        <div class="form-group">
+            <label for="tender-id">Tender ID</label>
+            <input type="text" id="tender-id" placeholder="Enter tender ID">
+        </div>
+
+        <div class="form-group">
+            <label for="template-name">Template Name</label>
+            <input type="text" id="template-name" placeholder="Enter template name">
+        </div>
+
+        <div class="button-row">
+            <button onclick="createTender()">Create Tender</button>
+            <button onclick="detectReturnables()">Detect Returnables</button>
+            <button onclick="runFullPipeline()">Run Full Pipeline</button>
+            <button onclick="refreshOutputs()">Refresh Outputs</button>
+        </div>
+
+        <h2>Output Files</h2>
+        <div id="output-files">
+            <p>No output files loaded.</p>
+        </div>
+    </div>
+
+    <script>
+        function getTenderId() {
+            return document.getElementById("tender-id").value.trim();
+        }
+
+        function getTemplateName() {
+            return document.getElementById("template-name").value.trim();
+        }
+
+        async function createTender() {
+            const tenderId = getTenderId();
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            const response = await fetch("/create_tender", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    tender_id: tenderId
+                })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                alert("Create Tender failed:\n" + errorText);
+                return;
+            }
+
+            await refreshOutputs();
+        }
+
+        async function detectReturnables() {
+            const tenderId = getTenderId();
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            const response = await fetch("/detect_returnable_documents", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    tender_id: tenderId
+                })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                alert("Detect Returnables failed:\n" + errorText);
+                return;
+            }
+
+            await refreshOutputs();
+        }
+
+        async function runFullPipeline() {
+            const tenderId = getTenderId();
+            const templateName = getTemplateName();
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            if (!templateName) {
+                alert("Enter a Template Name.");
+                return;
+            }
+
+            const response = await fetch("/run_full_pipeline", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    tender_id: tenderId,
+                    template_name: templateName
+                })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                alert("Run Full Pipeline failed:\n" + errorText);
+                return;
+            }
+
+            await refreshOutputs();
+        }
+
+        async function refreshOutputs() {
+            const tenderId = getTenderId();
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            const outputFilesDiv = document.getElementById("output-files");
+            outputFilesDiv.innerHTML = "<p>Loading output files...</p>";
+
+            const response = await fetch(`/list_outputs/${encodeURIComponent(tenderId)}`);
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                outputFilesDiv.innerHTML = `<p>Failed to load output files: ${errorText}</p>`;
+                return;
+            }
+
+            const data = await response.json();
+
+            if (!data.files || data.files.length === 0) {
+                outputFilesDiv.innerHTML = "<p>No output files found.</p>";
+                return;
+            }
+
+            const listItems = data.files.map(filename => {
+                const href = `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent(filename)}`;
+                return `<li><a href="${href}" target="_blank">${filename}</a></li>`;
+            }).join("");
+
+            outputFilesDiv.innerHTML = `<ul>${listItems}</ul>`;
+        }
+    </script>
+</body>
+</html>
