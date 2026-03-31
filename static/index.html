@@ -17,6 +17,7 @@
             --primary-2: #7c5cff;
             --success: #32d296;
             --danger: #ff7a7a;
+            --warning: #f6c453;
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
             --radius-xl: 28px;
             --radius-lg: 18px;
@@ -57,7 +58,8 @@
         .hero-card,
         .summary-card,
         .workspace,
-        .files-card {
+        .files-card,
+        .checklist-card {
             background: var(--panel);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -143,7 +145,8 @@
 
         .summary-card h2,
         .workspace h2,
-        .files-card h2 {
+        .files-card h2,
+        .checklist-card h2 {
             margin: 0;
             font-size: 1rem;
             letter-spacing: 0.01em;
@@ -176,8 +179,13 @@
         }
 
         .workspace,
-        .files-card {
+        .files-card,
+        .checklist-card {
             padding: 28px;
+        }
+
+        .checklist-card {
+            margin-top: 24px;
         }
 
         .section-head {
@@ -194,7 +202,8 @@
             font-size: 0.95rem;
         }
 
-        .badge {
+        .badge,
+        .search-pill {
             padding: 8px 12px;
             border-radius: 999px;
             background: rgba(110, 168, 254, 0.12);
@@ -203,6 +212,14 @@
             font-size: 0.82rem;
             font-weight: 600;
             white-space: nowrap;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
         }
 
         .input-grid {
@@ -310,23 +327,6 @@
             margin-top: 18px;
             color: var(--muted);
             font-size: 0.9rem;
-        }
-
-        .toolbar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .search-pill {
-            padding: 10px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--muted);
-            font-size: 0.88rem;
         }
 
         #output-files {
@@ -452,15 +452,16 @@
             background: rgba(255, 122, 122, 0.08);
         }
 
-        .checklist-card {
-            margin-top: 24px;
-            padding: 28px;
-            background: var(--panel);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow);
+        .readiness-good {
+            color: #d2ffea;
+        }
+
+        .readiness-warn {
+            color: #ffe7b8;
+        }
+
+        .readiness-bad {
+            color: #ffd4d4;
         }
 
         .checklist-grid {
@@ -492,7 +493,7 @@
 
         .checklist-columns {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
 
@@ -530,23 +531,11 @@
             font-size: 0.92rem;
         }
 
-        .readiness-good {
-            color: #d2ffea;
-        }
-
-        .readiness-warn {
-            color: #ffe7b8;
-        }
-
-        .readiness-bad {
-            color: #ffd4d4;
-        }
-
         @media (max-width: 980px) {
             .hero,
             .main-grid,
-            .checklist-columns,
-            .checklist-grid {
+            .checklist-grid,
+            .checklist-columns {
                 grid-template-columns: 1fr;
             }
         }
@@ -559,7 +548,8 @@
             .hero-card,
             .summary-card,
             .workspace,
-            .files-card {
+            .files-card,
+            .checklist-card {
                 padding: 22px;
                 border-radius: 24px;
             }
@@ -776,105 +766,119 @@
             return "readiness-bad";
         }
 
-function parseChecklistMarkdown(markdownText) {
-    const result = {
-        readinessPercent: "0%",
-        requiredCount: "0",
-        producedCount: "0",
-        missingCount: "0",
-        requiredArtifacts: [],
-        missingArtifacts: [],
-        producedArtifacts: []
-    };
+        function parseChecklistMarkdown(markdownText) {
+            const result = {
+                readinessPercent: "0%",
+                requiredCount: "0",
+                producedCount: "0",
+                missingCount: "0",
+                missingArtefacts: [],
+                producedArtefacts: []
+            };
 
-    const text = markdownText || "";
+            const text = markdownText || "";
+            const lines = text.split(/\r?\n/);
 
-    const readinessMatch =
-        text.match(/submission readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i) ||
-        text.match(/readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i);
+            const readinessMatch =
+                text.match(/submission readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i) ||
+                text.match(/readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i);
 
-    if (readinessMatch) {
-        result.readinessPercent = `${readinessMatch[1]}%`;
-    }
+            if (readinessMatch) {
+                result.readinessPercent = `${readinessMatch[1]}%`;
+            }
 
-    const ratioMatch =
-        text.match(/required artifacts[^\d]*(\d+)\s*\/\s*(\d+)/i) ||
-        text.match(/artifacts[^\d]*(\d+)\s*\/\s*(\d+)/i);
+            const ratioMatch =
+                text.match(/required artefacts generated[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artifacts generated[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artefacts[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artifacts[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i);
 
-    if (ratioMatch) {
-        result.producedCount = ratioMatch[1];
-        result.requiredCount = ratioMatch[2];
-    }
+            if (ratioMatch) {
+                result.producedCount = ratioMatch[1];
+                result.requiredCount = ratioMatch[2];
+            }
 
-            function extractSectionItems(titlePatterns) {
-                const lines = text.split(/\r?\n/);
-                let startIndex = -1;
-
+            function findSectionStart(titlePatterns) {
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i].trim();
                     for (const pattern of titlePatterns) {
                         if (pattern.test(line)) {
-                            startIndex = i + 1;
-                            break;
+                            return i + 1;
                         }
                     }
-                    if (startIndex !== -1) break;
                 }
+                return -1;
+            }
 
+            function collectSectionLines(startIndex) {
                 if (startIndex === -1) return [];
 
-                const items = [];
+                const collected = [];
                 for (let i = startIndex; i < lines.length; i++) {
-                    const rawLine = lines[i];
-                    const line = rawLine.trim();
+                    const line = lines[i].trim();
 
                     if (!line) continue;
                     if (/^#{1,6}\s+/.test(line)) break;
 
-                    const bulletMatch = line.match(/^[-*+]\s+(.*)$/);
-                    const numberedMatch = line.match(/^\d+[.)]\s+(.*)$/);
-
-                    if (bulletMatch) {
-                        items.push(bulletMatch[1].trim());
-                        continue;
-                    }
-
-                    if (numberedMatch) {
-                        items.push(numberedMatch[1].trim());
-                        continue;
-                    }
-
-                    if (/^[A-Za-z].*:$/.test(line)) break;
+                    collected.push(line);
                 }
-
-                return items;
+                return collected;
             }
 
-            result.requiredArtifacts = extractSectionItems([
+            const requiredStart = findSectionStart([
+                /^#{1,6}\s*required artefacts\s*$/i,
                 /^#{1,6}\s*required artifacts\s*$/i,
-                /^required artifacts\s*$/i,
-                /^#{1,6}\s*required artifacts total\s*$/i,
-                /^required artifacts total\s*$/i
+                /^required artefacts\s*$/i,
+                /^required artifacts\s*$/i
             ]);
 
-            result.missingArtifacts = extractSectionItems([
+            const missingStart = findSectionStart([
+                /^#{1,6}\s*missing required artefacts\s*$/i,
                 /^#{1,6}\s*missing required artifacts\s*$/i,
+                /^missing required artefacts\s*$/i,
                 /^missing required artifacts\s*$/i
             ]);
 
-            result.producedArtifacts = extractSectionItems([
-                /^#{1,6}\s*produced required artifacts\s*$/i,
-                /^produced required artifacts\s*$/i,
-                /^#{1,6}\s*which ones have been produced\s*$/i,
-                /^which ones have been produced\s*$/i
-            ]);
+            const requiredLines = collectSectionLines(requiredStart);
+            const missingLines = collectSectionLines(missingStart);
 
-            if (result.requiredArtifacts.length > 0) {
-                result.requiredCount = String(result.requiredArtifacts.length);
+            for (const line of requiredLines) {
+                const checkedMatch = line.match(/^[-*]\s*\[x\]\s+(.*)$/i);
+                const uncheckedMatch = line.match(/^[-*]\s*\[\s\]\s+(.*)$/i);
+
+                if (checkedMatch) {
+                    const item = checkedMatch[1].trim();
+                    if (!result.producedArtefacts.includes(item)) {
+                        result.producedArtefacts.push(item);
+                    }
+                    continue;
+                }
+
+                if (uncheckedMatch) {
+                    const item = uncheckedMatch[1].trim();
+                    if (!result.missingArtefacts.includes(item)) {
+                        result.missingArtefacts.push(item);
+                    }
+                    continue;
+                }
             }
 
-            if (result.missingArtifacts.length > 0) {
-                result.missingCount = String(result.missingArtifacts.length);
+            for (const line of missingLines) {
+                const bulletMatch = line.match(/^[-*]\s+(.*)$/);
+                if (!bulletMatch) continue;
+
+                const item = bulletMatch[1].trim();
+                if (!result.missingArtefacts.includes(item)) {
+                    result.missingArtefacts.push(item);
+                }
+            }
+
+            if (result.producedArtefacts.length > 0) {
+                result.producedCount = String(result.producedArtefacts.length);
+            }
+
+            if (result.missingArtefacts.length > 0) {
+                result.missingCount = String(result.missingArtefacts.length);
             } else {
                 const produced = Number(result.producedCount);
                 const required = Number(result.requiredCount);
@@ -883,13 +887,8 @@ function parseChecklistMarkdown(markdownText) {
                 }
             }
 
-            if (result.producedArtifacts.length > 0) {
-                result.producedCount = String(result.producedArtifacts.length);
-            }
-
             return result;
         }
-        
 
         function renderChecklistList(items) {
             if (!items || items.length === 0) {
@@ -915,31 +914,27 @@ function parseChecklistMarkdown(markdownText) {
                         <div class="checklist-stat-value ${readinessClass}">${escapeHtml(data.readinessPercent)}</div>
                     </div>
                     <div class="checklist-stat">
-                        <span class="checklist-stat-label">Required Artifacts Total</span>
+                        <span class="checklist-stat-label">Required Artefacts Total</span>
                         <div class="checklist-stat-value">${escapeHtml(data.requiredCount)}</div>
                     </div>
                     <div class="checklist-stat">
-                        <span class="checklist-stat-label">Required Artifacts Produced</span>
+                        <span class="checklist-stat-label">Produced Required Artefacts</span>
                         <div class="checklist-stat-value">${escapeHtml(data.producedCount)}</div>
                     </div>
                     <div class="checklist-stat">
-                        <span class="checklist-stat-label">Missing Required Artifacts</span>
+                        <span class="checklist-stat-label">Missing Required Artefacts</span>
                         <div class="checklist-stat-value">${escapeHtml(data.missingCount)}</div>
                     </div>
                 </div>
 
                 <div class="checklist-columns">
                     <div class="checklist-panel">
-                        <h3>Required Artifacts</h3>
-                        ${renderChecklistList(data.requiredArtifacts)}
+                        <h3>Missing Required Artefacts</h3>
+                        ${renderChecklistList(data.missingArtefacts)}
                     </div>
                     <div class="checklist-panel">
-                        <h3>Missing Required Artifacts</h3>
-                        ${renderChecklistList(data.missingArtifacts)}
-                    </div>
-                    <div class="checklist-panel">
-                        <h3>Produced Required Artifacts</h3>
-                        ${renderChecklistList(data.producedArtifacts)}
+                        <h3>Produced Required Artefacts</h3>
+                        ${renderChecklistList(data.producedArtefacts)}
                     </div>
                 </div>
             `;
@@ -1089,6 +1084,7 @@ function parseChecklistMarkdown(markdownText) {
                 if (!response.ok) {
                     const errorText = await response.text();
                     renderEmptyFiles("Unable to load output files", errorText);
+                    await loadSubmissionChecklist(tenderId);
                     setStatus(`Failed to load outputs for ${tenderId}.`, "error");
                     return;
                 }
@@ -1135,6 +1131,7 @@ function parseChecklistMarkdown(markdownText) {
                 setStatus(`Loaded ${filteredFiles.length} visible output file${filteredFiles.length === 1 ? "" : "s"} for ${tenderId}.`, "success");
             } catch (error) {
                 renderEmptyFiles("Unexpected error", error.message || "An error occurred while loading outputs.");
+                await loadSubmissionChecklist(tenderId);
                 setStatus(error.message || "Unexpected error occurred.", "error");
             }
         }

@@ -22,69 +22,43 @@
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
+      "template_section": "3.3 Transition Approach",
       "matched_requirements": [
         "REQ-007"
       ],
-      "section_purpose": "To outline the project management methodology and governance structure.",
-      "response_guidance": "Describe the project management methodology, governance structure, and reporting approach.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "3.2 Service Management",
-      "matched_requirements": [
-        "REQ-010"
-      ],
-      "section_purpose": "To describe the service management framework and responsibilities.",
-      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "matched_requirements": [
-        "REQ-005"
-      ],
-      "section_purpose": "To describe the approach to transitioning services in and out.",
+      "section_purpose": "To outline the approach for transitioning services in and out.",
       "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-006",
-      "template_section": "2.1 Technical Approach",
+      "section_id": "SEC-004",
+      "template_section": "2.3 Security Approach",
       "matched_requirements": [
         "REQ-009"
       ],
-      "section_purpose": "To describe the technical approach to meet the stated requirements.",
-      "response_guidance": "Describe the proposed technical approach to meet the stated requirements.",
+      "section_purpose": "To describe the security framework and controls relevant to the engagement.",
+      "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-007",
-      "template_section": "4.2 Relevant Experience and Case Studies",
+      "section_id": "SEC-005",
+      "template_section": "4.3 Key Personnel",
       "matched_requirements": [
-        "REQ-003"
+        "REQ-010"
       ],
-      "section_purpose": "To demonstrate relevant experience through case studies.",
-      "response_guidance": "Provide two or more case studies demonstrating relevant experience. Reference case study files from `case_studies/`.",
+      "section_purpose": "To list key personnel with their roles and qualifications.",
+      "response_guidance": "List proposed key personnel with roles, qualifications, and relevant experience.",
       "headings_to_add": []
     },
     {
-      "section_id": "SEC-008",
-      "template_section": "headings_to_add",
+      "section_id": "SEC-006",
+      "template_section": "3.2 Service Management",
       "matched_requirements": [
-        "REQ-004",
-        "REQ-006",
-        "REQ-008"
+        "REQ-005"
       ],
-      "section_purpose": "To address requirements not fitting existing sections.",
-      "response_guidance": "Provide responses to the requirements as specified.",
-      "headings_to_add": [
-        "Quotation Lodgement",
-        "AIC Obligations",
-        "Reporting"
-      ]
+      "section_purpose": "To describe the service management framework and performance management.",
+      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
+      "headings_to_add": []
     }
   ]
 }

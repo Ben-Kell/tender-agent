@@ -3,7 +3,7 @@
     {
       "section_id": "SEC-001",
       "template_section": "5.1 Pricing Schedule",
-      "draft_text": "The Supplier's Quotation includes pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), and a Combination of T&M and Fixed Price. The detailed pricing schedule is provided in Annexure A, as specified in the tender documents.",
+      "draft_text": "The Supplier's Quotation is to include pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), Combination of T&M and Fixed Price, or Other. Complete the pricing schedule as specified in the tender. Reference annexes where required.",
       "requirements_covered": [
         "REQ-002"
       ],
@@ -14,7 +14,7 @@
     {
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier accepts the draft contract terms as outlined in the RFQ. A PDF copy of the Supplier's Deed of Undertaking, duly signed, is included as part of the Quotation submission.",
+      "draft_text": "Quotations are to include a PDF copy of the Supplier’s Deed of Undertaking in the form attached duly signed by the Supplier. State acceptance of, or proposed deviations from, the draft contract terms.",
       "requirements_covered": [
         "REQ-001"
       ],
@@ -24,34 +24,10 @@
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3.1 Project Management",
-      "draft_text": "The Supplier will provide each Plan in accordance with the COD and as set out in the Work Order. Our project management methodology is aligned with industry best practices, ensuring effective governance and reporting throughout the project lifecycle.",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "The Supplier must deliver the following Plans: Australian Industry Capability (AIC) Plan in accordance with Annexure G to this SOW; Transition-In Plan prepared in accordance with Annexure H to this SOW; Phase-Out Plan prepared in accordance with Annexure I to this SOW; Supplier Risk Management Plan in accordance with Annexure J to this SOW; Service Management Plan in accordance with Annexure L to this SOW; Disaster Recovery Plan in accordance with Annexure N to this SOW; Test Plan in accordance with Annexure P to this SOW. Describe the approach to transition-in and, if applicable, transition-out.",
       "requirements_covered": [
         "REQ-007"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "3.2 Service Management",
-      "draft_text": "Responsibility for maintaining the DDM services suite lies with the Directorate of Digital Identity Services (DDIS) within Enterprise Technology Operations Branch (ETOB). The Supplier will adhere to the service management framework, including ITSM processes, SLAs, and escalation paths.",
-      "requirements_covered": [
-        "REQ-010"
-      ],
-      "used_boilerplate": [
-        "service_management.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-005",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "The Supplier will ensure that all Services are provided in accordance with the Deed and the Work Order, achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates. Our transition approach includes structured phases to ensure seamless transition-in and transition-out processes.",
-      "requirements_covered": [
-        "REQ-005"
       ],
       "used_boilerplate": [
         "transition_approach.md"
@@ -60,46 +36,41 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-006",
-      "template_section": "2.1 Technical Approach",
-      "draft_text": "The Supplier acknowledges that eTools has undergone consistent development and enhancement over the years to meet urgent business and security needs. We will address any documentation misalignments identified during the software development lifecycle to ensure full alignment with industry standards.",
+      "section_id": "SEC-004",
+      "template_section": "2.3 Security Approach",
+      "draft_text": "The Commonwealth’s security arrangements impacting the Services are: Sustainment of eTools and DDM must be undertaken from a Physical Zone 3 (as certified under the DSPF) or higher site. Describe the security framework, controls, and certifications relevant to this engagement.",
       "requirements_covered": [
         "REQ-009"
       ],
+      "used_boilerplate": [
+        "security_capability.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-005",
+      "template_section": "4.3 Key Personnel",
+      "draft_text": "The Supplier will provide Key Persons for the following Key Positions. List proposed key personnel with roles, qualifications, and relevant experience.",
+      "requirements_covered": [
+        "REQ-010"
+      ],
       "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     },
     {
-      "section_id": "SEC-007",
-      "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "The Supplier's past performance will be evaluated based on methodology, past performance, technical merit, pricing, and compliance. We have included two case studies demonstrating our ability to deliver similar services successfully.",
+      "section_id": "SEC-006",
+      "template_section": "3.2 Service Management",
+      "draft_text": "The Supplier agrees and acknowledges that the Commonwealth will inform the Supplier, as soon as practicable after each Performance Review, of the Supplier’s Achieved Performance for each KPI for the relevant Review Period and whether the Supplier is required to undertake any course of action in relation to its performance. Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
       "requirements_covered": [
-        "REQ-003"
+        "REQ-005"
       ],
-      "used_boilerplate": [],
-      "used_case_studies": [
-        "dict_case_study.md",
-        "nds_case_study.md"
+      "used_boilerplate": [
+        "service_management.md"
       ],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-008",
-      "template_section": "headings_to_add",
-      "draft_text": "Quotations are to be lodged electronically via AusTender before the Closing Time. The Supplier agrees to complete and submit for Approval an AIC Schedule or AIC Plan as applicable. Reports will be provided in a format agreed between the parties.",
-      "requirements_covered": [
-        "REQ-004",
-        "REQ-006",
-        "REQ-008"
-      ],
-      "used_boilerplate": [],
       "used_case_studies": [],
-      "headings_added": [
-        "Quotation Lodgement",
-        "AIC Obligations",
-        "Reporting"
-      ]
+      "headings_added": []
     }
   ]
 }
