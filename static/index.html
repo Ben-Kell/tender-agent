@@ -844,32 +844,35 @@
 
             for (const line of requiredLines) {
                 const checkedMatch = line.match(/^[-*]\s*\[x\]\s+(.*)$/i);
-                const uncheckedMatch = line.match(/^[-*]\s*\[\s\]\s+(.*)$/i);
 
                 if (checkedMatch) {
                     const item = checkedMatch[1].trim();
                     if (!result.producedArtefacts.includes(item)) {
                         result.producedArtefacts.push(item);
                     }
-                    continue;
-                }
-
-                if (uncheckedMatch) {
-                    const item = uncheckedMatch[1].trim();
-                    if (!result.missingArtefacts.includes(item)) {
-                        result.missingArtefacts.push(item);
-                    }
-                    continue;
                 }
             }
 
-            for (const line of missingLines) {
-                const bulletMatch = line.match(/^[-*]\s+(.*)$/);
-                if (!bulletMatch) continue;
+            if (missingLines.length > 0) {
+                for (const line of missingLines) {
+                    const bulletMatch = line.match(/^[-*]\s+(.*)$/);
+                    if (!bulletMatch) continue;
 
-                const item = bulletMatch[1].trim();
-                if (!result.missingArtefacts.includes(item)) {
-                    result.missingArtefacts.push(item);
+                    const item = bulletMatch[1].trim();
+                    if (!result.missingArtefacts.includes(item)) {
+                        result.missingArtefacts.push(item);
+                    }
+                }
+            } else {
+                for (const line of requiredLines) {
+                    const uncheckedMatch = line.match(/^[-*]\s*\[\s\]\s+(.*)$/i);
+
+                    if (uncheckedMatch) {
+                        const item = uncheckedMatch[1].trim();
+                        if (!result.missingArtefacts.includes(item)) {
+                            result.missingArtefacts.push(item);
+                        }
+                    }
                 }
             }
 

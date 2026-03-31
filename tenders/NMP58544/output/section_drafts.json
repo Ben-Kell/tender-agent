@@ -2,96 +2,76 @@
   "sections": [
     {
       "section_id": "SEC-001",
-      "template_section": "2. Technical Response",
-      "draft_text": "The Supplier will deliver services aligned with ITIL v4 to ensure consistency of service and quality. This includes managing the Commonwealth's server, network, and Application Software effectively. The Supplier will ensure that all technical solutions proposed are compatible with the existing ICT environment and meet the specified requirements.",
+      "template_section": "5.1 Pricing Schedule",
+      "draft_text": "The Supplier's Quotation includes pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), and a Combination of T&M and Fixed Price. Detailed pricing information is provided in the attached annexes, ensuring compliance with the tender requirements.",
       "requirements_covered": [
-        "REQ-018",
-        "REQ-019"
+        "REQ-002"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
-      "headings_added": [
-        "Technology – Service Attributes",
-        "Technology – Applications"
-      ]
+      "headings_added": []
     },
     {
       "section_id": "SEC-002",
-      "template_section": "3. Management Response",
-      "draft_text": "The Supplier will implement a robust performance management framework, ensuring that all KPIs are met and performance reviews are conducted regularly. Detailed plans will be developed and maintained to guide the project, with regular meetings scheduled to assess progress. Comprehensive reporting will be provided to the Commonwealth in agreed formats.",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "The Supplier accepts the draft contract terms as outlined in the RFQ. A PDF copy of the Supplier's Deed of Undertaking, duly signed, is included as part of this submission, in compliance with the tender requirements.",
       "requirements_covered": [
-        "REQ-009",
-        "REQ-010",
-        "REQ-013",
-        "REQ-014",
-        "REQ-015"
-      ],
-      "used_boilerplate": [
-        "service_management.md",
-        "transition_approach.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": [
-        "Performance Management",
-        "Performance Measures",
-        "Plans",
-        "Meetings",
-        "Reporting"
-      ]
-    },
-    {
-      "section_id": "SEC-003",
-      "template_section": "4. Corporate Response",
-      "draft_text": "The Supplier is committed to fulfilling the Australian Industry Capability (AIC) obligations. An AIC Schedule or Plan will be submitted as required, detailing the Supplier's strategy to maximize Australian industry participation.",
-      "requirements_covered": [
-        "REQ-011"
-      ],
-      "used_boilerplate": [
-        "corporate_overview.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": [
-        "AIC Obligations"
-      ]
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "5. Commercial Response",
-      "draft_text": "The Supplier's quotation is structured to meet the Commonwealth's requirements, with pricing information provided in 'Quotation Attachment A'. The Supplier will adhere to the evaluation criteria and is open to discussing alternative proposals that align with the Commonwealth's objectives.",
-      "requirements_covered": [
-        "REQ-001",
-        "REQ-003",
-        "REQ-008"
+        "REQ-001"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
-      "headings_added": [
-        "Quotation format",
-        "Evaluation Criteria",
-        "Alternative Proposal"
-      ]
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "3.1 Project Management",
+      "draft_text": "The Supplier will employ a robust project management methodology aligned with industry best practices to ensure successful delivery of the services. Our governance structure includes regular performance reviews and reporting to the Commonwealth, detailing compliance with Performance Measures and the Work Order. This approach ensures transparency and accountability, fostering continuous improvement.",
+      "requirements_covered": [
+        "REQ-005",
+        "REQ-009"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "3.2 Service Management",
+      "draft_text": "The Supplier will deliver managed services using an ITIL-aligned service management framework. This includes comprehensive ITSM processes, SLAs, and defined escalation paths to ensure consistent service delivery. Our approach is designed to meet the Commonwealth's requirements and support operational efficiency.",
+      "requirements_covered": [
+        "REQ-007"
+      ],
+      "used_boilerplate": [
+        "service_management.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
     },
     {
       "section_id": "SEC-005",
-      "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier confirms compliance with all legal and policy requirements, including the management of Intellectual Property as per the Work Order. The Supplier will adhere to additional standards and demonstrate full compliance with the Digital Service Standard.",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "The Supplier's transition approach is structured to ensure a seamless transition-in and transition-out process. This includes detailed planning, risk management, and stakeholder engagement to maintain service continuity and minimise disruption.",
       "requirements_covered": [
-        "REQ-004",
-        "REQ-005",
-        "REQ-012",
-        "REQ-016",
-        "REQ-017"
+        "REQ-007"
+      ],
+      "used_boilerplate": [
+        "transition_approach.md"
+      ],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-006",
+      "template_section": "2.3 Security Approach",
+      "draft_text": "The Supplier will undertake sustainment of eTools and DDM from a Physical Zone 3 or higher site, as certified under the DSPF. Our security framework includes comprehensive controls and certifications to ensure compliance with the Commonwealth's security requirements.",
+      "requirements_covered": [
+        "REQ-010"
       ],
       "used_boilerplate": [
         "security_capability.md"
       ],
       "used_case_studies": [],
-      "headings_added": [
-        "Australian Government requirements",
-        "Intellectual Property",
-        "Additional Standards and Policy Requirements",
-        "Digital Service Standard"
-      ]
+      "headings_added": []
     }
   ]
 }
