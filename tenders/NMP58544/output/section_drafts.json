@@ -2,39 +2,43 @@
   "sections": [
     {
       "section_id": "SEC-001",
-      "template_section": "2. Technical Response",
-      "draft_text": "The proposed services will ensure compatibility with the Commonwealth's existing ICT environment, including any impacted Existing Systems, as required by REQ-011. Our approach includes delivering a comprehensive Test Plan, as outlined in REQ-023, to be approved by the Commonwealth. This plan will detail the testing methodologies and schedules to ensure all services meet the required standards. Furthermore, our service delivery will align with ITIL v4 standards to ensure consistency and quality, as specified in REQ-032. We will provide the services with respect to Commonwealth server, network, and Application Software, ensuring seamless integration and operation, as per REQ-033.",
+      "template_section": "5.1 Pricing Schedule",
+      "draft_text": "The Supplier's Quotation includes pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), and a Combination of T&M and Fixed Price. The detailed pricing schedule is provided in Annexure A, as specified in the tender documents.",
       "requirements_covered": [
-        "REQ-011",
-        "REQ-023",
-        "REQ-032",
-        "REQ-033"
+        "REQ-002"
       ],
-      "used_boilerplate": [
-        "security_capability.md"
-      ],
+      "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     },
     {
       "section_id": "SEC-002",
-      "template_section": "3. Management Response",
-      "draft_text": "Our service delivery approach is designed to meet all specifications, laws, authorisations, performance measures, milestones, and timeframes as outlined in REQ-010. Services will be delivered across specified geographic locations, including Anzac Park West, Russell Offices, and RAAF Williams, as detailed in REQ-014, REQ-015, and REQ-016. We will ensure that all services are consistent with the Deed Objectives and minimise any risks or disruptions to the Commonwealth, as required by REQ-012 and REQ-013. Performance management will be conducted in accordance with the Performance Management Framework, ensuring all performance measures are met, as specified in REQ-027. Regular performance reviews and reporting will be conducted to assess and discuss service delivery, as outlined in REQ-028 and REQ-029.",
+      "template_section": "5.2 Commercial Terms",
+      "draft_text": "The Supplier accepts the draft contract terms as outlined in the RFQ. A PDF copy of the Supplier's Deed of Undertaking, duly signed, is included as part of the Quotation submission.",
       "requirements_covered": [
-        "REQ-009",
-        "REQ-010",
-        "REQ-012",
-        "REQ-013",
-        "REQ-014",
-        "REQ-015",
-        "REQ-016",
-        "REQ-017",
-        "REQ-018",
-        "REQ-022",
-        "REQ-026",
-        "REQ-027",
-        "REQ-028",
-        "REQ-029"
+        "REQ-001"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "3.1 Project Management",
+      "draft_text": "The Supplier will provide each Plan in accordance with the COD and as set out in the Work Order. Our project management methodology is aligned with industry best practices, ensuring effective governance and reporting throughout the project lifecycle.",
+      "requirements_covered": [
+        "REQ-007"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-004",
+      "template_section": "3.2 Service Management",
+      "draft_text": "Responsibility for maintaining the DDM services suite lies with the Directorate of Digital Identity Services (DDIS) within Enterprise Technology Operations Branch (ETOB). The Supplier will adhere to the service management framework, including ITSM processes, SLAs, and escalation paths.",
+      "requirements_covered": [
+        "REQ-010"
       ],
       "used_boilerplate": [
         "service_management.md"
@@ -43,32 +47,33 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-003",
-      "template_section": "4. Corporate Response",
-      "draft_text": "Our approach to personnel management includes clear procedures for the stand down of personnel, as outlined in REQ-021. This ensures that we can efficiently manage workforce adjustments while maintaining service continuity and compliance with contractual obligations.",
+      "section_id": "SEC-005",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "The Supplier will ensure that all Services are provided in accordance with the Deed and the Work Order, achieving the Milestones and/or Critical Milestones by the relevant Milestone Dates. Our transition approach includes structured phases to ensure seamless transition-in and transition-out processes.",
       "requirements_covered": [
-        "REQ-021"
+        "REQ-005"
       ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-004",
-      "template_section": "5. Commercial Response",
-      "draft_text": "We confirm that our pricing information is provided as a separate attachment, marked 'Quotation Attachment A – Work Order Price & Payment Arrangements', in compliance with REQ-001. Our pricing structure is designed to ensure value for money while meeting all service delivery requirements. We accept the commercial terms as outlined in the tender documents, ensuring compliance with all relevant legal and policy requirements.",
-      "requirements_covered": [
-        "REQ-001",
-        "REQ-020"
+      "used_boilerplate": [
+        "transition_approach.md"
       ],
-      "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
     },
     {
       "section_id": "SEC-006",
+      "template_section": "2.1 Technical Approach",
+      "draft_text": "The Supplier acknowledges that eTools has undergone consistent development and enhancement over the years to meet urgent business and security needs. We will address any documentation misalignments identified during the software development lifecycle to ensure full alignment with industry standards.",
+      "requirements_covered": [
+        "REQ-009"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
       "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "Our past performance demonstrates our capability to deliver similar services effectively. We have included case studies that highlight our ability to meet challenging timeframes and adapt to changes through innovation and continuous improvement, as required by REQ-003.",
+      "draft_text": "The Supplier's past performance will be evaluated based on methodology, past performance, technical merit, pricing, and compliance. We have included two case studies demonstrating our ability to deliver similar services successfully.",
       "requirements_covered": [
         "REQ-003"
       ],
@@ -80,53 +85,21 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-007",
-      "template_section": "5.2 Commercial Terms",
-      "draft_text": "We confirm compliance with all legal requirements, including those related to unpaid employee entitlements and the Workplace Gender Equality Act 2012 (Cth), as specified in REQ-004 and REQ-005. Additionally, we will adhere to all additional standards and policy requirements outlined in REQ-030 and REQ-031.",
+      "section_id": "SEC-008",
+      "template_section": "headings_to_add",
+      "draft_text": "Quotations are to be lodged electronically via AusTender before the Closing Time. The Supplier agrees to complete and submit for Approval an AIC Schedule or AIC Plan as applicable. Reports will be provided in a format agreed between the parties.",
       "requirements_covered": [
         "REQ-004",
-        "REQ-005",
-        "REQ-030",
-        "REQ-031"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-008",
-      "template_section": "3.2 Service Management",
-      "draft_text": "The Commonwealth will provide Government Furnished Materials, Facilities, and Services as outlined in REQ-019. We will utilize these resources effectively to ensure seamless service management and delivery.",
-      "requirements_covered": [
-        "REQ-019"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-009",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "We are prepared to manage and submit alternative proposals in accordance with the requirements specified in REQ-008. Our transition approach ensures that any alternative proposals are integrated smoothly into the overall service delivery framework.",
-      "requirements_covered": [
+        "REQ-006",
         "REQ-008"
       ],
-      "used_boilerplate": [
-        "transition_approach.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-010",
-      "template_section": "4.3 Key Personnel",
-      "draft_text": "We will manage Intellectual Property rights and restrictions in accordance with clause 5 of the COD and the Work Order, as required by REQ-025. This includes ensuring that all technical data and software rights are appropriately managed and protected.",
-      "requirements_covered": [
-        "REQ-025"
-      ],
       "used_boilerplate": [],
       "used_case_studies": [],
-      "headings_added": []
+      "headings_added": [
+        "Quotation Lodgement",
+        "AIC Obligations",
+        "Reporting"
+      ]
     }
   ]
 }
