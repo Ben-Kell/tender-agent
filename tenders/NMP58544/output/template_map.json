@@ -2,63 +2,84 @@
   "sections": [
     {
       "section_id": "SEC-001",
-      "template_section": "5.1 Pricing Schedule",
+      "template_section": "2. Technical Response",
       "matched_requirements": [
-        "REQ-002"
+        "REQ-018",
+        "REQ-019"
       ],
-      "section_purpose": "To provide detailed pricing information as required by the tender.",
-      "response_guidance": "Complete the pricing schedule as specified in the tender. Reference annexes where required.",
-      "headings_to_add": []
+      "section_purpose": "To detail the technical aspects and requirements of the proposed solution.",
+      "response_guidance": "Describe how the services will be delivered in alignment with ITIL v4 and manage Commonwealth server, network, and Application Software.",
+      "headings_to_add": [
+        "Technology – Service Attributes",
+        "Technology – Applications"
+      ]
     },
     {
       "section_id": "SEC-002",
-      "template_section": "5.2 Commercial Terms",
+      "template_section": "3. Management Response",
       "matched_requirements": [
-        "REQ-001"
+        "REQ-009",
+        "REQ-010",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015"
       ],
-      "section_purpose": "To confirm acceptance or propose deviations from the draft contract terms.",
-      "response_guidance": "State acceptance of, or proposed deviations from, the draft contract terms.",
-      "headings_to_add": []
+      "section_purpose": "To outline the management and governance structures supporting the project.",
+      "response_guidance": "Explain the performance management, planning, meeting schedules, and reporting requirements.",
+      "headings_to_add": [
+        "Performance Management",
+        "Performance Measures",
+        "Plans",
+        "Meetings",
+        "Reporting"
+      ]
     },
     {
       "section_id": "SEC-003",
-      "template_section": "3.3 Transition Approach",
+      "template_section": "4. Corporate Response",
       "matched_requirements": [
-        "REQ-007"
+        "REQ-011"
       ],
-      "section_purpose": "To outline the approach for transitioning services in and out.",
-      "response_guidance": "Describe the approach to transition-in and, if applicable, transition-out.",
-      "headings_to_add": []
+      "section_purpose": "To demonstrate the supplier's corporate capabilities and compliance with industry standards.",
+      "response_guidance": "Provide details on the AIC obligations and how they will be met.",
+      "headings_to_add": [
+        "AIC Obligations"
+      ]
     },
     {
       "section_id": "SEC-004",
-      "template_section": "2.3 Security Approach",
+      "template_section": "5. Commercial Response",
       "matched_requirements": [
-        "REQ-009"
+        "REQ-001",
+        "REQ-003",
+        "REQ-008"
       ],
-      "section_purpose": "To describe the security framework and controls relevant to the engagement.",
-      "response_guidance": "Describe the security framework, controls, and certifications relevant to this engagement.",
-      "headings_to_add": []
+      "section_purpose": "To address the commercial aspects of the proposal, including pricing and compliance with tender requirements.",
+      "response_guidance": "Include pricing information, evaluation criteria, and any alternative proposals.",
+      "headings_to_add": [
+        "Quotation format",
+        "Evaluation Criteria",
+        "Alternative Proposal"
+      ]
     },
     {
       "section_id": "SEC-005",
-      "template_section": "4.3 Key Personnel",
+      "template_section": "5.2 Commercial Terms",
       "matched_requirements": [
-        "REQ-010"
+        "REQ-004",
+        "REQ-005",
+        "REQ-012",
+        "REQ-016",
+        "REQ-017"
       ],
-      "section_purpose": "To list key personnel with their roles and qualifications.",
-      "response_guidance": "List proposed key personnel with roles, qualifications, and relevant experience.",
-      "headings_to_add": []
-    },
-    {
-      "section_id": "SEC-006",
-      "template_section": "3.2 Service Management",
-      "matched_requirements": [
-        "REQ-005"
-      ],
-      "section_purpose": "To describe the service management framework and performance management.",
-      "response_guidance": "Describe the service management framework, including ITSM processes, SLAs, and escalation paths.",
-      "headings_to_add": []
+      "section_purpose": "To ensure compliance with legal and policy requirements.",
+      "response_guidance": "State compliance with legal requirements, intellectual property management, and additional standards.",
+      "headings_to_add": [
+        "Australian Government requirements",
+        "Intellectual Property",
+        "Additional Standards and Policy Requirements",
+        "Digital Service Standard"
+      ]
     }
   ]
 }
