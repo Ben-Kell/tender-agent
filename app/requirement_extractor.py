@@ -58,7 +58,7 @@ def extract_requirements_from_chunk(
             f"Chunk too large before sending to model: {doc_name} chunk {chunk_index}"
         )
 
-    prompt = load_prompt("extract_requirements")
+    prompt = load_prompt("extract_requirements.md")
 
     user_prompt = f"""
 Document name: {doc_name}
@@ -113,7 +113,7 @@ def extract_requirements_from_documents(
         if not doc_text.strip():
             continue
 
-        chunks = split_text_into_chunks(doc_text, max_chars=12000, overlap=1000)
+        chunks = split_text_into_chunks(doc_text, max_chars=20000, overlap=1200)
         print(f"[extract] {doc_name}: {len(chunks)} chunk(s)")
 
         for i, chunk in enumerate(chunks, start=1):
