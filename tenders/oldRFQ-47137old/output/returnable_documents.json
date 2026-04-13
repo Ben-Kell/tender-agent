@@ -170,6 +170,20 @@
       "score": -999
     },
     {
+      "filename": "Schedule A – Statement of Work.md",
+      "original_filename": "Schedule A – Statement of Work",
+      "is_returnable": false,
+      "confidence": 0.99,
+      "document_type": "statement_of_work",
+      "reasons": [
+        "Hard rule: filename identified as a Statement of Work document, which is not returnable"
+      ],
+      "key_signals": {
+        "override": "statement_of_work_filename"
+      },
+      "score": -999
+    },
+    {
       "filename": "RFQ 47137 Addendum 1.md",
       "original_filename": "RFQ 47137 Addendum 1.pdf",
       "is_returnable": false,
@@ -207,8 +221,8 @@
     }
   ],
   "summary": {
-    "total_documents": 8,
+    "total_documents": 9,
     "returnable_documents": 5,
-    "reference_only_documents": 3
+    "reference_only_documents": 4
   }
 }

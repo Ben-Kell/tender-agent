@@ -3,9 +3,10 @@
     {
       "section_id": "SEC-001",
       "template_section": "5.1 Pricing Schedule",
-      "draft_text": "The Supplier's Quotation includes pricing on the basis of Fixed Price, Outcome Based T&M (capped at a NTE Price), Time and Materials (T&M) (capped at a NTE Price), and a Combination of T&M and Fixed Price. Detailed pricing information is provided in the attached annexes, ensuring compliance with the tender requirements.",
+      "draft_text": "The pricing schedule is completed in accordance with the tender requirements. Pricing is provided on a Fixed Price basis, with options for Outcome Based T&M and Time and Materials, capped at a Not-To-Exceed (NTE) Price. Detailed pricing information is included in 'Quotation Attachment A – Work Order Price & Payment Arrangements'.",
       "requirements_covered": [
-        "REQ-002"
+        "REQ-001",
+        "REQ-003"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
@@ -14,7 +15,19 @@
     {
       "section_id": "SEC-002",
       "template_section": "5.2 Commercial Terms",
-      "draft_text": "The Supplier accepts the draft contract terms and acknowledges the requirement to complete and submit an AIC Schedule or AIC Plan, as applicable, based on the Work Order value. The Supplier is committed to fulfilling all AIC Obligations as specified by the Commonwealth.",
+      "draft_text": "We confirm acceptance of the draft contract terms, ensuring compliance with all legal requirements, including the management of Intellectual Property as per the Work Order. We affirm that there are no judicial decisions against us relating to unpaid employee entitlements, and we are compliant with the Workplace Gender Equality Act 2012 (Cth).",
+      "requirements_covered": [
+        "REQ-005",
+        "REQ-009"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    },
+    {
+      "section_id": "SEC-003",
+      "template_section": "3.1 Project Management",
+      "draft_text": "Our project management approach is structured around a robust governance framework, ensuring clear reporting and accountability. Performance will be reviewed regularly, with the Commonwealth informed of Achieved Performance for each KPI and any required actions.",
       "requirements_covered": [
         "REQ-007"
       ],
@@ -23,11 +36,11 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-003",
+      "section_id": "SEC-004",
       "template_section": "4.2 Relevant Experience and Case Studies",
-      "draft_text": "The Supplier provides two case studies demonstrating relevant experience in delivering similar services. These case studies highlight our methodology, past performance, technical merit, and compliance with pricing structures. Detailed case studies are attached in the `case_studies/` directory.",
+      "draft_text": "We provide two case studies demonstrating our capability to deliver similar services. These case studies highlight our methodology, past performance, and technical merit, aligning with the evaluation criteria of the tender.",
       "requirements_covered": [
-        "REQ-003"
+        "REQ-004"
       ],
       "used_boilerplate": [],
       "used_case_studies": [
@@ -37,49 +50,11 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-004",
-      "template_section": "3.1 Project Management",
-      "draft_text": "The Supplier employs a robust project management methodology, supported by a governance structure that ensures effective reporting and performance management. Monthly performance reviews will be attended to assess and discuss performance against agreed measures.",
-      "requirements_covered": [
-        "REQ-006",
-        "REQ-010"
-      ],
-      "used_boilerplate": [
-        "service_management.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
       "section_id": "SEC-005",
-      "template_section": "4.1 Corporate Overview",
-      "draft_text": "The Supplier confirms compliance with all Australian Government requirements, including the absence of any judicial decisions relating to unpaid employee entitlements. A detailed corporate overview is provided, outlining our background, size, and structure.",
-      "requirements_covered": [
-        "REQ-005"
-      ],
-      "used_boilerplate": [
-        "corporate_overview.md"
-      ],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-006",
-      "template_section": "2.2 Solution Architecture",
-      "draft_text": "The proposed solution architecture is designed to meet the requirements of the Work Order, with a focus on managing Intellectual Property in accordance with clause 5 of the COD. Detailed architectural diagrams are included to illustrate the solution.",
+      "template_section": "3.3 Transition Approach",
+      "draft_text": "Our transition approach ensures a seamless transition-in, with a structured plan for transition-out if required. We will complete and submit the AIC Schedule or Plan as specified, ensuring compliance with all AIC obligations.",
       "requirements_covered": [
         "REQ-008"
-      ],
-      "used_boilerplate": [],
-      "used_case_studies": [],
-      "headings_added": []
-    },
-    {
-      "section_id": "SEC-007",
-      "template_section": "3.3 Transition Approach",
-      "draft_text": "The Supplier's transition approach ensures a seamless transition-in and transition-out process, with detailed plans provided for each phase. All required plans will be delivered in accordance with the Work Order specifications.",
-      "requirements_covered": [
-        "REQ-009"
       ],
       "used_boilerplate": [
         "transition_approach.md"
@@ -88,16 +63,29 @@
       "headings_added": []
     },
     {
-      "section_id": "SEC-008",
-      "template_section": "Cover Page",
-      "draft_text": "The Supplier's Deed of Undertaking is included as a PDF, duly signed, and all quotations will be lodged electronically via AusTender before the specified Closing Time.",
+      "section_id": "SEC-006",
+      "template_section": "2.1 Technical Approach",
+      "draft_text": "Our technical approach is designed to meet all stated requirements, with detailed plans provided in accordance with the COD and Work Order. This ensures alignment with the tender's technical and planning expectations.",
       "requirements_covered": [
-        "REQ-001",
-        "REQ-004"
+        "REQ-010"
       ],
       "used_boilerplate": [],
       "used_case_studies": [],
       "headings_added": []
+    },
+    {
+      "section_id": "SEC-007",
+      "template_section": "Submission Process",
+      "draft_text": "Quotations will be lodged electronically via AusTender, ensuring compliance with the specified procedures and deadlines. This process guarantees timely and secure submission of all required documents.",
+      "requirements_covered": [
+        "REQ-002",
+        "REQ-006"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": [
+        "Submission Process"
+      ]
     }
   ]
 }

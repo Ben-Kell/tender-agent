@@ -277,7 +277,7 @@
 
         .button-row {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
         }
 
@@ -635,7 +635,7 @@
                 <div class="button-row">
                     <button class="btn-secondary" id="btn-upload" onclick="uploadTenderDocuments()">Upload Tender Documents</button>
                     <button class="btn-primary" id="btn-create" onclick="createTender()">Create Tender</button>
-
+                    <button class="btn-secondary" id="btn-returnables" onclick="detectReturnables()">Detect Returnables</button>
                     <button class="btn-accent" id="btn-run" onclick="runFullPipeline()">Run Full Pipeline</button>
                     <button class="btn-ghost" id="btn-refresh" onclick="refreshOutputs()">Refresh Outputs</button>
                 </div>
@@ -713,7 +713,7 @@
         }
 
         function setButtonsDisabled(isDisabled) {
-            ["btn-create", "btn-upload", "btn-run", "btn-refresh"].forEach(id => {
+            ["btn-upload", "btn-create", "btn-returnables", "btn-run", "btn-refresh"].forEach(id => {
                 document.getElementById(id).disabled = isDisabled;
             });
         }
@@ -1063,7 +1063,6 @@
                 setButtonsDisabled(false);
             }
         }
-
 
         async function createTender() {
             const tenderId = getTenderId();
