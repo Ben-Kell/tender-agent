@@ -300,6 +300,92 @@ Return raw JSON only in this structure:
         "current_step": RUNS[run_id]["current_step"],
         "result": RUNS[run_id]["result"],
     }
+def _draft_single_section(
+    tender_id: str,
+    template_text: str,
+    tender_metadata: dict,
+    section: dict,
+    requirements: list,
+    boilerplate_docs: list,
+    case_study_docs: list,
+) -> dict:
+    system_prompt = load_prompt("system_instructions.md")
+    draft_prompt = load_prompt("draft_sections.md")
+
+    section_name = section.get("template_section", "").strip()
+    matched_requirement_ids = section.get("matched_requirements", [])
+
+    matched_requirements = [
+        req for req in requirements
+        if req.get("requirement_id") in matched_requirement_ids
+    ]
+
+    user_prompt = f"""
+TASK:
+{draft_prompt}
+
+TENDER ID:
+{tender_id}
+
+SECTION TO DRAFT:
+{json.dumps(section, indent=2)}
+
+RESPONSE TEMPLATE:
+{template_text}
+
+TENDER METADATA:
+{json.dumps(tender_metadata, indent=2)}
+
+MATCHED REQUIREMENTS:
+{json.dumps(matched_requirements, indent=2)}
+
+BOILERPLATE:
+{json.dumps(boilerplate_docs, indent=2)}
+
+CASE STUDIES:
+{json.dumps(case_study_docs, indent=2)}
+
+Return raw JSON only in this structure:
+{{
+  "section_id": "{section.get('section_id', '')}",
+  "template_section": "{section_name}",
+  "draft_text": "Draft response text here",
+  "requirements_covered": ["REQ-001", "REQ-004"],
+  "used_boilerplate": ["file1.md"],
+  "used_case_studies": ["case1.md"],
+  "headings_added": ["Optional heading"]
+}}
+
+Do not include an Executive Summary section.
+""".strip()
+
+    raw_output = chat(system_prompt, user_prompt)
+    cleaned_output = raw_output.strip()
+
+    if cleaned_output.startswith("```json"):
+        cleaned_output = cleaned_output[len("```json"):].strip()
+    elif cleaned_output.startswith("```"):
+        cleaned_output = cleaned_output[len("```"):].strip()
+
+    if cleaned_output.endswith("```"):
+        cleaned_output = cleaned_output[:-3].strip()
+
+    try:
+        parsed = json.loads(cleaned_output)
+        return parsed
+    except json.JSONDecodeError:
+        return {
+            "section_id": section.get("section_id", ""),
+            "template_section": section_name,
+            "draft_text": "",
+            "requirements_covered": [],
+            "used_boilerplate": [],
+            "used_case_studies": [],
+            "headings_added": [],
+            "error": "Failed to parse model output as JSON",
+            "raw_output": raw_output,
+        }
+
 
 def draft_sections(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -340,84 +426,29 @@ def draft_sections(config: dict) -> dict:
 
         boilerplate_docs = load_boilerplate_docs()
         case_study_docs = load_case_studies()
-        tender_docs = load_normalised_tender_docs(tender_id)
-
-        system_prompt = load_prompt("system_instructions.md")
-        draft_prompt = load_prompt("draft_sections.md")
 
         RUNS[run_id]["current_step"] = "drafting_sections"
 
-        user_prompt = f"""
-TASK:
-{draft_prompt}
+        drafted_sections = []
 
-TENDER ID:
-{tender_id}
+        for index, section in enumerate(filtered_mapped_sections, start=1):
+            section_name = section.get("template_section", f"Section {index}")
+            print(f"[draft_sections] Drafting {index}/{len(filtered_mapped_sections)}: {section_name}")
 
-RESPONSE TEMPLATE:
-{template_text}
+            drafted_section = _draft_single_section(
+                tender_id=tender_id,
+                template_text=template_text,
+                tender_metadata=tender_metadata,
+                section=section,
+                requirements=requirements,
+                boilerplate_docs=boilerplate_docs,
+                case_study_docs=case_study_docs,
+            )
 
-TENDER DOCUMENTS:
-{json.dumps(tender_docs, indent=2)}
+            if drafted_section.get("template_section", "").strip() not in SKIP_AUTO_DRAFT_SECTIONS:
+                drafted_sections.append(drafted_section)
 
-EXTRACTED REQUIREMENTS:
-{json.dumps(requirements, indent=2)}
-
-TEMPLATE MAP:
-{json.dumps(filtered_mapped_sections, indent=2)}
-
-BOILERPLATE:
-{json.dumps(boilerplate_docs, indent=2)}
-
-CASE STUDIES:
-{json.dumps(case_study_docs, indent=2)}
-
-Return raw JSON only in this structure:
-{{
-  "sections": [
-    {{
-      "section_id": "SEC-002",
-      "template_section": "Technical Response",
-      "draft_text": "Draft response text here",
-      "requirements_covered": ["REQ-001", "REQ-004"],
-      "used_boilerplate": ["file1.md"],
-      "used_case_studies": ["case1.md"],
-      "headings_added": ["Optional heading"]
-    }}
-  ]
-}}
-
-Do not include an Executive Summary section.
-"""
-
-        raw_output = chat(system_prompt, user_prompt)
-
-        cleaned_output = raw_output.strip()
-
-        if cleaned_output.startswith("```json"):
-            cleaned_output = cleaned_output[len("```json"):].strip()
-        elif cleaned_output.startswith("```"):
-            cleaned_output = cleaned_output[len("```"):].strip()
-
-        if cleaned_output.endswith("```"):
-            cleaned_output = cleaned_output[:-3].strip()
-
-        try:
-            parsed = json.loads(cleaned_output)
-
-            parsed_sections = parsed.get("sections", [])
-            parsed["sections"] = [
-                section
-                for section in parsed_sections
-                if section.get("template_section", "").strip() not in SKIP_AUTO_DRAFT_SECTIONS
-            ]
-
-        except json.JSONDecodeError:
-            parsed = {
-                "sections": [],
-                "error": "Failed to parse model output as JSON",
-                "raw_output": raw_output,
-            }
+        parsed = {"sections": drafted_sections}
 
         write_tender_output(tender_id, "section_drafts.json", parsed)
 
