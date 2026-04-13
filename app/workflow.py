@@ -21,6 +21,8 @@ from app.submission_checklist import (
     generate_submission_checklist_md,
 )
 
+from app.requirement_extractor import extract_and_deduplicate_requirements
+
 from app.tender_bootstrap import create_tender_structure
 from app.tender_ingest import create_and_ingest_tender
 from app.returnable_detector import detect_returnable_documents
@@ -37,6 +39,65 @@ from app.supplier_background import (
     copy_supplier_background_template_if_required,
     detect_past_performance_requirement,
 )
+
+def _extract_metadata_from_docs(docs: list[dict]) -> dict:
+    """
+    Lightweight metadata extractor to avoid sending the full tender.
+    Uses only the first 4000 characters of each document.
+    """
+    system_prompt = load_prompt("system_instructions.md")
+
+    combined_preview = "\n\n".join(
+        f"# DOCUMENT: {doc['filename']}\n{doc['content'][:4000]}"
+        for doc in docs
+    )
+
+    user_prompt = f"""
+Extract tender metadata from these tender document previews.
+
+Return raw JSON only.
+Do not use markdown.
+Do not use triple backticks.
+Do not add explanatory text.
+
+Return exactly this structure:
+{{
+  "tender_reference": "",
+  "tender_title": "",
+  "customer": "",
+  "submission_date": ""
+}}
+
+DOCUMENT PREVIEWS:
+{combined_preview}
+""".strip()
+
+    raw_output = chat(system_prompt, user_prompt, model="gpt-4o")
+    cleaned_output = raw_output.strip()
+
+    if cleaned_output.startswith("```json"):
+        cleaned_output = cleaned_output[len("```json"):].strip()
+    elif cleaned_output.startswith("```"):
+        cleaned_output = cleaned_output[len("```"):].strip()
+
+    if cleaned_output.endswith("```"):
+        cleaned_output = cleaned_output[:-3].strip()
+
+    try:
+        parsed = json.loads(cleaned_output)
+        return {
+            "tender_reference": str(parsed.get("tender_reference", "")).strip(),
+            "tender_title": str(parsed.get("tender_title", "")).strip(),
+            "customer": str(parsed.get("customer", "")).strip(),
+            "submission_date": str(parsed.get("submission_date", "")).strip(),
+        }
+    except Exception:
+        return {
+            "tender_reference": "",
+            "tender_title": "",
+            "customer": "",
+            "submission_date": "",
+        }
 
 def start_run(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -57,88 +118,8 @@ def start_run(config: dict) -> dict:
         docs = load_normalised_tender_docs(tender_id)
         print(f"[start_run] loaded {len(docs)} normalised docs")
 
-        system_prompt = load_prompt("system_instructions.md")
-        extract_prompt = load_prompt("extract_requirements.md")
-        print("[start_run] prompts loaded")
-
-        RUNS[run_id]["current_step"] = "extracting_requirements"
-
-        tender_text_blob = "\n\n".join(
-            f"# DOCUMENT: {doc['filename']}\n{doc['content']}"
-            for doc in docs
-        )
-
-        user_prompt = f"""
-You are extracting requirements from tender documents.
-
-TASK:
-{extract_prompt}
-
-TENDER ID:
-{tender_id}
-
-DOCUMENTS:
-{tender_text_blob}
-
-Return raw JSON only.
-Do not use markdown.
-Do not use triple backticks.
-Do not add any explanatory text.
-
-Return JSON only in this structure:
-{{
-  "metadata": {{
-    "tender_reference": "RFQ 47137",
-    "tender_title": "JP2181 and NMP2106 ICT Resources",
-    "customer": "Department of Defence",
-    "submission_date": "08/11/2024"
-  }},
-  "requirements": [
-    {{
-      "requirement_id": "REQ-001",
-      "source_document": "filename.md",
-      "clause_reference": "1.1",
-      "requirement_text": "Full requirement text",
-      "requirement_type": "mandatory",
-      "theme": "service delivery",
-      "response_needed": true
-    }}
-  ]
-}}
-"""
-
-        print("[start_run] calling OpenAI")
-        raw_output = chat(system_prompt, user_prompt)
-        print("[start_run] OpenAI call complete")
-
-        cleaned_output = raw_output.strip()
-
-        if cleaned_output.startswith("```json"):
-            cleaned_output = cleaned_output[len("```json"):].strip()
-        elif cleaned_output.startswith("```"):
-            cleaned_output = cleaned_output[len("```"):].strip()
-
-        if cleaned_output.endswith("```"):
-            cleaned_output = cleaned_output[:-3].strip()
-
-        try:
-            parsed = json.loads(cleaned_output)
-            print("[start_run] JSON parsed successfully")
-        except json.JSONDecodeError as e:
-            print(f"[start_run] JSON parse failed: {e}")
-            parsed = {
-                "metadata": {
-                    "tender_reference": "",
-                    "tender_title": "",
-                    "customer": "",
-                    "submission_date": "",
-                },
-                "requirements": [],
-                "error": "Failed to parse model output as JSON",
-                "raw_output": raw_output,
-            }
-
-        metadata = parsed.get("metadata", {}) or {}
+        RUNS[run_id]["current_step"] = "extracting_metadata"
+        metadata = _extract_metadata_from_docs(docs)
 
         def clean_value(value):
             return value.strip() if isinstance(value, str) else ""
@@ -150,47 +131,64 @@ Return JSON only in this structure:
             "submission_date": clean_value(metadata.get("submission_date", "")),
         }
 
-        parsed["metadata"] = metadata
+        print(f"[start_run] extracted metadata: {metadata}")
 
-        output_path = write_tender_output(tender_id, "extracted_requirements.json", parsed)
+        RUNS[run_id]["current_step"] = "extracting_requirements"
+
+        documents = [
+            {
+                "name": doc["filename"],
+                "content": doc["content"],
+            }
+            for doc in docs
+        ]
+
+        requirements = extract_and_deduplicate_requirements(documents)
+        print(f"[start_run] extracted {len(requirements)} deduplicated requirements")
+
+        parsed = {
+            "metadata": metadata,
+            "requirements": requirements,
+        }
+
+        output_path = write_tender_output(
+            tender_id,
+            "extracted_requirements.json",
+            parsed,
+        )
         print(f"[start_run] wrote output to {output_path}")
 
-                # 🔍 Detect if supplier background / company overview is required
         supplier_background_detection = detect_supplier_background_requirement(parsed)
 
-        # 📄 Copy template into output folder if required
         supplier_background_copy_result = copy_supplier_background_template_if_required(
             tender_id=tender_id,
             detection_result=supplier_background_detection,
         )
 
-        # 💾 Save detection result for traceability
         write_tender_output(
             tender_id,
             "supplier_background_requirement.json",
-            supplier_background_detection
+            supplier_background_detection,
         )
 
-        # 🔍 Detect if past performance / relevant experience is required
         past_performance_detection = detect_past_performance_requirement(parsed)
 
-        # 💾 Save detection result for traceability
         write_tender_output(
             tender_id,
             "past_performance_requirement.json",
-            past_performance_detection
+            past_performance_detection,
         )
-
 
         RUNS[run_id]["result"] = {
             "message": "Requirements extracted successfully",
             "output_file": output_path,
             "metadata": metadata,
-            "requirement_count": len(parsed.get("requirements", [])),
+            "requirement_count": len(requirements),
             "supplier_background_requirement": supplier_background_detection,
             "supplier_background_copy_result": supplier_background_copy_result,
             "past_performance_requirement": past_performance_detection,
         }
+
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 
