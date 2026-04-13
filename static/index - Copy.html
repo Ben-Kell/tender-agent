@@ -1,112 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Tender Response Agent</title>
     <style>
+        :root {
+            --bg-1: #0b1020;
+            --bg-2: #111a33;
+            --panel: rgba(12, 18, 35, 0.82);
+            --panel-2: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.12);
+            --text: #e8edf7;
+            --muted: #a6b2cb;
+            --primary: #6ea8fe;
+            --primary-2: #7c5cff;
+            --success: #32d296;
+            --danger: #ff7a7a;
+            --warning: #f6c453;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            --radius-xl: 28px;
+            --radius-lg: 18px;
+            --radius-md: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(124, 92, 255, 0.24), transparent 30%),
+                radial-gradient(circle at top right, rgba(110, 168, 254, 0.18), transparent 30%),
+                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background: #f7f7f7;
-            color: #222;
+            padding: 32px;
         }
 
-        h1, h2 {
-            margin-bottom: 10px;
-        }
-
-        .container {
-            max-width: 900px;
+        .shell {
+            max-width: 1240px;
             margin: 0 auto;
-            background: #fff;
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
 
-        .form-group {
-            margin-bottom: 16px;
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .hero-card,
+        .summary-card,
+        .workspace,
+        .files-card,
+        .checklist-card {
+            background: var(--panel);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card {
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            inset: auto -80px -80px auto;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(124, 92, 255, 0.28), transparent 65%);
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 18px 0 12px;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-copy {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.65;
+            max-width: 62ch;
+        }
+
+        .status-pill {
+            margin-top: 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            background: rgba(50, 210, 150, 0.12);
+            color: #ccffe9;
+            border: 1px solid rgba(50, 210, 150, 0.18);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 18px rgba(50, 210, 150, 0.9);
+        }
+
+        .summary-card {
+            padding: 24px;
+            display: grid;
+            gap: 14px;
+            align-content: start;
+        }
+
+        .summary-card h2,
+        .workspace h2,
+        .files-card h2,
+        .checklist-card h2 {
+            margin: 0;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .metric {
+            padding: 16px 18px;
+            border-radius: var(--radius-lg);
+            background: var(--panel-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .metric-label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.82rem;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            word-break: break-word;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 24px;
+        }
+
+        .workspace,
+        .files-card,
+        .checklist-card {
+            padding: 28px;
+        }
+
+        .checklist-card {
+            margin-top: 24px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-subtitle {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .badge,
+        .search-pill {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(110, 168, 254, 0.12);
+            color: #dbe8ff;
+            border: 1px solid rgba(110, 168, 254, 0.18);
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .input-grid {
+            display: grid;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .field {
+            display: grid;
+            gap: 10px;
         }
 
         label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #dce5f6;
+        }
+
+        .input-wrap {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            pointer-events: none;
+            font-size: 0.95rem;
         }
 
         input {
             width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            padding: 16px 16px 16px 44px;
+            border-radius: var(--radius-md);
+            font-size: 0.98rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        input::placeholder {
+            color: #7e8aa6;
+        }
+
+        input:focus {
+            border-color: rgba(110, 168, 254, 0.55);
+            box-shadow: 0 0 0 4px rgba(110, 168, 254, 0.14);
+            transform: translateY(-1px);
         }
 
         .button-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
         }
 
         button {
-            padding: 10px 16px;
-            font-size: 14px;
+            border: 0;
+            border-radius: 16px;
+            padding: 15px 18px;
+            font-size: 0.96rem;
+            font-weight: 700;
             cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+            color: white;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #304266, #19243f);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, #17b26a, #10804b);
+        }
+
+        .btn-ghost {
+            background: linear-gradient(135deg, #44506d, #283148);
+        }
+
+        .command-note {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.9rem;
         }
 
         #output-files {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            padding: 16px;
-            border-radius: 6px;
-            min-height: 60px;
+            min-height: 320px;
+            border-radius: 22px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03)),
+                rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px;
         }
 
-        #output-files ul {
+        .empty-state {
+            height: 100%;
+            min-height: 280px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: var(--muted);
+            padding: 24px;
+        }
+
+        .empty-state .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .file-list {
+            list-style: none;
             margin: 0;
-            padding-left: 20px;
+            padding: 0;
+            display: grid;
+            gap: 12px;
         }
 
-        #output-files li {
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+        }
+
+        .file-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(110, 168, 254, 0.35);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .file-meta {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .file-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(110, 168, 254, 0.22), rgba(124, 92, 255, 0.22));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 1.1rem;
+            flex: 0 0 auto;
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .file-name:hover {
+            text-decoration: underline;
+        }
+
+        .file-subtext {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            padding: 10px 14px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .status-bar {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .status-bar.success {
+            color: #d2ffea;
+            border-color: rgba(50, 210, 150, 0.22);
+            background: rgba(50, 210, 150, 0.08);
+        }
+
+        .status-bar.error {
+            color: #ffd4d4;
+            border-color: rgba(255, 122, 122, 0.22);
+            background: rgba(255, 122, 122, 0.08);
+        }
+
+        .readiness-good {
+            color: #d2ffea;
+        }
+
+        .readiness-warn {
+            color: #ffe7b8;
+        }
+
+        .readiness-bad {
+            color: #ffd4d4;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .checklist-stat {
+            padding: 18px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .checklist-stat-label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.82rem;
             margin-bottom: 8px;
         }
 
-        #output-files a {
-            text-decoration: none;
+        .checklist-stat-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
-        #output-files a:hover {
-            text-decoration: underline;
+        .checklist-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .checklist-panel {
+            padding: 18px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .checklist-panel h3 {
+            margin: 0 0 12px 0;
+            font-size: 1rem;
+        }
+
+        .checklist-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .checklist-list li {
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            word-break: break-word;
+        }
+
+        .checklist-empty {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 980px) {
+            .hero,
+            .main-grid,
+            .checklist-grid,
+            .checklist-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 18px;
+            }
+
+            .hero-card,
+            .summary-card,
+            .workspace,
+            .files-card,
+            .checklist-card {
+                padding: 22px;
+                border-radius: 24px;
+            }
+
+            .button-row {
+                grid-template-columns: 1fr;
+            }
+
+            .file-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .download-link {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>AI Tender Response Agent</h1>
+    <div class="shell">
+        <section class="hero">
+            <div class="hero-card">
+                <span class="eyebrow">Tender Operations Workspace</span>
+                <h1>AI Tender Response Agent</h1>
+                <p class="hero-copy">
+                    A polished control centre for creating tenders, detecting returnable documents,
+                    running the full drafting pipeline, and accessing generated outputs in one place.
+                </p>
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span id="hero-status">Ready for execution</span>
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label for="tender-id">Tender ID</label>
-            <input type="text" id="tender-id" placeholder="Enter tender ID">
-        </div>
+            <aside class="summary-card">
+                <h2>Workspace Snapshot</h2>
+                <div class="metric">
+                    <span class="metric-label">Current Tender</span>
+                    <div class="metric-value" id="metric-tender">—</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Template</span>
+                    <div class="metric-value">response_template.md</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Visible Output Files</span>
+                    <div class="metric-value" id="metric-files">0</div>
+                </div>
+            </aside>
+        </section>
 
-        <div class="form-group">
-            <label for="template-name">Template Name</label>
-            <input type="text" id="template-name" placeholder="Enter template name">
-        </div>
+        <section class="main-grid">
+            <div class="workspace">
+                <div class="section-head">
+                    <div>
+                        <h2>Execution Console</h2>
+                        <p class="section-subtitle">Provide the tender ID, then launch the required workflow.</p>
+                    </div>
+                    <span class="badge">FastAPI Front End</span>
+                </div>
 
-        <div class="button-row">
-            <button onclick="createTender()">Create Tender</button>
-            <button onclick="detectReturnables()">Detect Returnables</button>
-            <button onclick="runFullPipeline()">Run Full Pipeline</button>
-            <button onclick="refreshOutputs()">Refresh Outputs</button>
-        </div>
+                <div class="input-grid">
+                    <div class="field">
+                        <label for="tender-id">Tender ID</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">#</span>
+                            <input type="text" id="tender-id" placeholder="Enter tender ID" oninput="syncSummary()" />
+                        </div>
+                    </div>
 
-        <h2>Output Files</h2>
-        <div id="output-files">
-            <p>No output files loaded.</p>
-        </div>
+                    <div class="field">
+                        <label for="tender-files">Tender Documents</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📎</span>
+                            <input type="file" id="tender-files" multiple />
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="template-name" value="response_template.md" />
+
+                <div class="button-row">
+                    <button class="btn-secondary" id="btn-upload" onclick="uploadTenderDocuments()">Upload Tender Documents</button>
+                    <button class="btn-primary" id="btn-create" onclick="createTender()">Create Tender</button>
+                    <button class="btn-secondary" id="btn-returnables" onclick="detectReturnables()">Detect Returnables</button>
+                    <button class="btn-accent" id="btn-run" onclick="runFullPipeline()">Run Full Pipeline</button>
+                    <button class="btn-ghost" id="btn-refresh" onclick="refreshOutputs()">Refresh Outputs</button>
+                </div>
+
+                <p class="command-note">Only .docx, .pdf, and .csv output files are shown to the user.</p>
+                <div id="status-message" class="status-bar">Awaiting input.</div>
+            </div>
+
+            <div class="files-card">
+                <div class="section-head">
+                    <div>
+                        <h2>Output Files</h2>
+                        <p class="section-subtitle">Generated artefacts appear here and can be opened directly.</p>
+                    </div>
+                    <div class="toolbar">
+                        <span class="search-pill">Filtered file listing</span>
+                    </div>
+                </div>
+
+                <div id="output-files">
+                    <div class="empty-state">
+                        <div>
+                            <div class="icon">📁</div>
+                            <strong>No output files loaded</strong>
+                            <p>Enter a Tender ID and refresh outputs to view generated files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="checklist-card">
+            <div class="section-head">
+                <div>
+                    <h2>Submission Checklist</h2>
+                    <p class="section-subtitle">Readiness summary pulled from output/submission_checklist.md.</p>
+                </div>
+                <div class="toolbar">
+                    <span class="search-pill">Checklist summary</span>
+                </div>
+            </div>
+
+            <div id="submission-checklist">
+                <div class="empty-state">
+                    <div>
+                        <div class="icon">✅</div>
+                        <strong>No checklist loaded</strong>
+                        <p>Enter a Tender ID and refresh outputs to load the submission checklist.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
@@ -115,7 +696,372 @@
         }
 
         function getTemplateName() {
-            return document.getElementById("template-name").value.trim();
+            return "response_template.md";
+        }
+
+        function syncSummary() {
+            const tenderId = getTenderId();
+            document.getElementById("metric-tender").textContent = tenderId || "—";
+        }
+
+        function setStatus(message, type = "") {
+            const statusBar = document.getElementById("status-message");
+            const heroStatus = document.getElementById("hero-status");
+            statusBar.className = `status-bar ${type}`.trim();
+            statusBar.textContent = message;
+            heroStatus.textContent = message;
+        }
+
+        function setButtonsDisabled(isDisabled) {
+            ["btn-upload", "btn-create", "btn-returnables", "btn-run", "btn-refresh"].forEach(id => {
+                document.getElementById(id).disabled = isDisabled;
+            });
+        }
+
+        function showLoadingFiles(message = "Loading output files...") {
+            const outputFilesDiv = document.getElementById("output-files");
+            outputFilesDiv.innerHTML = `
+                <div class="empty-state">
+                    <div>
+                        <div class="icon">⏳</div>
+                        <strong>${message}</strong>
+                        <p>Please wait while the output directory is being checked.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderEmptyFiles(title, body) {
+            const outputFilesDiv = document.getElementById("output-files");
+            outputFilesDiv.innerHTML = `
+                <div class="empty-state">
+                    <div>
+                        <div class="icon">📁</div>
+                        <strong>${title}</strong>
+                        <p>${body}</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById("metric-files").textContent = "0";
+        }
+
+        function isAllowedFile(filename) {
+            const name = filename.toLowerCase();
+            return name.endsWith(".docx") || name.endsWith(".pdf") || name.endsWith(".csv");
+        }
+
+        function getFileEmoji(filename) {
+            const name = filename.toLowerCase();
+            if (name.endsWith(".docx")) return "📝";
+            if (name.endsWith(".pdf")) return "📄";
+            if (name.endsWith(".csv")) return "📊";
+            return "📁";
+        }
+
+        function escapeHtml(value) {
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function getReadinessClass(percentValue) {
+            const numeric = Number(percentValue);
+            if (Number.isNaN(numeric)) return "";
+            if (numeric >= 80) return "readiness-good";
+            if (numeric >= 50) return "readiness-warn";
+            return "readiness-bad";
+        }
+
+        function parseChecklistMarkdown(markdownText) {
+            const result = {
+                readinessPercent: "0%",
+                requiredCount: "0",
+                producedCount: "0",
+                missingCount: "0",
+                missingArtefacts: [],
+                producedArtefacts: []
+            };
+
+            const text = markdownText || "";
+            const lines = text.split(/\r?\n/);
+
+            const readinessMatch =
+                text.match(/submission readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i) ||
+                text.match(/readiness[^\d]*(\d+(?:\.\d+)?)\s*%/i);
+
+            if (readinessMatch) {
+                result.readinessPercent = `${readinessMatch[1]}%`;
+            }
+
+            const ratioMatch =
+                text.match(/required artefacts generated[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artifacts generated[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artefacts[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i) ||
+                text.match(/required artifacts[^\d]*(\d+)\s*(?:of|\/)\s*(\d+)/i);
+
+            if (ratioMatch) {
+                result.producedCount = ratioMatch[1];
+                result.requiredCount = ratioMatch[2];
+            }
+
+            function findSectionStart(titlePatterns) {
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    for (const pattern of titlePatterns) {
+                        if (pattern.test(line)) {
+                            return i + 1;
+                        }
+                    }
+                }
+                return -1;
+            }
+
+            function collectSectionLines(startIndex) {
+                if (startIndex === -1) return [];
+
+                const collected = [];
+                for (let i = startIndex; i < lines.length; i++) {
+                    const line = lines[i].trim();
+
+                    if (!line) continue;
+                    if (/^#{1,6}\s+/.test(line)) break;
+
+                    collected.push(line);
+                }
+                return collected;
+            }
+
+            const requiredStart = findSectionStart([
+                /^#{1,6}\s*required artefacts\s*$/i,
+                /^#{1,6}\s*required artifacts\s*$/i,
+                /^required artefacts\s*$/i,
+                /^required artifacts\s*$/i
+            ]);
+
+            const missingStart = findSectionStart([
+                /^#{1,6}\s*missing required artefacts\s*$/i,
+                /^#{1,6}\s*missing required artifacts\s*$/i,
+                /^missing required artefacts\s*$/i,
+                /^missing required artifacts\s*$/i
+            ]);
+
+            const requiredLines = collectSectionLines(requiredStart);
+            const missingLines = collectSectionLines(missingStart);
+
+            for (const line of requiredLines) {
+                const checkedMatch = line.match(/^[-*]\s*\[x\]\s+(.*)$/i);
+
+                if (checkedMatch) {
+                    const item = checkedMatch[1].trim();
+                    if (!result.producedArtefacts.includes(item)) {
+                        result.producedArtefacts.push(item);
+                    }
+                }
+            }
+
+            if (missingLines.length > 0) {
+                for (const line of missingLines) {
+                    const bulletMatch = line.match(/^[-*]\s+(.*)$/);
+                    if (!bulletMatch) continue;
+
+                    const item = bulletMatch[1].trim();
+                    if (!result.missingArtefacts.includes(item)) {
+                        result.missingArtefacts.push(item);
+                    }
+                }
+            } else {
+                for (const line of requiredLines) {
+                    const uncheckedMatch = line.match(/^[-*]\s*\[\s\]\s+(.*)$/i);
+
+                    if (uncheckedMatch) {
+                        const item = uncheckedMatch[1].trim();
+                        if (!result.missingArtefacts.includes(item)) {
+                            result.missingArtefacts.push(item);
+                        }
+                    }
+                }
+            }
+
+            if (result.producedArtefacts.length > 0) {
+                result.producedCount = String(result.producedArtefacts.length);
+            }
+
+            if (result.missingArtefacts.length > 0) {
+                result.missingCount = String(result.missingArtefacts.length);
+            } else {
+                const produced = Number(result.producedCount);
+                const required = Number(result.requiredCount);
+                if (!Number.isNaN(produced) && !Number.isNaN(required) && required >= produced) {
+                    result.missingCount = String(required - produced);
+                }
+            }
+
+            return result;
+        }
+
+        function renderChecklistList(items) {
+            if (!items || items.length === 0) {
+                return `<div class="checklist-empty">None listed.</div>`;
+            }
+
+            return `
+                <ul class="checklist-list">
+                    ${items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+                </ul>
+            `;
+        }
+
+        function renderSubmissionChecklist(data) {
+            const checklistDiv = document.getElementById("submission-checklist");
+            const readinessNumber = data.readinessPercent.replace("%", "").trim();
+            const readinessClass = getReadinessClass(readinessNumber);
+
+            checklistDiv.innerHTML = `
+                <div class="checklist-grid">
+                    <div class="checklist-stat">
+                        <span class="checklist-stat-label">Submission Readiness</span>
+                        <div class="checklist-stat-value ${readinessClass}">${escapeHtml(data.readinessPercent)}</div>
+                    </div>
+                    <div class="checklist-stat">
+                        <span class="checklist-stat-label">Required Artefacts Total</span>
+                        <div class="checklist-stat-value">${escapeHtml(data.requiredCount)}</div>
+                    </div>
+                    <div class="checklist-stat">
+                        <span class="checklist-stat-label">Produced Required Artefacts</span>
+                        <div class="checklist-stat-value">${escapeHtml(data.producedCount)}</div>
+                    </div>
+                    <div class="checklist-stat">
+                        <span class="checklist-stat-label">Missing Required Artefacts</span>
+                        <div class="checklist-stat-value">${escapeHtml(data.missingCount)}</div>
+                    </div>
+                </div>
+
+                <div class="checklist-columns">
+                    <div class="checklist-panel">
+                        <h3>Missing Required Artefacts</h3>
+                        ${renderChecklistList(data.missingArtefacts)}
+                    </div>
+                    <div class="checklist-panel">
+                        <h3>Produced Required Artefacts</h3>
+                        ${renderChecklistList(data.producedArtefacts)}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderChecklistError(message) {
+            const checklistDiv = document.getElementById("submission-checklist");
+            checklistDiv.innerHTML = `
+                <div class="empty-state">
+                    <div>
+                        <div class="icon">⚠️</div>
+                        <strong>Checklist unavailable</strong>
+                        <p>${escapeHtml(message)}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function loadSubmissionChecklist(tenderId) {
+            try {
+                const checklistResponse = await fetch(
+                    `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent("submission_checklist.md")}`
+                );
+
+                if (!checklistResponse.ok) {
+                    renderChecklistError("submission_checklist.md was not found for this tender.");
+                    return;
+                }
+
+                const markdownText = await checklistResponse.text();
+                const parsed = parseChecklistMarkdown(markdownText);
+                renderSubmissionChecklist(parsed);
+            } catch (error) {
+                renderChecklistError(error.message || "An error occurred while loading the checklist.");
+            }
+        }
+
+        async function postJson(url, body, startMessage, successMessage) {
+            setButtonsDisabled(true);
+            setStatus(startMessage);
+
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    setStatus(errorText, "error");
+                    alert(`${startMessage} failed:\n${errorText}`);
+                    return false;
+                }
+
+                setStatus(successMessage, "success");
+                return true;
+            } catch (error) {
+                setStatus(error.message || "Unexpected error occurred.", "error");
+                alert(`Request failed:\n${error.message}`);
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function uploadTenderDocuments() {
+            const tenderId = getTenderId();
+            const fileInput = document.getElementById("tender-files");
+
+            if (!tenderId) {
+                alert("Enter a Tender ID.");
+                return;
+            }
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert("Select one or more tender documents.");
+                return;
+            }
+
+            setButtonsDisabled(true);
+            setStatus(`Uploading tender documents for ${tenderId}...`);
+
+            try {
+                const formData = new FormData();
+                formData.append("tender_id", tenderId);
+
+                for (const file of fileInput.files) {
+                    formData.append("files", file);
+                }
+
+                const response = await fetch("/upload_tender_documents", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    setStatus(errorText, "error");
+                    alert(`Upload failed:\n${errorText}`);
+                    return;
+                }
+
+                const data = await response.json();
+                setStatus(`Uploaded ${data.files.length} tender document(s) for ${tenderId}.`, "success");
+                fileInput.value = "";
+                alert(`Upload complete.\n\nSaved to dump/${tenderId}`);
+            } catch (error) {
+                setStatus(error.message || "Unexpected error occurred.", "error");
+                alert(`Upload failed:\n${error.message}`);
+            } finally {
+                setButtonsDisabled(false);
+            }
         }
 
         async function createTender() {
@@ -126,23 +1072,16 @@
                 return;
             }
 
-            const response = await fetch("/create_tender", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    tender_id: tenderId
-                })
-            });
+            const ok = await postJson(
+                "/create_tender",
+                { tender_id: tenderId },
+                `Creating tender ${tenderId}...`,
+                `Tender ${tenderId} created successfully.`
+            );
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                alert("Create Tender failed:\n" + errorText);
-                return;
+            if (ok) {
+                await refreshOutputs();
             }
-
-            await refreshOutputs();
         }
 
         async function detectReturnables() {
@@ -153,23 +1092,16 @@
                 return;
             }
 
-            const response = await fetch("/detect_returnable_documents", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    tender_id: tenderId
-                })
-            });
+            const ok = await postJson(
+                "/detect_returnable_documents",
+                { tender_id: tenderId },
+                `Detecting returnable documents for ${tenderId}...`,
+                `Returnable document detection completed for ${tenderId}.`
+            );
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                alert("Detect Returnables failed:\n" + errorText);
-                return;
+            if (ok) {
+                await refreshOutputs();
             }
-
-            await refreshOutputs();
         }
 
         async function runFullPipeline() {
@@ -181,29 +1113,19 @@
                 return;
             }
 
-            if (!templateName) {
-                alert("Enter a Template Name.");
-                return;
-            }
-
-            const response = await fetch("/run_full_pipeline", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
+            const ok = await postJson(
+                "/run_full_pipeline",
+                {
                     tender_id: tenderId,
                     template_name: templateName
-                })
-            });
+                },
+                `Running full pipeline for ${tenderId}...`,
+                `Full pipeline completed for ${tenderId}.`
+            );
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                alert("Run Full Pipeline failed:\n" + errorText);
-                return;
+            if (ok) {
+                await refreshOutputs();
             }
-
-            await refreshOutputs();
         }
 
         async function refreshOutputs() {
@@ -214,31 +1136,68 @@
                 return;
             }
 
-            const outputFilesDiv = document.getElementById("output-files");
-            outputFilesDiv.innerHTML = "<p>Loading output files...</p>";
+            showLoadingFiles();
+            setStatus(`Refreshing outputs for ${tenderId}...`);
 
-            const response = await fetch(`/list_outputs/${encodeURIComponent(tenderId)}`);
+            try {
+                const response = await fetch(`/list_outputs/${encodeURIComponent(tenderId)}`);
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                outputFilesDiv.innerHTML = `<p>Failed to load output files: ${errorText}</p>`;
-                return;
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    renderEmptyFiles("Unable to load output files", errorText);
+                    await loadSubmissionChecklist(tenderId);
+                    setStatus(`Failed to load outputs for ${tenderId}.`, "error");
+                    return;
+                }
+
+                const data = await response.json();
+
+                if (!data.files || data.files.length === 0) {
+                    renderEmptyFiles("No output files found", `No generated artefacts are available yet for tender ${tenderId}.`);
+                    await loadSubmissionChecklist(tenderId);
+                    setStatus(`No outputs found for ${tenderId}.`);
+                    return;
+                }
+
+                const filteredFiles = data.files.filter(isAllowedFile);
+
+                if (filteredFiles.length === 0) {
+                    renderEmptyFiles("No visible output files", "Only .docx, .pdf, and .csv files are shown.");
+                    await loadSubmissionChecklist(tenderId);
+                    setStatus(`No visible outputs found for ${tenderId}.`);
+                    return;
+                }
+
+                const listItems = filteredFiles.map(filename => {
+                    const href = `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent(filename)}`;
+                    const fileEmoji = getFileEmoji(filename);
+
+                    return `
+                        <li class="file-item">
+                            <div class="file-meta">
+                                <div class="file-icon">${fileEmoji}</div>
+                                <div>
+                                    <a class="file-name" href="${href}" target="_blank">${filename}</a>
+                                    <div class="file-subtext">Generated artefact ready for review or download</div>
+                                </div>
+                            </div>
+                            <a class="download-link" href="${href}" target="_blank">Open File</a>
+                        </li>
+                    `;
+                }).join("");
+
+                document.getElementById("output-files").innerHTML = `<ul class="file-list">${listItems}</ul>`;
+                document.getElementById("metric-files").textContent = String(filteredFiles.length);
+                await loadSubmissionChecklist(tenderId);
+                setStatus(`Loaded ${filteredFiles.length} visible output file${filteredFiles.length === 1 ? "" : "s"} for ${tenderId}.`, "success");
+            } catch (error) {
+                renderEmptyFiles("Unexpected error", error.message || "An error occurred while loading outputs.");
+                await loadSubmissionChecklist(tenderId);
+                setStatus(error.message || "Unexpected error occurred.", "error");
             }
-
-            const data = await response.json();
-
-            if (!data.files || data.files.length === 0) {
-                outputFilesDiv.innerHTML = "<p>No output files found.</p>";
-                return;
-            }
-
-            const listItems = data.files.map(filename => {
-                const href = `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent(filename)}`;
-                return `<li><a href="${href}" target="_blank">${filename}</a></li>`;
-            }).join("");
-
-            outputFilesDiv.innerHTML = `<ul>${listItems}</ul>`;
         }
+
+        syncSummary();
     </script>
 </body>
 </html>

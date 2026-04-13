@@ -965,14 +965,21 @@
             `;
         }
 
-        async function loadSubmissionChecklist(tenderId) {
+        async function loadSubmissionChecklist(tenderId, availableFiles = []) {
+            const checklistExists = availableFiles.includes("submission_checklist.md");
+
+            if (!checklistExists) {
+                renderChecklistError("submission_checklist.md has not been generated yet for this tender.");
+                return;
+            }
+
             try {
                 const checklistResponse = await fetch(
                     `/download_output/${encodeURIComponent(tenderId)}/${encodeURIComponent("submission_checklist.md")}`
                 );
 
                 if (!checklistResponse.ok) {
-                    renderChecklistError("submission_checklist.md was not found for this tender.");
+                    renderChecklistError("submission_checklist.md exists in the file list but could not be opened.");
                     return;
                 }
 
@@ -1145,25 +1152,26 @@
                 if (!response.ok) {
                     const errorText = await response.text();
                     renderEmptyFiles("Unable to load output files", errorText);
-                    await loadSubmissionChecklist(tenderId);
+                    renderChecklistError("Checklist unavailable because output files could not be loaded.");
                     setStatus(`Failed to load outputs for ${tenderId}.`, "error");
                     return;
                 }
 
                 const data = await response.json();
+                const allFiles = Array.isArray(data.files) ? data.files : [];
 
-                if (!data.files || data.files.length === 0) {
+                if (allFiles.length === 0) {
                     renderEmptyFiles("No output files found", `No generated artefacts are available yet for tender ${tenderId}.`);
-                    await loadSubmissionChecklist(tenderId);
+                    renderChecklistError("submission_checklist.md has not been generated yet for this tender.");
                     setStatus(`No outputs found for ${tenderId}.`);
                     return;
                 }
 
-                const filteredFiles = data.files.filter(isAllowedFile);
+                const filteredFiles = allFiles.filter(isAllowedFile);
 
                 if (filteredFiles.length === 0) {
                     renderEmptyFiles("No visible output files", "Only .docx, .pdf, and .csv files are shown.");
-                    await loadSubmissionChecklist(tenderId);
+                    await loadSubmissionChecklist(tenderId, allFiles);
                     setStatus(`No visible outputs found for ${tenderId}.`);
                     return;
                 }
@@ -1188,11 +1196,11 @@
 
                 document.getElementById("output-files").innerHTML = `<ul class="file-list">${listItems}</ul>`;
                 document.getElementById("metric-files").textContent = String(filteredFiles.length);
-                await loadSubmissionChecklist(tenderId);
+                await loadSubmissionChecklist(tenderId, allFiles);
                 setStatus(`Loaded ${filteredFiles.length} visible output file${filteredFiles.length === 1 ? "" : "s"} for ${tenderId}.`, "success");
             } catch (error) {
                 renderEmptyFiles("Unexpected error", error.message || "An error occurred while loading outputs.");
-                await loadSubmissionChecklist(tenderId);
+                renderChecklistError("Checklist unavailable because outputs could not be refreshed.");
                 setStatus(error.message || "Unexpected error occurred.", "error");
             }
         }

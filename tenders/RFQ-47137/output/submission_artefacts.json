@@ -1,0 +1,102 @@
+{
+  "submission_readiness": {
+    "readiness_percent": 0,
+    "total_required_count": 10,
+    "generated_required_count": 0,
+    "missing_required_count": 10,
+    "missing_required_names": [
+      "Proposal Overview",
+      "AIC Plan",
+      "Attachments to the ICTPA Conditions of Deed.md",
+      "ICTPA Conditions of Deed.md",
+      "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "Short Form RFQ and draft Work Order.md",
+      "Supplier Quotation Form.md",
+      "Schedule A - Statement of Work.md",
+      "RFQ 47137 Addendum 1.md",
+      "Tenderer Letter - Fujitsu Australia Limited.md"
+    ]
+  },
+  "artefacts": [
+    {
+      "name": "Proposal Overview",
+      "type": "core_response",
+      "required": true,
+      "source": "system_generated",
+      "status": "missing",
+      "file_path": null
+    },
+    {
+      "name": "AIC Plan",
+      "type": "core_response",
+      "required": true,
+      "source": "system_generated",
+      "status": "missing",
+      "file_path": null
+    },
+    {
+      "name": "Attachments to the ICTPA Conditions of Deed.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "ICTPA Conditions of Deed.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "Short Form RFQ and draft Work Order.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "Supplier Quotation Form.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "Schedule A - Statement of Work.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "RFQ 47137 Addendum 1.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "Tenderer Letter - Fujitsu Australia Limited.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    }
+  ]
+}

@@ -113,7 +113,7 @@ def extract_requirements_from_documents(
         if not doc_text.strip():
             continue
 
-        chunks = split_text_into_chunks(doc_text, max_chars=20000, overlap=1200)
+        chunks = split_text_into_chunks(doc_text, max_chars=15000, overlap=800)
         print(f"[extract] {doc_name}: {len(chunks)} chunk(s)")
 
         for i, chunk in enumerate(chunks, start=1):
