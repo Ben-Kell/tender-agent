@@ -27,6 +27,12 @@ from app.executive_summary import (
     inject_executive_summary,
     remove_existing_executive_summary,
 )
+from app.proposal_overview import (
+    build_proposal_overview_scaffold,
+    remove_existing_proposal_overview,
+    inject_proposal_overview,
+)
+
 from app.supplier_background import (
     detect_supplier_background_requirement,
     copy_supplier_background_template_if_required,
@@ -488,6 +494,7 @@ def compile_response(config: dict) -> dict:
 
         section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         drafted_sections = section_drafts.get("sections", [])
+        proposal_overview_plan = load_proposal_overview_plan(tender_id)
 
         system_prompt = load_prompt("system_instructions.md")
         compile_prompt = load_prompt("compile_response.md")
@@ -547,6 +554,15 @@ Do not add commentary before or after the document.
         executive_summary_text = generate_executive_summary(summary_source_markdown)
 
         final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
+
+        RUNS[run_id]["current_step"] = "building_proposal_overview"
+
+        # Remove placeholder / stale Proposal Overview content before rebuilding it
+        final_markdown = remove_existing_proposal_overview(final_markdown)
+
+        proposal_overview_text = build_proposal_overview_scaffold(proposal_overview_plan)
+
+        final_markdown = inject_proposal_overview(final_markdown, proposal_overview_text)
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
 

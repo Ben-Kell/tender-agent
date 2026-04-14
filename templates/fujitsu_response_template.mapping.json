@@ -7,7 +7,8 @@
     "Submission Date": "submission_date"
   },
   "sections": {
-    "1. Executive Summary": "executive_summary",
+    "Executive Summary": "executive_summary",
+    "Proposal Overview": "proposal_overview_body",
     "Corporate Capability": "corporate_capability",
     "Technical Response": "technical_response",
     "Implementation Approach": "implementation_approach",

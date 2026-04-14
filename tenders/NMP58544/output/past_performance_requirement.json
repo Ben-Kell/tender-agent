@@ -1,22 +1,7 @@
 {
-  "past_performance_required": true,
-  "template_filename": "fujitsu_past_performance.docx",
-  "output_filename": "fujitsu_past_performance.docx",
-  "matches": [
-    {
-      "matched_phrases": [
-        "past performance"
-      ],
-      "requirement": {
-        "requirement_id": "REQ-004",
-        "source_document": "01. NMP58544 - ANNEX A TO ATTACHMENT F - Short Form RFQ and WO.md",
-        "clause_reference": "Evaluation Criteria",
-        "requirement_text": "The criteria that the Commonwealth will use to evaluate the Quotation comprises the following: Methodology, Past Performance, Technical Merit, Pricing, Compliance.",
-        "requirement_type": "response",
-        "theme": "evaluation",
-        "response_needed": true
-      }
-    }
-  ],
-  "confidence": 0.95
+  "past_performance_required": false,
+  "template_filename": null,
+  "output_filename": null,
+  "matches": [],
+  "confidence": 0.0
 }
