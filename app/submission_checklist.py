@@ -1,4 +1,31 @@
-import json
+from pathlib import Path
+from app.submission_artefacts import build_submission_artefacts
+
+
+def _output_dir_for_tender(tender_id: str) -> Path:
+    return Path("tenders") / tender_id / "output"
+
+
+def generate_submission_artefacts_json(tender_id: str):
+    result = build_submission_artefacts(tender_id)
+    return result["submission_artefacts"]
+
+
+def generate_submission_checklist_md(tender_id: str):
+    result = build_submission_artefacts(tender_id)
+    output_dir = _output_dir_for_tender(tender_id)
+
+    return {
+        "tender_id": tender_id,
+        "submission_readiness_percent": result["submission_readiness"]["readiness_percent"],
+        "required_count": result["submission_readiness"]["total_required_count"],
+        "produced_count": result["submission_readiness"]["generated_required_count"],
+        "missing_count": result["submission_readiness"]["missing_required_count"],
+        "checklist_path": str(output_dir / "submission_checklist.md"),
+    }
+
+
+'''import json
 from pathlib import Path
 
 
@@ -155,4 +182,4 @@ def generate_submission_checklist_md(tender_id: str):
         "produced_count": produced_count,
         "missing_count": len(missing_required),
         "checklist_path": str(checklist_path),
-    }
+    }'''

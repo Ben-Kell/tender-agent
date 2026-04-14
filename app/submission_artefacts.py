@@ -15,6 +15,8 @@ def build_submission_artefacts(tender_id: str) -> Dict[str, Any]:
 
     existing_files = _list_existing_output_files(output_dir)
 
+    print("SUBMISSION ARTEFACT OUTPUT FILES:", sorted(existing_files.keys()))
+
     # -----------------------------
     # Core response artefacts
     # -----------------------------
@@ -27,7 +29,12 @@ def build_submission_artefacts(tender_id: str) -> Dict[str, Any]:
             artefact_type="core_response",
             required=True,
             source="system_generated",
-            candidate_filenames=["proposal_overview.docx"],
+            candidate_filenames=[
+                "proposal_overview.docx",
+                "Proposal Overview.docx",
+                "proposal-overview.docx",
+                "proposal overview.docx",
+            ],
         )
     )
 
@@ -40,7 +47,13 @@ def build_submission_artefacts(tender_id: str) -> Dict[str, Any]:
             artefact_type="core_response",
             required=True,
             source="system_generated",
-            candidate_filenames=["fujitsu_aic_plan.docx"],
+            candidate_filenames=[
+                "fujitsu_aic_plan.docx",
+                "AIC Plan.docx",
+                "fujitsu-aic-plan.docx",
+                "fujitsu aic plan.docx",
+                "aic_plan.docx",
+            ],
         )
     )
 
@@ -224,10 +237,22 @@ def _find_existing_file(
     existing_files: Dict[str, Path],
     candidate_filenames: List[str],
 ) -> Optional[str]:
-    for candidate in candidate_filenames:
+    expanded_candidates = _expand_candidate_filenames(candidate_filenames)
+
+    for candidate in expanded_candidates:
         candidate_lower = candidate.lower()
         if candidate_lower in existing_files:
             return _normalise_path(existing_files[candidate_lower])
+
+    normalised_existing = {
+        _normalise_filename_for_match(path.name): path
+        for path in existing_files.values()
+    }
+
+    for candidate in expanded_candidates:
+        candidate_key = _normalise_filename_for_match(candidate)
+        if candidate_key in normalised_existing:
+            return _normalise_path(normalised_existing[candidate_key])
 
     return None
 
@@ -465,6 +490,40 @@ def _deduplicate_preserve_order(items: List[str]) -> List[str]:
             result.append(item)
 
     return result
+
+def _normalise_filename_for_match(value: str) -> str:
+    value = value.strip().lower()
+    value = value.replace("\\", "/").split("/")[-1]
+    value = re.sub(r"\.[a-z0-9]+$", "", value)
+    value = re.sub(r"[^a-z0-9]+", "_", value)
+    value = re.sub(r"_+", "_", value)
+    return value.strip("_")
+
+
+def _expand_candidate_filenames(candidate_filenames: List[str]) -> List[str]:
+    expanded: List[str] = []
+
+    for candidate in candidate_filenames:
+        if not isinstance(candidate, str) or not candidate.strip():
+            continue
+
+        raw = candidate.strip()
+        expanded.append(raw)
+
+        stem = Path(raw).stem
+        suffix = Path(raw).suffix or ".docx"
+
+        slug_stem = _slugify(stem)
+
+        expanded.append(f"{stem}{suffix}")
+        expanded.append(f"{slug_stem}{suffix}")
+        expanded.append(f"{slug_stem}.docx")
+        expanded.append(f"{slug_stem}.pdf")
+        expanded.append(f"{slug_stem}.xlsx")
+        expanded.append(f"{slug_stem}.xls")
+        expanded.append(f"{slug_stem}.doc")
+
+    return _deduplicate_preserve_order(expanded)
 
 
 def _normalise_path(path: Path) -> str:

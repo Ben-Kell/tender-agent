@@ -1,36 +1,27 @@
 import json
 import uuid
 
+
 from app.storage import RUNS
+from app.content_loader import load_boilerplate_docs, load_case_studies
+from app.docx_bridge import render_docx_with_node
+from app.docx_payload_builder import build_docx_payload, write_docx_payload
 from app.file_loader import load_normalised_tender_docs
+from app.json_loader import load_tender_output_json
+from app.json_loader import load_proposal_overview_plan
+from app.markdown_writer import write_markdown_output
+from app.openai_client import chat
 from app.output_writer import write_tender_output
 from app.prompt_loader import load_prompt
-from app.openai_client import chat
-
-from app.template_loader import load_template
-from app.json_loader import load_tender_output_json
-from app.submission_artefacts import build_submission_artefacts
-from app.content_loader import load_boilerplate_docs, load_case_studies
-from app.markdown_writer import write_markdown_output
-from app.template_utils import fill_template_placeholders
-
-from app.tender_ingest import create_and_ingest_tender
-from app.returnable_detector import detect_returnable_documents
-from app.submission_checklist import (
-    generate_submission_artefacts_json,
-    generate_submission_checklist_md,
-)
-
-
-
+from app.proposal_overview_planner import plan_proposal_overview
 from app.requirement_extractor import extract_and_deduplicate_requirements
-
+from app.returnable_detector import detect_returnable_documents
+from app.submission_artefacts import build_submission_artefacts
+from app.template_loader import load_template
+from app.template_utils import fill_template_placeholders
 from app.tender_bootstrap import create_tender_structure
 from app.tender_ingest import create_and_ingest_tender
-from app.returnable_detector import detect_returnable_documents
 
-from app.docx_payload_builder import build_docx_payload, write_docx_payload
-from app.docx_bridge import render_docx_with_node
 from app.executive_summary import (
     generate_executive_summary,
     inject_executive_summary,
@@ -489,7 +480,9 @@ def compile_response(config: dict) -> dict:
         past_performance_requirement = load_tender_output_json(
             tender_id,
             "past_performance_requirement.json"
-        )        
+        )     
+
+        proposal_overview_plan = load_proposal_overview_plan(tender_id)   
 
         template_text = fill_template_placeholders(template_text, tender_metadata)
 
@@ -516,6 +509,21 @@ Return markdown only.
 Do not use triple backticks.
 Do not add commentary before or after the document.
 """
+        
+        proposal_overview_sections = proposal_overview_plan.get("proposal_overview_sections", [])
+
+        proposal_overview_headings = []
+        proposal_overview_headings_markdown_lines = []
+
+        for section in proposal_overview_sections:
+            heading = (section.get("heading") or "").strip()
+            if not heading:
+                continue
+
+            proposal_overview_headings.append({"heading": heading})
+            proposal_overview_headings_markdown_lines.append(f"## {heading}")
+
+        proposal_overview_headings_markdown = "\n".join(proposal_overview_headings_markdown_lines)
 
         raw_output = chat(system_prompt, user_prompt)
         final_markdown = raw_output.strip()
@@ -541,19 +549,6 @@ Do not add commentary before or after the document.
         final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
-
-        RUNS[run_id]["current_step"] = "building_submission_artefacts"
-
-        submission_artefact_result = build_submission_artefacts(tender_id)
-
-        print("SUBMISSION ARTEFACTS BUILT")
-        print(submission_artefact_result)
-
-        checklist_path = submission_artefact_result.get("submission_checklist_md_path")
-        if not checklist_path:
-            raise RuntimeError("submission_checklist_md_path missing from submission artefact result")
-
-        RUNS[run_id]["current_step"] = "building_docx_payload"
 
         payload = build_docx_payload(
             tender_id=tender_id,
@@ -589,12 +584,15 @@ Do not add commentary before or after the document.
                 output_path=f"tenders/{tender_id}/output/fujitsu_past_performance.docx"
             )
 
-        #submission_artefact_result = build_submission_artefacts(tender_id)
-
-        
+        RUNS[run_id]["current_step"] = "building_submission_artefacts"
+        submission_artefact_result = build_submission_artefacts(tender_id)
 
         print("SUBMISSION ARTEFACTS BUILT")
         print(submission_artefact_result)
+
+        checklist_path = submission_artefact_result.get("submission_checklist_md_path")
+        if not checklist_path:
+            raise RuntimeError("submission_checklist_md_path missing from submission artefact result")
 
         RUNS[run_id]["result"] = {
             "message": "Final response draft and DOCX files compiled successfully",
@@ -608,6 +606,10 @@ Do not add commentary before or after the document.
             "submission_checklist_markdown": submission_artefact_result["submission_checklist_markdown"],
             "submission_artefacts_json_path": submission_artefact_result["submission_artefacts_json_path"],
             "submission_checklist_md_path": submission_artefact_result["submission_checklist_md_path"],
+            "proposal_overview_plan_summary": proposal_overview_plan.get("overall_summary", ""),
+            "proposal_overview_headings": proposal_overview_headings,
+            "proposal_overview_headings_markdown": proposal_overview_headings_markdown,
+            "proposal_overview_sections_json": json.dumps(proposal_overview_sections, indent=2),
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
@@ -631,89 +633,6 @@ def _assert_stage_completed(stage_name: str, stage_result: dict) -> None:
 
     if stage_result.get("status") != "completed":
         raise RuntimeError(f"{stage_name} failed: {stage_result.get('result')}")
-
-
-"""def run_full_pipeline(config: dict) -> dict:
-    run_id = f"run_{uuid.uuid4().hex[:8]}"
-
-    RUNS[run_id] = {
-        "status": "running",
-        "current_step": "starting_full_pipeline",
-        "config": config,
-        "result": None,
-    }
-
-    try:
-        tender_id = config["tender_id"]
-        template_name = config.get("template_name", "response_template.md")
-
-        RUNS[run_id]["current_step"] = "running_create_tender"
-        create_result = create_and_ingest_tender(tender_id)
-
-        RUNS[run_id]["current_step"] = "running_detect_returnable_documents"
-        returnable_result = detect_returnable_documents(tender_id)
-
-        stage_config = {
-            "tender_id": tender_id,
-            "template_name": template_name,
-        }
-
-        RUNS[run_id]["current_step"] = "running_start_run"
-        start_result = start_run(stage_config)
-        _assert_stage_completed("start_run", start_result)
-
-        RUNS[run_id]["current_step"] = "building_early_submission_artefacts"
-        early_submission_artefact_result = build_submission_artefacts(tender_id)
-
-        print("EARLY SUBMISSION ARTEFACTS BUILT")
-        print(early_submission_artefact_result)
-
-        RUNS[run_id]["current_step"] = "running_map_template"
-        map_result = map_template(stage_config)
-        _assert_stage_completed("map_template", map_result)
-
-        RUNS[run_id]["current_step"] = "running_draft_sections"
-        draft_result = draft_sections(stage_config)
-        _assert_stage_completed("draft_sections", draft_result)
-
-        RUNS[run_id]["current_step"] = "running_compile_response"
-        compile_result = compile_response(stage_config)
-        _assert_stage_completed("compile_response", compile_result)
-
-        RUNS[run_id]["current_step"] = "building_submission_artefacts"
-
-        submission_artefact_result = build_submission_artefacts(tender_id)
-
-        print("FULL PIPELINE SUBMISSION ARTEFACTS BUILT")
-        print(submission_artefact_result)
-
-        RUNS[run_id]["result"] = {
-            "message": "Full tender pipeline completed successfully",
-            "tender_id": tender_id,
-            "create_tender": create_result,
-            "detect_returnable_documents": returnable_result,
-            "start_run": start_result["result"],
-            "map_template": map_result["result"],
-            "draft_sections": draft_result["result"],
-            "compile_response": compile_result["result"],
-            "submission_artefacts": submission_artefact_result,
-        }
-        RUNS[run_id]["status"] = "completed"
-        RUNS[run_id]["current_step"] = "done"
-
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        RUNS[run_id]["status"] = "failed"
-        RUNS[run_id]["current_step"] = "failed"
-        RUNS[run_id]["result"] = {"error": str(e)}
-
-    return {
-        "run_id": run_id,
-        "status": RUNS[run_id]["status"],
-        "current_step": RUNS[run_id]["current_step"],
-        "result": RUNS[run_id]["result"],
-    }"""
 
 def run_full_pipeline(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -744,15 +663,15 @@ def run_full_pipeline(config: dict) -> dict:
         start_result = start_run(stage_config)
         _assert_stage_completed("start_run", start_result)
 
-        RUNS[run_id]["current_step"] = "building_early_submission_artefacts"
-        early_submission_artefact_result = build_submission_artefacts(tender_id)
-
-        print("EARLY SUBMISSION ARTEFACTS BUILT")
-        print(early_submission_artefact_result)
-
         RUNS[run_id]["current_step"] = "running_map_template"
         map_result = map_template(stage_config)
         _assert_stage_completed("map_template", map_result)
+
+        RUNS[run_id]["current_step"] = "planning_proposal_overview"
+        proposal_overview_plan_result = plan_proposal_overview(tender_id)
+
+        print("PROPOSAL OVERVIEW PLAN BUILT")
+        print(proposal_overview_plan_result)
 
         RUNS[run_id]["current_step"] = "running_draft_sections"
         draft_result = draft_sections(stage_config)
@@ -768,7 +687,8 @@ def run_full_pipeline(config: dict) -> dict:
             "create_tender": create_result,
             "detect_returnable_documents": returnable_result,
             "start_run": start_result["result"],
-            "early_submission_artefacts": early_submission_artefact_result,
+            #"early_submission_artefacts": early_submission_artefact_result,
+            "proposal_overview_plan": proposal_overview_plan_result,
             "map_template": map_result["result"],
             "draft_sections": draft_result["result"],
             "compile_response": compile_result["result"],

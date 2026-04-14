@@ -1,12 +1,10 @@
 {
   "submission_readiness": {
-    "readiness_percent": 0,
+    "readiness_percent": 20,
     "total_required_count": 10,
-    "generated_required_count": 0,
-    "missing_required_count": 10,
+    "generated_required_count": 2,
+    "missing_required_count": 8,
     "missing_required_names": [
-      "Proposal Overview",
-      "AIC Plan",
       "Attachments to the ICTPA Conditions of Deed.md",
       "ICTPA Conditions of Deed.md",
       "Attachment A to Quotation - Work Order Price and Payment Arrangements.md",
@@ -23,16 +21,16 @@
       "type": "core_response",
       "required": true,
       "source": "system_generated",
-      "status": "missing",
-      "file_path": null
+      "status": "generated",
+      "file_path": "tenders/RFQ-47137/output/proposal_overview.docx"
     },
     {
       "name": "AIC Plan",
       "type": "core_response",
       "required": true,
       "source": "system_generated",
-      "status": "missing",
-      "file_path": null
+      "status": "generated",
+      "file_path": "tenders/RFQ-47137/output/fujitsu_aic_plan.docx"
     },
     {
       "name": "Attachments to the ICTPA Conditions of Deed.md",
