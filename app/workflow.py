@@ -488,7 +488,7 @@ def compile_response(config: dict) -> dict:
             "past_performance_requirement.json"
         )     
 
-        proposal_overview_plan = load_proposal_overview_plan(tender_id)   
+        #proposal_overview_plan = load_proposal_overview_plan(tender_id)   
 
         template_text = fill_template_placeholders(template_text, tender_metadata)
 
@@ -548,16 +548,12 @@ Do not add commentary before or after the document.
 
         RUNS[run_id]["current_step"] = "generating_executive_summary"
 
-        # Remove placeholder / stale executive summary content before summarising
         summary_source_markdown = remove_existing_executive_summary(final_markdown)
-
         executive_summary_text = generate_executive_summary(summary_source_markdown)
-
         final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
 
         RUNS[run_id]["current_step"] = "building_proposal_overview"
 
-        # Remove placeholder / stale Proposal Overview content before rebuilding it
         final_markdown = remove_existing_proposal_overview(final_markdown)
 
         proposal_overview_text = build_proposal_overview_scaffold(proposal_overview_plan)

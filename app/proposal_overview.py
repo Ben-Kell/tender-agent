@@ -8,11 +8,6 @@ PROPOSAL_OVERVIEW_HEADING_RE = re.compile(
 
 
 def build_proposal_overview_scaffold(proposal_overview_plan: Dict[str, Any]) -> str:
-    """
-    Convert proposal_overview_plan.json into scaffolded markdown content.
-    This only creates headings and placeholder body text for now.
-    """
-
     sections: List[Dict[str, Any]] = proposal_overview_plan.get("proposal_overview_sections", [])
 
     if not sections:
@@ -28,7 +23,11 @@ def build_proposal_overview_scaffold(proposal_overview_plan: Dict[str, Any]) -> 
             continue
 
         if reason:
-            block = f"### {heading}\n\n[Insert response content for {heading}]\n\n*Why this is here:* {reason}"
+            block = (
+                f"### {heading}\n\n"
+                f"[Insert response content for {heading}]\n\n"
+                f"*Why this is here:* {reason}"
+            )
         else:
             block = f"### {heading}\n\n[Insert response content for {heading}]"
 

@@ -7,12 +7,12 @@
     "Submission Date": "submission_date"
   },
   "sections": {
-    "Executive Summary": "executive_summary",
-    "Proposal Overview": "proposal_overview_body",
-    "Corporate Capability": "corporate_capability",
-    "Technical Response": "technical_response",
-    "Implementation Approach": "implementation_approach",
-    "Risk Management": "risk_management",
-    "Pricing": "pricing"
+    "1. Executive Summary": "executive_summary",
+    "2. Proposal Overview": "proposal_overview_body",
+    "3. Corporate Capability": "corporate_capability",
+    "4. Technical Response": "technical_response",
+    "5. Implementation Approach": "implementation_approach",
+    "6. Risk Management": "risk_management",
+    "7. Pricing": "pricing"
   }
 }
