@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "output_file": "tenders\\NMP69524\\output\\tm_pricing_schedule.csv",
+  "diagnostics_file": "tenders\\NMP69524\\output\\tm_pricing_matches.json",
+  "role_count": 18,
+  "csv_row_count": 18
+}

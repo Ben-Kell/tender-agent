@@ -1,0 +1,91 @@
+{
+  "submission_readiness": {
+    "readiness_percent": 22,
+    "total_required_count": 9,
+    "generated_required_count": 2,
+    "missing_required_count": 7,
+    "missing_required_names": [
+      "NMP69524 SOW Annexure C- AIC Schedule.md",
+      "NMP69524 SOW Annexure E- AIC Plan Description.md",
+      "NMP69524 - Short Form RFQ and WO V2.md",
+      "NMP69524 - Attachment A to Quotation - Work Order Price  Payment Arrangements V2.md",
+      "NMP69524 Supplier Quotation V2.md",
+      "NMP69524 - SOW Annexure D - Role Requirements.md",
+      "NMP69524 - ICTPA Schedule A - Statement of Work V2.md"
+    ]
+  },
+  "artefacts": [
+    {
+      "name": "Proposal Overview",
+      "type": "core_response",
+      "required": true,
+      "source": "system_generated",
+      "status": "generated",
+      "file_path": "tenders/NMP69524/output/proposal_overview.docx"
+    },
+    {
+      "name": "AIC Plan",
+      "type": "core_response",
+      "required": true,
+      "source": "system_generated",
+      "status": "generated",
+      "file_path": "tenders/NMP69524/output/fujitsu_aic_plan.docx"
+    },
+    {
+      "name": "NMP69524 SOW Annexure C- AIC Schedule.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 SOW Annexure E- AIC Plan Description.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 - Short Form RFQ and WO V2.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 - Attachment A to Quotation - Work Order Price  Payment Arrangements V2.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 Supplier Quotation V2.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 - SOW Annexure D - Role Requirements.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    },
+    {
+      "name": "NMP69524 - ICTPA Schedule A - Statement of Work V2.md",
+      "type": "returnable_document",
+      "required": true,
+      "source": "returnable_detector",
+      "status": "manual_completion_required",
+      "file_path": null
+    }
+  ]
+}

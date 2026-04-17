@@ -3,6 +3,7 @@ import uuid
 
 
 from app.storage import RUNS
+from app.compliance_evaluator import evaluate_compliance
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.docx_bridge import render_docx_with_node
 from app.docx_payload_builder import build_docx_payload, write_docx_payload
@@ -12,6 +13,7 @@ from app.json_loader import load_proposal_overview_plan
 from app.markdown_writer import write_markdown_output
 from app.openai_client import chat
 from app.output_writer import write_tender_output
+from app.pricing_model_detector import detect_pricing_model
 from app.prompt_loader import load_prompt
 from app.proposal_overview_planner import plan_proposal_overview
 from app.requirement_extractor import extract_and_deduplicate_requirements
@@ -21,6 +23,7 @@ from app.template_loader import load_template
 from app.template_utils import fill_template_placeholders
 from app.tender_bootstrap import create_tender_structure
 from app.tender_ingest import create_and_ingest_tender
+from app.tm_pricing_csv import generate_tm_pricing_csv
 
 from app.executive_summary import (
     generate_executive_summary,
@@ -145,9 +148,14 @@ def start_run(config: dict) -> dict:
         requirements = extract_and_deduplicate_requirements(documents)
         print(f"[start_run] extracted {len(requirements)} deduplicated requirements")
 
+        RUNS[run_id]["current_step"] = "detecting_pricing_model"
+        pricing_model_result = detect_pricing_model(tender_id)
+        print(f"[start_run] pricing model detection result: {pricing_model_result}")
+
         parsed = {
             "metadata": metadata,
             "requirements": requirements,
+            "pricing_model_detection": pricing_model_result,
         }
 
         output_path = write_tender_output(
@@ -183,6 +191,8 @@ def start_run(config: dict) -> dict:
             "output_file": output_path,
             "metadata": metadata,
             "requirement_count": len(requirements),
+            "pricing_model_detection": pricing_model_result,
+            "pricing_model_detection_file": f"tenders/{tender_id}/output/pricing_model_detection.json",
             "supplier_background_requirement": supplier_background_detection,
             "supplier_background_copy_result": supplier_background_copy_result,
             "past_performance_requirement": past_performance_detection,
@@ -675,6 +685,9 @@ def run_full_pipeline(config: dict) -> dict:
         start_result = start_run(stage_config)
         _assert_stage_completed("start_run", start_result)
 
+        RUNS[run_id]["current_step"] = "running_tm_pricing_csv"
+        tm_pricing_result = generate_tm_pricing_csv(tender_id)
+
         RUNS[run_id]["current_step"] = "running_map_template"
         map_result = map_template(stage_config)
         _assert_stage_completed("map_template", map_result)
@@ -693,6 +706,9 @@ def run_full_pipeline(config: dict) -> dict:
         compile_result = compile_response(stage_config)
         _assert_stage_completed("compile_response", compile_result)
 
+        RUNS[run_id]["current_step"] = "evaluating_compliance"
+        compliance_result = evaluate_compliance(tender_id)
+
         RUNS[run_id]["result"] = {
             "message": "Full tender pipeline completed successfully",
             "tender_id": tender_id,
@@ -704,6 +720,9 @@ def run_full_pipeline(config: dict) -> dict:
             "map_template": map_result["result"],
             "draft_sections": draft_result["result"],
             "compile_response": compile_result["result"],
+            "pricing_model_detection": start_result["result"].get("pricing_model_detection"),
+            "tm_pricing_csv": tm_pricing_result,
+            "compliance_matrix": compliance_result,
         }
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"

@@ -1,0 +1,19 @@
+tender_role_name,matched_rate_card_role_name,sfia_code,sfia_level,quantity,unit,sell_rate,contract_days,total_price,notes_assumptions
+Data Engineers – Pipeline,Specialist Advice TECH,TECH,5,3,day,2449.71,,,Matched on SFIA code and level
+Data Engineers – SIEM,Specialist Advice TECH,TECH,5,3,day,2449.71,,,Matched on SFIA code and level
+Data Engineers – NDR,Specialist Advice TECH,TECH,5,1,day,2449.71,,,Matched on SFIA code and level
+Data Engineers – Pipeline,Specialist Advice TECH,TECH,4,1,day,1909.17,,,Matched on SFIA code and level
+Asset Manager,Asset Management ASMG,ASMG,3,1,day,1221.54,,,Matched on SFIA code and level
+Technology Service Management,IT Management ITMG,ITMG,5,1,day,1908.51,,,Matched on SFIA code and level
+Project Officers,"Portfolio, Programme and Project Support PROF",PROF,4,2,day,1310.93,,,Matched on SFIA code and level
+Change Manager,Change Management CHMG,CHMG,3,1,day,1555.59,,,Matched on SFIA code and level
+ICT Infrastructure – Op1 - Infrastructure Operations,Specialist Advice TECH,TECH,5,1,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op2 - System Software Administration,Specialist Advice TECH,TECH,5,1,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op3 - Storage Management,Specialist Advice TECH,TECH,5,2,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op4 - Network Support,Specialist Advice TECH,TECH,5,1,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op5 - Security Operation,Specialist Advice TECH,TECH,5,1,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op6 - Specialist Advice Technology,Specialist Advice TECH,TECH,5,3,day,2449.71,,,Matched on SFIA code and level
+ICT Infrastructure – Op1 - Infrastructure Operations,Specialist Advice TECH,TECH,4,1,day,1909.17,,,Matched on SFIA code and level
+ICT Infrastructure – Op2 - System Software Administration,Specialist Advice TECH,TECH,4,3,day,1909.17,,,Matched on SFIA code and level
+ICT Infrastructure – Op3 - Network Support,Specialist Advice TECH,TECH,4,1,day,1909.17,,,Matched on SFIA code and level
+ICT Infrastructure – Op4 - Specialist Advice Technology,Specialist Advice TECH,TECH,4,1,day,1909.17,,,Matched on SFIA code and level

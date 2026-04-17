@@ -11,6 +11,8 @@ from app.storage import RUNS
 from app.workflow import start_run, map_template, draft_sections, compile_response, run_full_pipeline
 from app.tender_ingest import create_and_ingest_tender
 from app.returnable_detector import detect_returnable_documents
+from app.pricing_model_detector import detect_pricing_model
+from app.tm_pricing_csv import generate_tm_pricing_csv
 
 import shutil
 
@@ -27,7 +29,13 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 class TenderRunRequest(BaseModel):
     tender_id: str
 
+class DetectPricingModelRequest(BaseModel):
+    tender_id: str
+
 class DetectReturnableDocumentsRequest(BaseModel):
+    tender_id: str
+    
+class GenerateTMPricingRequest(BaseModel):
     tender_id: str
 
 class TemplateMapRequest(BaseModel):
@@ -71,6 +79,24 @@ def detect_returnable_documents_endpoint(request: DetectReturnableDocumentsReque
     return {
         "status": "success",
         "message": f"Returnable documents analysed for {request.tender_id}",
+        "result": result,
+    }
+
+@app.post("/detect_pricing_model")
+def detect_pricing_model_endpoint(request: DetectPricingModelRequest):
+    result = detect_pricing_model(request.tender_id)
+    return {
+        "status": "success",
+        "message": f"Pricing model analysed for {request.tender_id}",
+        "result": result,
+    }
+
+@app.post("/generate_tm_pricing_csv")
+def generate_tm_pricing_csv_endpoint(request: GenerateTMPricingRequest):
+    result = generate_tm_pricing_csv(request.tender_id)
+    return {
+        "status": "success",
+        "message": f"T&M pricing CSV processed for {request.tender_id}",
         "result": result,
     }
 
@@ -166,6 +192,8 @@ def list_outputs(tender_id: str):
         "tender_id": tender_id,
         "files": files,
     }
+
+
 
 
 @app.get("/download_output/{tender_id}/{filename}")
