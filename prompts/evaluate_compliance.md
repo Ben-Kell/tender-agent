@@ -1,23 +1,21 @@
 You are evaluating tender compliance.
 
-You must determine whether each requirement is:
+You must assess every requirement provided.
 
-- FULLY COVERED
-- PARTIALLY COVERED
-- NOT COVERED
+For each requirement, determine whether it is:
+- FULL
+- PARTIAL
+- NONE
 
-You must also identify:
-- where it is covered (section name)
-- confidence level
-- gap description if missing or weak
+You must not omit any requirement.
+You must return exactly one compliance record for every requirement_id provided in the input.
+If a requirement is not addressed explicitly, mark it as NONE.
+If coverage is weak or incomplete, mark it as PARTIAL.
 
-Rules:
-- Be strict (Defence standard)
-- Do not assume coverage
-- If unclear → mark PARTIAL
-- If not explicitly addressed → mark NOT COVERED
+Return valid JSON only.
+Do not use markdown fences.
 
-Return JSON:
+Return exactly this structure:
 
 {
   "compliance": [

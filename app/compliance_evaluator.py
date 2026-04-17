@@ -31,11 +31,20 @@ Return JSON only.
 """
 
     raw = chat(system_prompt, user_prompt, model="gpt-4o")
+    cleaned = raw.strip()
+
+    if cleaned.startswith("```json"):
+        cleaned = cleaned[len("```json"):].strip()
+    elif cleaned.startswith("```"):
+        cleaned = cleaned[len("```"):].strip()
+
+    if cleaned.endswith("```"):
+        cleaned = cleaned[:-3].strip()
 
     try:
-        parsed = json.loads(raw)
+        parsed = json.loads(cleaned)
     except Exception:
-        parsed = {"compliance": [], "error": raw[:1000]}
+        parsed = {"compliance": [], "error": cleaned[:1000]}
 
     write_tender_output(
         tender_id,

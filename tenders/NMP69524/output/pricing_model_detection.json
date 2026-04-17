@@ -1,7 +1,7 @@
 {
   "pricing_model": "staff_augmentation_time_and_materials",
   "confidence": "high",
-  "summary": "The tender is primarily structured around providing personnel resources on a time and materials basis, with a focus on labour rates and capped pricing.",
+  "summary": "The tender is primarily structured around a time and materials model with a focus on providing ICT personnel resources.",
   "primary_evidence": [
     "T&M Services (up to an NTE Price)",
     "proposed Labour Rates for the applicable SFIA skillsets",
@@ -9,8 +9,8 @@
   ],
   "secondary_indicators": [
     "Provision of ICT Personnel Resources",
-    "Supplier must provide Key Persons",
-    "Payment based on labour rates"
+    "Supplier\u2019s Quotation is to include pricing on the basis of: Time and Materials (T&M)",
+    "The Supplier must provide the ICT Personnel Resources"
   ],
-  "reasoning": "The tender documents consistently emphasize the provision of personnel resources with billing based on time and materials, capped at a Not-To-Exceed (NTE) price. The focus on labour rates, specific roles, and time tracking supports the classification as staff augmentation time and materials."
+  "reasoning": "The tender documents consistently emphasize a time and materials approach, with detailed references to labour rates, SFIA skillsets, and a capped NTE price. The focus is on providing personnel resources rather than delivering a fixed outcome or service, which aligns with a staff augmentation model."
 }

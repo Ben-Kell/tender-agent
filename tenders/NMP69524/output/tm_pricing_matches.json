@@ -12,19 +12,9 @@
       "source_snippet": "Data Engineers \u2013 Pipeline x 3 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -41,19 +31,9 @@
       "source_snippet": "Data Engineers \u2013 SIEM x 3 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -70,19 +50,9 @@
       "source_snippet": "Data Engineers \u2013 NDR x 1 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -99,19 +69,9 @@
       "source_snippet": "Data Engineers \u2013 Pipeline x 1 | Y | | TECH | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 53,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1909.1675
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -128,19 +88,9 @@
       "source_snippet": "Asset Manager x 1 | Y | | ASMG | 3 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 252,
-        "category": "Delivery and Operation",
-        "sub_category": "Service Transition",
-        "skill_text": "Asset Management ASMG",
-        "sfia_code": "ASMG",
-        "skill_name": "Asset Management",
-        "sfia_level": 3,
-        "unit": "day",
-        "sell_rate": 1221.5384999999999
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -157,19 +107,9 @@
       "source_snippet": "Technology Service Management x 1 | Y | | ITMG | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 61,
-        "category": "Strategy and Architecture",
-        "sub_category": "and Planning",
-        "skill_text": "IT Management ITMG",
-        "sfia_code": "ITMG",
-        "skill_name": "IT Management",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 1908.512
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -186,19 +126,9 @@
       "source_snippet": "Project Officers x 2 | Y | | PROF | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 119,
-        "category": "Transformation",
-        "sub_category": "Business Change Implementation",
-        "skill_text": "Portfolio, Programme and Project Support PROF",
-        "sfia_code": "PROF",
-        "skill_name": "Portfolio, Programme and Project Support",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1310.93
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -215,19 +145,9 @@
       "source_snippet": "Change Manager x 1 | Y | | CHMG | 3 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 257,
-        "category": "Delivery and Operation",
-        "sub_category": "Service Transition",
-        "skill_text": "Change Management CHMG",
-        "sfia_code": "CHMG",
-        "skill_name": "Change Management",
-        "sfia_level": 3,
-        "unit": "day",
-        "sell_rate": 1555.587
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -244,19 +164,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -273,19 +183,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 1 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -302,19 +202,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op3 - Storage Management x 2 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -331,19 +221,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op4 - Network Support x 1 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -360,19 +240,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op5 - Security Operation x 1 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -389,19 +259,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op6 - Specialist Advice Technology x 3 | Y | | TECH | 5 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 52,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 5,
-        "unit": "day",
-        "sell_rate": 2449.708
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -418,19 +278,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 53,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1909.1675
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -447,19 +297,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 3 | Y | | TECH | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 53,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1909.1675
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -476,19 +316,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op3 - Network Support x 1 | Y | | TECH | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 53,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1909.1675
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   },
@@ -505,19 +335,9 @@
       "source_snippet": "ICT Infrastructure \u2013 Op4 - Specialist Advice Technology x 1 | Y | | TECH | 4 | 8"
     },
     "match_result": {
-      "match_status": "EXACT_SFIA_CODE_LEVEL_MATCH",
-      "confidence": "high",
-      "matched_row": {
-        "source_row_number": 53,
-        "category": "Strategy and Architecture",
-        "sub_category": "Advice and Guidance",
-        "skill_text": "Specialist Advice TECH",
-        "sfia_code": "TECH",
-        "skill_name": "Specialist Advice",
-        "sfia_level": 4,
-        "unit": "day",
-        "sell_rate": 1909.1675
-      },
+      "match_status": "NO_MATCH_FOUND",
+      "confidence": "low",
+      "matched_row": null,
       "recommended_row": null
     }
   }
