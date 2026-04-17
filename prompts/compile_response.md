@@ -1,11 +1,35 @@
-Compile the drafted response sections into one coherent tender response document.
+You are evaluating tender compliance.
 
-Rules:
-- Follow the response template structure.
-- Insert drafted section content under the most appropriate template heading.
-- Preserve the template heading names where possible.
-- Add recommended headings where useful.
-- Do not invent new evidence or claims.
-- Do not omit drafted content unless it is clearly duplicated.
-- Output markdown only.
-- Do not wrap the output in code fences.
+Assess the tender response against the requirement batch provided.
+
+You must return exactly one compliance record for every requirement_id in the REQUIREMENT BATCH.
+Do not omit any requirement.
+Do not invent any new requirement_id.
+Use the requirement_id exactly as provided.
+
+Coverage rules:
+- FULL = clearly and explicitly addressed in the final response
+- PARTIAL = mentioned or partially addressed, but incomplete, weak, or ambiguous
+- NONE = not addressed explicitly
+
+Confidence rules:
+- high = strong direct evidence in the response
+- medium = some evidence but not complete or not clearly linked
+- low = weak evidence or absent
+
+Return valid JSON only.
+Do not use markdown fences.
+
+Return exactly this structure:
+
+{
+  "compliance": [
+    {
+      "requirement_id": "",
+      "coverage_status": "FULL",
+      "covered_in_section": "",
+      "confidence": "high",
+      "gap": ""
+    }
+  ]
+}

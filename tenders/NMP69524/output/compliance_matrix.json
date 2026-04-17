@@ -1,3 +1,10 @@
 {
-  "compliance": []
+  "compliance": [],
+  "summary": {
+    "requirement_count": 0,
+    "full_count": 0,
+    "partial_count": 0,
+    "none_count": 0
+  },
+  "error": "No requirements found in extracted_requirements.json"
 }

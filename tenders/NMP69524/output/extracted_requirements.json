@@ -2,24 +2,24 @@
   "metadata": {
     "tender_reference": "NMP69524",
     "tender_title": "CDS Technical Specialists - Cyber Platforms - 01-07-26 - 30-06-29",
-    "customer": "Commonwealth of Australia as represented by the Department of Defence",
+    "customer": "The Commonwealth of Australia as represented by the Department of Defence",
     "submission_date": "12:00 pm 30 Apr 2026 ACT local time"
   },
   "requirements": [],
   "pricing_model_detection": {
     "pricing_model": "staff_augmentation_time_and_materials",
     "confidence": "high",
-    "summary": "The tender is primarily structured around a time and materials model with a focus on providing ICT personnel resources.",
+    "summary": "The tender primarily involves the provision of ICT personnel resources on a time and materials basis, with a capped not-to-exceed (NTE) price.",
     "primary_evidence": [
       "T&M Services (up to an NTE Price)",
       "proposed Labour Rates for the applicable SFIA skillsets",
       "actual time spent by the Supplier’s Personnel"
     ],
     "secondary_indicators": [
-      "Provision of ICT Personnel Resources",
+      "Provision of Services in accordance with the Deed",
       "Supplier’s Quotation is to include pricing on the basis of: Time and Materials (T&M)",
       "The Supplier must provide the ICT Personnel Resources"
     ],
-    "reasoning": "The tender documents consistently emphasize a time and materials approach, with detailed references to labour rates, SFIA skillsets, and a capped NTE price. The focus is on providing personnel resources rather than delivering a fixed outcome or service, which aligns with a staff augmentation model."
+    "reasoning": "The tender documents consistently emphasize the use of a time and materials pricing model with a capped NTE price, focusing on the provision of ICT personnel resources. The presence of detailed labour rates and the requirement for timesheets further support this classification. There is no significant evidence of a fixed price or outcome-based service model, leading to a high confidence classification as staff augmentation time and materials."
   }
 }

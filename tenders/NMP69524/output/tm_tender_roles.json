@@ -9,7 +9,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Data Engineers \u2013 Pipeline x 3 | Y | | TECH | 5 | 8"
+      "source_snippet": "Data Engineers \u2013 Pipeline x 3 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Data Engineers \u2013 SIEM",
@@ -20,7 +20,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Data Engineers \u2013 SIEM x 3 | Y | | TECH | 5 | 8"
+      "source_snippet": "Data Engineers \u2013 SIEM x 3 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Data Engineers \u2013 NDR",
@@ -31,7 +31,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Data Engineers \u2013 NDR x 1 | Y | | TECH | 5 | 8"
+      "source_snippet": "Data Engineers \u2013 NDR x 1 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Data Engineers \u2013 Pipeline",
@@ -42,7 +42,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Data Engineers \u2013 Pipeline x 1 | Y | | TECH | 4 | 8"
+      "source_snippet": "Data Engineers \u2013 Pipeline x 1 | Y | | TECH | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Asset Manager",
@@ -53,7 +53,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Asset Manager x 1 | Y | | ASMG | 3 | 8"
+      "source_snippet": "Asset Manager x 1 | Y | | ASMG | 3 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Technology Service Management",
@@ -64,7 +64,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Technology Service Management x 1 | Y | | ITMG | 5 | 8"
+      "source_snippet": "Technology Service Management x 1 | Y | | ITMG | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Project Officers",
@@ -75,7 +75,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Project Officers x 2 | Y | | PROF | 4 | 8"
+      "source_snippet": "Project Officers x 2 | Y | | PROF | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "Change Manager",
@@ -86,7 +86,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "Change Manager x 1 | Y | | CHMG | 3 | 8"
+      "source_snippet": "Change Manager x 1 | Y | | CHMG | 3 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations",
@@ -97,7 +97,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op2 - System Software Administration",
@@ -108,7 +108,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 1 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 1 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op3 - Storage Management",
@@ -119,7 +119,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op3 - Storage Management x 2 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op3 - Storage Management x 2 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op4 - Network Support",
@@ -130,7 +130,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op4 - Network Support x 1 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op4 - Network Support x 1 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op5 - Security Operation",
@@ -141,7 +141,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op5 - Security Operation x 1 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op5 - Security Operation x 1 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op6 - Specialist Advice Technology",
@@ -152,7 +152,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op6 - Specialist Advice Technology x 3 | Y | | TECH | 5 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op6 - Specialist Advice Technology x 3 | Y | | TECH | 5 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations",
@@ -163,7 +163,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 4 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op1 - Infrastructure Operations x 1 | Y | | TECH | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op2 - System Software Administration",
@@ -174,7 +174,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 3 | Y | | TECH | 4 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op2 - System Software Administration x 3 | Y | | TECH | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op3 - Network Support",
@@ -185,7 +185,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op3 - Network Support x 1 | Y | | TECH | 4 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op3 - Network Support x 1 | Y | | TECH | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     },
     {
       "tender_role_name": "ICT Infrastructure \u2013 Op4 - Specialist Advice Technology",
@@ -196,7 +196,7 @@
       "pricing_unit_required": "day",
       "duration_years": null,
       "duration_months": null,
-      "source_snippet": "ICT Infrastructure \u2013 Op4 - Specialist Advice Technology x 1 | Y | | TECH | 4 | 8"
+      "source_snippet": "ICT Infrastructure \u2013 Op4 - Specialist Advice Technology x 1 | Y | | TECH | 4 | 8 | Example:- $500 | Example:- $2,045.50 | Example:- $2,250.00"
     }
   ]
 }
