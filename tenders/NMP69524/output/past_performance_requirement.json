@@ -1,7 +1,44 @@
 {
-  "past_performance_required": false,
-  "template_filename": null,
-  "output_filename": null,
-  "matches": [],
-  "confidence": 0.0
+  "past_performance_required": true,
+  "template_filename": "fujitsu_past_performance.docx",
+  "output_filename": "fujitsu_past_performance.docx",
+  "matches": [
+    {
+      "matched_phrases": [
+        "demonstrated experience"
+      ],
+      "requirement": {
+        "requirement_id": "REQ-004",
+        "clause_reference": "Table 8, Row 3, OP 1",
+        "requirement_text": "Data Architecture experience is highly desirable; this could include demonstrated experience designing a new Data Pipeline or a significant redesign of an existing Data Pipeline.",
+        "requirement_type": "technical",
+        "response_needed": true
+      }
+    },
+    {
+      "matched_phrases": [
+        "referees"
+      ],
+      "requirement": {
+        "requirement_id": "REQ-005",
+        "clause_reference": "SUPPLIER’S PROFILE",
+        "requirement_text": "Suppliers are to provide contact details for at least 2 referees for whom the Supplier has performed similar services within the past 3 years.",
+        "requirement_type": "response",
+        "response_needed": true
+      }
+    },
+    {
+      "matched_phrases": [
+        "referees"
+      ],
+      "requirement": {
+        "requirement_id": "REQ-014",
+        "clause_reference": "ATTACHMENTS",
+        "requirement_text": "Supplier is to attach a Resume / CV for each proposed Key Person. At a minimum, each Resume / CV must contain the following details: the candidate’s name; the role the candidate is being proposed for, including SFIA code and skill level; the candidate’s current security clearance level (with clearance reference number); an experience summary addressing the candidate’s suitability to perform the proposed Key Position, including qualifications, skills and experience, and dates of experience summaries; notification of time last served in the Australian Defence Force, or time since transition out of the ADF; The name and contact details of two professional referees whom the candidate has worked with in the past 3 years; and The CV for each candidate should not exceed a combined total of four (4) A4 pages in length.",
+        "requirement_type": "personnel",
+        "response_needed": true
+      }
+    }
+  ],
+  "confidence": 0.95
 }

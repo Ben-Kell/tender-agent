@@ -145,8 +145,15 @@ def start_run(config: dict) -> dict:
             for doc in docs
         ]
 
-        requirements = extract_and_deduplicate_requirements(documents)
+        requirements = extract_and_deduplicate_requirements(tender_id, documents)
         print(f"[start_run] extracted {len(requirements)} deduplicated requirements")
+
+        if not requirements:
+            raise RuntimeError(
+                f"Requirement extraction returned zero requirements for {tender_id}. "
+                f"Check tenders/{tender_id}/output/requirement_extraction_diagnostics.json "
+                f"and tenders/{tender_id}/output/raw_extracted_requirements.json."
+            )
 
         RUNS[run_id]["current_step"] = "detecting_pricing_model"
         pricing_model_result = detect_pricing_model(tender_id)

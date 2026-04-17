@@ -1,23 +1,45 @@
-Extract tender metadata and all supplier response requirements from the tender documents.
+You are extracting supplier response requirements from a tender document chunk.
 
-You must return these metadata fields exactly:
-- tender_reference
-- tender_title
-- customer
-- submission_date
+Extract only requirement records from the text provided.
+Do NOT extract metadata.
+Do NOT return a metadata object.
+Do NOT return commentary.
 
-Rules for metadata:
-- Use exact wording from the tender where possible.
-- Do not guess.
-- If a value is not clearly available, return an empty string.
-- Put all metadata inside a top-level object named "metadata".
+Capture:
+- mandatory obligations
+- response requirements
+- evaluation criteria response requirements
+- pricing/commercial requirements
+- security requirements
+- personnel requirements
+- governance/reporting requirements
+- technical requirements
+- plans, schedules, and deliverables the supplier must provide
 
-Rules for requirements:
-- Capture mandatory obligations, evaluation response requirements, pricing requirements, security requirements, personnel requirements, plans, reporting, governance, AIC, compliance, and deliverables.
+Rules:
 - Preserve clause references where possible.
-- Do not summarise requirements into vague wording.
-- Break combined obligations into separate requirements where practical.
-- requirement_type must be one of: mandatory, response, commercial, security, personnel, governance, technical.
-- Set response_needed to true where the supplier must address the point in the tender response.
+- Preserve the wording of the requirement as closely as possible.
+- Break combined obligations into separate requirement records where practical.
+- Ignore background/context text that does not impose a supplier obligation or response need.
+- If the text includes evaluation criteria, submission instructions, response schedules, annexures to be completed, pricing instructions, staffing tables, compliance statements, or mandatory plans, extract them.
+- requirement_type must be one of:
+  mandatory, response, commercial, security, personnel, governance, technical
+- response_needed must be true if Fujitsu needs to address it in the response, submit something for it, price it, or comply with it.
 
-Return only valid JSON matching the structure requested by the caller.
+Return valid JSON only.
+Do not use markdown fences.
+
+Return either:
+1) a raw JSON list of requirement objects
+or
+2) an object with a top-level "requirements" list
+
+Each requirement object must use this shape:
+
+{
+  "requirement_id": "REQ-001",
+  "clause_reference": "",
+  "requirement_text": "",
+  "requirement_type": "mandatory",
+  "response_needed": true
+}

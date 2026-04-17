@@ -4,6 +4,7 @@ from typing import Any, Dict, List
 from app.prompt_loader import load_prompt
 from app.openai_client import chat
 from app.text_chunker import split_text_into_chunks
+from app.output_writer import write_tender_output
 
 
 def _clean_json_response(content: str) -> str:
@@ -24,6 +25,85 @@ def _clean_json_response(content: str) -> str:
         content = content[:-3]
 
     return content.strip()
+
+
+def normalise_text(value: str) -> str:
+    return " ".join((value or "").strip().lower().split())
+
+
+def _normalise_requirement_obj(item: Any, fallback_index: int) -> Dict[str, Any] | None:
+    if not isinstance(item, dict):
+        return None
+
+    requirement_text = str(item.get("requirement_text", "")).strip()
+    if not requirement_text:
+        requirement_text = str(
+            item.get("text")
+            or item.get("requirement")
+            or item.get("description")
+            or ""
+        ).strip()
+
+    if not requirement_text:
+        return None
+
+    requirement_id = str(item.get("requirement_id", "")).strip()
+    if not requirement_id:
+        requirement_id = f"REQ-AUTO-{fallback_index:04d}"
+
+    clause_reference = str(item.get("clause_reference", "")).strip()
+    requirement_type = str(item.get("requirement_type", "response")).strip().lower()
+    response_needed = item.get("response_needed", True)
+
+    allowed_types = {
+        "mandatory",
+        "response",
+        "commercial",
+        "security",
+        "personnel",
+        "governance",
+        "technical",
+    }
+    if requirement_type not in allowed_types:
+        requirement_type = "response"
+
+    if not isinstance(response_needed, bool):
+        response_needed = True
+
+    return {
+        "requirement_id": requirement_id,
+        "clause_reference": clause_reference,
+        "requirement_text": requirement_text,
+        "requirement_type": requirement_type,
+        "response_needed": response_needed,
+    }
+
+
+def _extract_requirements_from_parsed_payload(parsed: Any) -> List[Dict[str, Any]]:
+    candidates = []
+
+    if isinstance(parsed, list):
+        candidates = parsed
+    elif isinstance(parsed, dict):
+        if isinstance(parsed.get("requirements"), list):
+            candidates = parsed["requirements"]
+        elif isinstance(parsed.get("items"), list):
+            candidates = parsed["items"]
+        elif isinstance(parsed.get("data"), list):
+            candidates = parsed["data"]
+        elif isinstance(parsed.get("output"), list):
+            candidates = parsed["output"]
+        else:
+            if "requirement_text" in parsed or "text" in parsed or "requirement" in parsed:
+                candidates = [parsed]
+
+    normalised: List[Dict[str, Any]] = []
+    for i, item in enumerate(candidates, start=1):
+        obj = _normalise_requirement_obj(item, i)
+        if obj:
+            normalised.append(obj)
+
+    return normalised
 
 
 def _coerce_chat_response_to_text(response: Any) -> str:
@@ -88,50 +168,78 @@ Text:
         parsed = json.loads(content)
     except json.JSONDecodeError as e:
         raise ValueError(
-            f"Failed to parse JSON from chunk {chunk_index} in document {doc_name}. "
+            f"Failed to parse JSON from chunk {chunk_index} in document {doc_name}.\n"
             f"Raw response was:\n{content}"
         ) from e
 
-    if isinstance(parsed, list):
-        return parsed
-
-    if isinstance(parsed, dict) and "requirements" in parsed and isinstance(parsed["requirements"], list):
-        return parsed["requirements"]
-
-    return []
+    return _extract_requirements_from_parsed_payload(parsed)
 
 
 def extract_requirements_from_documents(
+    tender_id: str,
     documents: List[Dict[str, str]]
 ) -> List[Dict[str, Any]]:
     all_requirements: List[Dict[str, Any]] = []
+    diagnostics: List[Dict[str, Any]] = []
 
     for doc in documents:
         doc_name = doc.get("name", "unknown_document")
         doc_text = doc.get("content", "")
 
         if not doc_text.strip():
+            diagnostics.append({
+                "document": doc_name,
+                "status": "skipped_empty_document",
+                "chunks": []
+            })
             continue
 
         chunks = split_text_into_chunks(doc_text, max_chars=15000, overlap=800)
         print(f"[extract] {doc_name}: {len(chunks)} chunk(s)")
 
+        doc_diag = {
+            "document": doc_name,
+            "status": "processed",
+            "chunk_count": len(chunks),
+            "chunks": []
+        }
+
         for i, chunk in enumerate(chunks, start=1):
             print(f"[extract] Processing {doc_name} chunk {i}/{len(chunks)}")
+            try:
+                chunk_requirements = extract_requirements_from_chunk(
+                    doc_name=doc_name,
+                    chunk_text=chunk,
+                    chunk_index=i,
+                )
+                all_requirements.extend(chunk_requirements)
 
-            chunk_requirements = extract_requirements_from_chunk(
-                doc_name=doc_name,
-                chunk_text=chunk,
-                chunk_index=i,
-            )
+                doc_diag["chunks"].append({
+                    "chunk_index": i,
+                    "chunk_length": len(chunk),
+                    "requirement_count": len(chunk_requirements),
+                    "status": "ok",
+                    "chunk_preview": chunk[:800]
+                })
+            except Exception as e:
+                doc_diag["chunks"].append({
+                    "chunk_index": i,
+                    "chunk_length": len(chunk),
+                    "requirement_count": 0,
+                    "status": "error",
+                    "error": str(e),
+                    "chunk_preview": chunk[:800]
+                })
 
-            all_requirements.extend(chunk_requirements)
+        diagnostics.append(doc_diag)
+
+    write_tender_output(
+        tender_id,
+        "requirement_extraction_diagnostics.json",
+        diagnostics,
+    )
 
     return all_requirements
-
-
-def normalise_text(value: str) -> str:
-    return " ".join((value or "").strip().lower().split())
 
 
 def deduplicate_requirements(
@@ -153,7 +261,16 @@ def deduplicate_requirements(
 
 
 def extract_and_deduplicate_requirements(
+    tender_id: str,
     documents: List[Dict[str, str]]
 ) -> List[Dict[str, Any]]:
-    raw_requirements = extract_requirements_from_documents(documents)
-    return deduplicate_requirements(raw_requirements)
+    raw_requirements = extract_requirements_from_documents(tender_id, documents)
+    deduped = deduplicate_requirements(raw_requirements)
+
+    write_tender_output(
+        tender_id,
+        "raw_extracted_requirements.json",
+        raw_requirements,
+    )
+
+    return deduped

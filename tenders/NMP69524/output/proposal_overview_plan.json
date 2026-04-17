@@ -1,5 +1,87 @@
 {
-  "proposal_overview_sections": [],
-  "covered_elsewhere": [],
-  "overall_summary": "No evaluation criteria were found in extracted_requirements.json."
+  "proposal_overview_sections": [
+    {
+      "heading": "Understanding of Requirements",
+      "criteria_ids": [
+        "REQ-003",
+        "REQ-004"
+      ],
+      "criteria_titles": [
+        "Untitled criterion",
+        "Untitled criterion"
+      ],
+      "reason": "These criteria require the supplier to demonstrate their understanding of the RFQ and associated documents, which is a key part of the proposal overview."
+    },
+    {
+      "heading": "Service Delivery Approach",
+      "criteria_ids": [
+        "REQ-006"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "reason": "This criterion involves the supplier's approach to ensuring minimal turnover of personnel and managing associated risks, which is relevant to the service delivery approach."
+    },
+    {
+      "heading": "Key Staff / Capability Overview",
+      "criteria_ids": [
+        "REQ-008"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "reason": "This criterion involves the supplier's proposed targets for increasing the proportion of apprentices and ICT cadets, which relates to key staff and capability."
+    }
+  ],
+  "covered_elsewhere": [
+    {
+      "criteria_ids": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-004",
+        "REQ-005"
+      ],
+      "criteria_titles": [
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion"
+      ],
+      "document": "pricing_workbook_or_quote",
+      "reason": "These criteria involve labor rates and pricing information, which should be covered in the pricing workbook or quote."
+    },
+    {
+      "criteria_ids": [
+        "REQ-005"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "cvs_or_key_personnel",
+      "reason": "This criterion requires CVs of key personnel, which should be included in the CVs or key personnel attachments."
+    },
+    {
+      "criteria_ids": [
+        "REQ-003"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "aic_plan",
+      "reason": "This criterion involves the AIC Schedule or AIC Plan, which should be covered in the AIC plan document."
+    },
+    {
+      "criteria_ids": [
+        "REQ-005"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "past_performance_document",
+      "reason": "This criterion requires contact details for referees, which should be included in the past performance document."
+    }
+  ],
+  "overall_summary": "The Proposal Overview should focus on demonstrating the supplier's understanding of the requirements, their service delivery approach, and their capability in terms of key staff. Pricing, past performance, and specific compliance details should be addressed in their respective documents."
 }
