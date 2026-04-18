@@ -175,7 +175,11 @@ def start_run(config: dict) -> dict:
             "extracted_requirements.json",
             parsed,
         )
-
+        write_tender_output(
+            tender_id,
+            "response_routing.json",
+            response_routing,
+        )
         write_tender_output(
             tender_id,
             "response_routing.json",
@@ -552,6 +556,8 @@ Return raw JSON only in this structure:
             "error": "Failed to parse model output as JSON",
             "raw_output": raw_output,
         }
+
+
 
 
 def draft_sections(config: dict) -> dict:
