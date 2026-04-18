@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "section_id": "SEC-MAIN-001",
+      "template_section": "Response to Customer Requirements",
+      "draft_text": "Fujitsu is committed to delivering services that align with the Commonwealth of Australia's requirements as outlined in the tender NMP69524. Our approach ensures compliance with all specified laws, authorisations, performance measures, and milestones, thereby minimising risks and disruptions to the Commonwealth's operations. We will provide services that are fully compatible with the existing ICT environment, ensuring seamless integration and operational continuity.\n\nIn adherence to the Deed and Work Order, Fujitsu will submit an AIC Schedule or Plan, as applicable, to demonstrate our strategy for achieving Australian Industry Capability (AIC) objectives. This includes maximising the participation of Australian Industry in our supply chain, ensuring that procurement activities are structured to provide fair and equitable opportunities for local businesses.\n\nFujitsu's performance will be measured against the established performance measures, impacting entitlements to any At Risk Amount or Service Credits. We will ensure that all deliverables, whether hard or soft copy, are provided to the Commonwealth Contract Manager as specified, and that all contract reports are accurate and up-to-date at the time of submission.\n\nOur commitment to supporting government policies is reflected in our compliance with the Commonwealth Supplier Code of Conduct and cooperation with any reasonable requests or directions issued by the Commonwealth. We will also ensure that our personnel are aware of their obligations regarding the collection and disclosure of personal information, as required.\n\nFujitsu will lodge all quotations electronically via AusTender, ensuring adherence to the specified lodgement procedures and timelines. We acknowledge the Commonwealth's rights as set out in the RFQ and this deed poll, including the right to exclude quotations if necessary.",
+      "requirements_covered": [
+        "REQ-002",
+        "REQ-009"
+      ],
+      "used_boilerplate": [],
+      "used_case_studies": [],
+      "headings_added": []
+    }
+  ]
+}

@@ -1,3 +1,3 @@
 ## 1. Executive Summary
 
-## 2. Response to Customer Requirements
+## 2. Our Understanding and Response

@@ -25,17 +25,20 @@ def build_query_text(
     matched_requirements: list[dict],
     tender_metadata: dict
 ) -> str:
+    response_focuses = section.get("response_focuses", [])
+
     return "\n".join([
         f"Section: {section.get('template_section', '')}",
         f"Purpose: {section.get('section_purpose', '')}",
         f"Guidance: {section.get('response_guidance', '')}",
+        f"Response focuses: {', '.join(response_focuses)}",
         f"Tender title: {tender_metadata.get('tender_title', '')}",
+        "Priority topics: proposal response, understanding, methodology, delivery approach, governance, transition, security",
         "Requirements:",
         "\n".join(
             f"- {req.get('requirement_text', '')}" for req in matched_requirements
         )
     ]).strip()
-
 
 def retrieve_relevant_chunks(
     section: dict,

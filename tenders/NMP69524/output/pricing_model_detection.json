@@ -1,0 +1,16 @@
+{
+  "pricing_model": "staff_augmentation_time_and_materials",
+  "confidence": "high",
+  "summary": "The tender is primarily structured around time and materials billing with a focus on providing ICT personnel resources.",
+  "primary_evidence": [
+    "T&M Services (up to an NTE Price)",
+    "proposed Labour Rates for the applicable SFIA skillsets",
+    "actual time spent by the Supplier\u2019s Personnel"
+  ],
+  "secondary_indicators": [
+    "Provision of ICT Personnel Resources",
+    "Supplier must provide Key Persons",
+    "Supplier\u2019s Quotation is to include pricing on the basis of: Time and Materials (T&M)"
+  ],
+  "reasoning": "The tender documents consistently emphasize a time and materials approach, with detailed references to labour rates, SFIA skillsets, and the requirement for personnel to perform services. The absence of fixed price elements and the focus on resource provision further support this classification."
+}

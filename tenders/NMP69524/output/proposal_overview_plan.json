@@ -1,0 +1,101 @@
+{
+  "proposal_overview_sections": [
+    {
+      "heading": "Understanding of Requirements",
+      "criteria_ids": [
+        "REQ-004",
+        "REQ-005"
+      ],
+      "criteria_titles": [
+        "Untitled criterion",
+        "Untitled criterion"
+      ],
+      "reason": "These criteria require the supplier to demonstrate their understanding and compliance with the RFQ and SOW documentation."
+    },
+    {
+      "heading": "Service Delivery Approach",
+      "criteria_ids": [
+        "REQ-006"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "reason": "This criterion involves the supplier's approach to ensuring minimal turnover of personnel and managing associated risks."
+    },
+    {
+      "heading": "Key Staff / Capability Overview",
+      "criteria_ids": [
+        "REQ-010"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "reason": "This criterion involves providing CVs of key personnel, which is relevant to the overview of key staff and capabilities."
+    }
+  ],
+  "covered_elsewhere": [
+    {
+      "criteria_ids": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-006",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-012"
+      ],
+      "criteria_titles": [
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion",
+        "Untitled criterion"
+      ],
+      "document": "pricing_workbook_or_quote",
+      "reason": "These criteria relate to pricing information, labour rates, and quotation submission, which are typically covered in a pricing workbook or quote."
+    },
+    {
+      "criteria_ids": [
+        "REQ-007"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "cvs_or_key_personnel",
+      "reason": "This criterion requires the submission of CVs for key personnel, which should be included in a separate CVs or key personnel attachment."
+    },
+    {
+      "criteria_ids": [
+        "REQ-003"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "aic_plan",
+      "reason": "This criterion involves the delivery of an AIC Schedule or AIC Plan, which should be covered in the AIC plan document."
+    },
+    {
+      "criteria_ids": [
+        "REQ-005"
+      ],
+      "criteria_titles": [
+        "Untitled criterion"
+      ],
+      "document": "returnable_schedule",
+      "reason": "This criterion involves the submission of a Meeting Agenda, which is typically covered in returnable schedules."
+    }
+  ],
+  "overall_summary": "The Proposal Overview should focus on demonstrating the supplier's understanding of the requirements, their service delivery approach, and an overview of key staff and capabilities. Pricing, detailed personnel information, and specific plans like the AIC Plan should be covered in their respective documents."
+}

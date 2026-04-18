@@ -17,7 +17,7 @@ Determine which tender requirements should be addressed in the main Fujitsu resp
 Rules:
 - The main Fujitsu response document must contain only:
   1. Executive Summary
-  2. Response to Customer Requirements
+  2. Our Understanding and Response
 - Route a requirement to "main_response" only if it should be addressed in narrative prose in the main Fujitsu response.
 - Route a requirement to "other_document" if it is better addressed in:
   - a customer-issued returnable form
@@ -26,15 +26,24 @@ Rules:
   - a past performance document
   - another separate submission artefact
 - Be conservative. If a requirement looks like it belongs in a separate schedule, form, rate card, attachment, or customer returnable, do not put it in the main response.
+- For each requirement routed to the main response, assign a "response_focus" that best reflects what kind of narrative should be written:
+  - understanding
+  - methodology
+  - approach
+  - delivery
+  - transition
+  - governance
+  - security
 - Return raw JSON only. Do not use markdown. Do not use triple backticks.
 
 Return exactly this structure:
 {{
-  "main_response_section_title": "Response to Customer Requirements",
+  "main_response_section_title": "Our Understanding and Response",
   "main_response_requirements": [
     {{
       "requirement_id": "REQ-001",
-      "reason": "Why it belongs in the main response"
+      "reason": "Why it belongs in the main response",
+      "response_focus": "understanding"
     }}
   ],
   "other_document_requirements": [
@@ -64,13 +73,13 @@ REQUIREMENTS:
 
     try:
         parsed = json.loads(cleaned_output)
-        parsed.setdefault("main_response_section_title", "Response to Customer Requirements")
+        parsed.setdefault("main_response_section_title", "Our Understanding and Response")
         parsed.setdefault("main_response_requirements", [])
         parsed.setdefault("other_document_requirements", [])
         return parsed
     except json.JSONDecodeError:
         return {
-            "main_response_section_title": "Response to Customer Requirements",
+            "main_response_section_title": "Our Understanding and Response",
             "main_response_requirements": [],
             "other_document_requirements": [],
             "error": "Failed to parse model output as JSON",

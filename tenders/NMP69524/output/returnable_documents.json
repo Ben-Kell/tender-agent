@@ -1,0 +1,200 @@
+{
+  "tender_id": "NMP69524",
+  "documents": [
+    {
+      "filename": "NMP69524 SOW Annexure C- AIC Schedule.md",
+      "original_filename": "NMP69524 SOW Annexure C- AIC Schedule.DOCX",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "aic_plan",
+      "reasons": [
+        "Filename contains 'schedule'",
+        "Filename contains 'annex'",
+        "Filename contains 'aic'",
+        "Contains phrase 'must be submitted'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "schedule",
+          "annex",
+          "aic"
+        ],
+        "phrases": [
+          "must be submitted"
+        ],
+        "negative_phrases": [],
+        "table_hints": [
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 17
+    },
+    {
+      "filename": "NMP69524 SOW Annexure E- AIC Plan Description.md",
+      "original_filename": "NMP69524 SOW Annexure E- AIC Plan Description.DOCX",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "aic_plan",
+      "reasons": [
+        "Filename contains 'annex'",
+        "Filename contains 'aic'",
+        "Contains phrase 'must be submitted'",
+        "Markdown table detected",
+        "Detected table/content hint 'yes/no'",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "annex",
+          "aic"
+        ],
+        "phrases": [
+          "must be submitted"
+        ],
+        "negative_phrases": [],
+        "table_hints": [
+          "yes/no",
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 17
+    },
+    {
+      "filename": "NMP69524 - Short Form RFQ and WO V2.md",
+      "original_filename": "NMP69524 - Short Form RFQ and WO V2.docx",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "pricing_schedule",
+      "reasons": [
+        "Contains phrase 'must be submitted'",
+        "Contains phrase 'the supplier must provide'",
+        "Markdown table detected",
+        "Detected table/content hint 'compliant'",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [
+          "must be submitted",
+          "the supplier must provide"
+        ],
+        "negative_phrases": [],
+        "table_hints": [
+          "compliant",
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 16
+    },
+    {
+      "filename": "NMP69524 - Attachment A to Quotation - Work Order Price  Payment Arrangements V2.md",
+      "original_filename": "NMP69524 - Attachment A to Quotation - Work Order Price  Payment Arrangements V2.docx",
+      "is_returnable": true,
+      "confidence": 0.99,
+      "document_type": "schedule",
+      "reasons": [
+        "Filename contains 'price'",
+        "Filename contains 'attachment'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'",
+        "Detected table/content hint 'total price'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "price",
+          "attachment"
+        ],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [
+          "price",
+          "rate",
+          "total price"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 14
+    },
+    {
+      "filename": "NMP69524 Supplier Quotation V2.md",
+      "original_filename": "NMP69524 Supplier Quotation V2.docx",
+      "is_returnable": true,
+      "confidence": 0.83,
+      "document_type": "compliance_schedule",
+      "reasons": [
+        "Contains phrase 'the supplier must provide'",
+        "Markdown table detected",
+        "Detected table/content hint 'price'",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [],
+        "phrases": [
+          "the supplier must provide"
+        ],
+        "negative_phrases": [],
+        "table_hints": [
+          "price",
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 10
+    },
+    {
+      "filename": "NMP69524 - SOW Annexure D - Role Requirements.md",
+      "original_filename": "NMP69524 - SOW Annexure D - Role Requirements.docx",
+      "is_returnable": true,
+      "confidence": 0.5,
+      "document_type": "unknown",
+      "reasons": [
+        "Filename contains 'annex'",
+        "Markdown table detected",
+        "Detected table/content hint 'rate'"
+      ],
+      "key_signals": {
+        "filename_keywords": [
+          "annex"
+        ],
+        "phrases": [],
+        "negative_phrases": [],
+        "table_hints": [
+          "rate"
+        ],
+        "markdown_table_detected": true
+      },
+      "score": 6
+    },
+    {
+      "filename": "NMP69524 - ICTPA Schedule A - Statement of Work V2.md",
+      "original_filename": "NMP69524 - ICTPA Schedule A - Statement of Work V2.docx",
+      "is_returnable": false,
+      "confidence": 0.99,
+      "document_type": "statement_of_work",
+      "reasons": [
+        "Hard rule: filename identified as a Statement of Work document, which is not returnable"
+      ],
+      "key_signals": {
+        "override": "statement_of_work_filename"
+      },
+      "score": -999
+    }
+  ],
+  "summary": {
+    "total_documents": 7,
+    "returnable_documents": 6,
+    "reference_only_documents": 1
+  }
+}
