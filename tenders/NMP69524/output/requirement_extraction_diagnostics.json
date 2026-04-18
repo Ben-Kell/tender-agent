@@ -21,7 +21,7 @@
       {
         "chunk_index": 1,
         "chunk_length": 15000,
-        "requirement_count": 14,
+        "requirement_count": 12,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 - ICTPA Schedule A - Statement of Work V2.docx\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nWORK ORDER SCHEDULE A – Statement of Work\n\nTABLE OF CONTENTS\n\n1.\tServices to be provided\t2\n\n2.\tLocations\t4\n\n3.\tGovernment Furnished Facilities, Materials and Services\t4\n\n4.\tPricing\t6\n\n5.\tStand down of Personnel\t6\n\n6.\tMilestones, Delivery, Approval and Acceptance\t9\n\n7.\tTesting\t12\n\n8.\tAIC Obligations\t12\n\n9.\tIntellectual Property\t12\n\n10.\tPlans\t13\n\n11.\tPerformance Management\t14\n\n12.\tMeetings\t14\n\n13.\tReporting\t15\n\n14.\tAdditional Standards and Policy Requirements\t16\n\n15.\tDigital Service Standard\t16\n\n16.\tTechnology – Service Attributes\t17\n\n17.\tTechnology – Applications\t17\n\n18.\tAnnexures to this SOW\t18\n\nSERVICES\n\nPRICING\n\nPERSONNEL\n\nINTELLECTUAL PROPERTY\n\nPLANS\n\nPERFORM"
       },
@@ -84,14 +84,14 @@
       {
         "chunk_index": 2,
         "chunk_length": 14999,
-        "requirement_count": 12,
+        "requirement_count": 14,
         "status": "ok",
         "chunk_preview": "om the third party prior to disclosure. Nothing in this clause 7 changes or affects the ownership of IP in the information contained in the Quotation documents. Part Quotations  The Commonwealth may consider a Quotation for part of the Services. The Commonwealth reserves the right to enter into more than one Work Order (with different Suppliers) for different parts of the Services set out in this RFQ. ALTERNATIVE PROPOSAL The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with the requirements specified in this clause 9. The Commonwealth will not consider an alternative proposal unless the alternative proposal: is submitted as part of a Quotation that addresse"
       },
       {
         "chunk_index": 3,
         "chunk_length": 15000,
-        "requirement_count": 21,
+        "requirement_count": 14,
         "status": "ok",
         "chunk_preview": "sisting the Commonwealth in the conduct of the RFQ process and for the purposes contained in clauses 7.3 and 7.4.  The Commonwealth may obtain appropriate confidentiality undertakings from the third party prior to disclosure. Nothing in this clause 7 changes or affects the ownership of IP in the information contained in the Quotation documents. Part Quotations  The Commonwealth may consider a Quotation for part of the Services. The Commonwealth reserves the right to enter into more than one Work Order (with different Suppliers) for different parts of the Services set out in this RFQ. ALTERNATIVE PROPOSAL The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with "
       },
@@ -119,7 +119,7 @@
       {
         "chunk_index": 7,
         "chunk_length": 15000,
-        "requirement_count": 17,
+        "requirement_count": 19,
         "status": "ok",
         "chunk_preview": "e COD is amended as follows: “30 days” is replaced with “the period set out in clause 7.2(i)”. SC1.5 – Clause 7.6(e) of the COD is amended as follows: “30 days” is replaced with “the period set out in clause 7.2(i)”. SC1.6 – Replace clause 7.7(d) of the COD with the following: “(d)\tIf the interest payment is not offset or paid as part of the subject claim, the Commonwealth will adjust the next Approved payment under the Work Order. If there are no further payments, the relevant party must pay the interest payment within: (i)\t20 days after being provided with a notice; or (ii)\twhere a Work Order specifies that the PEPPOL framework applies, and the Payment Claim is lodged electronically through the PEPPOL framework, 5 days after being provided with notice.” SC1.7: Insert the following define"
       },
@@ -161,7 +161,7 @@
       {
         "chunk_index": 1,
         "chunk_length": 7666,
-        "requirement_count": 7,
+        "requirement_count": 6,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 SOW Annexure C- AIC Schedule.DOCX\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nAnnexure C\n\naustralian industry capability SCHEDULE\n\nNote to drafters:  This annex should be used for procurements where the expected value of any resultant Work Order will be between $4 million and $20 million (GST inclusive).\n\nIf the expected value of any resultant Work Order is likely to exceed $20 million, then the AIC Plan template should be used.\n\nNote to tenderers:  The Australian Industry Capability (AIC) Schedule forms part of any resultant Work Order and describes the Supplier’s commitments to the participation of Australian Industry for that Work Order, including local businesses operating in the areas where work is undertaken, and participation by other small and"
       }
@@ -175,14 +175,14 @@
       {
         "chunk_index": 1,
         "chunk_length": 15000,
-        "requirement_count": 16,
+        "requirement_count": 15,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 SOW Annexure E- AIC Plan Description.DOCX\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nNOTE TO TENDERERS AND SUPPLIERS: \tThis Data Item Description is provided for guidance only. The draft AIC Plan must be submitted to the Commonwealth in accordance with any timescales specified in Item 30 of an RFQ or Work Order. The final AIC Plan Approved by the Commonwealth will replace this guidance document as the new Annex x to the Statement of Work. Guidance on completion of the AIC Plan and associated definitions for the AIC terminology used in this AIC Plan Description is provided on the AIC webpage available at: http://www.defence.gov.au/SPI/Industry/AIC.asp.\n\nTITLE:\tAustralian Industry CAPABILITY PLAN\n\nDESCRIPTION and intended use\n\nThe Australian Industry C"
       },
       {
         "chunk_index": 2,
         "chunk_length": 15000,
-        "requirement_count": 12,
+        "requirement_count": 14,
         "status": "ok",
         "chunk_preview": "lation to Milestones);\n\nestablishing Subcontracts with Australian Industry, including:\n\nan overview of the Supplier’s standard procurement processes, including identifying the typical linkages that exist with the Supplier’s design teams for the Mission System and Support System;\n\na description of how procurement activities will be structured, including in relation to timings and use of selection criteria, to maximise opportunities for Australian Industry to participate in the procurement activities on a fair and equitable basis; and\n\ndescribing how any commercial requirements and constraints, which may apply to particular types of procurement activities, will be addressed, including in relation to Intellectual Property (IP), security, and export controls, so that the widest possible market"
       },
@@ -210,7 +210,7 @@
       {
         "chunk_index": 2,
         "chunk_length": 11044,
-        "requirement_count": 16,
+        "requirement_count": 13,
         "status": "ok",
         "chunk_preview": "s more than one director, or (b) has a director and a company secretary that are two different people.\n\nOption 2: Where the company has a sole director who is also the sole company secretary, or where the company has a sole director and the company does not have a company secretary\n\nOption 3: Where the corporate trustee (a) has more than one director, or (b) has a director and a company secretary that are two different people.\n\nOption 4: Where the corporate trustee has a sole director who is also the company secretary, or where the corporate trustee has a sole director and the corporate trustee does not have a company secretary.\n\n| PART 3 QUOTATION |\n| --- |\n\n| ABOUT THIS DOCUMENT Once completed and submitted to the Commonwealth, this document (along with relevant attachments) will be an o"
       }

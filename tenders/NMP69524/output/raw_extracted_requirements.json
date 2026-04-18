@@ -57,15 +57,15 @@
   },
   {
     "requirement_id": "REQ-005",
-    "clause_reference": "Review Periods",
-    "requirement_text": "The first Review Period for each Performance Measure shall begin on [the Work Order Effective Date] and continue for the duration specified in Appendix A.",
+    "clause_reference": "Overview of Performance Measures",
+    "requirement_text": "This clause describes the types of Performance Measures that will be used to measure and report the Supplier’s performance during each Review Period in accordance with this Work Order.",
     "requirement_type": "governance",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-006",
-    "clause_reference": "Review Periods",
-    "requirement_text": "Each subsequent Review Period for a Performance Measure commences after the end of the previous Review Period and continues for the duration specified in Appendix A.",
+    "clause_reference": "Key Performance Indicators",
+    "requirement_text": "The KPIs applicable to this Work Order are set out at Appendix A to this Annexure.",
     "requirement_type": "governance",
     "response_needed": true
   },
@@ -79,49 +79,35 @@
   {
     "requirement_id": "REQ-008",
     "clause_reference": "Services Description",
-    "requirement_text": "The Supplier must provide the ICT Personnel Resources set out in the table below: The Supplier key personnel will be integrated into the CDS team to provide specialist system administration, engineering and business support functions.",
+    "requirement_text": "The Supplier must provide the ICT Personnel Resources set out in the table below: The Supplier key personnel will be integrated into the CDS team to provide specialist system administration, engineering and business support functions. The Commonwealth may require the Supplier Key Persons to be available for On Call Services in the event of Defence operational tempo changes. If initiated, these services will need to be provided outside of working hours, weekends, and public holidays depending on Commonwealth objectives.",
     "requirement_type": "personnel",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-009",
-    "clause_reference": "Services Description",
-    "requirement_text": "The Commonwealth may require the Supplier Key Persons to be available for On Call Services in the event of Defence operational tempo changes. If initiated, these services will need to be provided outside of working hours, weekends, and public holidays depending on Commonwealth objectives.",
-    "requirement_type": "personnel",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-010",
     "clause_reference": "Locations",
     "requirement_text": "The Supplier must deliver the Services in the following geographic locations: HMAS Harman, Jerrabomberra, ACT, Australia, 2600.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-011",
+    "requirement_id": "REQ-010",
     "clause_reference": "Government Furnished Facilities, Materials and Services",
-    "requirement_text": "The Commonwealth will provide the Supplier with access to and use of: Government Furnished Materials (GFM), Government Furnished Facilities (GFF), and Government Furnished Services (GFS) in accordance with clauses 3.8, 3.9 and 3.11 COD.",
+    "requirement_text": "The Commonwealth will provide the Supplier with access to and use of: Government Furnished Materials (GFM), Government Furnished Facilities (GFF), and Government Furnished Services (GFS) in accordance with clauses 3.8, 3.9 and 3.11 COD, and in accordance with any other conditions set out in the table below.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-012",
+    "requirement_id": "REQ-011",
     "clause_reference": "Pricing",
-    "requirement_text": "If the Supplier provides the Services in accordance with the Deed and this Work Order, and otherwise complies with the Deed and this Work Order, the Supplier is entitled to payment calculated in accordance with Attachment B (Price and Payment) to the COD, and as further set out in Annexure A to this SOW.",
+    "requirement_text": "Without limiting clause 7 of the COD, if the Supplier provides the Services in accordance with the Deed and this Work Order, and otherwise complies with the Deed and this Work Order, the Supplier is entitled to payment calculated in accordance with Attachment B (Price and Payment) to the COD, and as further set out in Annexure A to this SOW.",
     "requirement_type": "commercial",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-013",
+    "requirement_id": "REQ-012",
     "clause_reference": "Stand down of Personnel",
-    "requirement_text": "The Commonwealth may at any time during the Work Order Term, issue the Supplier a notice (Stand Down Notice) for all or any part of the Services provided under the Work Order.",
-    "requirement_type": "personnel",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-014",
-    "clause_reference": "Stand down of Personnel",
-    "requirement_text": "The Supplier must: for the duration of a Stand Down Period: stop provision of all or the specified part of the Services identified in the Stand Down Notice; use all reasonable steps to maintain its capacity to recommence provision of the relevant Services when the Stand Down Period ends; and ensure that Supplier Personnel co-operate fully with the Commonwealth for the purpose of exercising the Commonwealth’s rights during the Stand Down Period.",
+    "requirement_text": "The Commonwealth may at any time during the Work Order Term, issue the Supplier a notice (Stand Down Notice) for all or any part of the Services provided under the Work Order. The Supplier must: for the duration of a Stand Down Period: stop provision of all or the specified part of the Services identified in the Stand Down Notice; use all reasonable steps to maintain its capacity to recommence provision of the relevant Services when the Stand Down Period ends; and ensure that Supplier Personnel co-operate fully with the Commonwealth for the purpose of exercising the Commonwealth’s rights during the Stand Down Period.",
     "requirement_type": "personnel",
     "response_needed": true
   },
@@ -226,7 +212,7 @@
   {
     "requirement_id": "REQ-015",
     "clause_reference": "Performance Reviews",
-    "requirement_text": "The Supplier must attend Performance Reviews for this Work Order on a bi-annual basis during the Work Order Term to assess and discuss the Supplier’s performance against Performance Measures as outlined in the Performance Reports.",
+    "requirement_text": "The Supplier must attend Performance Reviews for this Work Order on a bi-annual basis during the Work Order Term to assess and discuss the Supplier’s performance against Performance Measures as outlined in the Performance Reports, in accordance with the COD, Attachment E to the COD, and this Work Order.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
@@ -373,22 +359,22 @@
   {
     "requirement_id": "REQ-004",
     "clause_reference": "",
-    "requirement_text": "The calculation of On Call Allowances will be determined in accordance with the table shown below. The applicable Labour Rates for the provision of On Call Services under the Work Order are in accordance with the below rate card for the applicable labour category.",
+    "requirement_text": "The calculation of On Call Allowances will be determined in accordance with the table shown below.",
     "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-005",
     "clause_reference": "",
-    "requirement_text": "The Daily Labour Rate must not exceed the Maximum Daily Labour Rates in Annex A to Attachment B to the COD.",
+    "requirement_text": "The applicable Labour Rates for the provision of On Call Services under the Work Order are in accordance with the below rate card for the applicable labour category.",
     "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-006",
     "clause_reference": "",
-    "requirement_text": "The Commonwealth will assess the Supplier’s performance against the behaviours described below as Superior, Good, Fair or Poor. The Commonwealth will, on the basis of these assessments, rate the Supplier’s Achieved Performance in accordance with the Performance Table at the end of this KPI.",
-    "requirement_type": "governance",
+    "requirement_text": "Note that the Daily Labour Rate must not exceed the Maximum Daily Labour Rates in Annex A to Attachment B to the COD.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
@@ -407,29 +393,29 @@
   },
   {
     "requirement_id": "REQ-003",
+    "clause_reference": "Quotation Details Schedule",
+    "requirement_text": "The Supplier’s Quotation is to include pricing on the basis of: Time and Materials (T&M) (capped at a NTE Price).",
+    "requirement_type": "commercial",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-004",
     "clause_reference": "Evaluation Criteria",
     "requirement_text": "The Supplier’s demonstrated understanding and compliance with the RFQ and SOW documentation and associated requirements.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-004",
+    "requirement_id": "REQ-005",
     "clause_reference": "Evaluation Criteria",
     "requirement_text": "The extent to which the Supplier is able to demonstrate their understanding of the Services as specified in the RFQ and associated documents.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-005",
-    "clause_reference": "Evaluation Criteria",
-    "requirement_text": "CVs of all proposed Key Personnel are to be provided to the Commonwealth and are to be no more than four pages long.",
-    "requirement_type": "personnel",
-    "response_needed": true
-  },
-  {
     "requirement_id": "REQ-006",
     "clause_reference": "Evaluation Criteria",
-    "requirement_text": "The Supplier’s proposed approach to ensuring minimal turnover of personnel and how the Supplier will manage the associated risk.",
+    "requirement_text": "CVs of all proposed Key Personnel are to be provided to the Commonwealth and are to be no more than four pages long.",
     "requirement_type": "personnel",
     "response_needed": true
   },
@@ -442,9 +428,9 @@
   },
   {
     "requirement_id": "REQ-008",
-    "clause_reference": "Evaluation Criteria",
-    "requirement_text": "The extent to which the Supplier demonstrates its proposed targets would increase the proportion of Apprentices and ICT Cadets engaged in the workforce of the Supplier.",
-    "requirement_type": "personnel",
+    "clause_reference": "Conditions of Quotation",
+    "requirement_text": "Suppliers are to prepare and lodge their quotes based on the acknowledgements and agreements at the Supplier’s Deed of Undertaking.",
+    "requirement_type": "mandatory",
     "response_needed": true
   },
   {
@@ -457,15 +443,15 @@
   {
     "requirement_id": "REQ-010",
     "clause_reference": "Quotation Validity Period",
-    "requirement_text": "Quotations submitted in response to this RFQ must remain open for acceptance during the Quotation Validity Period specified in the Quotation Details Schedule.",
+    "requirement_text": "The Commonwealth requires that Quotations submitted in response to this RFQ remain open for acceptance during the Quotation Validity Period specified in the Quotation Details Schedule.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-011",
     "clause_reference": "Confidentiality and Use of documents",
-    "requirement_text": "The Commonwealth may require a Supplier to execute a Confidentiality Deed Poll before being provided with some or all of the information included in relation to the RFQ.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The Commonwealth may require a Supplier to execute a Confidentiality Deed Poll in the form at Part 1 of Annex F to Attachment F of the COD before being provided with some or all of the information included in relation to the RFQ.",
+    "requirement_type": "security",
     "response_needed": true
   },
   {
@@ -526,177 +512,142 @@
   },
   {
     "requirement_id": "REQ-009",
+    "clause_reference": "General",
+    "requirement_text": "Suppliers are solely responsible for informing themselves of the export control status of the Services and for ensuring their compliance with Australian and foreign government controls related to the export of defence and dual-use goods.",
+    "requirement_type": "mandatory",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-010",
+    "clause_reference": "Contact Officer and RFQ inquiries",
+    "requirement_text": "Suppliers are to direct any questions or concerns regarding this RFQ in writing to the Contact Officer specified in the Quotation Details Schedule.",
+    "requirement_type": "response",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-011",
     "clause_reference": "Lodgement of Quotations",
     "requirement_text": "Quotations are to be lodged electronically via AusTender before the Closing Time in accordance with the Quotation lodgement procedures set out in this RFQ and on AusTender.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-010",
+    "requirement_id": "REQ-012",
     "clause_reference": "Lodgement of Quotations",
     "requirement_text": "Quotations are to be lodged in the format specified in the Quotation Details Schedule.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-011",
+    "requirement_id": "REQ-013",
     "clause_reference": "Quotation Validity Period",
     "requirement_text": "The Commonwealth requires that Quotations submitted in response to this RFQ remain open for acceptance during the Quotation Validity Period specified in the Quotation Details Schedule.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-012",
+    "requirement_id": "REQ-014",
     "clause_reference": "Confidentiality and Use of documents",
     "requirement_text": "The Commonwealth may require a Supplier to execute a Confidentiality Deed Poll in the form at Part 1 of Annex F to Attachment F of the COD before being provided with some or all of the information included in relation to the RFQ.",
-    "requirement_type": "security",
+    "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-001",
-    "clause_reference": "Clause 9",
-    "requirement_text": "Any alternative proposal is to be submitted by the Supplier in accordance with the requirements specified in this clause 9.",
+    "clause_reference": "9",
+    "requirement_text": "The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with the requirements specified in this clause 9.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-002",
-    "clause_reference": "Clause 9",
-    "requirement_text": "The Commonwealth will not consider an alternative proposal unless the alternative proposal is submitted as part of a Quotation that addresses the requirements of the RFQ.",
+    "clause_reference": "9",
+    "requirement_text": "The Commonwealth will not consider an alternative proposal unless the alternative proposal is submitted as part of a Quotation that addresses the requirements of the RFQ; is clearly identified as an alternative proposal; complies with all essential requirements (if any) identified in the RFQ; is fully described by the Supplier, including the advantages, disadvantages, limitations and capability of the alternative proposal; and the extent to which the adoption of the alternative proposal would impact upon the Quotation that addresses the requirements of the RFQ, including any financial impact, impact on the provision of the Services, and any other consequences of the alternative proposal; and contains sufficient and verifiable supporting information and data to enable a comparison of the alternative proposal against other quotations.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-003",
-    "clause_reference": "Clause 9",
-    "requirement_text": "The alternative proposal must be clearly identified as an alternative proposal.",
-    "requirement_type": "response",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-004",
-    "clause_reference": "Clause 9",
-    "requirement_text": "The alternative proposal must comply with all essential requirements (if any) identified in the RFQ.",
-    "requirement_type": "response",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-005",
-    "clause_reference": "Clause 9",
-    "requirement_text": "The alternative proposal must be fully described by the Supplier, including the advantages, disadvantages, limitations and capability of the alternative proposal.",
-    "requirement_type": "response",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-006",
-    "clause_reference": "Clause 9",
-    "requirement_text": "The alternative proposal must contain sufficient and verifiable supporting information and data to enable a comparison of the alternative proposal against other quotations.",
-    "requirement_type": "response",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-007",
-    "clause_reference": "Clause 10.1",
-    "requirement_text": "If an Insolvency Event occurs in respect of the Supplier, the Commonwealth may allow the substitution of that Supplier with another legal entity upon receipt of a joint written request.",
+    "clause_reference": "10.1",
+    "requirement_text": "If during the period following the submission of the Quotation and prior to execution of any resultant Work Order with the successful Supplier, there occurs an Insolvency Event in respect of the Supplier; or any other event that has the effect of substantially altering the composition or control of the Supplier or the business of the Supplier, the Commonwealth may allow, on such terms as the Commonwealth considers appropriate, the substitution of that Supplier with another legal entity upon receipt of a joint written request from or on behalf of the Supplier and the other legal entity.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-008",
-    "clause_reference": "Clause 11.2(a)",
+    "requirement_id": "REQ-004",
+    "clause_reference": "11.2(a)",
     "requirement_text": "In assessing Quotations, the Commonwealth may take into account any supporting documentation provided under clause 11.2(a).",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-009",
-    "clause_reference": "Clause 11.11A",
-    "requirement_text": "The Supplier must comply with the Payment Times Procurement Connected Policy (PT PCP), including the obligation to provide and comply with a PT PCP Remediation Plan when required.",
+    "requirement_id": "REQ-005",
+    "clause_reference": "11.11A",
+    "requirement_text": "The Payment Times Procurement Connected Policy (PT PCP) applies to this Work Order.",
     "requirement_type": "commercial",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-010",
-    "clause_reference": "Clause 11.11A",
-    "requirement_text": "If the Supplier enters into a PT PCP Subcontract, the Supplier must include in that subcontract a requirement to pay the PT PCP Subcontractor within 20 days after the acknowledgement of satisfactory delivery and receipt of a Correctly Rendered Invoice.",
-    "requirement_type": "commercial",
+    "requirement_id": "REQ-006",
+    "clause_reference": "5.1",
+    "requirement_text": "Ownership of all Foreground IP embodied in the Deliverables vests on its creation in the Commonwealth.",
+    "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-011",
-    "clause_reference": "Clause 11.11A",
-    "requirement_text": "The Supplier must respond to any complaint of non-compliance made by the subcontractor under clause 11.11A(c)(iii).",
-    "requirement_type": "commercial",
+    "requirement_id": "REQ-007",
+    "clause_reference": "6.1",
+    "requirement_text": "The Performance Measures and At Risk Amount(s) (if any) are set out in Annexure B to the Statement of Work.",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-012",
-    "clause_reference": "Clause 11.11A",
-    "requirement_text": "The Supplier must cooperate in good faith with the PT PCP Policy Team in connection with any investigation or inquiry and any attempt to resolve the complaint.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-013",
-    "clause_reference": "Clause 6.6(g)",
-    "requirement_text": "When a claim for Postponement costs is Approved, the Supplier must submit to the Commonwealth a Payment Claim for the amount of Postponement costs that has been Approved.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-014",
-    "clause_reference": "Clause 7.2(i)",
-    "requirement_text": "The Commonwealth must pay the Supplier the amount Approved for a Payment Claim within 20 days, or 5 days if lodged electronically through the PEPPOL framework.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-015",
-    "clause_reference": "Clause 7.6(d)",
-    "requirement_text": "Clause 7.6(d) is amended to replace '30 days' with 'the period set out in clause 7.2(i)'.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-016",
-    "clause_reference": "Clause 7.6(e)",
-    "requirement_text": "Clause 7.6(e) is amended to replace '30 days' with 'the period set out in clause 7.2(i)'.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-017",
-    "clause_reference": "Clause 7.7(d)",
-    "requirement_text": "If the interest payment is not offset or paid as part of the subject claim, the Commonwealth will adjust the next Approved payment under the Work Order.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-018",
-    "clause_reference": "Clause 3.1 COD",
-    "requirement_text": "The Services, including the relevant location of where the Services are to be performed, are set out in the attached Statement of Work (SOW).",
+    "requirement_id": "REQ-008",
+    "clause_reference": "8.2",
+    "requirement_text": "From when the Services are Accepted or Approved until 90 days after Acceptance or Approval of the Services.",
     "requirement_type": "technical",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-019",
-    "clause_reference": "Clause 3.13 COD",
-    "requirement_text": "The Supplier will provide Key Persons for the following Key Positions.",
-    "requirement_type": "personnel",
+    "requirement_id": "REQ-009",
+    "clause_reference": "11.6(a)",
+    "requirement_text": "The following information is designated Confidential Information for the purposes of this Work Order.",
+    "requirement_type": "security",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-020",
-    "clause_reference": "Clause 11.12 COD",
+    "requirement_id": "REQ-010",
+    "clause_reference": "11.12",
     "requirement_text": "The following Commonwealth security requirements apply.",
     "requirement_type": "security",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-021",
-    "clause_reference": "Clause 9.1(a) COD",
+    "requirement_id": "REQ-011",
+    "clause_reference": "9.1(a)",
     "requirement_text": "The Supplier is required to effect and maintain, or otherwise have the benefit of, the Required Insurance Policies specified below.",
     "requirement_type": "mandatory",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-012",
+    "clause_reference": "11.11A",
+    "requirement_text": "The Supplier must comply with the PT PCP, including the obligation to provide and comply with a PT PCP Remediation Plan (as defined in the PT PCP) when required to do so by the PT PCP Policy Team.",
+    "requirement_type": "commercial",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-013",
+    "clause_reference": "11.11A",
+    "requirement_text": "If the Supplier enters into a PT PCP Subcontract, the Supplier must include in that subcontract: a requirement for the Supplier to pay the PT PCP Subcontractor within 20 days after the acknowledgement of the satisfactory delivery of the goods or services and receipt of a Correctly Rendered Invoice.",
+    "requirement_type": "commercial",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-014",
+    "clause_reference": "11.11A",
+    "requirement_text": "The Supplier agrees that if it is the subject of a complaint in relation to its compliance with clauses 11.11A(a) to 11.11A(e), or the associated payment provisions of a PT PCP Subcontract, the Supplier must not take any prejudicial action against the complainant due to the complaint or any investigation or inquiry in relation to the complaint; and cooperate in good faith with the PT PCP Policy Team in connection with any investigation or inquiry and any attempt to resolve the complaint.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
@@ -982,7 +933,7 @@
   {
     "requirement_id": "REQ-007",
     "clause_reference": "11.19(f)",
-    "requirement_text": "If the Commonwealth notifies the Supplier in writing that it considers that the Supplier has breached clause 11.19(b), the Supplier must issue a notice under clause 11.19(d) and otherwise comply with its obligations under this clause 11.19.",
+    "requirement_text": "If the Commonwealth notifies the Supplier in writing that it considers that the Supplier has breached clause 11.19(b), the Supplier must issue a notice under clause 11.19(d).",
     "requirement_type": "mandatory",
     "response_needed": true
   },
@@ -1038,7 +989,7 @@
   {
     "requirement_id": "REQ-015",
     "clause_reference": "11.11A(c)",
-    "requirement_text": "If the Supplier enters into a PT PCP Subcontract, the Supplier must include in that subcontract a requirement for the Supplier to pay the PT PCP Subcontractor within 20 days after the acknowledgement of the satisfactory delivery of the goods or services and receipt of a Correctly Rendered Invoice.",
+    "requirement_text": "If the Supplier enters into a PT PCP Subcontract, the Supplier must include in that subcontract a requirement to pay the PT PCP Subcontractor within 20 days after the acknowledgement of the satisfactory delivery of the goods or services and receipt of a Correctly Rendered Invoice.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
@@ -1093,71 +1044,85 @@
   },
   {
     "requirement_id": "REQ-008",
-    "clause_reference": "SC 4.1",
-    "requirement_text": "The Supplier must comply with, and must ensure that Supplier Personnel comply with, the Commonwealth Supplier Code of Conduct in connection with the performance of this Deed and any Work Order.",
+    "clause_reference": "SC 3.1",
+    "requirement_text": "The Supplier must provide such reports and other information about the Supplier’s progress in implementing a Significant Event plan as may be reasonably requested by the Commonwealth.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-009",
     "clause_reference": "SC 4.1",
-    "requirement_text": "The Supplier must periodically monitor and assess its, and Supplier Personnel’s, compliance with the Code.",
+    "requirement_text": "The Supplier must comply with, and must ensure that Supplier Personnel comply with, the Commonwealth Supplier Code of Conduct in connection with the performance of this Deed and any Work Order.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-010",
     "clause_reference": "SC 4.1",
-    "requirement_text": "On request from the Commonwealth, the Supplier must promptly provide information regarding the policies, frameworks, or systems it has established to monitor and assess compliance with the Code.",
+    "requirement_text": "The Supplier must periodically monitor and assess its, and Supplier Personnel’s, compliance with the Code.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-011",
     "clause_reference": "SC 4.1",
-    "requirement_text": "The Supplier must, as soon as practicable, issue the Commonwealth Deed Representative a notice on becoming aware of any breach of clause 11.19(b).",
+    "requirement_text": "On request from the Commonwealth, the Supplier must promptly provide information regarding the policies, frameworks, or systems it has established to monitor and assess compliance with the Code.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-012",
-    "clause_reference": "SC 5.1",
-    "requirement_text": "The Supplier must meet the Australian Skills Guarantee Targets in its performance of the Services under any applicable Work Order, as calculated in accordance with the ASG PCP.",
+    "clause_reference": "SC 4.1",
+    "requirement_text": "The Supplier must, as soon as practicable, issue the Commonwealth Deed Representative a notice on becoming aware of any breach of clause 11.19(b).",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-013",
     "clause_reference": "SC 5.1",
-    "requirement_text": "The Supplier must submit a Skills Guarantee Report in accordance with the reporting requirements of the ASG PCP.",
+    "requirement_text": "The Supplier must meet the Australian Skills Guarantee Targets in its performance of the Services under any applicable Work Order, as calculated in accordance with the ASG PCP.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-014",
     "clause_reference": "SC 5.1",
-    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of every quarter during the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the preceding quarter.",
+    "requirement_text": "The Supplier must submit a Skills Guarantee Report in accordance with the reporting requirements of the ASG PCP.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-015",
     "clause_reference": "SC 5.1",
-    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of every financial year during the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the preceding financial year.",
+    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of every quarter during the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the preceding quarter.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-016",
     "clause_reference": "SC 5.1",
-    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the applicable Work Order Term.",
+    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of every financial year during the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the preceding financial year.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-017",
     "clause_reference": "SC 5.1",
+    "requirement_text": "A Skills Guarantee Report must be submitted within 10 Working Days after the end of the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the applicable Work Order Term.",
+    "requirement_type": "mandatory",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-018",
+    "clause_reference": "SC 5.1",
     "requirement_text": "A Skills Guarantee Report must be submitted using the Skills Guarantee Reporting Worksheet, or such other form Approved by the applicable Commonwealth Contract Manager.",
+    "requirement_type": "mandatory",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-019",
+    "clause_reference": "SC 5.1",
+    "requirement_text": "If the Supplier did not meet one or more of the Australian Skills Guarantee Targets during the relevant reporting period, the Supplier must include details of the non-compliance in the relevant Skills Guarantee Report.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
@@ -1185,7 +1150,7 @@
   {
     "requirement_id": "REQ-004",
     "clause_reference": "12.3(v)(ii)",
-    "requirement_text": "The Supplier must obtain all necessary consents from its Apprentices and ICT Cadets in accordance with relevant privacy laws to the collection, use and disclosure of their Personal Information.",
+    "requirement_text": "The Supplier has obtained all necessary consents from its Apprentices and ICT Cadets in accordance with relevant privacy laws to the collection, use and disclosure of their Personal Information.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
@@ -1347,7 +1312,7 @@
     "requirement_id": "REQ-019",
     "clause_reference": "Table 8, Row 5",
     "requirement_text": "The Service Provider’s Key Personnel will primarily perform the activities described above at Defence sites in Canberra, ACT.",
-    "requirement_type": "personnel",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
@@ -1529,21 +1494,21 @@
     "requirement_id": "REQ-025",
     "clause_reference": "3",
     "requirement_text": "Action and respond to stakeholder engagement via the group mailbox, and various work take on queues.",
-    "requirement_type": "technical",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-026",
     "clause_reference": "3",
     "requirement_text": "Contribute in the development and maintenance of training materials and/or corporate guides such as on-boarding for new team members.",
-    "requirement_type": "technical",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-027",
     "clause_reference": "3",
     "requirement_text": "Coordinate with the Cyber Defence Systems team, including the executive, for approvals and scheduling of changes in managed environments.",
-    "requirement_type": "technical",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
@@ -1585,46 +1550,39 @@
     "requirement_id": "REQ-001",
     "clause_reference": "",
     "requirement_text": "Provide a draft AIC Schedule in accordance with Table 1.",
-    "requirement_type": "response",
+    "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-002",
     "clause_reference": "",
-    "requirement_text": "Describe the tenderer’s approach to maximising participation of Australian Industry, including local businesses, in their supply chain.",
+    "requirement_text": "Describe the tenderer’s approach to maximising participation of Australian Industry, including local businesses, in their supply chain, including evidence of market testing.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-003",
-    "clause_reference": "",
-    "requirement_text": "Provide evidence that the tenderer has market tested Australian Industry, including local businesses.",
-    "requirement_type": "response",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-004",
     "clause_reference": "1.1c",
     "requirement_text": "Set out ‘local business’ criteria against which local Australian Industry will be assessed.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-005",
+    "requirement_id": "REQ-004",
     "clause_reference": "",
     "requirement_text": "Describe how the tenderer proposes to define ‘local business’, and how the tenderer will determine whether a service provider or supplier meets this definition.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-006",
+    "requirement_id": "REQ-005",
     "clause_reference": "",
     "requirement_text": "Describe the tenderer’s approach to supporting the Australian Government’s Indigenous Procurement Policy, in considering and involving recognised Indigenous Enterprises within the tenderer’s supply chain and the employment of Indigenous Australians as part of delivering any resultant Work Order.",
     "requirement_type": "response",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-007",
+    "requirement_id": "REQ-006",
     "clause_reference": "",
     "requirement_text": "Summarise the tenderer’s approach to supporting the Australian Government’s Indigenous Procurement Policy, cross-referencing to its proposed Indigenous Procurement Policy Plan.",
     "requirement_type": "response",
@@ -1689,138 +1647,145 @@
   {
     "requirement_id": "REQ-009",
     "clause_reference": "",
-    "requirement_text": "Approval of the AIC Plan will be based upon criteria including the program of AIC activities achieving the AIC Objectives and satisfying the AIC Obligations.",
+    "requirement_text": "The AIC Plan shall provide a summary of the Supplier’s strategy for achieving each of the AIC Objectives.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-010",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall provide a summary of the Supplier’s strategy for achieving each of the AIC Objectives.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall identify the AIC manager, including name, title, contact details and the AIC manager’s responsibilities.",
+    "requirement_type": "personnel",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-011",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall identify the AIC manager, including name, title, contact details and the AIC manager’s responsibilities.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall describe the organisational arrangements for managing and undertaking the AIC program and related activities for the Work Order.",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-012",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall describe the organisational arrangements for managing and undertaking the AIC program and related activities for the Work Order.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall describe the assurance process used to ensure that the AIC Obligations are met and the AIC Objectives are being pursued.",
+    "requirement_type": "governance",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-013",
-    "clause_reference": "",
-    "requirement_text": "The AIC Plan shall describe the assurance process used to ensure that the AIC Obligations are met and the AIC Objectives are being pursued.",
-    "requirement_type": "mandatory",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-014",
     "clause_reference": "",
     "requirement_text": "The AIC Plan shall include an AIC Schedule that details the activities being performed under the Work Order and over the Work Order Term in Australia or New Zealand.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-015",
+    "requirement_id": "REQ-014",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall include a table which identifies those elements of the Work Order for which the exact source of supply for particular goods and services has not yet been finalised.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall include a table identifying elements of the Work Order for which the exact source of supply for particular goods and services has not yet been finalised.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-016",
+    "requirement_id": "REQ-015",
     "clause_reference": "",
     "requirement_text": "The AIC Plan shall describe the approach, actions, processes and clear commitments in relation to industry engagement, market testing and Subcontract establishment.",
-    "requirement_type": "mandatory",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-001",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall describe the initiatives that will be employed to address the Indigenous Procurement Policy to maximise participation of Indigenous enterprises over the Work Order Term, including the Supplier’s commitments in considering and involving recognised Indigenous enterprises within the Supplier’s supply chain and the employment of Indigenous Australians as part of delivering the Work Order requirements.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The Supplier must provide an overview of their standard procurement processes, including identifying the typical linkages that exist with the Supplier’s design teams for the Mission System and Support System.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-002",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall describe the initiatives that will be employed, including the Supplier’s commitments, to engage and employ veterans (previous members of the Australian Defence Force), including through suppliers that employ veterans, as part of delivering the Work Order requirements.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The Supplier must describe how procurement activities will be structured, including in relation to timings and use of selection criteria, to maximise opportunities for Australian Industry to participate in the procurement activities on a fair and equitable basis.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-003",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall identify and describe the Supplier’s commitments and any AIC Subcontractors’ commitments under the Work Order in relation to the creation or enhancement of Industry Capabilities in Australia or New Zealand.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The Supplier must describe how any commercial requirements and constraints, which may apply to particular types of procurement activities, will be addressed, including in relation to Intellectual Property (IP), security, and export controls.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-004",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall identify and describe the Supplier’s commitments and any AIC Subcontractors’ commitments under the Work Order to support the maintenance of existing Industry Capabilities within Australian Industry.",
+    "requirement_text": "The Supplier must ensure that AIC Subcontractors will undertake their own market testing activities to promote and achieve the AIC Objectives.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-005",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall identify any commitments of the Supplier or AIC Subcontractors to promote the long-term sustainability of Industry Capabilities within Australian Industry.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall describe the initiatives that will be employed to address the Indigenous Procurement Policy to maximise participation of Indigenous enterprises over the Work Order Term.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-006",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall describe the Supplier’s plan, including the associated measures, to undertake assurance activities to monitor and assess the ANZ Sovereignty-related elements of their supply chain for the Services, as required by the SOW.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall describe the initiatives that will be employed, including the Supplier’s commitments, to engage and employ veterans as part of delivering the Work Order requirements.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-007",
     "clause_reference": "",
-    "requirement_text": "For those Supplier and AIC Subcontractor activities contributing to ACE, the AIC Plan shall provide a breakdown that clearly describes the elements of the work being conducted in Australia or New Zealand and the elements being conducted overseas.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall identify and describe the Supplier’s commitments and any AIC Subcontractors’ commitments under the Work Order in relation to the creation or enhancement of Industry Capabilities in Australia or New Zealand.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-008",
     "clause_reference": "",
-    "requirement_text": "The AIC Plan shall provide a summary of the Australian and/or New Zealand workforce profile for the Supplier and each AIC Subcontractor over the Work Order Term.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall identify and describe the Supplier’s commitments and any AIC Subcontractors’ commitments under the Work Order to support the maintenance of existing Industry Capabilities within Australian Industry.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-009",
     "clause_reference": "",
-    "requirement_text": "Where the Supplier’s and each AIC Subcontractor’s activities contributing to ACE are facilitated or made possible due to technology transfer, the AIC Plan shall describe the specific commitments of the other company(ies) to enable this work to be undertaken in Australia or New Zealand.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall identify any commitments of the Supplier or AIC Subcontractors to promote the long-term sustainability of Industry Capabilities within Australian Industry.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-010",
     "clause_reference": "",
-    "requirement_text": "The initial Public AIC Plan is to be developed from the successful RFQ response and any negotiated changes prior to being submitted to the Commonwealth for Approval.",
-    "requirement_type": "mandatory",
+    "requirement_text": "The AIC Plan shall describe the Supplier’s plan, including the associated measures, to undertake assurance activities to monitor and assess the ANZ Sovereignty-related elements of their supply chain for the Services.",
+    "requirement_type": "response",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-011",
+    "clause_reference": "",
+    "requirement_text": "For those Supplier and AIC Subcontractor activities contributing to ACE, the AIC Plan shall provide a breakdown that clearly describes the elements of the work being conducted in Australia or New Zealand and the elements being conducted overseas.",
+    "requirement_type": "response",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-012",
+    "clause_reference": "",
+    "requirement_text": "The Public AIC Plan is to be developed from the successful RFQ response and any negotiated changes prior to being submitted to the Commonwealth for Approval.",
+    "requirement_type": "mandatory",
+    "response_needed": true
+  },
+  {
+    "requirement_id": "REQ-013",
     "clause_reference": "",
     "requirement_text": "Updates to the Public AIC Plan are to be prepared, in accordance with the requirements of the Statement of Work and Work Order, to ensure that the plan accurately reflects forthcoming industry opportunities for publication on the Commonwealth internet website.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-012",
+    "requirement_id": "REQ-014",
     "clause_reference": "",
     "requirement_text": "The Public AIC Plan shall be written on a company letterhead, signed by a duly authorised officer of the Supplier, and presented in a format that can be published on a Commonwealth internet website.",
     "requirement_type": "mandatory",
@@ -1913,8 +1878,8 @@
   {
     "requirement_id": "REQ-013",
     "clause_reference": "",
-    "requirement_text": "When preparing the Australian Industry Capability Schedule, include all Services. Break the AIC Schedule Line Item into sub line items if necessary. All prices are to be expressed in Base Date dollars and be GST exclusive and duty free.",
-    "requirement_type": "commercial",
+    "requirement_text": "When preparing the Australian Industry Capability Schedule, include all Services and break the AIC Schedule Line Item into sub line items if necessary.",
+    "requirement_type": "mandatory",
     "response_needed": true
   },
   {
@@ -2150,64 +2115,43 @@
   },
   {
     "requirement_id": "REQ-008",
-    "clause_reference": "KEY PERSONS (clause 3.13 COD)",
-    "requirement_text": "The Supplier proposes the following Key Persons.",
-    "requirement_type": "personnel",
+    "clause_reference": "ATTACHMENTS",
+    "requirement_text": "Supplier is to provide its pricing information as a separate attachment to the Quotation, marked ‘Quotation Attachment A – Work Order Price & Payment Arrangements’.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-009",
-    "clause_reference": "SUBCONTRACTORS (clause 11.11 COD)",
-    "requirement_text": "The Supplier proposes to subcontract Services under the Work Order to the Subcontractors set out below.",
-    "requirement_type": "response",
+    "clause_reference": "ATTACHMENTS",
+    "requirement_text": "For any Fixed Price components, the Supplier is to complete and submit the basis of estimate (BoE) spreadsheet included in the RFQ pack.",
+    "requirement_type": "commercial",
     "response_needed": true
   },
   {
     "requirement_id": "REQ-010",
-    "clause_reference": "WORK ORDER PRICE & PAYMENT ARRANGEMENTS",
-    "requirement_text": "Refer to 'Quotation Attachment A – Work Order Price and Payment Arrangements'.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-011",
-    "clause_reference": "DESIGNATED CONFIDENTIAL INFORMATION (clause 11.6(a) COD)",
-    "requirement_text": "The Supplier proposes to designate the following as Confidential Information for the purposes of the Work Order for the reasons set out below.",
-    "requirement_type": "security",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-012",
-    "clause_reference": "ATTACHMENTS",
-    "requirement_text": "Supplier is to provide its pricing information as a separate attachment to the Quotation, marked 'Quotation Attachment A – Work Order Price & Payment Arrangements'.",
-    "requirement_type": "commercial",
-    "response_needed": true
-  },
-  {
-    "requirement_id": "REQ-013",
     "clause_reference": "ATTACHMENTS",
     "requirement_text": "Supplier is to complete and sign a Deed of Undertaking in the form shown at Schedule 1 to this document.",
     "requirement_type": "mandatory",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-014",
+    "requirement_id": "REQ-011",
     "clause_reference": "ATTACHMENTS",
-    "requirement_text": "Supplier is to attach a Resume / CV for each proposed Key Person. At a minimum, each Resume / CV must contain the following details: the candidate’s name; the role the candidate is being proposed for, including SFIA code and skill level; the candidate’s current security clearance level (with clearance reference number); an experience summary addressing the candidate’s suitability to perform the proposed Key Position, including qualifications, skills and experience, and dates of experience summaries; notification of time last served in the Australian Defence Force, or time since transition out of the ADF; The name and contact details of two professional referees whom the candidate has worked with in the past 3 years; and The CV for each candidate should not exceed a combined total of four (4) A4 pages in length.",
+    "requirement_text": "Supplier is to attach a Resume / CV for each proposed Key Person. At a minimum, each Resume / CV must contain specific details including the candidate’s name, role, current security clearance level, experience summary, and professional referees.",
     "requirement_type": "personnel",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-015",
+    "requirement_id": "REQ-012",
     "clause_reference": "ATTACHMENTS",
-    "requirement_text": "If the Supplier’s proposed Work Order value (including GST) is between $4M and $20M, Supplier is to attach a draft AIC Schedule, prepared in accordance with the AIC Schedule Description at Annexure C to the Statement of Work; or if the Supplier’s proposed Work Order value (including GST) exceeds $20M, Supplier is to attach a draft AIC Plan, prepared in accordance with the AIC Plan Description at Annexure E to the Statement of Work.",
+    "requirement_text": "If the Supplier’s proposed Work Order value (including GST) is between $4M and $20M, Supplier is to attach a draft AIC Schedule. If it exceeds $20M, Supplier is to attach a draft AIC Plan.",
     "requirement_type": "commercial",
     "response_needed": true
   },
   {
-    "requirement_id": "REQ-016",
+    "requirement_id": "REQ-013",
     "clause_reference": "ATTACHMENTS",
-    "requirement_text": "Suppliers are to provide a description of their proposed approach or strategy to performing the Services as defined in the Statement of Work, 500 words maximum. The Proposal Overview is to include the Supplier’s proposed approach to ensuring minimal turnover of personnel and how the Supplier will manage the associated risk.",
+    "requirement_text": "Suppliers are to provide a description of their proposed approach or strategy to performing the Services as defined in the Statement of Work, 500 words maximum.",
     "requirement_type": "response",
     "response_needed": true
   }

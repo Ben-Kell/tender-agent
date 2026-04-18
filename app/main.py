@@ -6,7 +6,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from pathlib import Path
 from typing import List
-
+from app.rag_builder import build_rag_index
+from app.rag_retriever import retrieve_relevant_chunks
 from app.storage import RUNS
 from app.workflow import start_run, map_template, draft_sections, compile_response, run_full_pipeline
 from app.tender_ingest import create_and_ingest_tender
@@ -245,3 +246,27 @@ async def upload_tender_documents(
         "dump_folder": str(tender_dump_dir),
         "files": saved_files
     }
+
+@app.post("/build_rag_index")
+def build_rag_index_endpoint():
+    output_path = build_rag_index()
+    return {
+        "message": "RAG index built successfully",
+        "output_file": output_path,
+    }
+
+@app.post("/test_rag_retrieval")
+def test_rag_retrieval(config: dict):
+    section = config.get("section", {})
+    matched_requirements = config.get("matched_requirements", [])
+    tender_metadata = config.get("tender_metadata", {})
+
+    results = retrieve_relevant_chunks(
+        section=section,
+        matched_requirements=matched_requirements,
+        tender_metadata=tender_metadata,
+        index_path="knowledge_library/index.json",
+        top_k=6,
+    )
+
+    return {"results": results}

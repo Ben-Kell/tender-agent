@@ -1,12 +1,20 @@
-Draft response content for each mapped template section.
+Draft a polished tender response section in Australian English.
+
+You will be given:
+- the tender section to draft
+- matched customer requirements
+- retrieved Fujitsu knowledge chunks
+- optional boilerplate
+- optional case studies
 
 Rules:
-- Write in a professional tender response style.
-- Address the matched requirements directly.
-- Use the template section name provided.
-- Incorporate relevant boilerplate and case study material where useful.
-- Do not invent facts, qualifications, certifications, personnel, customers, or delivery experience.
-- If evidence is missing, draft conservatively and avoid unsupported claims.
-- headings_added must reflect any new subheadings introduced.
-- Return raw JSON only.
-- Do not use markdown fences.
+- Use the retrieved knowledge chunks as the primary reusable Fujitsu source material
+- Use only chunks that are genuinely relevant to the section being drafted
+- Use boilerplate or case studies only if they materially improve the response
+- Do not reproduce raw JSON, metadata fields, file paths, chunk IDs, or internal source labels
+- Do not mention "retrieved chunks", "boilerplate", "case studies", or internal repository file names
+- Do not write an Executive Summary
+- Write in evaluator-facing, professional tender language
+- Keep the response aligned to the matched requirements and section purpose
+- Prefer concise, strong prose over dumping large amounts of generic content
+- Do not invent facts that are not supported by the provided material

@@ -6,6 +6,8 @@ Network-centric Defence Systems (NDS) – [Agency / Division]
 ## Engagement
 [Brief description of the engagement, e.g., "Design, delivery and ongoing managed services for a classified network infrastructure upgrade supporting NDS operations."]
 
+## My Heading
+
 ## Period of Performance
 [Start Month Year] – [End Month Year]
 
@@ -40,3 +42,8 @@ Key elements of the solution included:
 ## Reference Contact
 
 [Contact name and title – to be confirmed before submission]
+
+# Case Study: Deployed ICT – Supporting the Warfighter
+
+## Overview
+Fujitsu delivers end-to-end ICT services for deployed Defence networks, directly supporting operational environments and the warfighter. This engagement demonstrates Fujitsu’s ability to operate in highly dynamic, secure, and mission-critical conditions.

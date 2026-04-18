@@ -32,9 +32,9 @@
         "referees"
       ],
       "requirement": {
-        "requirement_id": "REQ-014",
+        "requirement_id": "REQ-011",
         "clause_reference": "ATTACHMENTS",
-        "requirement_text": "Supplier is to attach a Resume / CV for each proposed Key Person. At a minimum, each Resume / CV must contain the following details: the candidate’s name; the role the candidate is being proposed for, including SFIA code and skill level; the candidate’s current security clearance level (with clearance reference number); an experience summary addressing the candidate’s suitability to perform the proposed Key Position, including qualifications, skills and experience, and dates of experience summaries; notification of time last served in the Australian Defence Force, or time since transition out of the ADF; The name and contact details of two professional referees whom the candidate has worked with in the past 3 years; and The CV for each candidate should not exceed a combined total of four (4) A4 pages in length.",
+        "requirement_text": "Supplier is to attach a Resume / CV for each proposed Key Person. At a minimum, each Resume / CV must contain specific details including the candidate’s name, role, current security clearance level, experience summary, and professional referees.",
         "requirement_type": "personnel",
         "response_needed": true
       }

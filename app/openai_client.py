@@ -23,3 +23,10 @@ def chat(system_prompt: str, user_prompt: str, model: str = "gpt-4o") -> str:
         raise ValueError("OpenAI returned empty response content")
 
     return content
+
+def embed_texts(texts: list[str], model: str = "text-embedding-3-small") -> list[list[float]]:
+    response = client.embeddings.create(
+        model=model,
+        input=texts,
+    )
+    return [item.embedding for item in response.data]

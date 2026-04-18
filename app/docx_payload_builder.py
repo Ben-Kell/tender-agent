@@ -1,5 +1,5 @@
-# app/docx_payload_builder.py
 import json
+import re
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -12,17 +12,24 @@ def load_mapping(mapping_path: str) -> Dict[str, Any]:
 
 def clean_text_for_docx(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
-    # docxtemplater handles \n as line breaks inside plain text replacements reasonably
     return text.strip()
 
 
 def extract_metadata(tender_id: str) -> Dict[str, Any]:
     extracted_path = Path(f"tenders/{tender_id}/output/extracted_requirements.json")
+
     if not extracted_path.exists():
         return {}
 
     data = json.loads(extracted_path.read_text(encoding="utf-8"))
     return data.get("metadata", {})
+
+
+def normalise_section_heading(text: str) -> str:
+    text = text.strip()
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"^\d+\.\s*", "", text)  # remove leading numbering like "1. "
+    return text.lower()
 
 
 def build_docx_payload(
@@ -36,25 +43,40 @@ def build_docx_payload(
 
     payload: Dict[str, Any] = {}
 
-    # metadata fields
     payload["tender_reference"] = metadata.get("tender_reference", "")
     payload["tender_title"] = metadata.get("tender_title", "")
     payload["customer"] = metadata.get("customer", "")
     payload["abn"] = metadata.get("abn", "")
     payload["submission_date"] = metadata.get("submission_date", "")
 
-    # default all mapped section placeholders to empty string
-    for _, placeholder in mapping.get("sections", {}).items():
+    # Build a normalised mapping lookup
+    section_map = mapping.get("sections", {})
+    normalised_map = {
+        normalise_section_heading(source_heading): placeholder
+        for source_heading, placeholder in section_map.items()
+    }
+
+    # Default all placeholders to blank
+    for placeholder in section_map.values():
         payload[placeholder] = ""
 
-    # fill mapped sections
-    reverse_section_map = mapping.get("sections", {})
+    matched_headings = []
+    unmatched_headings = []
+
     for section in parsed_sections:
         heading = section["heading"]
         content = clean_text_for_docx(section["content"])
-        placeholder = reverse_section_map.get(heading)
+        placeholder = normalised_map.get(normalise_section_heading(heading))
+
         if placeholder:
             payload[placeholder] = content
+            matched_headings.append({"heading": heading, "placeholder": placeholder})
+        else:
+            unmatched_headings.append(heading)
+
+    # Debug visibility in the payload itself
+    payload["_debug_matched_headings"] = matched_headings
+    payload["_debug_unmatched_headings"] = unmatched_headings
 
     return payload
 

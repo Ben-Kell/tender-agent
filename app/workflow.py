@@ -16,6 +16,7 @@ from app.output_writer import write_tender_output
 from app.pricing_model_detector import detect_pricing_model
 from app.prompt_loader import load_prompt
 from app.proposal_overview_planner import plan_proposal_overview
+from app.rag_retriever import retrieve_relevant_chunks
 from app.requirement_extractor import extract_and_deduplicate_requirements
 from app.returnable_detector import detect_returnable_documents
 from app.submission_artefacts import build_submission_artefacts
@@ -328,11 +329,19 @@ def _draft_single_section(
 
     section_name = section.get("template_section", "").strip()
     matched_requirement_ids = section.get("matched_requirements", [])
-
     matched_requirements = [
         req for req in requirements
         if req.get("requirement_id") in matched_requirement_ids
     ]
+
+    retrieved_chunks = retrieve_relevant_chunks(
+        section=section,
+        matched_requirements=matched_requirements,
+        tender_metadata=tender_metadata,
+        index_path="knowledge_library/index.json",
+        top_k=6,
+    )
+
 
     user_prompt = f"""
 TASK:
@@ -350,14 +359,10 @@ RESPONSE TEMPLATE:
 TENDER METADATA:
 {json.dumps(tender_metadata, indent=2)}
 
-MATCHED REQUIREMENTS:
-{json.dumps(matched_requirements, indent=2)}
-
-BOILERPLATE:
-{json.dumps(boilerplate_docs, indent=2)}
-
-CASE STUDIES:
-{json.dumps(case_study_docs, indent=2)}
+MATCHED REQUIREMENTS: {json.dumps(matched_requirements, indent=2)}
+RETRIEVED KNOWLEDGE CHUNKS: {json.dumps(retrieved_chunks, indent=2)}
+OPTIONAL BOILERPLATE: {json.dumps(boilerplate_docs, indent=2)}
+OPTIONAL CASE STUDIES: {json.dumps(case_study_docs, indent=2)}
 
 Return raw JSON only in this structure:
 {{
@@ -367,6 +372,8 @@ Return raw JSON only in this structure:
   "requirements_covered": ["REQ-001", "REQ-004"],
   "used_boilerplate": ["file1.md"],
   "used_case_studies": ["case1.md"],
+  "used_rag_chunks": ["chunk_123", "chunk_456"],
+  "used_rag_sources": ["service_transition_standard.md", "nds_case_study.md"],
   "headings_added": ["Optional heading"]
 }}
 
@@ -386,6 +393,17 @@ Do not include an Executive Summary section.
 
     try:
         parsed = json.loads(cleaned_output)
+        draft_text = str(parsed.get("draft_text", "")).strip()
+
+        if draft_text.startswith("{") and '"coverage_status"' in draft_text:
+            raise RuntimeError(
+            f"Drafted section '{section_name}' returned compliance JSON instead of narrative text"
+            )
+
+        if draft_text.startswith("{") and '"requirement_id"' in draft_text:
+            raise RuntimeError(
+            f"Drafted section '{section_name}' returned raw JSON instead of narrative text"
+            )
         return parsed
     except json.JSONDecodeError:
         return {
@@ -395,10 +413,13 @@ Do not include an Executive Summary section.
             "requirements_covered": [],
             "used_boilerplate": [],
             "used_case_studies": [],
+            "used_rag_chunks": [],
+            "used_rag_sources": [],
             "headings_added": [],
             "error": "Failed to parse model output as JSON",
             "raw_output": raw_output,
         }
+
 
 
 def draft_sections(config: dict) -> dict:
@@ -552,6 +573,12 @@ Do not add commentary before or after the document.
         raw_output = chat(system_prompt, user_prompt)
         final_markdown = raw_output.strip()
 
+        if '"compliance"' in final_markdown or '"coverage_status"' in final_markdown:
+            raise RuntimeError(
+                "Compiled markdown contains compliance JSON or machine-readable artefacts. "
+                "Inspect section_drafts.json and compile prompt output before generating Executive Summary."
+            )
+
         if final_markdown.startswith("```markdown"):
             final_markdown = final_markdown[len("```markdown"):].strip()
         elif final_markdown.startswith("```"):
@@ -566,24 +593,46 @@ Do not add commentary before or after the document.
         RUNS[run_id]["current_step"] = "generating_executive_summary"
 
         summary_source_markdown = remove_existing_executive_summary(final_markdown)
-        executive_summary_text = generate_executive_summary(summary_source_markdown)
+        executive_summary_text = generate_executive_summary(summary_source_markdown).strip()
+
+        print("[compile_response] executive_summary_text length:", len(executive_summary_text))
+
+        if not executive_summary_text:
+            raise RuntimeError("Executive Summary generation returned empty text")
+
         final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
 
+        print(
+            "[compile_response] executive summary heading present after injection:",
+            ("## 1. Executive Summary" in final_markdown) or ("## Executive Summary" in final_markdown)
+        )
+        if '"compliance"' in final_markdown or '"coverage_status"' in final_markdown:
+            raise RuntimeError(
+                "Final markdown still contains compliance JSON after Executive Summary injection."
+            )
         RUNS[run_id]["current_step"] = "building_proposal_overview"
 
         final_markdown = remove_existing_proposal_overview(final_markdown)
-
         proposal_overview_text = build_proposal_overview_scaffold(proposal_overview_plan)
-
         final_markdown = inject_proposal_overview(final_markdown, proposal_overview_text)
 
         write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
+
+        if ("## 1. Executive Summary" not in final_markdown) and ("## Executive Summary" not in final_markdown):
+            raise RuntimeError("Executive Summary missing from final_response_draft.md before payload build")
 
         payload = build_docx_payload(
             tender_id=tender_id,
             markdown_text=final_markdown,
             mapping_path="templates/fujitsu_response_template.mapping.json"
         )
+
+        print("[compile_response] payload executive_summary length:", len(payload.get("executive_summary", "")))
+        print("[compile_response] payload matched headings:", payload.get("_debug_matched_headings", []))
+        print("[compile_response] payload unmatched headings:", payload.get("_debug_unmatched_headings", []))
+
+        if not payload.get("executive_summary", "").strip():
+            raise RuntimeError("Executive Summary missing from docx_payload.json before DOCX render")
 
         payload_file = write_docx_payload(tender_id, payload)
 
@@ -593,7 +642,7 @@ Do not add commentary before or after the document.
             tender_id=tender_id,
             template_path="templates/fujitsu_response_template.docx",
             payload_path=payload_file,
-            output_path=f"tenders/{tender_id}/output/proposal_overview.docx"
+            output_path=f"tenders/{tender_id}/output/fujitsu_response.docx"
         )
 
         aic_docx_output_file = render_docx_with_node(
