@@ -18,6 +18,7 @@ from app.prompt_loader import load_prompt
 from app.proposal_overview_planner import plan_proposal_overview
 from app.rag_retriever import retrieve_relevant_chunks
 from app.requirement_extractor import extract_and_deduplicate_requirements
+from app.response_router import route_requirements_for_main_response
 from app.returnable_detector import detect_returnable_documents
 from app.submission_artefacts import build_submission_artefacts
 from app.template_loader import load_template
@@ -160,10 +161,13 @@ def start_run(config: dict) -> dict:
         pricing_model_result = detect_pricing_model(tender_id)
         print(f"[start_run] pricing model detection result: {pricing_model_result}")
 
+        response_routing = route_requirements_for_main_response(tender_id, requirements)
+
         parsed = {
             "metadata": metadata,
             "requirements": requirements,
             "pricing_model_detection": pricing_model_result,
+            "response_routing": response_routing,
         }
 
         output_path = write_tender_output(
@@ -171,6 +175,13 @@ def start_run(config: dict) -> dict:
             "extracted_requirements.json",
             parsed,
         )
+
+        write_tender_output(
+            tender_id,
+            "response_routing.json",
+            response_routing,
+        )
+
         print(f"[start_run] wrote output to {output_path}")
 
         supplier_background_detection = detect_supplier_background_requirement(parsed)
@@ -419,12 +430,96 @@ Do not include an Executive Summary section.
             "error": "Failed to parse model output as JSON",
             "raw_output": raw_output,
         }
+def _draft_main_response_section(
+    tender_id: str,
+    tender_metadata: dict,
+    section_title: str,
+    main_response_requirements: list[dict],
+    requirements: list[dict],
+    boilerplate_docs: list,
+    case_study_docs: list,
+) -> dict:
+    system_prompt = load_prompt("system_instructions.md")
+    draft_prompt = load_prompt("draft_sections.md")
 
+    routed_ids = [item.get("requirement_id") for item in main_response_requirements]
+    matched_requirements = [
+        req for req in requirements if req.get("requirement_id") in routed_ids
+    ]
+
+    user_prompt = f"""
+TASK: {draft_prompt}
+
+Draft a single main-response section for the Fujitsu response document.
+
+Rules:
+- This section will appear immediately after the Executive Summary
+- The heading must be exactly: {section_title}
+- Only address requirements routed to the main Fujitsu response document
+- Do not include pricing schedules, rate cards, returnable-form content, supplier background forms, or past performance tables unless clearly needed as short narrative references
+- Write in polished tender prose in Australian English
+- Do not include an Executive Summary
+- Do not include any other top-level section headings
+
+TENDER ID: {tender_id}
+
+TENDER METADATA:
+{json.dumps(tender_metadata, indent=2)}
+
+ROUTED MAIN RESPONSE REQUIREMENTS:
+{json.dumps(main_response_requirements, indent=2)}
+
+MATCHED REQUIREMENT DETAILS:
+{json.dumps(matched_requirements, indent=2)}
+
+BOILERPLATE:
+{json.dumps(boilerplate_docs, indent=2)}
+
+CASE STUDIES:
+{json.dumps(case_study_docs, indent=2)}
+
+Return raw JSON only in this structure:
+{{
+  "section_id": "SEC-MAIN-001",
+  "template_section": "{section_title}",
+  "draft_text": "Draft response text here",
+  "requirements_covered": ["REQ-001", "REQ-004"],
+  "used_boilerplate": ["file1.md"],
+  "used_case_studies": ["case1.md"],
+  "headings_added": []
+}}
+""".strip()
+
+    raw_output = chat(system_prompt, user_prompt)
+    cleaned_output = raw_output.strip()
+
+    if cleaned_output.startswith("```json"):
+        cleaned_output = cleaned_output[len("```json"):].strip()
+    elif cleaned_output.startswith("```"):
+        cleaned_output = cleaned_output[len("```"):].strip()
+
+    if cleaned_output.endswith("```"):
+        cleaned_output = cleaned_output[:-3].strip()
+
+    try:
+        parsed = json.loads(cleaned_output)
+        return parsed
+    except json.JSONDecodeError:
+        return {
+            "section_id": "SEC-MAIN-001",
+            "template_section": section_title,
+            "draft_text": "",
+            "requirements_covered": [],
+            "used_boilerplate": [],
+            "used_case_studies": [],
+            "headings_added": [],
+            "error": "Failed to parse model output as JSON",
+            "raw_output": raw_output,
+        }
 
 
 def draft_sections(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
-
     RUNS[run_id] = {
         "status": "running",
         "current_step": "loading_inputs_for_drafting",
@@ -432,59 +527,39 @@ def draft_sections(config: dict) -> dict:
         "result": None,
     }
 
-    SKIP_AUTO_DRAFT_SECTIONS = {
-        "Executive Summary",
-        "1. Executive Summary",
-    }
-
     try:
         tender_id = config["tender_id"]
-        template_name = config.get("template_name", "response_template.md")
 
         extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
-        template_map = load_tender_output_json(tender_id, "template_map.json")
-
         requirements = extracted.get("requirements", [])
-        mapped_sections = template_map.get("sections", [])
-
-        filtered_mapped_sections = []
-        for section in mapped_sections:
-            section_name = section.get("template_section", "").strip()
-            if section_name in SKIP_AUTO_DRAFT_SECTIONS:
-                continue
-            filtered_mapped_sections.append(section)
-
-        template_text = load_template(template_name)
-
         tender_metadata = extracted.get("metadata", {})
-        template_text = fill_template_placeholders(template_text, tender_metadata)
+        response_routing = extracted.get("response_routing", {})
+
+        section_title = response_routing.get(
+            "main_response_section_title",
+            "Response to Customer Requirements",
+        )
+        main_response_requirements = response_routing.get(
+            "main_response_requirements",
+            []
+        )
 
         boilerplate_docs = load_boilerplate_docs()
         case_study_docs = load_case_studies()
 
-        RUNS[run_id]["current_step"] = "drafting_sections"
+        RUNS[run_id]["current_step"] = "drafting_main_response_section"
 
-        drafted_sections = []
+        drafted_section = _draft_main_response_section(
+            tender_id=tender_id,
+            tender_metadata=tender_metadata,
+            section_title=section_title,
+            main_response_requirements=main_response_requirements,
+            requirements=requirements,
+            boilerplate_docs=boilerplate_docs,
+            case_study_docs=case_study_docs,
+        )
 
-        for index, section in enumerate(filtered_mapped_sections, start=1):
-            section_name = section.get("template_section", f"Section {index}")
-            print(f"[draft_sections] Drafting {index}/{len(filtered_mapped_sections)}: {section_name}")
-
-            drafted_section = _draft_single_section(
-                tender_id=tender_id,
-                template_text=template_text,
-                tender_metadata=tender_metadata,
-                section=section,
-                requirements=requirements,
-                boilerplate_docs=boilerplate_docs,
-                case_study_docs=case_study_docs,
-            )
-
-            if drafted_section.get("template_section", "").strip() not in SKIP_AUTO_DRAFT_SECTIONS:
-                drafted_sections.append(drafted_section)
-
-        parsed = {"sections": drafted_sections}
-
+        parsed = {"sections": [drafted_section]}
         write_tender_output(tender_id, "section_drafts.json", parsed)
 
         RUNS[run_id]["result"] = parsed
@@ -514,112 +589,55 @@ def compile_response(config: dict) -> dict:
 
     try:
         tender_id = config["tender_id"]
-        template_name = config.get("template_name", "response_template.md")
-
-        template_text = load_template(template_name)
 
         extracted = load_tender_output_json(tender_id, "extracted_requirements.json")
         tender_metadata = extracted.get("metadata", {})
-
-        past_performance_requirement = load_tender_output_json(
-            tender_id,
-            "past_performance_requirement.json"
-        )     
-
-        #proposal_overview_plan = load_proposal_overview_plan(tender_id)   
-
-        template_text = fill_template_placeholders(template_text, tender_metadata)
+        response_routing = extracted.get("response_routing", {})
 
         section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         drafted_sections = section_drafts.get("sections", [])
-        proposal_overview_plan = load_proposal_overview_plan(tender_id)
 
-        system_prompt = load_prompt("system_instructions.md")
-        compile_prompt = load_prompt("compile_response.md")
+        if not drafted_sections:
+            raise RuntimeError("No drafted main response section found in section_drafts.json")
 
-        RUNS[run_id]["current_step"] = "compiling_final_response"
+        main_section = drafted_sections[0]
+        main_section_title = main_section.get(
+            "template_section",
+            response_routing.get("main_response_section_title", "Response to Customer Requirements")
+        ).strip()
 
-        user_prompt = f"""
-TASK: {compile_prompt}
+        main_section_text = str(main_section.get("draft_text", "")).strip()
 
-TENDER ID: {tender_id}
+        if not main_section_text:
+            raise RuntimeError("Main response section draft is empty")
 
-RESPONSE TEMPLATE:
-{template_text}
+        RUNS[run_id]["current_step"] = "building_two_section_markdown"
 
-SECTION DRAFTS:
-{json.dumps(drafted_sections, indent=2)}
-
-Return markdown only.
-Do not use triple backticks.
-Do not add commentary before or after the document.
-"""
-        
-        proposal_overview_sections = proposal_overview_plan.get("proposal_overview_sections", [])
-
-        proposal_overview_headings = []
-        proposal_overview_headings_markdown_lines = []
-
-        for section in proposal_overview_sections:
-            heading = (section.get("heading") or "").strip()
-            if not heading:
-                continue
-
-            proposal_overview_headings.append({"heading": heading})
-            proposal_overview_headings_markdown_lines.append(f"## {heading}")
-
-        proposal_overview_headings_markdown = "\n".join(proposal_overview_headings_markdown_lines)
-
-        raw_output = chat(system_prompt, user_prompt)
-        final_markdown = raw_output.strip()
-
-        if '"compliance"' in final_markdown or '"coverage_status"' in final_markdown:
-            raise RuntimeError(
-                "Compiled markdown contains compliance JSON or machine-readable artefacts. "
-                "Inspect section_drafts.json and compile prompt output before generating Executive Summary."
-            )
-
-        if final_markdown.startswith("```markdown"):
-            final_markdown = final_markdown[len("```markdown"):].strip()
-        elif final_markdown.startswith("```"):
-            final_markdown = final_markdown[len("```"):].strip()
-
-        if final_markdown.endswith("```"):
-            final_markdown = final_markdown[:-3].strip()
-
-        # Safety pass in case the model reproduced placeholders again
-        final_markdown = fill_template_placeholders(final_markdown, tender_metadata)
+        base_markdown = (
+            "## 1. Executive Summary\n\n"
+            f"## 2. {main_section_title}\n\n"
+            f"{main_section_text}\n"
+        ).strip()
 
         RUNS[run_id]["current_step"] = "generating_executive_summary"
 
-        summary_source_markdown = remove_existing_executive_summary(final_markdown)
+        summary_source_markdown = remove_existing_executive_summary(base_markdown)
         executive_summary_text = generate_executive_summary(summary_source_markdown).strip()
-
-        print("[compile_response] executive_summary_text length:", len(executive_summary_text))
 
         if not executive_summary_text:
             raise RuntimeError("Executive Summary generation returned empty text")
 
-        final_markdown = inject_executive_summary(final_markdown, executive_summary_text)
-
-        print(
-            "[compile_response] executive summary heading present after injection:",
-            ("## 1. Executive Summary" in final_markdown) or ("## Executive Summary" in final_markdown)
-        )
-        if '"compliance"' in final_markdown or '"coverage_status"' in final_markdown:
-            raise RuntimeError(
-                "Final markdown still contains compliance JSON after Executive Summary injection."
-            )
-        RUNS[run_id]["current_step"] = "building_proposal_overview"
-
-        final_markdown = remove_existing_proposal_overview(final_markdown)
-        proposal_overview_text = build_proposal_overview_scaffold(proposal_overview_plan)
-        final_markdown = inject_proposal_overview(final_markdown, proposal_overview_text)
-
-        write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
+        final_markdown = inject_executive_summary(base_markdown, executive_summary_text)
 
         if ("## 1. Executive Summary" not in final_markdown) and ("## Executive Summary" not in final_markdown):
-            raise RuntimeError("Executive Summary missing from final_response_draft.md before payload build")
+            raise RuntimeError("Executive Summary missing from final markdown")
+
+        if '"compliance"' in final_markdown or '"coverage_status"' in final_markdown:
+            raise RuntimeError(
+                "Final markdown contains compliance JSON or machine-readable artefacts."
+            )
+
+        write_markdown_output(tender_id, "final_response_draft.md", final_markdown)
 
         payload = build_docx_payload(
             tender_id=tender_id,
@@ -627,12 +645,11 @@ Do not add commentary before or after the document.
             mapping_path="templates/fujitsu_response_template.mapping.json"
         )
 
-        print("[compile_response] payload executive_summary length:", len(payload.get("executive_summary", "")))
-        print("[compile_response] payload matched headings:", payload.get("_debug_matched_headings", []))
-        print("[compile_response] payload unmatched headings:", payload.get("_debug_unmatched_headings", []))
-
         if not payload.get("executive_summary", "").strip():
             raise RuntimeError("Executive Summary missing from docx_payload.json before DOCX render")
+
+        if not payload.get("main_response_section", "").strip():
+            raise RuntimeError("Main response section missing from docx_payload.json before DOCX render")
 
         payload_file = write_docx_payload(tender_id, payload)
 
@@ -642,7 +659,7 @@ Do not add commentary before or after the document.
             tender_id=tender_id,
             template_path="templates/fujitsu_response_template.docx",
             payload_path=payload_file,
-            output_path=f"tenders/{tender_id}/output/fujitsu_response.docx"
+            output_path=f"tenders/{tender_id}/output/final_response.docx"
         )
 
         aic_docx_output_file = render_docx_with_node(
@@ -654,19 +671,8 @@ Do not add commentary before or after the document.
 
         past_performance_docx_output_file = None
 
-        if past_performance_requirement.get("past_performance_required"):
-            past_performance_docx_output_file = render_docx_with_node(
-                tender_id=tender_id,
-                template_path="templates/fujitsu_past_performance.docx",
-                payload_path=payload_file,
-                output_path=f"tenders/{tender_id}/output/fujitsu_past_performance.docx"
-            )
-
         RUNS[run_id]["current_step"] = "building_submission_artefacts"
         submission_artefact_result = build_submission_artefacts(tender_id)
-
-        print("SUBMISSION ARTEFACTS BUILT")
-        print(submission_artefact_result)
 
         checklist_path = submission_artefact_result.get("submission_checklist_md_path")
         if not checklist_path:
@@ -684,11 +690,8 @@ Do not add commentary before or after the document.
             "submission_checklist_markdown": submission_artefact_result["submission_checklist_markdown"],
             "submission_artefacts_json_path": submission_artefact_result["submission_artefacts_json_path"],
             "submission_checklist_md_path": submission_artefact_result["submission_checklist_md_path"],
-            "proposal_overview_plan_summary": proposal_overview_plan.get("overall_summary", ""),
-            "proposal_overview_headings": proposal_overview_headings,
-            "proposal_overview_headings_markdown": proposal_overview_headings_markdown,
-            "proposal_overview_sections_json": json.dumps(proposal_overview_sections, indent=2),
         }
+
         RUNS[run_id]["status"] = "completed"
         RUNS[run_id]["current_step"] = "done"
 
