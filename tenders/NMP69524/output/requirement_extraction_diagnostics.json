@@ -21,21 +21,21 @@
       {
         "chunk_index": 1,
         "chunk_length": 15000,
-        "requirement_count": 13,
+        "requirement_count": 16,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 - ICTPA Schedule A - Statement of Work V2.docx\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nWORK ORDER SCHEDULE A – Statement of Work\n\nTABLE OF CONTENTS\n\n1.\tServices to be provided\t2\n\n2.\tLocations\t4\n\n3.\tGovernment Furnished Facilities, Materials and Services\t4\n\n4.\tPricing\t6\n\n5.\tStand down of Personnel\t6\n\n6.\tMilestones, Delivery, Approval and Acceptance\t9\n\n7.\tTesting\t12\n\n8.\tAIC Obligations\t12\n\n9.\tIntellectual Property\t12\n\n10.\tPlans\t13\n\n11.\tPerformance Management\t14\n\n12.\tMeetings\t14\n\n13.\tReporting\t15\n\n14.\tAdditional Standards and Policy Requirements\t16\n\n15.\tDigital Service Standard\t16\n\n16.\tTechnology – Service Attributes\t17\n\n17.\tTechnology – Applications\t17\n\n18.\tAnnexures to this SOW\t18\n\nSERVICES\n\nPRICING\n\nPERSONNEL\n\nINTELLECTUAL PROPERTY\n\nPLANS\n\nPERFORM"
       },
       {
         "chunk_index": 2,
         "chunk_length": 14999,
-        "requirement_count": 20,
+        "requirement_count": 16,
         "status": "ok",
         "chunk_preview": "art of the Services; amending the original Stand Down Notice; or requiring the Supplier to take further steps to mitigate Loss in connection with the Stand Down Period, or avoid disruption to Services not subject to the Stand Down Period, including to: re-schedule performance of Services; provide information, records or data; or take action in relation to Subcontracts. Except in accordance with clause 5.3(a)(i), and clauses 6.4 (Performance Relief) and 6.5 (Postponement) of the COD, the Stand Down Period does not relieve the Supplier from any of its obligations in respect of the performance of the Work Order.  The Supplier must notify the Commonwealth in accordance with clause 6 of the COD, if as a result of the Stand Down Period: there will be a delay in achieving any Milestone Date or ot"
       },
       {
         "chunk_index": 3,
         "chunk_length": 15000,
-        "requirement_count": 10,
+        "requirement_count": 8,
         "status": "ok",
         "chunk_preview": "ting period in relation to the Services and steps taken or proposed to be taken by the Supplier, to address them; details of any Supplier Personnel and Subcontractor Personnel resignations which have been received or are expected in relation to the Work Order, and steps being taken or proposed to be taken by the Supplier to find suitable replacements; the Supplier’s progress in relation to: resolving any delays, notified by the Supplier under clause 6.2 of the COD; performing any Defect rectification work, undertaken by the Supplier in accordance with clause 8.2 of the COD; and/or any other matters which the Supplier is required to report against under the Deed; details of any replacement of Key Persons, Approved by the Commonwealth in accordance with clause 3.13 of the COD, that have not "
       },
@@ -77,28 +77,28 @@
       {
         "chunk_index": 1,
         "chunk_length": 15000,
-        "requirement_count": 11,
+        "requirement_count": 12,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 - Short Form RFQ and WO V2.docx\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nAGREEMENT\n\nThe Commonwealth of Australia as represented by the Department of Defence (ABN 68 706 814 312) (Commonwealth);\n\nand\n\n<insert name of Supplier (ABN [insert ABN])> (Supplier),\n\nagree that the Supplier will provide the Services as set out in this document (which, once executed by the parties, will constitute a Work Order (number NMP69524)0 (Work Order) and comply with its other obligations under this Work Order.\n\nExecuted as an agreement.\n\nSHORT FORM RFQ & WORK ORDER\n\nSCHEDULE A – STATEMENT OF WORK\n\nRefer to the attached document titled “Schedule A – Statement of Work”.\n\n| PART 1  – SHORT FORM RFQ & WORK ORDER |\n| --- |\n\n| Short Form RFQ & draft Work Order Deed of Stan"
       },
       {
         "chunk_index": 2,
         "chunk_length": 14999,
-        "requirement_count": 13,
+        "requirement_count": 12,
         "status": "ok",
         "chunk_preview": "om the third party prior to disclosure. Nothing in this clause 7 changes or affects the ownership of IP in the information contained in the Quotation documents. Part Quotations  The Commonwealth may consider a Quotation for part of the Services. The Commonwealth reserves the right to enter into more than one Work Order (with different Suppliers) for different parts of the Services set out in this RFQ. ALTERNATIVE PROPOSAL The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with the requirements specified in this clause 9. The Commonwealth will not consider an alternative proposal unless the alternative proposal: is submitted as part of a Quotation that addresse"
       },
       {
         "chunk_index": 3,
         "chunk_length": 15000,
-        "requirement_count": 17,
+        "requirement_count": 13,
         "status": "ok",
         "chunk_preview": "sisting the Commonwealth in the conduct of the RFQ process and for the purposes contained in clauses 7.3 and 7.4.  The Commonwealth may obtain appropriate confidentiality undertakings from the third party prior to disclosure. Nothing in this clause 7 changes or affects the ownership of IP in the information contained in the Quotation documents. Part Quotations  The Commonwealth may consider a Quotation for part of the Services. The Commonwealth reserves the right to enter into more than one Work Order (with different Suppliers) for different parts of the Services set out in this RFQ. ALTERNATIVE PROPOSAL The Commonwealth may consider an alternative proposal that does not comply with the requirements of the RFQ. Any alternative proposal is to be submitted by the Supplier in accordance with "
       },
       {
         "chunk_index": 4,
         "chunk_length": 15000,
-        "requirement_count": 17,
+        "requirement_count": 19,
         "status": "ok",
         "chunk_preview": "s replaced with “the period set out in clause 7.2(i)”. SC1.6 – Replace clause 7.7(d) of the COD with the following: “(d)\tIf the interest payment is not offset or paid as part of the subject claim, the Commonwealth will adjust the next Approved payment under the Work Order. If there are no further payments, the relevant party must pay the interest payment within: (i)\t20 days after being provided with a notice; or (ii)\twhere a Work Order specifies that the PEPPOL framework applies, and the Payment Claim is lodged electronically through the PEPPOL framework, 5 days after being provided with notice.” SC1.7: Insert the following defined terms in alphabetical order in the Glossary (Attachment G):  SC2: National Anti-Corruption Commission Act 2022 (Cth) Requirements SC 2.1\tThe Supplier acknowledg"
       },
@@ -112,21 +112,21 @@
       {
         "chunk_index": 6,
         "chunk_length": 14999,
-        "requirement_count": 15,
+        "requirement_count": 16,
         "status": "ok",
         "chunk_preview": "whether to exercise any rights in relation to extending the term of the Deed or any Work Order; deciding whether to exercise any rights in relation to termination or a reduction of the scope of Services under or in connection with the Deed or any Work Order; and undertaking any Panel review or refresh under or in connection with the Deed. Nothing in this clause 11.18 requires the Supplier to act in any manner or disclose any information which would: breach an obligation of confidentiality that existed prior to the date the Significant Event occurred, that is owed to an unrelated third party; cause the Supplier to breach any law or regulation or contractual obligation regarding privacy or security (in Australia or outside of Australia); have the effect of waiving legal professional privileg"
       },
       {
         "chunk_index": 7,
         "chunk_length": 15000,
-        "requirement_count": 19,
+        "requirement_count": 17,
         "status": "ok",
         "chunk_preview": "e COD is amended as follows: “30 days” is replaced with “the period set out in clause 7.2(i)”. SC1.5 – Clause 7.6(e) of the COD is amended as follows: “30 days” is replaced with “the period set out in clause 7.2(i)”. SC1.6 – Replace clause 7.7(d) of the COD with the following: “(d)\tIf the interest payment is not offset or paid as part of the subject claim, the Commonwealth will adjust the next Approved payment under the Work Order. If there are no further payments, the relevant party must pay the interest payment within: (i)\t20 days after being provided with a notice; or (ii)\twhere a Work Order specifies that the PEPPOL framework applies, and the Payment Claim is lodged electronically through the PEPPOL framework, 5 days after being provided with notice.” SC1.7: Insert the following define"
       },
       {
         "chunk_index": 8,
         "chunk_length": 4215,
-        "requirement_count": 7,
+        "requirement_count": 8,
         "status": "ok",
         "chunk_preview": "must be submitted within 10 Working Days after the end of the applicable Work Order Term, reporting on performance against the Australian Skills Guarantee Targets during the applicable Work Order Term; and (iv)\tmust be submitted using the Skills Guarantee Reporting Worksheet, or such other form Approved by the applicable Commonwealth Contract Manager. (s)\tIf the Supplier did not meet one or more of the Australian Skills Guarantee Targets during the relevant reporting period, the Supplier must include details of the non-compliance in the relevant Skills Guarantee Report. (t)\tThe Supplier consents to the Commonwealth using and providing a copy of Skills Guarantee Information to the Department of Employment and Workplace Relations, for the purposes of: (i)\tmeeting the objectives and requireme"
       }
@@ -140,14 +140,14 @@
       {
         "chunk_index": 1,
         "chunk_length": 15000,
-        "requirement_count": 37,
+        "requirement_count": 38,
         "status": "ok",
         "chunk_preview": "# Source: NMP69524 - SOW Annexure D - Role Requirements.docx\n# Document Type: docx\n# Normalised For: Tender agent ingestion\n\nTable 1\n\ndfafadf\n\nTable 2\n\nTable 3\n\nTable 4\n\nTable 5\n\nTable 6\n\nTable 7\n\nTable 8\n\n| Note to Suppliers:  Vendors are to submit no more than two nominations for each of the available positions. E.G Data Engineers TECH 5 OP 1, three positions available, max of six nominations. Data Engineers TECH 5 OP 3, one position available, max of two nominations etc Change Manager CHMG 3, one position available, max of two nominations  If questions are raised to the Commonwealth on any information in these Role Descriptions, please ensure Table# and Row are referenced to ensure accurate responses. |\n| --- |\n\n| Row Number | Role | Data Engineers |\n| --- | --- | --- |\n| 1 | SFIA | Spe"
       },
       {
         "chunk_index": 2,
         "chunk_length": 9071,
-        "requirement_count": 17,
+        "requirement_count": 26,
         "status": "ok",
         "chunk_preview": "an Platform System Administrator for the CDS environments Working with system owners providing guidance on data formats and transport methods. Collaborating with internal and external stakeholders managing and guiding all ITSM process’ Communicating verbally and in written form, complex problems to various stakeholders, including senior executives. Represent CDS at relevant Capability Advisory Boards (CAB’s) within the wider Defence community Action and respond to stakeholder engagement via the group mailbox, and various work take on queues Secondary Responsibilities: All CDS Above-the-Line contractors may be tasked with assisting other CDS functional areas where the member’s skills and knowledge are relevant, and does not create a priority against core duies. |\n| 4 | Timeframe | The speci"
       }
@@ -182,7 +182,7 @@
       {
         "chunk_index": 2,
         "chunk_length": 15000,
-        "requirement_count": 14,
+        "requirement_count": 16,
         "status": "ok",
         "chunk_preview": "lation to Milestones);\n\nestablishing Subcontracts with Australian Industry, including:\n\nan overview of the Supplier’s standard procurement processes, including identifying the typical linkages that exist with the Supplier’s design teams for the Mission System and Support System;\n\na description of how procurement activities will be structured, including in relation to timings and use of selection criteria, to maximise opportunities for Australian Industry to participate in the procurement activities on a fair and equitable basis; and\n\ndescribing how any commercial requirements and constraints, which may apply to particular types of procurement activities, will be addressed, including in relation to Intellectual Property (IP), security, and export controls, so that the widest possible market"
       },
@@ -210,7 +210,7 @@
       {
         "chunk_index": 2,
         "chunk_length": 11044,
-        "requirement_count": 14,
+        "requirement_count": 13,
         "status": "ok",
         "chunk_preview": "s more than one director, or (b) has a director and a company secretary that are two different people.\n\nOption 2: Where the company has a sole director who is also the sole company secretary, or where the company has a sole director and the company does not have a company secretary\n\nOption 3: Where the corporate trustee (a) has more than one director, or (b) has a director and a company secretary that are two different people.\n\nOption 4: Where the corporate trustee has a sole director who is also the company secretary, or where the corporate trustee has a sole director and the corporate trustee does not have a company secretary.\n\n| PART 3 QUOTATION |\n| --- |\n\n| ABOUT THIS DOCUMENT Once completed and submitted to the Commonwealth, this document (along with relevant attachments) will be an o"
       }
