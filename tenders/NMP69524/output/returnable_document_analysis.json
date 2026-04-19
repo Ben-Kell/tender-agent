@@ -1,3 +1,259 @@
 {
-  "documents": []
+  "documents": [
+    {
+      "file_name": "NMP69524 - Attachment A to Quotation - Work Order Price  Payment Arrangements V2.md",
+      "document_type": "schedule",
+      "required_to_return": true,
+      "confidence": "high",
+      "reason": "The document contains pricing tables and sections that are typically required for submission as part of a tender response.",
+      "sections": [
+        {
+          "section_name": "Fixed Price",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Fixed price sections usually require specific supplier input and validation."
+        },
+        {
+          "section_name": "T&M Services (up to an NTE Price)",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Time and Materials pricing requires detailed supplier-specific input and validation."
+        },
+        {
+          "section_name": "Labour Rates for SFIA skillsets",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Labour rates need to be provided by the supplier based on specific skillsets and levels."
+        },
+        {
+          "section_name": "TIME",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Time-related pricing requires specific supplier input and validation."
+        },
+        {
+          "section_name": "MATERIALS",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Materials pricing requires specific supplier input and validation."
+        },
+        {
+          "section_name": "TOTAL T&M Services (NTE PRICE)",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Total pricing requires specific supplier input and validation."
+        },
+        {
+          "section_name": "On Call Allowance",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "On Call Allowance rates need to be provided by the supplier."
+        }
+      ]
+    },
+    {
+      "file_name": "NMP69524 - ICTPA Schedule A - Statement of Work V2.md",
+      "document_type": "reference_only",
+      "required_to_return": false,
+      "confidence": "high",
+      "reason": "Hard rule: filename identified as a Statement of Work document, which is not returnable",
+      "sections": []
+    },
+    {
+      "file_name": "NMP69524 - Short Form RFQ and WO V2.md",
+      "document_type": "pricing_schedule",
+      "required_to_return": true,
+      "confidence": "high",
+      "reason": "The document contains phrases indicating it must be submitted and requires supplier-provided information, including pricing and compliance details.",
+      "sections": [
+        {
+          "section_name": "AGREEMENT",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section involves legal commitments and execution as an agreement, requiring manual review and signatures."
+        },
+        {
+          "section_name": "SCHEDULE A – STATEMENT OF WORK",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "The Statement of Work is typically a detailed description of services that requires specific supplier input and cannot be auto-filled."
+        },
+        {
+          "section_name": "PART 1 – SHORT FORM RFQ & WORK ORDER",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section includes specific RFQ and Work Order details that require manual completion and verification."
+        },
+        {
+          "section_name": "QUOTATION DETAILS SCHEDULE",
+          "auto_fill_candidate": true,
+          "auto_fill_type": "metadata",
+          "suggested_source": "tender_metadata",
+          "reason": "This section contains structured data such as RFQ number, title, and closing time, which can be auto-filled from tender metadata."
+        },
+        {
+          "section_name": "Evaluation Criteria",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Evaluation criteria require detailed supplier responses and cannot be auto-filled."
+        },
+        {
+          "section_name": "CONDITIONS OF QUOTATION",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section outlines conditions and legal terms that require careful review and cannot be auto-filled."
+        }
+      ]
+    },
+    {
+      "file_name": "NMP69524 - SOW Annexure D - Role Requirements.md",
+      "document_type": "unknown",
+      "required_to_return": true,
+      "confidence": "medium",
+      "reason": "The document contains role requirements and instructions for supplier nominations, indicating it is part of the response package.",
+      "sections": [
+        {
+          "section_name": "Role Requirements Table",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "The section contains detailed role requirements and responsibilities that require specific supplier input and cannot be auto-filled."
+        },
+        {
+          "section_name": "Note to Suppliers",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Instructions for supplier nominations require careful reading and adherence, necessitating manual review."
+        }
+      ]
+    },
+    {
+      "file_name": "NMP69524 SOW Annexure C- AIC Schedule.md",
+      "document_type": "aic_plan",
+      "required_to_return": true,
+      "confidence": "high",
+      "reason": "The document is an AIC Schedule that forms part of any resultant Work Order and must be submitted to Defence.",
+      "sections": [
+        {
+          "section_name": "Australian Industry Capability Schedule Requirements",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section requires detailed descriptions and evidence of market testing, which involves human judgment and tender-specific input."
+        },
+        {
+          "section_name": "Table 1: Australian Industry Capability Schedule",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "The table requires specific details about services, companies, values, and justifications that are unique to the tender and require manual input."
+        },
+        {
+          "section_name": "Indigenous Procurement Policy Options",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section involves strategic decisions and cross-referencing to a proposed Indigenous Procurement Policy Plan, requiring manual completion."
+        }
+      ]
+    },
+    {
+      "file_name": "NMP69524 SOW Annexure E- AIC Plan Description.md",
+      "document_type": "aic_plan",
+      "required_to_return": true,
+      "confidence": "high",
+      "reason": "The document contains specific instructions for the Supplier to submit an AIC Plan, which is a critical part of the tender response.",
+      "sections": [
+        {
+          "section_name": "AIC Program Summary",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section requires strategic input and commitments specific to the Supplier's operations and plans, which cannot be auto-filled.",
+          "notes": "Requires detailed supplier-specific commitments and strategic planning."
+        },
+        {
+          "section_name": "Preparation Instructions",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "The section outlines specific instructions for the preparation of the AIC Plan, which requires careful adherence and manual input.",
+          "notes": "Includes specific language and commitment requirements."
+        },
+        {
+          "section_name": "Generic Format and Content",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section provides guidelines on the format and content of the AIC Plan, requiring manual compliance.",
+          "notes": "Guidelines must be manually interpreted and applied."
+        },
+        {
+          "section_name": "Inter-relationships",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section requires understanding of how the AIC Plan integrates with other plans and reports, necessitating manual input.",
+          "notes": "Integration with other documents requires manual cross-referencing."
+        }
+      ]
+    },
+    {
+      "file_name": "NMP69524 Supplier Quotation V2.md",
+      "document_type": "compliance_schedule",
+      "required_to_return": true,
+      "confidence": "high",
+      "reason": "The document contains declarations, acknowledgements, and undertakings that the supplier must complete and return as part of the tender submission.",
+      "sections": [
+        {
+          "section_name": "SUPPLIER’S deed of undertaking",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section involves legal commitments and declarations that require manual review and completion by the supplier."
+        },
+        {
+          "section_name": "DECLARATIONS",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Declarations require manual input and confirmation by the supplier, involving legal and compliance aspects."
+        },
+        {
+          "section_name": "ACKNOWLEDGEMENTS",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Acknowledgements involve understanding and agreeing to terms that require manual review and acceptance."
+        },
+        {
+          "section_name": "ACCEPTANCE",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "Acceptance involves confirming the validity and terms of the quotation, requiring manual confirmation."
+        },
+        {
+          "section_name": "UNDERTAKINGS AND WARRANTIES",
+          "auto_fill_candidate": false,
+          "auto_fill_type": "manual_only",
+          "suggested_source": "manual",
+          "reason": "This section involves legal warranties and undertakings that require careful manual review and completion."
+        }
+      ]
+    }
+  ]
 }

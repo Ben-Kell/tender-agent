@@ -18,7 +18,6 @@ def analyze_returnable_documents(config: dict) -> dict:
         }
 
     detection = json.loads(detection_path.read_text(encoding="utf-8"))
-
     docs = load_normalised_tender_docs(tender_id)
 
     system_prompt = load_prompt("system_instructions.md")
@@ -27,7 +26,18 @@ def analyze_returnable_documents(config: dict) -> dict:
     results = []
 
     detected_documents = detection.get("documents", [])
-    detected_by_name = {doc.get("file_name", ""): doc for doc in detected_documents}
+
+    # IMPORTANT:
+    # returnable_detector writes:
+    # - filename
+    # - is_returnable
+    # - reasons
+    # - confidence (float)
+    # - document_type
+    detected_by_name = {
+        doc.get("filename", ""): doc
+        for doc in detected_documents
+    }
 
     for doc in docs:
         file_name = doc.get("filename", "")
@@ -37,17 +47,30 @@ def analyze_returnable_documents(config: dict) -> dict:
         if not detected:
             continue
 
-        required_to_return = detected.get("required_to_return")
-        confidence = detected.get("confidence", "medium")
-        reason = detected.get("reason", "")
+        is_returnable = detected.get("is_returnable", False)
+        confidence_value = detected.get("confidence", 0.5)
+        reasons = detected.get("reasons", [])
+        detected_doc_type = detected.get("document_type", "unknown")
 
-        if required_to_return is False:
+        if isinstance(confidence_value, (int, float)):
+            if confidence_value >= 0.8:
+                confidence = "high"
+            elif confidence_value >= 0.5:
+                confidence = "medium"
+            else:
+                confidence = "low"
+        else:
+            confidence = "medium"
+
+        reason_text = "; ".join(reasons) if reasons else ""
+
+        if is_returnable is False:
             results.append({
                 "file_name": file_name,
                 "document_type": "reference_only",
                 "required_to_return": False,
                 "confidence": confidence,
-                "reason": reason or "Detected as non-returnable",
+                "reason": reason_text or "Detected as non-returnable",
                 "sections": [],
             })
             continue
@@ -108,18 +131,18 @@ Return exactly this structure:
             parsed = json.loads(cleaned_output)
         except Exception:
             parsed = {
-                "required_to_return": True if required_to_return is not False else False,
-                "confidence": "low",
+                "required_to_return": True,
+                "confidence": confidence,
                 "reason": "Failed to parse model output",
                 "sections": [],
             }
 
         results.append({
             "file_name": file_name,
-            "document_type": "customer_returnable",
+            "document_type": detected_doc_type,
             "required_to_return": parsed.get("required_to_return", True),
-            "confidence": parsed.get("confidence", "low"),
-            "reason": parsed.get("reason", ""),
+            "confidence": parsed.get("confidence", confidence),
+            "reason": parsed.get("reason", reason_text),
             "sections": parsed.get("sections", []),
         })
 
