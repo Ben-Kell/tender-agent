@@ -7,23 +7,25 @@ from app.compliance_evaluator import evaluate_compliance
 from app.content_loader import load_boilerplate_docs, load_case_studies
 from app.docx_bridge import render_docx_with_node
 from app.docx_payload_builder import build_docx_payload, write_docx_payload
+from app.feature_flags import DEFAULT_FEATURE_FLAGS
 from app.file_loader import load_normalised_tender_docs
 from app.json_loader import load_tender_output_json
 from app.json_loader import load_proposal_overview_plan
+from app.llm_json import chat_json
 from app.markdown_writer import write_markdown_output
 from app.openai_client import chat
 from app.output_writer import write_tender_output
+from app.pipeline_registry import PIPELINE_STAGES
 from app.pricing_model_detector import detect_pricing_model
 from app.prompt_loader import load_prompt
-from app.proposal_overview_planner import plan_proposal_overview
 from app.rag_retriever import retrieve_relevant_chunks
 from app.requirement_extractor import extract_and_deduplicate_requirements
 from app.response_router import route_requirements_for_main_response
 from app.returnable_detector import detect_returnable_documents
 from app.returnable_analyser import analyze_returnable_documents
+from app.stage_result import make_stage_response, assert_stage_completed
 from app.submission_artefacts import build_submission_artefacts
 from app.template_loader import load_template
-from app.template_utils import fill_template_placeholders
 from app.tender_bootstrap import create_tender_structure
 from app.tender_ingest import create_and_ingest_tender
 from app.tm_pricing_csv import generate_tm_pricing_csv
@@ -32,11 +34,6 @@ from app.executive_summary import (
     generate_executive_summary,
     inject_executive_summary,
     remove_existing_executive_summary,
-)
-from app.proposal_overview import (
-    build_proposal_overview_scaffold,
-    remove_existing_proposal_overview,
-    inject_proposal_overview,
 )
 
 from app.supplier_background import (
@@ -77,32 +74,24 @@ DOCUMENT PREVIEWS:
 {combined_preview}
 """.strip()
 
-    raw_output = chat(system_prompt, user_prompt, model="gpt-4o")
-    cleaned_output = raw_output.strip()
-
-    if cleaned_output.startswith("```json"):
-        cleaned_output = cleaned_output[len("```json"):].strip()
-    elif cleaned_output.startswith("```"):
-        cleaned_output = cleaned_output[len("```"):].strip()
-
-    if cleaned_output.endswith("```"):
-        cleaned_output = cleaned_output[:-3].strip()
-
-    try:
-        parsed = json.loads(cleaned_output)
-        return {
-            "tender_reference": str(parsed.get("tender_reference", "")).strip(),
-            "tender_title": str(parsed.get("tender_title", "")).strip(),
-            "customer": str(parsed.get("customer", "")).strip(),
-            "submission_date": str(parsed.get("submission_date", "")).strip(),
-        }
-    except Exception:
-        return {
+    parsed = chat_json(
+        system_prompt,
+        user_prompt,
+        model="gpt-4o",
+        fallback={
             "tender_reference": "",
             "tender_title": "",
             "customer": "",
             "submission_date": "",
-        }
+        },
+    )
+
+    return {
+        "tender_reference": str(parsed.get("tender_reference", "")).strip(),
+        "tender_title": str(parsed.get("tender_title", "")).strip(),
+        "customer": str(parsed.get("customer", "")).strip(),
+        "submission_date": str(parsed.get("submission_date", "")).strip(),
+    }
 
 def start_run(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -288,29 +277,14 @@ Return raw JSON only in this structure:
   ]
 }}
 """
-
-
-
-        raw_output = chat(system_prompt, user_prompt)
-
-        cleaned_output = raw_output.strip()
-
-        if cleaned_output.startswith("```json"):
-            cleaned_output = cleaned_output[len("```json"):].strip()
-        elif cleaned_output.startswith("```"):
-            cleaned_output = cleaned_output[len("```"):].strip()
-
-        if cleaned_output.endswith("```"):
-            cleaned_output = cleaned_output[:-3].strip()
-
-        try:
-            parsed = json.loads(cleaned_output)
-        except json.JSONDecodeError:
-            parsed = {
+        parsed = chat_json(
+            system_prompt,
+            user_prompt,
+            fallback={
                 "sections": [],
                 "error": "Failed to parse model output as JSON",
-                "raw_output": raw_output,
-            }
+            },
+        )
 
         write_tender_output(tender_id, "template_map.json", parsed)
 
@@ -393,33 +367,10 @@ Return raw JSON only in this structure:
 Do not include an Executive Summary section.
 """.strip()
 
-    raw_output = chat(system_prompt, user_prompt)
-    cleaned_output = raw_output.strip()
-
-    if cleaned_output.startswith("```json"):
-        cleaned_output = cleaned_output[len("```json"):].strip()
-    elif cleaned_output.startswith("```"):
-        cleaned_output = cleaned_output[len("```"):].strip()
-
-    if cleaned_output.endswith("```"):
-        cleaned_output = cleaned_output[:-3].strip()
-
-    try:
-        parsed = json.loads(cleaned_output)
-        draft_text = str(parsed.get("draft_text", "")).strip()
-
-        if draft_text.startswith("{") and '"coverage_status"' in draft_text:
-            raise RuntimeError(
-            f"Drafted section '{section_name}' returned compliance JSON instead of narrative text"
-            )
-
-        if draft_text.startswith("{") and '"requirement_id"' in draft_text:
-            raise RuntimeError(
-            f"Drafted section '{section_name}' returned raw JSON instead of narrative text"
-            )
-        return parsed
-    except json.JSONDecodeError:
-        return {
+    parsed = chat_json(
+        system_prompt,
+        user_prompt,
+        fallback={
             "section_id": section.get("section_id", ""),
             "template_section": section_name,
             "draft_text": "",
@@ -430,8 +381,23 @@ Do not include an Executive Summary section.
             "used_rag_sources": [],
             "headings_added": [],
             "error": "Failed to parse model output as JSON",
-            "raw_output": raw_output,
-        }
+        },
+    )
+
+    draft_text = str(parsed.get("draft_text", "")).strip()
+
+    if draft_text.startswith("{") and '"coverage_status"' in draft_text:
+        raise RuntimeError(
+            f"Drafted section '{section_name}' returned compliance JSON instead of narrative text"
+        )
+
+    if draft_text.startswith("{") and '"requirement_id"' in draft_text:
+        raise RuntimeError(
+            f"Drafted section '{section_name}' returned raw JSON instead of narrative text"
+        )
+
+    return parsed
+
 def _draft_main_response_section(
     tender_id: str,
     tender_metadata: dict,
@@ -557,22 +523,10 @@ Return raw JSON only in this structure:
     print("[draft_main_response_section] retrieved_chunks:", len(compact_chunks))
     print("[draft_main_response_section] prompt_chars:", len(user_prompt))
 
-    raw_output = chat(system_prompt, user_prompt)
-    cleaned_output = raw_output.strip()
-
-    if cleaned_output.startswith("```json"):
-        cleaned_output = cleaned_output[len("```json"):].strip()
-    elif cleaned_output.startswith("```"):
-        cleaned_output = cleaned_output[len("```"):].strip()
-
-    if cleaned_output.endswith("```"):
-        cleaned_output = cleaned_output[:-3].strip()
-
-    try:
-        parsed = json.loads(cleaned_output)
-        return parsed
-    except json.JSONDecodeError:
-        return {
+    return chat_json(
+        system_prompt,
+        user_prompt,
+        fallback={
             "section_id": "SEC-MAIN-001",
             "template_section": section_title,
             "draft_text": "",
@@ -583,10 +537,8 @@ Return raw JSON only in this structure:
             "used_rag_sources": [],
             "headings_added": [],
             "error": "Failed to parse model output as JSON",
-            "raw_output": raw_output,
-        }
-
-
+        },
+    )
 
 
 def draft_sections(config: dict) -> dict:
@@ -791,12 +743,14 @@ def compile_response(config: dict) -> dict:
         "result": RUNS[run_id]["result"],
     }
 
-def _assert_stage_completed(stage_name: str, stage_result: dict) -> None:
-    if not isinstance(stage_result, dict):
-        raise RuntimeError(f"{stage_name} returned a non-dict response")
+def _run_pipeline_stage(run_id: str, step_name: str, func, *args, required: bool = True, **kwargs):
+    RUNS[run_id]["current_step"] = step_name
+    result = func(*args, **kwargs)
 
-    if stage_result.get("status") != "completed":
-        raise RuntimeError(f"{stage_name} failed: {stage_result.get('result')}")
+    if required and isinstance(result, dict) and result.get("status") in {"failed"}:
+        raise RuntimeError(f"{func.__name__} failed: {result.get('result') or result}")
+
+    return result
 
 def run_full_pipeline(config: dict) -> dict:
     run_id = f"run_{uuid.uuid4().hex[:8]}"
@@ -812,53 +766,94 @@ def run_full_pipeline(config: dict) -> dict:
         tender_id = config["tender_id"]
         template_name = config.get("template_name", "response_template.md")
 
-        RUNS[run_id]["current_step"] = "running_create_tender"
-        create_result = create_and_ingest_tender(tender_id)
-
-        RUNS[run_id]["current_step"] = "running_detect_returnable_documents"
-        returnable_result = detect_returnable_documents(tender_id)
-
-        RUNS[run_id]["current_step"] = "running_analyze_returnable_documents"
-        analysis_result = analyze_returnable_documents({
-            "tender_id": tender_id,
-            "template_name": template_name,
-        })
-
-        if analysis_result.get("status") != "completed":
-            raise RuntimeError(f"analyze_returnable_documents failed: {analysis_result}")
+        feature_flags = {**DEFAULT_FEATURE_FLAGS, **config.get("feature_flags", {})}
 
         stage_config = {
             "tender_id": tender_id,
             "template_name": template_name,
         }
 
-        RUNS[run_id]["current_step"] = "running_start_run"
-        start_result = start_run(stage_config)
-        _assert_stage_completed("start_run", start_result)
+        create_result = _run_pipeline_stage(
+            run_id,
+            "running_create_tender",
+            create_and_ingest_tender,
+            tender_id,
+            required=False,
+        )
 
-        RUNS[run_id]["current_step"] = "running_tm_pricing_csv"
-        tm_pricing_result = generate_tm_pricing_csv(tender_id)
+        returnable_result = _run_pipeline_stage(
+            run_id,
+            "running_detect_returnable_documents",
+            detect_returnable_documents,
+            tender_id,
+            required=False,
+        )
 
-        RUNS[run_id]["current_step"] = "running_map_template"
-        map_result = map_template(stage_config)
-        _assert_stage_completed("map_template", map_result)
+        analysis_result = None
+        if feature_flags["enable_returnable_analysis"]:
+            analysis_result = _run_pipeline_stage(
+                run_id,
+                "running_analyze_returnable_documents",
+                analyze_returnable_documents,
+                stage_config,
+                required=True,
+            )
 
-        '''  RUNS[run_id]["current_step"] = "planning_proposal_overview"
-        proposal_overview_plan_result = plan_proposal_overview(tender_id)
+        start_result = _run_pipeline_stage(
+            run_id,
+            "running_start_run",
+            start_run,
+            stage_config,
+            required=True,
+        )
+        assert_stage_completed("start_run", start_result)
 
-        print("PROPOSAL OVERVIEW PLAN BUILT")
-        print(proposal_overview_plan_result)
-'''
-        RUNS[run_id]["current_step"] = "running_draft_sections"
-        draft_result = draft_sections(stage_config)
-        _assert_stage_completed("draft_sections", draft_result)
+        tm_pricing_result = None
+        if feature_flags["enable_tm_pricing_csv"]:
+            tm_pricing_result = _run_pipeline_stage(
+                run_id,
+                "running_tm_pricing_csv",
+                generate_tm_pricing_csv,
+                tender_id,
+                required=False,
+            )
 
-        RUNS[run_id]["current_step"] = "running_compile_response"
-        compile_result = compile_response(stage_config)
-        _assert_stage_completed("compile_response", compile_result)
+        map_result = _run_pipeline_stage(
+            run_id,
+            "running_map_template",
+            map_template,
+            stage_config,
+            required=True,
+        )
+        assert_stage_completed("map_template", map_result)
 
-        RUNS[run_id]["current_step"] = "evaluating_compliance"
-        compliance_result = evaluate_compliance(tender_id)
+        draft_result = _run_pipeline_stage(
+            run_id,
+            "running_draft_sections",
+            draft_sections,
+            stage_config,
+            required=True,
+        )
+        assert_stage_completed("draft_sections", draft_result)
+
+        compile_result = _run_pipeline_stage(
+            run_id,
+            "running_compile_response",
+            compile_response,
+            stage_config,
+            required=True,
+        )
+        assert_stage_completed("compile_response", compile_result)
+
+        compliance_result = None
+        if feature_flags["enable_compliance_evaluation"]:
+            compliance_result = _run_pipeline_stage(
+                run_id,
+                "evaluating_compliance",
+                evaluate_compliance,
+                tender_id,
+                required=False,
+            )
 
         RUNS[run_id]["result"] = {
             "message": "Full tender pipeline completed successfully",
@@ -867,8 +862,6 @@ def run_full_pipeline(config: dict) -> dict:
             "detect_returnable_documents": returnable_result,
             "analyze_returnable_documents": analysis_result,
             "start_run": start_result["result"],
-            #"early_submission_artefacts": early_submission_artefact_result,
-            #"proposal_overview_plan": proposal_overview_plan_result,
             "map_template": map_result["result"],
             "draft_sections": draft_result["result"],
             "compile_response": compile_result["result"],
