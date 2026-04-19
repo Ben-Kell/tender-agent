@@ -20,6 +20,7 @@ from app.rag_retriever import retrieve_relevant_chunks
 from app.requirement_extractor import extract_and_deduplicate_requirements
 from app.response_router import route_requirements_for_main_response
 from app.returnable_detector import detect_returnable_documents
+from app.returnable_analyser import analyze_returnable_documents
 from app.submission_artefacts import build_submission_artefacts
 from app.template_loader import load_template
 from app.template_utils import fill_template_placeholders
@@ -817,6 +818,15 @@ def run_full_pipeline(config: dict) -> dict:
         RUNS[run_id]["current_step"] = "running_detect_returnable_documents"
         returnable_result = detect_returnable_documents(tender_id)
 
+        RUNS[run_id]["current_step"] = "running_analyze_returnable_documents"
+        analysis_result = analyze_returnable_documents({
+            "tender_id": tender_id,
+            "template_name": template_name,
+        })
+
+        if analysis_result.get("status") != "completed":
+            raise RuntimeError(f"analyze_returnable_documents failed: {analysis_result}")
+
         stage_config = {
             "tender_id": tender_id,
             "template_name": template_name,
@@ -855,6 +865,7 @@ def run_full_pipeline(config: dict) -> dict:
             "tender_id": tender_id,
             "create_tender": create_result,
             "detect_returnable_documents": returnable_result,
+            "analyze_returnable_documents": analysis_result,
             "start_run": start_result["result"],
             #"early_submission_artefacts": early_submission_artefact_result,
             #"proposal_overview_plan": proposal_overview_plan_result,
