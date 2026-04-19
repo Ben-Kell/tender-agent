@@ -3,702 +3,681 @@
     {
       "requirement_id": "REQ-001",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "1. Executive Summary",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific acknowledgment of Commonwealth informing Supplier of Achieved Performance."
+      "gap": "General mention of performance reviews but lacks specific details on Commonwealth informing Supplier of Achieved Performance."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General mention of performance reviews but lacks specific details on impact on At Risk Amount or Service Credits."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific mention of future changes to Work Order based on performance."
+      "gap": "General mention of performance reviews but lacks specific details on future changes to Work Order."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific mention of Commonwealth measuring performance at each Review Period."
+      "gap": "General mention of performance reviews but lacks specific details on measuring Performance Measures during Review Period."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "1. Executive Summary",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific acknowledgment of Commonwealth informing Supplier of Achieved Performance."
+      "gap": "General mention of performance reviews but lacks specific details on Commonwealth informing Supplier of Achieved Performance."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General mention of performance reviews but lacks specific details on impact on At Risk Amount or Service Credits."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific mention of future changes to Work Order based on performance."
+      "gap": "General mention of performance reviews but lacks specific details on future changes to Work Order."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General commitment to performance measures but lacks specific mention of Commonwealth measuring performance at each Review Period."
+      "gap": "General mention of performance reviews but lacks specific details on measuring Performance Measures during Review Period."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of the first Review Period beginning on the Work Order Effective Date."
+      "gap": "No specific mention of KPIs set out at Appendix A."
     },
     {
       "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No specific mention of subsequent Review Periods commencing after the previous one."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General mention of compliance with governance standards but lacks specific details on meeting all specifications, Laws, Authorisations, etc."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "The response mentions performance measures but lacks specific details on how they will be measured and reported during each Review Period."
+      "gap": "The response mentions a national workforce but does not explicitly address integration into the CDS team or specific roles for system administration, engineering, and business support."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not mention the KPIs set out in Appendix A."
+      "gap": "The response does not address the availability of Supplier Key Persons for On Call Services outside of working hours."
     },
     {
       "requirement_id": "REQ-009",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not specify service delivery in the geographic location of HMAS Harman, Jerrabomberra, ACT."
     },
     {
       "requirement_id": "REQ-010",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "The response does not address the provision of ICT Personnel Resources or integration into the CDS team."
-    },
-    {
-      "requirement_id": "REQ-011",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "The response does not mention the availability of Supplier Key Persons for On Call Services."
-    },
-    {
-      "requirement_id": "REQ-012",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "The response does not specify the geographic locations for service delivery."
-    },
-    {
-      "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
       "gap": "The response does not mention access to Government Furnished Materials, Facilities, or Services."
     },
     {
-      "requirement_id": "REQ-014",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response mentions entitlements to payment but lacks specific details on pricing calculations as per Attachment B."
-    },
-    {
-      "requirement_id": "REQ-015",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "The response does not address the Stand Down Notice for personnel."
-    },
-    {
-      "requirement_id": "REQ-016",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "The response does not cover the requirements during a Stand Down Period."
-    },
-    {
-      "requirement_id": "REQ-017",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No explicit mention of mitigating losses during the Stand Down Period."
-    },
-    {
-      "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to compliance is mentioned, but specific milestones and dates are not addressed."
-    },
-    {
-      "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
-    },
-    {
-      "requirement_id": "REQ-003",
-      "coverage_status": "FULL",
-      "covered_in_section": "1. Executive Summary",
-      "confidence": "high",
-      "gap": ""
-    },
-    {
-      "requirement_id": "REQ-004",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of IP Schedule preparation and delivery."
-    },
-    {
-      "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of meeting agenda preparation and delivery."
-    },
-    {
-      "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of meeting minutes preparation and delivery."
-    },
-    {
-      "requirement_id": "REQ-007",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General mention of contract reports but lacks specific format and requirements."
-    },
-    {
-      "requirement_id": "REQ-008",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of performance report preparation and delivery."
-    },
-    {
-      "requirement_id": "REQ-009",
-      "coverage_status": "FULL",
-      "covered_in_section": "1. Executive Summary",
-      "confidence": "high",
-      "gap": ""
-    },
-    {
-      "requirement_id": "REQ-010",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No explicit mention of managing Intellectual Property or Technical Data and Software rights."
-    },
-    {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of submitting an IP Schedule or compliance with clause 5.10(b) of the COD."
+      "gap": "The response does not address payment entitlements or reference Attachment B or Annexure A for pricing."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of providing each Plan in accordance with the COD."
+      "gap": "The response does not mention the possibility of a Stand Down Notice or its implications."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of drafting, delivering, reviewing, and updating each Plan as required."
+      "gap": "The response does not address actions required during a Stand Down Period or cooperation with the Commonwealth."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "The response discusses governance and compliance but does not explicitly mention achieving Milestones or Critical Milestones by specific dates."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention the delivery of hard or soft copy Deliverables to the Commonwealth Contract Manager."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the preparation and delivery of an AIC Schedule or Plan in the specified format."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of preparing and delivering an IP Schedule in accordance with clause 5.10(b) of the COD and in the format set out in Attachment I to the COD."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "Mention of timely preparation and delivery of agendas but lacks specific reference to the format agreed with the Commonwealth Contract Manager."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "Mentions preparation and delivery of draft minutes but lacks specific reference to incorporating Commonwealth feedback or requested changes."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "Mentions Contract Reports but lacks specific reference to the format agreed with the Commonwealth Contract Manager and clause 13 of the SOW."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of preparing and delivering a Performance Report in accordance with clause 13 of the SOW and clause 1.4(b), Part 1, Attachment E to the Deed."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of completing and submitting an AIC Schedule or AIC Plan as per the specified conditions."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of managing Intellectual Property under the Work Order in accordance with clause 5 of the COD."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of submitting an IP Schedule by the specified date(s) in accordance with clause 5.10(b) of the COD."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of providing each Plan in accordance with the COD and as set out in the Work Order."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of drafting, delivering, reviewing, and updating each Plan in accordance with clause 3.19 of the COD and related clauses."
     },
     {
       "requirement_id": "REQ-014",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General mention of performance measurement but lacks specific reference to clause 6.1 of the COD and the Performance Management Framework."
+      "gap": "The response mentions a governance framework and performance reviews but does not explicitly address the Performance Management Framework or specific Performance Measures."
     },
     {
       "requirement_id": "REQ-015",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No explicit mention of providing Performance Reports detailing self-assessment against Performance Measures."
+      "coverage_status": "FULL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "high",
+      "gap": ""
     },
     {
       "requirement_id": "REQ-016",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No explicit mention of submitting Performance Reports by specified dates."
+      "coverage_status": "FULL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "high",
+      "gap": ""
     },
     {
       "requirement_id": "REQ-017",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No explicit mention of providing reports in accordance with clause 13 of the SOW."
+      "coverage_status": "FULL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "high",
+      "gap": ""
     },
     {
       "requirement_id": "REQ-018",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of providing a quarterly contract report with specified details."
+      "gap": "The response does not address the requirement for report formats and delivery methods as specified in clause 13."
+    },
+    {
+      "requirement_id": "REQ-019",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "The response mentions performance reviews but does not explicitly cover the provision of Performance Reports detailing compliance with Performance Measures."
+    },
+    {
+      "requirement_id": "REQ-020",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the requirement for quarterly contract reports with specific details as outlined."
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General mention of submitting contract reports but lacks specific reference to the Milestone/Deliverable table in clause 6 of the SOW."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention submission dates for Contract Reports as specified in the Milestone/Deliverable table."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the requirement for ensuring Contract Reports are accurate, complete, and up to date."
     },
     {
       "requirement_id": "REQ-003",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "Specific policies, standards, guidelines, frameworks, procedures, or other resources are not explicitly mentioned."
-    },
-    {
-      "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of ITIL v3.0 alignment."
+      "gap": "The response does not mention compliance with additional policies, standards, guidelines, frameworks, or procedures as specified."
     },
     {
-      "requirement_id": "REQ-005",
+      "requirement_id": "REQ-004",
       "coverage_status": "FULL",
-      "covered_in_section": "1. Executive Summary, 2. Response to Customer Requirements",
+      "covered_in_section": "1. Executive Summary; 2. Our Understanding and Response",
       "confidence": "high",
       "gap": ""
     },
     {
-      "requirement_id": "REQ-006",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General alignment with Commonwealth objectives is mentioned, but specific architecture and standards are not detailed."
-    },
-    {
-      "requirement_id": "REQ-007",
+      "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of primary functionalities and security arrangements."
+      "gap": "No mention of ITIL v3.0 alignment in the response."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of providing services within the Commonwealth's current ICT environment."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "1. Executive Summary; 2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General alignment with Defence objectives mentioned, but not specifically with Commonwealth's architecture and standards."
     },
     {
       "requirement_id": "REQ-008",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "1. Executive Summary",
-      "confidence": "medium",
-      "gap": "Annexures are not explicitly listed or referenced."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of annexures attached to the SOW."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of Work Order Price or payment schedules."
+      "gap": "No mention of payment terms or Work Order Price."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of timesheets as objective quality evidence."
+      "gap": "No mention of submitting timesheets as objective quality evidence."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of stopping services when NTE Price is reached."
+      "gap": "No mention of stopping services when the NTE Price is reached."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of submitting timesheets as objective quality evidence."
     },
     {
       "requirement_id": "REQ-003",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response indicates compliance with RFQ and deed poll but does not explicitly demonstrate understanding and compliance with the RFQ and SOW documentation."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of providing On Call Services as directed by the Commonwealth."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "The response mentions compliance with requirements but does not explicitly demonstrate understanding of the Services as specified in the RFQ."
+      "gap": "General understanding and compliance with governance standards mentioned, but not specific to RFQ and SOW documentation."
     },
     {
       "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "There is no mention of providing CVs of proposed Key Personnel."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General understanding of services mentioned, but not specific to RFQ and associated documents."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of providing pricing information as a separate attachment marked 'Quotation Attachment A'."
+      "gap": "No specific mention of providing pricing information as a separate attachment."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of lodging quotations electronically via AusTender."
     },
     {
       "requirement_id": "REQ-003",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response indicates compliance with RFQ and deed poll but does not explicitly demonstrate understanding and compliance with the RFQ and SOW documentation."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of pricing on the basis of Time and Materials (T&M) capped at a NTE Price."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "The response mentions compliance with requirements but does not explicitly demonstrate understanding of the Services as specified in the RFQ."
+      "gap": "General understanding and compliance with governance standards mentioned, but not specific to RFQ and SOW documentation."
     },
     {
       "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "There is no mention of providing CVs of proposed Key Personnel."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General understanding of services mentioned, but not specific to RFQ and associated documents."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of the costed proposal and pricing structure representing value for money."
+      "gap": "No mention of providing CVs of Key Personnel."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of preparing and lodging quotes based on the Supplier's Deed of Undertaking."
+      "gap": "No specific mention of costed proposal and pricing structure representing value for money."
     },
     {
       "requirement_id": "REQ-008",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "Mentions electronic lodgement via AusTender but does not specify adherence to the format in the Quotation Details Schedule."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of preparing and lodging quotes based on the Supplier’s Deed of Undertaking."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of the requirement for quotations to remain open for acceptance during the Quotation Validity Period."
+      "gap": "No specific mention of lodging quotations in the specified format."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of executing a Confidentiality Deed Poll as required."
-    },
-    {
-      "requirement_id": "REQ-001",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of submitting alternative proposals in accordance with clause 9."
-    },
-    {
-      "requirement_id": "REQ-002",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of submitting alternative proposals as part of a Quotation addressing RFQ requirements."
-    },
-    {
-      "requirement_id": "REQ-003",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of compliance of alternative proposals with essential RFQ requirements."
-    },
-    {
-      "requirement_id": "REQ-004",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No description of alternative proposals including advantages, disadvantages, limitations, and capability."
-    },
-    {
-      "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of providing sufficient and verifiable supporting information for alternative proposals."
-    },
-    {
-      "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of substitution of Supplier in case of an Insolvency Event."
-    },
-    {
-      "requirement_id": "REQ-007",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of compliance with the Payment Times Procurement Connected Policy (PT PCP) in the response."
-    },
-    {
-      "requirement_id": "REQ-008",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "Response mentions adherence to the Deed but does not explicitly reference the Supplier’s Deed of Undertaking."
-    },
-    {
-      "requirement_id": "REQ-009",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
-    },
-    {
-      "requirement_id": "REQ-001",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-002",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-003",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-004",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of alternative proposals in the response."
-    },
-    {
-      "requirement_id": "REQ-007",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of compliance with the Payment Times Procurement Connected Policy (PT PCP) in the response."
-    },
-    {
-      "requirement_id": "REQ-008",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of subcontractor payment terms within 20 days after delivery and invoice."
-    },
-    {
-      "requirement_id": "REQ-009",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of responding to subcontractor complaints under clause 11.11A(c)(iii)."
-    },
-    {
-      "requirement_id": "REQ-010",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of completing a questionnaire if requested by the PT PCP Policy Team."
+      "gap": "No mention of quotation validity period."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of not taking prejudicial action against complainants."
-    },
-    {
-      "requirement_id": "REQ-012",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of cooperating in good faith with the PT PCP Policy Team."
-    },
-    {
-      "requirement_id": "REQ-013",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of submitting a Payment Claim for Approved Postponement costs."
-    },
-    {
-      "requirement_id": "REQ-014",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of payment timelines for Approved Payment Claims."
-    },
-    {
-      "requirement_id": "REQ-015",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of amendment to clause 7.6(d) regarding payment periods."
-    },
-    {
-      "requirement_id": "REQ-016",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of amendment to clause 7.6(e) regarding payment periods."
-    },
-    {
-      "requirement_id": "REQ-017",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of interest payment adjustments or timelines."
+      "gap": "No mention of executing a Confidentiality Deed Poll."
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "Acknowledgement as a contracted service provider under the NACC Act is not explicitly mentioned."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of submitting alternative proposals as per clause 9."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of addressing RFQ requirements in alternative proposals."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of issuing a notice after becoming aware of a Significant Event."
+      "gap": "No mention of compliance with essential requirements in alternative proposals."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of providing additional information regarding a Significant Event within 3 Working Days."
+      "gap": "No description of advantages, disadvantages, limitations, and capability of alternative proposals."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of preparing and submitting a draft Significant Event plan within 10 Working Days."
+      "gap": "No mention of providing supporting information for alternative proposals."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of making changes to the draft plan and resubmitting it within 5 Working Days."
+      "gap": "No mention of substitution of supplier in case of insolvency."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of complying with each Significant Event plan as approved by the Commonwealth."
+      "gap": "No mention of supporting documentation under clause 11.2(a)."
     },
     {
       "requirement_id": "REQ-008",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the requirement to include payment terms in PT PCP subcontracts."
     },
     {
       "requirement_id": "REQ-009",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "Monitoring and assessing compliance with the Code is not explicitly detailed."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention responding to complaints of non-compliance under clause 11.11A(c)(iii)."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of issuing a notice upon becoming aware of any breach of clause 11.19(b)."
+      "gap": "The response does not address completing a questionnaire if requested by the PT PCP Policy Team."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention submitting alternative proposals as part of a Quotation."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the need to clearly identify alternative proposals."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not describe alternative proposals, including their advantages and limitations."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention compliance with the Payment Times Procurement Connected Policy (PT PCP)."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the requirement to include payment terms in PT PCP subcontracts."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention responding to complaints of non-compliance under clause 11.11A(c)(iii)."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address completing a questionnaire if requested by the PT PCP Policy Team."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of handling complaints or non-prejudicial actions against complainants."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of cooperation with the PT PCP Policy Team in investigations or inquiries."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of submitting Payment Claims for Approved Postponement costs."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of payment timelines related to the PEPPOL framework or Payment Claims."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of amendments to Clause 7.6(d) regarding payment periods."
+    },
+    {
+      "requirement_id": "REQ-016",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of amendments to Clause 7.6(e) regarding payment periods."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of interest payment adjustments or timelines related to the PEPPOL framework."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of acknowledgment as a contracted service provider under the NACC Act."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of compliance with requests or cooperation related to the NACC Act."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of issuing notices upon awareness of a Significant Event."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of providing additional information regarding a Significant Event within 3 Working Days."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of preparing and submitting a draft Significant Event plan within 10 Working Days."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of making changes to a draft plan and resubmitting within 5 Working Days."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of complying with each Significant Event plan and providing progress reports."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of compliance with the Commonwealth Supplier Code of Conduct."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of monitoring and assessing compliance with the Code or providing related information."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No specific mention of issuing a notice on becoming aware of any breach of clause 11.19(b)."
     },
     {
       "requirement_id": "REQ-011",
@@ -719,140 +698,154 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of quarterly submission of Skills Guarantee Report."
+      "gap": "No specific mention of submitting a Skills Guarantee Report within 10 Working Days after the end of every quarter."
     },
     {
       "requirement_id": "REQ-014",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of annual submission of Skills Guarantee Report."
+      "gap": "No mention of submitting a Skills Guarantee Report within 10 working days after the end of every financial year."
     },
     {
       "requirement_id": "REQ-015",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of submission of Skills Guarantee Report at the end of the Work Order Term."
+      "gap": "No mention of submitting a Skills Guarantee Report within 10 working days after the end of the applicable Work Order Term."
     },
     {
       "requirement_id": "REQ-016",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of using the Skills Guarantee Reporting Worksheet."
+      "gap": "No mention of using the Skills Guarantee Reporting Worksheet or an approved form for the report."
     },
     {
       "requirement_id": "REQ-017",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of including details of non-compliance in the Skills Guarantee Report."
+      "gap": "No mention of including details of non-compliance in the Skills Guarantee Report."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of including details of non-compliance in the Skills Guarantee Report."
+      "gap": "No mention of including details of non-compliance in the Skills Guarantee Report."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General mention of personnel being informed about handling personal information, but lacks specific mention of making Apprentices aware of the collection and disclosure of their Personal Information."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of making apprentices aware of the collection and disclosure of their personal information."
     },
     {
       "requirement_id": "REQ-003",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General mention of compliance with privacy obligations, but lacks specific mention of obtaining necessary consents from Apprentices and ICT Cadets."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of obtaining necessary consents from apprentices and ICT cadets for personal information handling."
     },
     {
       "requirement_id": "REQ-004",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response mentions cooperation with reasonable requests but does not explicitly reference clause 12.3(x) or directions issued under it."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of providing evidence of consents to the Commonwealth on request."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of compliance with the PT PCP or the PT PCP Remediation Plan."
+      "gap": "No mention of providing additional information or implementing strategies if directed by the Commonwealth."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of PT PCP Subcontract payment terms."
+      "gap": "No mention of complying with directions issued by the Commonwealth under clause 12.3(x)."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of responding to complaints of non-compliance by subcontractors."
+      "gap": "No mention of PT PCP compliance or remediation plan."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of including obligations in Reporting Entity Subcontracts."
+      "gap": "No mention of PT PCP Subcontract payment terms."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of issuing notices regarding Significant Events."
+      "gap": "No mention of responding to subcontractor complaints."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of providing additional information regarding Significant Events."
+      "gap": "No mention of completing a questionnaire as per PT PCP."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of preparing and submitting a draft Significant Event plan."
+      "gap": "No mention of issuing notice to Commonwealth Deed Representative."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of making changes to and resubmitting the draft plan."
+      "gap": "No mention of providing additional information regarding a Significant Event."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of complying with Approved Significant Event plans."
+      "gap": "No mention of preparing and submitting a draft Significant Event plan."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of making changes to and resubmitting the draft plan."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of complying with an Approved Significant Event plan."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of a Significant Event plan submission by the specified date."
+      "gap": "No mention of submitting a Significant Event plan by a specific date."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of compliance with the Commonwealth Supplier Code of Conduct."
     },
     {
       "requirement_id": "REQ-003",
@@ -873,21 +866,21 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of issuing a notice upon becoming aware of a breach."
+      "gap": "No mention of issuing a notice upon becoming aware of any breach."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of advising the Commonwealth or issuing a notice within 3 Working Days of a possible breach."
+      "gap": "No mention of responding to notices of possible breaches within 3 Working Days."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of the consequences of failing to comply with obligations under clause 11.19."
+      "gap": "No mention of issuing a notice upon notification of a breach by the Commonwealth."
     },
     {
       "requirement_id": "REQ-008",
@@ -908,14 +901,14 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of submitting a Skills Guarantee Report within the specified timeframe."
+      "gap": "No mention of submitting a Skills Guarantee Report within specified timeframes."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of addressing concerns related to Australian Skills Guarantee Targets."
+      "gap": "No mention of providing additional information or implementing strategies if directed by the Commonwealth."
     },
     {
       "requirement_id": "REQ-014",
@@ -923,6 +916,13 @@
       "covered_in_section": "",
       "confidence": "low",
       "gap": "No mention of compliance with the Payment Times Procurement Connected Policy or PT PCP Remediation Plan."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of PT PCP Subcontract or payment terms for subcontractors."
     },
     {
       "requirement_id": "REQ-007",
@@ -936,686 +936,665 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of providing reports on Significant Event plan implementation."
+      "gap": "No mention of providing reports or information about Significant Event plans."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "PARTIAL",
-      "covered_in_section": "Executive Summary",
+      "covered_in_section": "2. Our Understanding and Response",
       "confidence": "medium",
-      "gap": "General compliance with the Commonwealth Supplier Code of Conduct is mentioned, but not specific to periodic monitoring and assessment."
+      "gap": "General mention of compliance and governance framework, but no specific mention of periodic monitoring and assessment of compliance with the Code."
     },
     {
       "requirement_id": "REQ-011",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "Executive Summary",
-      "confidence": "medium",
-      "gap": "General readiness to cooperate with requests is mentioned, but not specific to providing information on compliance monitoring systems."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of providing information regarding policies, frameworks, or systems for compliance monitoring."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of submitting no more than two nominations for each available position."
+      "gap": "No mention of submitting reports using the Skills Guarantee Reporting Worksheet or nominations for positions."
     },
     {
       "requirement_id": "REQ-003",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "Executive Summary",
-      "confidence": "medium",
-      "gap": "General mention of personnel responsibilities regarding personal information, but not specific to obtaining consents from Apprentices and ICT Cadets."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of making Apprentices aware of Personal Information collection and disclosure."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of providing evidence of consents to the Commonwealth."
+      "gap": "No mention of obtaining necessary consents from Apprentices and ICT Cadets for Personal Information."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of submitting no more than two nominations for each available position."
+      "gap": "No mention of submitting reports using the Skills Guarantee Reporting Worksheet or nominations for positions."
     },
     {
       "requirement_id": "REQ-002",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of creating or improving data pipelines, SME guidance in data architecture, or Linux troubleshooting."
+      "gap": "No specific mention of Data Pipeline Engineer responsibilities or Linux environment troubleshooting."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of data engineering experience or specific technologies like Apache NiFi, Kafka, Flink, or Linux fundamentals."
+      "gap": "No mention of experience with Apache NiFi, Kafka, Flink, or Linux fundamentals."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of data architecture experience or designing/redesigning data pipelines."
+      "gap": "No mention of experience with Git, Python, Java, CI/CD pipelines, or Splunk."
     },
     {
       "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of Git, Python, Java, CI/CD pipelines, or Splunk experience."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General experience in Defence environments mentioned, but not specific to data-engineering roles."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Department of Defence or government agency data-engineering roles."
+      "gap": "No mention of Splunk SIEM Engineers or their responsibilities."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of performing BAU tasks, SME guidance, or Linux troubleshooting."
+      "gap": "No mention of experience as a Splunk SME or specific SME components."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of Splunk SME experience, SIEM, or Linux fundamentals."
+      "gap": "No mention of Linux fundamentals or Splunk qualifications."
     },
     {
       "requirement_id": "REQ-009",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of Splunk qualifications."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2. Our Understanding and Response",
+      "confidence": "medium",
+      "gap": "General experience in Defence environments mentioned, but not specific to ICT engineering roles."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Department of Defence or government agency ICT engineering roles."
+      "gap": "No mention of Network Detection and Response Engineer responsibilities."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of working independently across systems, environments, stakeholders, or Linux operation."
+      "gap": "No mention of experience as an NDR or Network Observability Engineer or understanding of network security."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience as an NDR or Network Observability Engineer, or understanding of network security, incident response, and threat hunting."
+      "gap": "No specific mention of experience with Linux/UNIX systems or server appliances and hardware."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience with Linux/UNIX systems or server appliances and hardware."
+      "gap": "No specific mention of data pipelining, ETL processes, or system monitoring and reporting capabilities."
     },
     {
       "requirement_id": "REQ-014",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience with data pipelining, ETL processes, or system monitoring and reporting capabilities."
+      "gap": "No specific mention of networking fundamentals, TCP/IP, protocols, firewalls, optics, or network packet tapping."
     },
     {
       "requirement_id": "REQ-015",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of knowledge of networking fundamentals, TCP/IP, protocols, firewalls, optics, or experience with network packet tapping, aggregation, and brokerage."
-    },
-    {
-      "requirement_id": "REQ-016",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of scripting in Zeek, Bash, Python, Powershell, Groovy, or other languages."
+      "gap": "No specific mention of scripting in Zeek, Bash, Python, Powershell, Groovy, or other languages."
     },
     {
       "requirement_id": "REQ-017",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience working in Department of Defence or other Government agency in an ICT engineering role."
+      "gap": "No specific mention of delivering time and material in approximately 40 hours per week."
     },
     {
       "requirement_id": "REQ-018",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of delivering specific time and material in approximately forty hours per week."
+      "gap": "No specific mention of Key Personnel performing activities at Defence sites in Canberra, ACT."
     },
     {
       "requirement_id": "REQ-019",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of Key Personnel performing activities at Defence sites in Canberra, ACT."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "Executive Summary",
+      "confidence": "medium",
+      "gap": "General mention of security-cleared personnel but no specific mention of Top Secret, NV2 clearance."
     },
     {
       "requirement_id": "REQ-020",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of Top Secret, Negative Vetting Level 2 (NV2) security clearance."
+      "gap": "No specific mention of contributing to the strategic direction and operation of CDS’ Log Ingestion Pipeline."
     },
     {
       "requirement_id": "REQ-021",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of creating and improving data pipelines or maintaining and troubleshooting in a Linux environment."
+      "gap": "No specific mention of Data Engineering experience, Apache NiFi, Kafka, Flink, Git, Python, or Java."
     },
     {
       "requirement_id": "REQ-022",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of Data Engineering experience or technologies like Apache NiFi, Kafka, Flink, Git, Python, or Java."
-    },
-    {
-      "requirement_id": "REQ-023",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of CI/CD pipelines or Splunk."
+      "gap": "No specific mention of CI/CD pipelines, Splunk, or similar technology."
     },
     {
       "requirement_id": "REQ-024",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Department of Defence or Government agency data-engineering roles."
+      "gap": "No specific mention of lifecycle management activities for CDS assets."
     },
     {
       "requirement_id": "REQ-025",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of Asset Manager responsibilities or lifecycle management activities."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "Executive Summary",
+      "confidence": "medium",
+      "gap": "General experience with Defence environments mentioned, but not specific to purchasing processes or asset management databases."
     },
     {
       "requirement_id": "REQ-026",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of Defence purchasing processes or asset management databases."
+      "gap": "No mention of experience with equipment disposals in line with security framework documents."
     },
     {
       "requirement_id": "REQ-027",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of equipment disposals or security framework documents."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "Executive Summary",
+      "confidence": "medium",
+      "gap": "Experience in Defence environments mentioned, but not specifically in an Asset Manager role."
     },
     {
       "requirement_id": "REQ-028",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Department of Defence or Government agency asset management roles."
+      "gap": "No mention of delivering technology-based services as specified."
     },
     {
       "requirement_id": "REQ-029",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of delivering technology-based services or specific services like IT infrastructure, audio-visual, etc."
+      "gap": "No mention of managing specific technology services."
     },
     {
       "requirement_id": "REQ-030",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of managing technology services design, procurement, installation, etc."
+      "gap": "No mention of leading service delivery or ensuring service levels and security requirements."
     },
     {
       "requirement_id": "REQ-031",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of leading service delivery or ensuring service levels and security requirements."
+      "gap": "No mention of aligning processes, procedures, and practices across teams and providers."
     },
     {
       "requirement_id": "REQ-032",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of aligning processes, procedures, and practices across teams and providers."
+      "gap": "No mention of monitoring technology services performance or providing reports."
     },
     {
       "requirement_id": "REQ-033",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of monitoring technology services performance or providing reports."
+      "gap": "No mention of experience as a Change (and Release) Manager."
     },
     {
       "requirement_id": "REQ-034",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience as a Change (and Release) Manager."
+      "gap": "No mention of experience in Incident, Request, Problem Management."
     },
     {
       "requirement_id": "REQ-035",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Incident, Request, Problem Management."
+      "gap": "No mention of experience as an Atlassian DataCenter System Administrator."
     },
     {
       "requirement_id": "REQ-036",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience as an Atlassian DataCenter System Administrator."
-    },
-    {
-      "requirement_id": "REQ-037",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
       "gap": "No mention of experience with ITIL, SIAM, MADE or other ITSM processes."
     },
     {
-      "requirement_id": "REQ-038",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of experience working in Department of Defence or other Government agency."
+      "requirement_id": "REQ-037",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2",
+      "confidence": "medium",
+      "gap": "Experience in Defence environments is mentioned, but not specifically in a similar role."
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of Security Clearance: Top Secret, Negative Vetting Level 2 (NV2)."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "2",
+      "confidence": "medium",
+      "gap": "Security-cleared personnel are mentioned, but not specifically Top Secret, NV2 clearance."
     },
     {
       "requirement_id": "REQ-002",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of responsibilities related to the strategic direction and operation of CDS’ Log Ingestion Pipeline."
+      "gap": "No mention of responsibilities related to the Log Ingestion Pipeline or specific project tasks."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of managing Changes, Incidents, and Problems across Cyber Defence Systems."
+      "gap": "No mention of project management methods, risk management, or project plans."
     },
     {
       "requirement_id": "REQ-004",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of experience as a Change (and Release) Manager."
+      "coverage_status": "FULL",
+      "covered_in_section": "1, 2",
+      "confidence": "high",
+      "gap": ""
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of experience in Incident, Request, Problem Management."
+      "gap": "No mention of developing and maintaining SOPs and Working Instructions."
     },
     {
       "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of experience with Atlassian systems such as Jira / Confluence."
-    },
-    {
-      "requirement_id": "REQ-007",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of experience with ITIL, SIAM, MADE or other ITSM processes."
-    },
-    {
-      "requirement_id": "REQ-008",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of experience working in Department of Defence or other Government agency."
-    },
-    {
-      "requirement_id": "REQ-009",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of developing and maintaining SOPs and Working Instructions for workflows."
-    },
-    {
-      "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
       "gap": "No mention of creating Project Management Plans and associated documentation."
     },
     {
-      "requirement_id": "REQ-011",
+      "requirement_id": "REQ-007",
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "1, 2",
+      "confidence": "medium",
+      "gap": "Continuous improvement assessments and capturing lessons learned are not explicitly mentioned."
+    },
+    {
+      "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of conducting continuous improvement assessments and capturing lessons learned."
+      "gap": "No mention of developing Work Packages or ensuring resource allocation."
     },
     {
-      "requirement_id": "REQ-012",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of developing Work Packages for capabilities and ensuring resource allocation."
-    },
-    {
-      "requirement_id": "REQ-013",
+      "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
       "gap": "No mention of managing Jira roadmaps for scheduling and tracking deliverables."
     },
     {
+      "requirement_id": "REQ-010",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of attending migration meetings or communicating risks and dependencies."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of the Change Manager's experience requirements."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of experience in Incident, Request, Problem Management."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of experience with Atlassian systems such as Jira / Confluence."
+    },
+    {
       "requirement_id": "REQ-014",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of attending migration meetings for critical updates."
+      "gap": "No mention of improving and reviewing change requests or coordinating changes."
     },
     {
       "requirement_id": "REQ-015",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of communicating risks and dependencies to Project Manager."
+      "gap": "No mention of assisting in the development of management guides or policies."
     },
     {
       "requirement_id": "REQ-016",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of attending working group meetings and representing CDS."
+      "coverage_status": "PARTIAL",
+      "covered_in_section": "1, 2",
+      "confidence": "medium",
+      "gap": "Reporting on change process adherence and compliance is implied but not explicitly detailed."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "coverage_status": "FULL",
+      "covered_in_section": "1. Executive Summary; 2. Our Understanding and Response",
+      "confidence": "high",
+      "gap": ""
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "1, 2",
-      "confidence": "medium",
-      "gap": "Commitment to submit AIC Plan, but no specific timescales mentioned as per Item 30."
-    },
-    {
-      "requirement_id": "REQ-002",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "1, 2",
-      "confidence": "medium",
-      "gap": "General commitment to maximizing participation of Australian Industry, but no specific evidence of market testing."
-    },
-    {
-      "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No criteria for assessing local Australian Industry mentioned."
-    },
-    {
-      "requirement_id": "REQ-004",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No definition of 'local business' or determination process mentioned."
-    },
-    {
-      "requirement_id": "REQ-005",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of supporting the Indigenous Procurement Policy or involving Indigenous Enterprises."
-    },
-    {
-      "requirement_id": "REQ-006",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No summary or cross-reference to an Indigenous Procurement Policy Plan."
-    },
-    {
-      "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "1, 2",
-      "confidence": "medium",
-      "gap": "Commitment to submit AIC Plan, but no specific timescales mentioned as per Item 30."
+      "gap": "No draft AIC Plan or reference to timescales in Item 30 is provided."
     },
     {
       "requirement_id": "REQ-002",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific mention of compliance with the general format, content, and preparation instructions of the AIC Plan."
+      "gap": "No compliance with AIC Plan format, content, and preparation instructions is mentioned."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of summarizing aspects of other plans as specified in the Work Order."
+      "gap": "No summary of aspects of other plans in the AIC Plan is provided."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of separating commitments from background or descriptive information in the AIC Plan."
+      "gap": "No definition of 'local business' or determination method is provided."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of limiting background or descriptive information to 25% of the AIC Plan."
+      "gap": "No approach to supporting the Indigenous Procurement Policy is described."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of using specific terminology for commitments in the AIC Plan."
+      "gap": "No summary or cross-reference to an Indigenous Procurement Policy Plan is provided."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No draft AIC Plan or reference to timescales in Item 30 is provided."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No compliance with AIC Plan format, content, and preparation instructions is mentioned."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No summary of aspects of other plans in the AIC Plan is provided."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not address the separation of Supplier's commitments from background information in the AIC Plan."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not mention the limitation of background information to 25% of the AIC Plan."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not specify the use of required terminology for Supplier's commitments."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of clearly stating matters or assumptions qualifying commitments."
+      "gap": "The response does not address the need to clearly state any matters or assumptions qualifying the Supplier's commitments."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of the AIC Plan being subject to approval as per the Work Order and Statement of Work."
+      "gap": "The response does not mention the requirement for the AIC Plan to be subject to Approval as per the Work Order and Statement of Work."
     },
     {
       "requirement_id": "REQ-009",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General strategy for achieving AIC objectives is mentioned, but lacks specific summary details."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not provide a summary of the Supplier's strategy for achieving AIC Objectives."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of identifying the AIC manager with required details."
+      "gap": "The response does not identify the AIC manager or provide their details and responsibilities."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of describing organisational arrangements for managing the AIC program."
+      "gap": "The response does not describe the organisational arrangements for managing the AIC program."
     },
     {
       "requirement_id": "REQ-012",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response mentions the submission of an AIC Plan but does not explicitly describe the assurance process for AIC Obligations and Objectives."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not describe the assurance process for meeting AIC Obligations and Objectives."
     },
     {
       "requirement_id": "REQ-013",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "The response does not include an AIC Schedule detailing activities under the Work Order."
     },
     {
       "requirement_id": "REQ-014",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of a table identifying elements of the Work Order with unspecified sources of supply."
+      "gap": "No mention of a table identifying elements of the Work Order with unspecified sources of supply."
     },
     {
       "requirement_id": "REQ-015",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response discusses procurement activities but lacks detailed description of approach, actions, processes, and commitments for industry engagement and subcontract establishment."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No description of approach, actions, processes, or commitments related to industry engagement, market testing, and Subcontract establishment."
     },
     {
       "requirement_id": "REQ-001",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no specific mention of standard procurement processes or linkages with design teams."
+      "gap": "No overview of standard procurement processes or linkages with design teams for Mission and Support Systems."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No description of procurement activity structure, timings, or selection criteria to maximize Australian Industry participation."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of addressing commercial requirements and constraints related to IP, security, and export controls."
+      "gap": "No description of addressing commercial requirements and constraints related to IP, security, and export controls."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of ensuring AIC Subcontractors undertake market testing activities."
+      "gap": "No assurance that AIC Subcontractors will undertake market testing activities to achieve AIC Objectives."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of initiatives for Indigenous Procurement Policy or commitments to Indigenous enterprises."
+      "gap": "No description of initiatives to address the Indigenous Procurement Policy."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no mention of initiatives to engage and employ veterans."
+      "gap": "No description of initiatives to engage and employ veterans."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific commitments or descriptions related to the creation or enhancement of Industry Capabilities in Australia or New Zealand are mentioned."
+      "gap": "No identification or description of commitments to create or enhance Industry Capabilities in Australia or New Zealand."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific commitments or descriptions related to the maintenance of existing Industry Capabilities within Australian Industry are mentioned."
+      "gap": "No identification or description of commitments to support the maintenance of existing Industry Capabilities within Australian Industry."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No specific commitments to promote the long-term sustainability of Industry Capabilities within Australian Industry are mentioned."
+      "gap": "No mention of commitments to promote long-term sustainability of Industry Capabilities within Australian Industry."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No description of assurance activities to monitor and assess ANZ Sovereignty-related elements of the supply chain is provided."
+      "gap": "No description of the plan or measures to monitor and assess ANZ Sovereignty-related elements of the supply chain."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No breakdown of work elements conducted in Australia or New Zealand versus overseas is provided."
+      "gap": "No summary of the Australian and/or New Zealand workforce profile for the Supplier and each AIC Subcontractor."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No summary of the Australian and/or New Zealand workforce profile is provided."
+      "gap": "No mention of developing the Public AIC Plan from the successful RFQ response and any negotiated changes."
     },
     {
       "requirement_id": "REQ-013",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No description of technology transfer commitments from other companies is provided."
-    },
-    {
-      "requirement_id": "REQ-014",
-      "coverage_status": "NONE",
-      "covered_in_section": "",
-      "confidence": "low",
-      "gap": "No mention of developing the initial Public AIC Plan from the RFQ response and negotiated changes."
-    },
-    {
-      "requirement_id": "REQ-015",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
       "gap": "No mention of preparing updates to the Public AIC Plan in accordance with the Statement of Work and Work Order."
     },
     {
-      "requirement_id": "REQ-016",
+      "requirement_id": "REQ-014",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
       "gap": "No mention of the Public AIC Plan being written on company letterhead, signed, and formatted for publication."
     },
     {
+      "requirement_id": "REQ-001",
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of developing the initial Public AIC Plan from the successful RFQ response and any negotiated changes."
+    },
+    {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of security classification for publication on a public Internet website."
+      "gap": "No mention of ensuring the Public AIC Plan contains information of appropriate security classification."
     },
     {
       "requirement_id": "REQ-005",
@@ -1629,147 +1608,147 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of including information required under section 2 with specific headings and structure."
+      "gap": "No mention of including information required under section 2 with the same headings and structure."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of including company details such as name, address, and website."
+      "gap": "No mention of company details such as name, address, or website."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of including an executive summary with specific project details."
+      "gap": "No executive summary or details related to Defence project number, Work Order number, scope, price, duration, or completion date."
     },
     {
       "requirement_id": "REQ-009",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General mention of maximizing Australian Industry involvement but lacks specific details on subcontracting work."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No description of work to be subcontracted to Australian Industry or details of AIC Subcontractors."
     },
     {
       "requirement_id": "REQ-010",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to Australian Industry Capability but lacks specific commitments to new or existing capabilities."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No summary of commitments to new or existing Industry Capabilities in Australia or New Zealand."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of summarizing future work opportunities for Australian Industry."
+      "gap": "No mention of future work opportunities for Australian Industry."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of the process for Australian Entities to apply for work opportunities."
+      "gap": "No description of the process for Australian Entities to apply for work opportunities."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of preparing the Australian Industry Capability Schedule with specific pricing details."
+      "gap": "No mention of the Australian Industry Capability Schedule or its breakdown."
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "1. Executive Summary",
-      "confidence": "medium",
-      "gap": "The response does not explicitly mention the submission of the Quotation at the prices tendered or the statement of non-compliance."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No submission of Quotation or statement of non-compliance."
     },
     {
       "requirement_id": "REQ-002",
-      "coverage_status": "FULL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "high",
-      "gap": ""
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No acknowledgment of the Commonwealth's rights as set out in the RFQ."
     },
     {
       "requirement_id": "REQ-003",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not address the accuracy, completeness, or non-misleading nature of the Quotation."
+      "gap": "No acknowledgment that the Quotation is prepared in accordance with the RFQ."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not mention the Commonwealth's right to utilize information about the Supplier's performance."
+      "gap": "No explicit acknowledgment or agreement regarding the Commonwealth's utilization of information about the Supplier's performance is mentioned."
     },
     {
       "requirement_id": "REQ-005",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not address the Supplier's conduct during the RFQ process in relation to the Commonwealth's procurement framework."
+      "gap": "No explicit acknowledgment or agreement regarding the Supplier's conduct during the RFQ process is mentioned."
     },
     {
       "requirement_id": "REQ-006",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not mention the Commonwealth's reliance on the Quotation for assessing compliance, risks, and value for money."
+      "gap": "No explicit acknowledgment or agreement regarding the Commonwealth's reliance on the Quotation is mentioned."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not address the compliance with representations made in the Quotation when incorporated in any resultant Work Order."
+      "gap": "No explicit acknowledgment or agreement regarding compliance with representations made in the Quotation is mentioned."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not mention the Supplier's reliance on its own inquiries and inspection in preparing the Quotation."
+      "gap": "No explicit acknowledgment or agreement regarding reliance on the Supplier's own inquiries and inspection is mentioned."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not address the Supplier's non-reliance on Commonwealth representations, except for official addenda."
+      "gap": "No explicit acknowledgment or agreement regarding reliance on Commonwealth representations is mentioned."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "The response does not mention the prohibition of ACM in providing services or on Commonwealth premises."
+      "gap": "No explicit acknowledgment or agreement regarding the use of ACM in providing services is mentioned."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of judicial decisions against unpaid employee entitlements."
+      "gap": "No explicit acknowledgment or agreement regarding judicial decisions against the Supplier is mentioned."
     },
     {
       "requirement_id": "REQ-012",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of not being listed as a terrorist under the specified act."
+      "gap": "No explicit acknowledgment or agreement regarding terrorist listings under the Charter of the United Nations Act is mentioned."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of not being named in the consolidated list by DFAT."
+      "gap": "No explicit acknowledgment or agreement regarding the consolidated list maintained by the Department of Foreign Affairs and Trade is mentioned."
     },
     {
       "requirement_id": "REQ-014",
@@ -1783,14 +1762,14 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of Defence providing information to other agencies."
+      "gap": "No explicit mention of agreement to provide information to Commonwealth agencies."
     },
     {
       "requirement_id": "REQ-016",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of Defence's accountability and transparency requirements."
+      "gap": "No explicit mention of acknowledgment of Defence's accountability and transparency requirements."
     },
     {
       "requirement_id": "REQ-017",
@@ -1801,17 +1780,17 @@
     },
     {
       "requirement_id": "REQ-018",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to compliance but no specific mention of Quotation Validity Period."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of the Quotation Validity Period."
     },
     {
       "requirement_id": "REQ-019",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to compliance but no specific mention of obtaining necessary Authorisations."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No explicit mention of the Quotation being an unconditional offer or obtaining necessary Authorisations."
     },
     {
       "requirement_id": "REQ-020",
@@ -1825,49 +1804,49 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of improper assistance from Commonwealth Personnel or Defence Service Providers."
+      "gap": "No explicit mention of improper assistance from Commonwealth Personnel."
     },
     {
       "requirement_id": "REQ-022",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of compliance with laws or policies regarding unlawful inducements."
+      "gap": "No explicit mention of compliance with laws regarding unlawful inducements."
     },
     {
       "requirement_id": "REQ-023",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of awareness of Australian Consumer Law or false, misleading, or deceptive statements."
+      "gap": "No explicit mention of awareness of the Australian Consumer Law."
     },
     {
       "requirement_id": "REQ-024",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No explicit mention of past breaches of law, regulation, or code."
+      "gap": "No explicit mention of past breaches or warranties related to legal compliance."
     },
     {
       "requirement_id": "REQ-025",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of including obligations in subcontracts related to the Payment Times Procurement Connected Policy."
+      "gap": "No mention of Reporting Entity Subcontract or Payment Times Procurement Connected Policy."
     },
     {
       "requirement_id": "REQ-026",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of meeting proposed targets as per the Australian Skills Guarantee Procurement Connected Policy."
+      "gap": "No mention of meeting proposed targets or Australian Skills Guarantee Procurement Connected Policy."
     },
     {
       "requirement_id": "REQ-001",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to compliance but lacks specific mention of completing blank fields or additional information as directed."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of completing RFQ fields or providing additional information as directed."
     },
     {
       "requirement_id": "REQ-002",
@@ -1881,14 +1860,14 @@
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of identifying as a 'Reporting Entity' for the Payment Times Procurement Connected Policy."
+      "gap": "No mention of identifying as a 'Reporting Entity' for PT PCP."
     },
     {
       "requirement_id": "REQ-004",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of capability to use electronic invoicing through the PEPPOL framework."
+      "gap": "No mention of capability to use electronic invoicing through PEPPOL."
     },
     {
       "requirement_id": "REQ-005",
@@ -1899,86 +1878,72 @@
     },
     {
       "requirement_id": "REQ-006",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General compliance with the Commonwealth Supplier Code of Conduct is mentioned, but no specific details about investigations or breaches are provided."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of investigations or breaches of the Commonwealth Supplier Code of Conduct."
     },
     {
       "requirement_id": "REQ-007",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of tax residency information."
+      "gap": "No mention of providing pricing information as a separate attachment."
     },
     {
       "requirement_id": "REQ-008",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of proposing Key Persons."
+      "gap": "No mention of completing and submitting the basis of estimate (BoE) spreadsheet."
     },
     {
       "requirement_id": "REQ-009",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of subcontractors."
+      "gap": "No mention of completing and submitting information in the specified format for Quotation Attachment A."
     },
     {
       "requirement_id": "REQ-010",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of providing pricing information as a separate attachment."
+      "gap": "No mention of completing and signing a Deed of Undertaking as per Schedule 1."
     },
     {
       "requirement_id": "REQ-011",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of completing and submitting the basis of estimate spreadsheet."
+      "gap": "No mention of attaching a Resume/CV for each proposed Key Person."
     },
     {
       "requirement_id": "REQ-012",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "General commitment to compliance is mentioned, but no specific mention of completing and signing a Deed of Undertaking."
+      "coverage_status": "NONE",
+      "covered_in_section": "",
+      "confidence": "low",
+      "gap": "No mention of attaching a draft AIC Schedule for Work Order values between $4M and $20M."
     },
     {
       "requirement_id": "REQ-013",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "No mention of attaching resumes or CVs for Key Persons."
+      "gap": "No mention of attaching a draft AIC Plan for Work Order values exceeding $20M."
     },
     {
       "requirement_id": "REQ-014",
-      "coverage_status": "FULL",
-      "covered_in_section": "1. Executive Summary",
-      "confidence": "high",
-      "gap": ""
-    },
-    {
-      "requirement_id": "REQ-015",
-      "coverage_status": "PARTIAL",
-      "covered_in_section": "2. Response to Customer Requirements",
-      "confidence": "medium",
-      "gap": "The response mentions the submission of an AIC Schedule or Plan but does not specify if it is a draft AIC Plan or if it is contingent on the Work Order value exceeding $20M."
-    },
-    {
-      "requirement_id": "REQ-016",
       "coverage_status": "NONE",
       "covered_in_section": "",
       "confidence": "low",
-      "gap": "There is no specific description of the proposed approach or strategy to performing the Services as defined in the Statement of Work, nor is there a word count provided."
+      "gap": "No description of the proposed approach or strategy to performing the Services as defined in the Statement of Work."
     }
   ],
   "summary": {
-    "requirement_count": 282,
-    "full_count": 18,
-    "partial_count": 44,
-    "none_count": 220
+    "requirement_count": 277,
+    "full_count": 6,
+    "partial_count": 31,
+    "none_count": 240
   }
 }

@@ -3,411 +3,1100 @@
   "main_response_requirements": [
     {
       "requirement_id": "REQ-004",
-      "reason": "The requirement involves demonstrating understanding and compliance with the RFQ and SOW documentation.",
-      "response_focus": "understanding"
+      "reason": "The requirement involves understanding and aligning with the Commonwealth's governance standards.",
+      "response_focus": "governance"
     },
     {
-      "requirement_id": "REQ-005",
-      "reason": "The requirement involves demonstrating understanding of the Services as specified in the RFQ.",
-      "response_focus": "understanding"
+      "requirement_id": "REQ-016",
+      "reason": "The requirement involves producing reporting on change process adherence and compliance to management.",
+      "response_focus": "governance"
+    },
+    {
+      "requirement_id": "REQ-017",
+      "reason": "The requirement involves conducting post-implementation reviews to assess the effectiveness and efficiency of changes.",
+      "response_focus": "governance"
     }
   ],
   "other_document_requirements": [
     {
       "requirement_id": "REQ-001",
-      "reason": "The requirement involves providing proposed Labour Rates, which is commercial information typically included in a pricing schedule."
+      "reason": "This requirement involves providing labour rates, which is typically addressed in a pricing schedule."
     },
     {
       "requirement_id": "REQ-002",
-      "reason": "The requirement involves using Maximum Labour Rates, which is commercial information typically included in a pricing schedule."
+      "reason": "This requirement involves maximum labour rates, which is typically addressed in a pricing schedule."
     },
     {
       "requirement_id": "REQ-003",
-      "reason": "The requirement involves providing Labour Rates for On Call Services, which is commercial information typically included in a pricing schedule."
+      "reason": "This requirement involves labour rates for on-call services, which is typically addressed in a pricing schedule."
     },
     {
       "requirement_id": "REQ-004",
-      "reason": "The requirement involves using Maximum Labour Rates for On Call Services, which is commercial information typically included in a pricing schedule."
+      "reason": "This requirement involves maximum labour rates for on-call services, which is typically addressed in a pricing schedule."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves performance measures impacting financial entitlements, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves KPIs, which are typically addressed in a governance or performance document."
     },
     {
       "requirement_id": "REQ-006",
-      "reason": "The requirement involves the Supplier's performance against Performance Measures, which is governance-related and typically included in a performance review document."
+      "reason": "This requirement involves mandatory service provision details, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-007",
-      "reason": "The requirement involves types of Performance Measures, which is governance-related and typically included in a performance review document."
+      "reason": "This requirement involves personnel resources, which are typically addressed in a personnel or staffing document."
     },
     {
       "requirement_id": "REQ-008",
-      "reason": "The requirement involves KPIs applicable to the Work Order, which is governance-related and typically included in a performance review document."
+      "reason": "This requirement involves on-call services for key personnel, which are typically addressed in a personnel or staffing document."
     },
     {
       "requirement_id": "REQ-009",
-      "reason": "The requirement involves providing Services in accordance with the Deed, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves service delivery locations, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-010",
-      "reason": "The requirement involves providing ICT Personnel Resources, which is personnel-related and typically included in a personnel document."
+      "reason": "This requirement involves government-furnished facilities and materials, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-011",
-      "reason": "The requirement involves Key Persons being available for On Call Services, which is personnel-related and typically included in a personnel document."
+      "reason": "This requirement involves pricing and payment entitlements, which are typically addressed in a commercial document."
     },
     {
       "requirement_id": "REQ-012",
-      "reason": "The requirement involves delivering Services in specific geographic locations, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel stand-down procedures, which are typically addressed in a personnel or staffing document."
     },
     {
       "requirement_id": "REQ-013",
-      "reason": "The requirement involves access to Government Furnished Facilities, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel stand-down procedures, which are typically addressed in a personnel or staffing document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves deliverables, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves intellectual property management, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves intellectual property management, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves plan provision, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves plan provision, which is typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-014",
-      "reason": "The requirement involves entitlement to payment calculated in accordance with a pricing schedule, which is commercial information."
+      "reason": "This requirement involves performance measurement, which is typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-015",
-      "reason": "The requirement involves a Stand Down Notice, which is personnel-related and typically included in a personnel document."
+      "reason": "This requirement involves performance reviews, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-016",
-      "reason": "The requirement involves actions during a Stand Down Period, which is personnel-related and typically included in a personnel document."
+      "reason": "This requirement involves progress meetings, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-017",
-      "reason": "The requirement involves mitigating losses during a Stand Down Period, which is personnel-related and typically included in a personnel document."
+      "reason": "This requirement involves meeting administration, which is typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-018",
-      "reason": "The requirement involves the Payment Times Procurement Connected Policy, which is commercial information."
+      "reason": "This requirement involves reporting, which is typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-019",
-      "reason": "The requirement involves security clearance requirements, which is security-related and typically included in a security document."
+      "reason": "This requirement involves performance reports, which are typically addressed in a mandatory compliance document."
     },
     {
       "requirement_id": "REQ-020",
-      "reason": "The requirement involves the Supplier's obligations under the NACC Act, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves contract reports, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves contract report submission, which is typically addressed in a governance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves contract report accuracy, which is typically addressed in a governance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves compliance with additional policies, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves compliance with security standards, which is typically addressed in a security document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves service attributes, which are typically addressed in a technical document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves service attributes, which are typically addressed in a technical document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves service attributes, which are typically addressed in a technical document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves annexures, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves work order pricing, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves payment schedules, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves stopping services at a price threshold, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves timesheet submission, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves on-call services, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves on-call allowances, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves daily labour rates, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves pricing information, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves quotation lodgement, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves pricing structure, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves understanding and compliance with RFQ, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves understanding of services, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves CVs of key personnel, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves costed proposal and pricing structure, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves acknowledgements and agreements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves quotation format, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves quotation validity, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves confidentiality, which is typically addressed in a security document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves insolvency events, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves supporting documentation, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves supplier responsibilities, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves supplier responsibilities, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves quotation lodgement, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves alternative proposals, which are typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves compliance with payment policy, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves subcontractor payment terms, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves subcontractor complaints, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves completing a questionnaire, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves complaint handling, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves cooperation with policy team, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves payment claims, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves payment terms, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves payment terms, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-016",
+      "reason": "This requirement involves payment terms, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "reason": "This requirement involves interest payments, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves compliance with the NACC Act, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves compliance with the NACC Act, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves significant event notification, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves significant event information provision, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves significant event plan preparation, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves significant event plan changes, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves significant event plan compliance, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves compliance with the Supplier Code of Conduct, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves compliance monitoring, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves breach notification, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves meeting skills guarantee targets, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-016",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "reason": "This requirement involves skills guarantee non-compliance, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves skills guarantee non-compliance, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves privacy and consent, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves privacy and consent, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves privacy and consent, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves skills guarantee concerns, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves compliance with directions, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves compliance with payment policy, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves subcontractor payment terms, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves subcontractor complaints, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves completing a questionnaire, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves significant event notification, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves significant event information provision, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves significant event plan preparation, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves significant event plan changes, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves significant event plan compliance, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves significant event plan submission, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves compliance with the Supplier Code of Conduct, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves compliance monitoring, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves compliance monitoring, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves breach notification, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves breach response, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves breach response, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves meeting skills guarantee targets, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves skills guarantee concerns, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves compliance with payment policy, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves subcontractor payment terms, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves significant event plan compliance, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves significant event reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves compliance monitoring, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves compliance monitoring, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves skills guarantee reporting, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves privacy and consent, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves privacy and consent, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves personnel nominations, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "reason": "This requirement involves mandatory service delivery, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-018",
+      "reason": "This requirement involves mandatory service delivery, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-019",
+      "reason": "This requirement involves security clearance, which is typically addressed in a security document."
+    },
+    {
+      "requirement_id": "REQ-020",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-021",
-      "reason": "The requirement involves compliance with the Commonwealth Supplier Code of Conduct, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-022",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
-    },
-    {
-      "requirement_id": "REQ-023",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-024",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-025",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-026",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-027",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-028",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-029",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-030",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-031",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-032",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-033",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-034",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-035",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-036",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
       "requirement_id": "REQ-037",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-038",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves security clearance, which is typically addressed in a security document."
     },
     {
-      "requirement_id": "REQ-039",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-040",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves personnel responsibilities, which are typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-041",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-042",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-043",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-044",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-045",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-046",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-047",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-048",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-049",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves personnel experience, which is typically addressed in a personnel document."
     },
     {
-      "requirement_id": "REQ-050",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-051",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves technical responsibilities, which are typically addressed in a technical document."
     },
     {
-      "requirement_id": "REQ-052",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves AIC schedule, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-053",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves approach to Australian Industry participation, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-054",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves local business criteria, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-055",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves local business definition, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-056",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves Indigenous Procurement Policy, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-057",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves Indigenous Procurement Policy, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-058",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves AIC plan submission, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-059",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves AIC plan format, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-060",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves AIC plan summary, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-061",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves AIC plan commitments, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-062",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves AIC plan background, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-063",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves AIC plan commitments, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-064",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves AIC plan qualifications, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-065",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves AIC plan approval, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-066",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves AIC plan strategy, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-067",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves AIC manager identification, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-068",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves AIC program management, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-069",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves AIC assurance process, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-070",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves AIC schedule, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-071",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves AIC plan supply source, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-072",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves AIC plan industry engagement, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-073",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves procurement processes, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-074",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves procurement structure, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-075",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves commercial requirements, which is typically addressed in a commercial document."
     },
     {
-      "requirement_id": "REQ-076",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves AIC subcontractor market testing, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-077",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves Indigenous Procurement Policy, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-078",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves veteran engagement, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-079",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves industry capabilities, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-080",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves industry capabilities, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-081",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves industry capabilities, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-082",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves ANZ sovereignty, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-083",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves workforce profile, which is typically addressed in a response document."
     },
     {
-      "requirement_id": "REQ-084",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves public AIC plan development, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-085",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves public AIC plan updates, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-086",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves public AIC plan format, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-087",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves public AIC plan development, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-088",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves public AIC plan security, which is typically addressed in a security document."
     },
     {
-      "requirement_id": "REQ-089",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves public AIC plan style, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-090",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves public AIC plan structure, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-091",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves public AIC plan company details, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-092",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves public AIC plan executive summary, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-093",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves public AIC plan subcontracting, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-094",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves public AIC plan commitments, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-095",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves public AIC plan opportunities, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-096",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves public AIC plan application process, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-097",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves AIC schedule preparation, which is typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-098",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves quotation submission, which is typically addressed in a commercial document."
     },
     {
-      "requirement_id": "REQ-099",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
     },
     {
-      "requirement_id": "REQ-100",
-      "reason": "The requirement involves the Supplier's commitments under the AIC Plan, which is a mandatory requirement typically included in a compliance document."
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves security acknowledgements, which are typically addressed in a security document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves security acknowledgements, which are typically addressed in a security document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves personnel acknowledgements, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-015",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-016",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-017",
+      "reason": "This requirement involves acknowledgements, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-018",
+      "reason": "This requirement involves quotation validity, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-019",
+      "reason": "This requirement involves quotation offer, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-020",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-021",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-022",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-023",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-024",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-025",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-026",
+      "reason": "This requirement involves undertakings and warranties, which are typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-001",
+      "reason": "This requirement involves quotation completion, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-002",
+      "reason": "This requirement involves RFQ response, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-003",
+      "reason": "This requirement involves supplier profile, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-004",
+      "reason": "This requirement involves supplier profile, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-005",
+      "reason": "This requirement involves supplier profile, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-006",
+      "reason": "This requirement involves supplier profile, which is typically addressed in a response document."
+    },
+    {
+      "requirement_id": "REQ-007",
+      "reason": "This requirement involves pricing information, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-008",
+      "reason": "This requirement involves pricing information, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-009",
+      "reason": "This requirement involves pricing information, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-010",
+      "reason": "This requirement involves deed of undertaking, which is typically addressed in a mandatory compliance document."
+    },
+    {
+      "requirement_id": "REQ-011",
+      "reason": "This requirement involves personnel resumes, which are typically addressed in a personnel document."
+    },
+    {
+      "requirement_id": "REQ-012",
+      "reason": "This requirement involves AIC schedule, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "This requirement involves AIC plan, which is typically addressed in a commercial document."
+    },
+    {
+      "requirement_id": "REQ-014",
+      "reason": "This requirement involves approach description, which is typically addressed in a response document."
     }
   ]
 }

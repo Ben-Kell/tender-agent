@@ -180,11 +180,6 @@ def start_run(config: dict) -> dict:
             "response_routing.json",
             response_routing,
         )
-        write_tender_output(
-            tender_id,
-            "response_routing.json",
-            response_routing,
-        )
 
         print(f"[start_run] wrote output to {output_path}")
 
@@ -292,6 +287,8 @@ Return raw JSON only in this structure:
   ]
 }}
 """
+
+
 
         raw_output = chat(system_prompt, user_prompt)
 
@@ -451,7 +448,6 @@ def _draft_main_response_section(
         req for req in requirements if req.get("requirement_id") in routed_ids
     ]
 
-    # Build a lightweight focus summary to guide retrieval and drafting
     response_focuses = [
         item.get("response_focus", "").strip()
         for item in main_response_requirements
@@ -468,8 +464,42 @@ def _draft_main_response_section(
         matched_requirements=matched_requirements,
         tender_metadata=tender_metadata,
         index_path="knowledge_library/index.json",
-        top_k=8,
+        top_k=4,
     )
+
+    # Keep only the fields the model actually needs
+    compact_requirements = []
+    for req in matched_requirements[:12]:
+        compact_requirements.append({
+            "requirement_id": req.get("requirement_id", ""),
+            "requirement_text": req.get("requirement_text", ""),
+            "source_document": req.get("source_document", ""),
+            "category": req.get("category", ""),
+        })
+
+    compact_routing = []
+    for item in main_response_requirements[:12]:
+        compact_routing.append({
+            "requirement_id": item.get("requirement_id", ""),
+            "reason": item.get("reason", ""),
+            "response_focus": item.get("response_focus", ""),
+        })
+
+    compact_chunks = []
+    for chunk in retrieved_chunks[:4]:
+        compact_chunks.append({
+            "chunk_id": chunk.get("chunk_id", ""),
+            "source_file": chunk.get("source_file", ""),
+            "category": chunk.get("category", ""),
+            "score": round(float(chunk.get("score", 0.0)), 4),
+            "text": chunk.get("text", "")[:1800],
+        })
+
+    compact_metadata = {
+        "tender_reference": tender_metadata.get("tender_reference", ""),
+        "tender_title": tender_metadata.get("tender_title", ""),
+        "customer": tender_metadata.get("customer", ""),
+    }
 
     user_prompt = f"""
 TASK: {draft_prompt}
@@ -497,22 +527,16 @@ Rules:
 TENDER ID: {tender_id}
 
 TENDER METADATA:
-{json.dumps(tender_metadata, indent=2)}
+{json.dumps(compact_metadata, indent=2)}
 
 ROUTED MAIN RESPONSE REQUIREMENTS:
-{json.dumps(main_response_requirements, indent=2)}
+{json.dumps(compact_routing, indent=2)}
 
 MATCHED REQUIREMENT DETAILS:
-{json.dumps(matched_requirements, indent=2)}
+{json.dumps(compact_requirements, indent=2)}
 
 RETRIEVED KNOWLEDGE CHUNKS:
-{json.dumps(retrieved_chunks, indent=2)}
-
-OPTIONAL BOILERPLATE:
-{json.dumps(boilerplate_docs, indent=2)}
-
-OPTIONAL CASE STUDIES:
-{json.dumps(case_study_docs, indent=2)}
+{json.dumps(compact_chunks, indent=2)}
 
 Return raw JSON only in this structure:
 {{
@@ -520,13 +544,17 @@ Return raw JSON only in this structure:
   "template_section": "{section_title}",
   "draft_text": "Draft response text here",
   "requirements_covered": ["REQ-001", "REQ-004"],
-  "used_boilerplate": ["file1.md"],
-  "used_case_studies": ["case1.md"],
+  "used_boilerplate": [],
+  "used_case_studies": [],
   "used_rag_chunks": ["chunk_123", "chunk_456"],
   "used_rag_sources": ["service_transition_standard.md", "proposal_methodology.md"],
   "headings_added": []
 }}
 """.strip()
+    
+    print("[draft_main_response_section] matched_requirements:", len(compact_requirements))
+    print("[draft_main_response_section] retrieved_chunks:", len(compact_chunks))
+    print("[draft_main_response_section] prompt_chars:", len(user_prompt))
 
     raw_output = chat(system_prompt, user_prompt)
     cleaned_output = raw_output.strip()
@@ -636,6 +664,10 @@ def compile_response(config: dict) -> dict:
         tender_metadata = extracted.get("metadata", {})
         response_routing = extracted.get("response_routing", {})
 
+        past_performance_requirement = load_tender_output_json(
+            tender_id, "past_performance_requirement.json"
+        )
+
         section_drafts = load_tender_output_json(tender_id, "section_drafts.json")
         drafted_sections = section_drafts.get("sections", [])
 
@@ -712,6 +744,14 @@ def compile_response(config: dict) -> dict:
         )
 
         past_performance_docx_output_file = None
+
+        if past_performance_requirement.get("past_performance_required"):
+            past_performance_docx_output_file = render_docx_with_node(
+                tender_id=tender_id,
+                template_path="templates/fujitsu_past_performance.docx",
+                payload_path=payload_file,
+                output_path=f"tenders/{tender_id}/output/fujitsu_past_performance.docx"
+            )
 
         RUNS[run_id]["current_step"] = "building_submission_artefacts"
         submission_artefact_result = build_submission_artefacts(tender_id)
@@ -793,12 +833,12 @@ def run_full_pipeline(config: dict) -> dict:
         map_result = map_template(stage_config)
         _assert_stage_completed("map_template", map_result)
 
-        RUNS[run_id]["current_step"] = "planning_proposal_overview"
+        '''  RUNS[run_id]["current_step"] = "planning_proposal_overview"
         proposal_overview_plan_result = plan_proposal_overview(tender_id)
 
         print("PROPOSAL OVERVIEW PLAN BUILT")
         print(proposal_overview_plan_result)
-
+'''
         RUNS[run_id]["current_step"] = "running_draft_sections"
         draft_result = draft_sections(stage_config)
         _assert_stage_completed("draft_sections", draft_result)
@@ -817,7 +857,7 @@ def run_full_pipeline(config: dict) -> dict:
             "detect_returnable_documents": returnable_result,
             "start_run": start_result["result"],
             #"early_submission_artefacts": early_submission_artefact_result,
-            "proposal_overview_plan": proposal_overview_plan_result,
+            #"proposal_overview_plan": proposal_overview_plan_result,
             "map_template": map_result["result"],
             "draft_sections": draft_result["result"],
             "compile_response": compile_result["result"],
